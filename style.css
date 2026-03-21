@@ -1,0 +1,624 @@
+/* ====================================================
+   Destroyere1107's Home Page - Stylesheet
+   Style inspired by Microsoft Expression Web 4 templates
+   Dark mode default, optional light mode
+   ==================================================== */
+
+/* --- Reset & Base --- */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #c8ccd0;
+  background-color: #1a1a1e;
+}
+
+a {
+  color: #6ea8da;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #e09050;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #9a80c0;
+}
+
+ul {
+  list-style: none;
+}
+
+/* --- Wrapper --- */
+#wrapper {
+  width: 940px;
+  margin: 20px auto;
+  background-color: #24252a;
+  border: 1px solid #3a3b40;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+}
+
+/* --- Header --- */
+#header {
+  background: #1a3050;
+  background: linear-gradient(to bottom, #243e5c 0%, #0e1e30 100%);
+  color: #e0e4e8;
+  padding: 25px 30px 20px 30px;
+  border-bottom: 3px solid #0a1520;
+  display: flex;
+  align-items: center;
+}
+
+.header-photo {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  border: 2px solid #4a6a8a;
+  overflow: hidden;
+}
+
+.header-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.header-text {
+  flex: 1;
+  text-align: right;
+}
+
+#header h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 28px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  color: #e8ecf0;
+}
+
+#header .tagline {
+  font-size: 11px;
+  color: #7090b0;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.header-contacts {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.header-contacts a {
+  display: inline-block;
+  color: #7090b0;
+  margin-left: 18px;
+  text-decoration: none;
+}
+
+.header-contacts a:hover {
+  color: #e0e4e8;
+}
+
+/* --- Navigation --- */
+#navigation {
+  background: #2a2b30;
+  background: linear-gradient(to bottom, #333438 0%, #222226 100%);
+  border-bottom: 1px solid #444448;
+  padding: 0 20px;
+}
+
+#navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#navigation ul li {
+  float: left;
+}
+
+#navigation ul li a {
+  display: block;
+  padding: 8px 18px;
+  color: #b0b4b8;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+  border-right: 1px solid #3a3b40;
+  border-left: 1px solid #3a3b40;
+}
+
+#navigation ul li:first-child a {
+  border-left: none;
+}
+
+#navigation ul li a:hover {
+  background-color: #383a40;
+  color: #e0e4e8;
+}
+
+#navigation ul li a.active {
+  background-color: #1a3050;
+  color: #ffffff;
+}
+
+/* --- Content Wrapper --- */
+#content-wrapper {
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* --- Main Content --- */
+#content {
+  float: left;
+  width: 620px;
+  padding-right: 25px;
+  border-right: 1px solid #3a3b40;
+}
+
+#content h2 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 22px;
+  color: #6ea8da;
+  font-weight: normal;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #3a4050;
+}
+
+#content h3 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 16px;
+  color: #7eb8e0;
+  font-weight: normal;
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+
+#content p {
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+/* --- News Items --- */
+.news-item {
+  background-color: #1e2028;
+  border: 1px solid #3a4050;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+}
+
+.news-item .date {
+  font-size: 10px;
+  color: #808890;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.news-item p {
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+/* --- Sidebar --- */
+#sidebar {
+  float: right;
+  width: 230px;
+}
+
+.sidebar-section {
+  margin-bottom: 20px;
+  background-color: #1e2028;
+  border: 1px solid #3a4050;
+  padding: 12px;
+}
+
+.sidebar-section h3 {
+  font-family: Verdana, Tahoma, Geneva, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #e0e4e8;
+  background: #1a3050;
+  background: linear-gradient(to bottom, #243e5c 0%, #1a3050 100%);
+  padding: 5px 8px;
+  margin: -12px -12px 10px -12px;
+}
+
+.sidebar-section ul {
+  padding-left: 5px;
+}
+
+.sidebar-section ul li {
+  padding: 3px 0;
+  border-bottom: 1px dotted #3a4050;
+}
+
+.sidebar-section ul li:last-child {
+  border-bottom: none;
+}
+
+.sidebar-section ul li a {
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.sidebar-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.sidebar-section p {
+  font-size: 11px;
+  color: #909498;
+  margin-bottom: 6px;
+}
+
+/* --- Footer --- */
+#footer {
+  clear: both;
+  background: #1e1f24;
+  background: linear-gradient(to bottom, #28292e 0%, #1a1b20 100%);
+  border-top: 1px solid #3a3b40;
+  padding: 12px 20px;
+  text-align: center;
+}
+
+#footer-buttons {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.button-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #1a1b20;
+  border: 1px solid #3a3b40;
+  padding: 8px 12px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.button-card a {
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.button-card img {
+  display: block;
+  image-rendering: pixelated;
+}
+
+.button-card p {
+  font-size: 10px;
+  color: #909498;
+  margin: 0;
+  text-align: left;
+}
+
+#footer p {
+  font-size: 10px;
+  color: #808488;
+  margin-bottom: 2px;
+}
+
+#footer a {
+  color: #6ea8da;
+  text-decoration: none;
+  font-size: 10px;
+}
+
+#footer a:hover {
+  text-decoration: underline;
+}
+
+.powered-by {
+  font-size: 9px !important;
+  color: #606468 !important;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* --- Theme Toggle --- */
+#theme-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 5px 12px;
+  font-family: Verdana, Tahoma, Geneva, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000;
+  border: 1px solid #3a3b40;
+  background: #2a2b30;
+  color: #b0b4b8;
+}
+
+#theme-toggle:hover {
+  background: #383a40;
+  color: #e0e4e8;
+}
+
+/* --- Content Lists --- */
+.content-list {
+  padding-left: 20px;
+  margin-bottom: 12px;
+  list-style: square;
+}
+
+.content-list li {
+  padding: 3px 0;
+  font-size: 12px;
+}
+
+/* --- Photo Gallery --- */
+.photo-gallery {
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.photo-item {
+  float: left;
+  width: 185px;
+  margin: 0 10px 15px 0;
+  text-align: center;
+}
+
+.photo-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.photo-placeholder {
+  width: 185px;
+  height: 130px;
+  background: #2a2e38;
+  background: linear-gradient(to bottom, #303440 0%, #24282e 100%);
+  border: 1px solid #3a4050;
+  display: table;
+}
+
+.photo-placeholder span {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 14px;
+  color: #808890;
+  font-style: italic;
+}
+
+.photo-caption {
+  font-size: 10px;
+  color: #808890;
+  margin-top: 4px;
+}
+
+/* --- Contact Form --- */
+.form-table {
+  margin-top: 10px;
+}
+
+.form-table td {
+  padding: 4px 6px;
+  vertical-align: middle;
+}
+
+.form-label {
+  font-weight: bold;
+  font-size: 11px;
+  color: #a0a4a8;
+  width: 80px;
+  text-align: right;
+  padding-right: 10px !important;
+}
+
+.form-table input[type="text"],
+.form-table textarea {
+  font-family: Verdana, Tahoma, Geneva, sans-serif;
+  font-size: 11px;
+  padding: 3px 5px;
+  border: 1px solid #3a4050;
+  background-color: #1a1b20;
+  color: #c8ccd0;
+}
+
+.form-table input[type="text"]:focus,
+.form-table textarea:focus {
+  border-color: #6ea8da;
+  background-color: #20222a;
+}
+
+.submit-btn, .reset-btn {
+  font-family: Verdana, Tahoma, Geneva, sans-serif;
+  font-size: 11px;
+  padding: 4px 14px;
+  cursor: pointer;
+  border: 1px solid #4a4b50;
+  margin-right: 4px;
+}
+
+.submit-btn {
+  background: #2a2b30;
+  background: linear-gradient(to bottom, #333438 0%, #28292e 100%);
+  color: #c8ccd0;
+  font-weight: bold;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(to bottom, #3a3b40 0%, #303138 100%);
+}
+
+.reset-btn {
+  background: #2a2b30;
+  color: #909498;
+}
+
+/* --- Info Table --- */
+.info-table {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.info-table td {
+  padding: 3px 8px;
+  font-size: 12px;
+}
+
+.info-label {
+  font-weight: bold;
+  color: #a0a4a8;
+  width: 70px;
+}
+
+/* --- Specimen Table --- */
+.specimen-table td img {
+  max-width: 150px !important;
+  height: auto;
+  display: block;
+  margin: 4px 0;
+}
+
+/* --- Utility --- */
+.clear {
+  clear: both;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+}
+
+/* ====================================================
+   LIGHT MODE OVERRIDES
+   Applied when body has class "light-mode"
+   ==================================================== */
+
+body.light-mode {
+  color: #333333;
+  background-color: #e8e8e8;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHklEQVQIW2O8fPnyf0YGBgYmIAESYGJgYEAXAAcAJngEoX7h9scAAAAASUVORK5CYII=');
+}
+
+body.light-mode a { color: #2E5B8A; }
+body.light-mode a:hover { color: #C05020; }
+body.light-mode a:visited { color: #4A3070; }
+
+body.light-mode #wrapper {
+  background-color: #ffffff;
+  border-color: #a0a0a0;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+}
+
+body.light-mode #header {
+  background: linear-gradient(to bottom, #3A6FA0 0%, #1E3F66 100%);
+  border-bottom-color: #163050;
+}
+
+body.light-mode #header h1 { color: #ffffff; }
+body.light-mode #header .tagline { color: #b0c8e0; }
+body.light-mode .header-contacts a { color: #b0c8e0; }
+body.light-mode .header-contacts a:hover { color: #ffffff; }
+
+body.light-mode #navigation {
+  background: linear-gradient(to bottom, #fafafa 0%, #e0e0e0 100%);
+  border-bottom-color: #b0b0b0;
+}
+
+body.light-mode #navigation ul li a {
+  color: #333333;
+  border-right-color: #c8c8c8;
+  border-left-color: #ffffff;
+}
+
+body.light-mode #navigation ul li a:hover {
+  background-color: #d0d8e0;
+  color: #1E3F66;
+}
+
+body.light-mode #navigation ul li a.active {
+  background-color: #2E5B8A;
+  color: #ffffff;
+}
+
+body.light-mode #content { border-right-color: #d0d0d0; }
+body.light-mode #content h2 { color: #2E5B8A; border-bottom-color: #d0d8e0; }
+body.light-mode #content h3 { color: #3A6FA0; }
+
+body.light-mode .news-item {
+  background-color: #f5f8fc;
+  border-color: #d0d8e0;
+}
+body.light-mode .news-item .date { color: #808080; }
+
+body.light-mode .sidebar-section {
+  background-color: #f7f9fc;
+  border-color: #d0d8e0;
+}
+
+body.light-mode .sidebar-section h3 {
+  color: #ffffff;
+  background: linear-gradient(to bottom, #3A6FA0 0%, #2E5B8A 100%);
+}
+
+body.light-mode .sidebar-section ul li { border-bottom-color: #c0c8d0; }
+body.light-mode .sidebar-section p { color: #555555; }
+
+body.light-mode #footer {
+  background: linear-gradient(to bottom, #e8e8e8 0%, #d0d0d0 100%);
+  border-top-color: #b0b0b0;
+}
+body.light-mode #footer p { color: #606060; }
+body.light-mode #footer a { color: #2E5B8A; }
+body.light-mode .powered-by { color: #909090 !important; }
+body.light-mode .button-card {
+  background-color: #f0f2f5;
+  border-color: #c0c4c8;
+}
+body.light-mode .button-card p { color: #555555; }
+
+body.light-mode #theme-toggle {
+  border-color: #a0a0a0;
+  background: #f0f0f0;
+  color: #444444;
+}
+body.light-mode #theme-toggle:hover {
+  background: #e0e0e0;
+  color: #222222;
+}
+
+body.light-mode .photo-placeholder {
+  background: linear-gradient(to bottom, #e0e8f0 0%, #c0c8d0 100%);
+  border-color: #a0a8b0;
+}
+body.light-mode .photo-placeholder span { color: #606870; }
+body.light-mode .photo-caption { color: #606060; }
+
+body.light-mode .form-label { color: #444444; }
+body.light-mode .form-table input[type="text"],
+body.light-mode .form-table textarea {
+  border-color: #a0a8b0;
+  background-color: #fafbfc;
+  color: #333333;
+}
+body.light-mode .form-table input[type="text"]:focus,
+body.light-mode .form-table textarea:focus {
+  border-color: #2E5B8A;
+  background-color: #ffffff;
+}
+body.light-mode .submit-btn {
+  background: linear-gradient(to bottom, #f0f0f0 0%, #d8d8d8 100%);
+  color: #333333;
+  border-color: #808080;
+}
+body.light-mode .reset-btn { background: #f0f0f0; color: #666666; }
+body.light-mode .info-label { color: #444444; }
