@@ -92,6 +92,28 @@ if (!window._skipAutoInit) {
     // Load footer
     SiteIncludes.loadPartial('footer.html', 'footer-container');
 
+    // Load main sidebar if container exists on this page
+    if (document.getElementById('main-sidebar-container')) {
+      SiteIncludes.loadPartial('sidebar.html', 'main-sidebar-container');
+    }
+
+    // Load separate calculator sidebar if container exists on root page
+    if (document.getElementById('calc-sidebar-container')) {
+      SiteIncludes.loadPartial('calculator-pages/calc-sidebar.html', 'calc-sidebar-container', function() {
+        var links = document.querySelectorAll('#calc-sidebar-container a');
+        for (var i = 0; i < links.length; i++) {
+          var href = links[i].getAttribute('href');
+          if (href && href.indexOf('://') === -1 && href.indexOf('#') !== 0 && href.indexOf('mailto:') !== 0) {
+            if (href.indexOf('../') === 0) {
+              links[i].setAttribute('href', href.substring(3));
+            } else {
+              links[i].setAttribute('href', 'calculator-pages/' + href);
+            }
+          }
+        }
+      });
+    }
+
     // Load calculator museum license if container exists on this page
     if (document.getElementById('calc-license-container')) {
       SiteIncludes.loadPartial('calculator-pages/calc-license.html', 'calc-license-container');
