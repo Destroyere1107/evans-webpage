@@ -9,6 +9,15 @@
 // Shared site utilities — available globally for sub-page scripts
 var SiteIncludes = (function() {
 
+  /**
+   * Fetches an HTML snippet via AJAX and injects it into a specified DOM element.
+   * This is used to dynamically load reusable site components (like headers and footers) 
+   * into static HTML files, preventing code duplication across the site.
+   *
+   * @param {string} url - The URL of the HTML partial to retrieve.
+   * @param {string} targetId - The ID of the target element to inject the HTML into.
+   * @param {function} [callback] - Optional callback function to run after insertion.
+   */
   function loadPartial(url, targetId, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
@@ -21,7 +30,14 @@ var SiteIncludes = (function() {
     xhr.send();
   }
 
-  // Fix relative links and image sources inside a container to point up one directory
+  /**
+   * Adjusts 'href' and 'src' attributes within a container by prepending '../'.
+   * This is necessary for shared components that contain root-relative links/images 
+   * but are dynamically loaded into sub-pages (e.g., inside '/calculator-pages/').
+   * It ensures paths correctly point up one directory level to the root assets.
+   *
+   * @param {string} containerSelector - CSS selector for the container to process.
+   */
   function fixRelativeLinks(containerSelector) {
     var links = document.querySelectorAll(containerSelector + ' a');
     for (var i = 0; i < links.length; i++) {
@@ -39,6 +55,11 @@ var SiteIncludes = (function() {
     }
   }
 
+  /**
+   * Creates and appends a theme toggle button to the document body.
+   * This provides the user interface for switching between light and dark modes.
+   * The user's preference is saved to localStorage to persist across pages and visits.
+   */
   function createThemeToggle() {
     var btn = document.createElement('button');
     btn.id = 'theme-toggle';
