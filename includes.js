@@ -98,7 +98,6 @@ if (!window._skipAutoInit) {
         'about.html': 'nav-about',
         'yugoslavia.html': 'nav-yugoslavia-dev',
         'photos.html': 'nav-photos',
-        'links.html': 'nav-links',
         'calculator-museum.html': 'nav-calculator-museum',
         'ai-topic.html': 'nav-ai-topic',
         'contact.html': 'nav-contact'
