@@ -18,12 +18,67 @@ var SiteIncludes = (function() {
    * @param {string} targetId - The ID of the target element to inject the HTML into.
    * @param {function} [callback] - Optional callback function to run after insertion.
    */
+  /**
+   * Basic sanitizer to remove scripts and inline event handlers from a node and its children.
+   * @param {Node} node
+   */
+  function sanitizeNode(node) {
+    if (node.nodeType === Node.ELEMENT_NODE) {
+      // Remove <script> tags
+      if (node.tagName.toLowerCase() === 'script') {
+        node.parentNode.removeChild(node);
+        return;
+      }
+
+      // Remove inline event handlers (on*) and javascript: URIs
+      var attributes = node.attributes;
+      if (attributes) {
+        for (var i = attributes.length - 1; i >= 0; i--) {
+          var attrName = attributes[i].name.toLowerCase();
+          var attrValue = attributes[i].value.toLowerCase().trim();
+
+          // Remove attributes starting with 'on'
+          if (attrName.indexOf('on') === 0) {
+            node.removeAttribute(attributes[i].name);
+          }
+          // Remove 'javascript:' from 'href' or 'src'
+          else if ((attrName === 'href' || attrName === 'src') && attrValue.indexOf('javascript:') === 0) {
+            node.removeAttribute(attributes[i].name);
+          }
+        }
+      }
+    }
+
+    // Recursively sanitize children
+    var child = node.firstChild;
+    while (child) {
+      var next = child.nextSibling;
+      sanitizeNode(child);
+      child = next;
+    }
+  }
+
   function loadPartial(url, targetId, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
     xhr.onreadystatechange = function() {
       if (xhr.readyState === 4 && xhr.status === 200) {
-        document.getElementById(targetId).innerHTML = xhr.responseText;
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(xhr.responseText, 'text/html');
+
+        // Sanitize the parsed document's body
+        sanitizeNode(doc.body);
+
+        var targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.innerHTML = ''; // Clear existing content
+
+          // Append sanitized nodes
+          while (doc.body.firstChild) {
+            targetElement.appendChild(doc.body.firstChild);
+          }
+        }
+
         if (callback) callback();
       }
     };
