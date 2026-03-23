@@ -42,14 +42,14 @@ var SiteIncludes = (function() {
     var links = document.querySelectorAll(containerSelector + ' a');
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute('href');
-      if (href && href.indexOf('://') === -1 && href.indexOf('../') === -1 && href.indexOf('#') !== 0 && href.indexOf('mailto:') !== 0) {
+      if (href && !href.includes('://') && !href.includes('../') && !href.startsWith('#') && !href.startsWith('mailto:')) {
         links[i].setAttribute('href', '../' + href);
       }
     }
     var imgs = document.querySelectorAll(containerSelector + ' img');
     for (var i = 0; i < imgs.length; i++) {
       var src = imgs[i].getAttribute('src');
-      if (src && src.indexOf('://') === -1 && src.indexOf('../') === -1 && src.indexOf('data:') === -1) {
+      if (src && !src.includes('://') && !src.includes('../') && !src.startsWith('data:')) {
         imgs[i].setAttribute('src', '../' + src);
       }
     }
@@ -124,8 +124,8 @@ if (!window._skipAutoInit) {
         var links = document.querySelectorAll('#calc-sidebar-container a');
         for (var i = 0; i < links.length; i++) {
           var href = links[i].getAttribute('href');
-          if (href && href.indexOf('://') === -1 && href.indexOf('#') !== 0 && href.indexOf('mailto:') !== 0) {
-            if (href.indexOf('../') === 0) {
+          if (href && !href.includes('://') && !href.startsWith('#') && !href.startsWith('mailto:')) {
+            if (href.startsWith('../')) {
               links[i].setAttribute('href', href.substring(3));
             } else {
               links[i].setAttribute('href', 'calculator-pages/' + href);
