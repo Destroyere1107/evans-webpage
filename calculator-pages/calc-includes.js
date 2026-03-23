@@ -6,7 +6,7 @@
   SiteIncludes.loadPartial('../header.html', 'header-container', function() {
     SiteIncludes.fixRelativeLinks('#header');
     SiteIncludes.fixRelativeLinks('#navigation');
-    var el = document.getElementById('nav-calculator-museum');
+    const el = document.getElementById('nav-calculator-museum');
     if (el) el.className = 'active';
   });
 

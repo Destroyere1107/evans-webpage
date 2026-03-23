@@ -1,13 +1,13 @@
 // Apply saved theme immediately (before page renders)
 (function() {
-  var saved = localStorage.getItem('theme');
+  const saved = localStorage.getItem('theme');
   if (saved === 'light') {
     document.body.className = 'light-mode';
   }
 })();
 
 // Shared site utilities — available globally for sub-page scripts
-var SiteIncludes = (function() {
+const SiteIncludes = (function() {
 
   /**
    * Fetches an HTML snippet via AJAX and injects it into a specified DOM element.
@@ -19,7 +19,7 @@ var SiteIncludes = (function() {
    * @param {function} [callback] - Optional callback function to run after insertion.
    */
   function loadPartial(url, targetId, callback) {
-    var xhr = new XMLHttpRequest();
+    const xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
     xhr.onreadystatechange = function() {
       if (xhr.readyState === 4 && xhr.status === 200) {
@@ -39,16 +39,16 @@ var SiteIncludes = (function() {
    * @param {string} containerSelector - CSS selector for the container to process.
    */
   function fixRelativeLinks(containerSelector) {
-    var links = document.querySelectorAll(containerSelector + ' a');
-    for (var i = 0; i < links.length; i++) {
-      var href = links[i].getAttribute('href');
+    const links = document.querySelectorAll(containerSelector + ' a');
+    for (let i = 0; i < links.length; i++) {
+      const href = links[i].getAttribute('href');
       if (href && href.indexOf('://') === -1 && href.indexOf('../') === -1 && href.indexOf('#') !== 0 && href.indexOf('mailto:') !== 0) {
         links[i].setAttribute('href', '../' + href);
       }
     }
-    var imgs = document.querySelectorAll(containerSelector + ' img');
-    for (var i = 0; i < imgs.length; i++) {
-      var src = imgs[i].getAttribute('src');
+    const imgs = document.querySelectorAll(containerSelector + ' img');
+    for (let i = 0; i < imgs.length; i++) {
+      const src = imgs[i].getAttribute('src');
       if (src && src.indexOf('://') === -1 && src.indexOf('../') === -1 && src.indexOf('data:') === -1) {
         imgs[i].setAttribute('src', '../' + src);
       }
@@ -61,7 +61,7 @@ var SiteIncludes = (function() {
    * The user's preference is saved to localStorage to persist across pages and visits.
    */
   function createThemeToggle() {
-    var btn = document.createElement('button');
+    const btn = document.createElement('button');
     btn.id = 'theme-toggle';
     btn.textContent = document.body.className === 'light-mode' ? '[ Dark Mode ]' : '[ Light Mode ]';
     btn.onclick = function() {
@@ -92,8 +92,8 @@ if (!window._skipAutoInit) {
   (function() {
     // Load header, then highlight the active nav link
     SiteIncludes.loadPartial('header.html', 'header-container', function() {
-      var page = window.location.pathname.split('/').pop() || 'index.html';
-      var navMap = {
+      const page = window.location.pathname.split('/').pop() || 'index.html';
+      const navMap = {
         'index.html': 'nav-home',
         'about.html': 'nav-about',
         'yugoslavia.html': 'nav-yugoslavia-dev',
@@ -103,9 +103,9 @@ if (!window._skipAutoInit) {
         'ai-topic.html': 'nav-ai-topic',
         'contact.html': 'nav-contact'
       };
-      var activeId = navMap[page];
+      const activeId = navMap[page];
       if (activeId) {
-        var el = document.getElementById(activeId);
+        const el = document.getElementById(activeId);
         if (el) el.className = 'active';
       }
     });
@@ -121,9 +121,9 @@ if (!window._skipAutoInit) {
     // Load separate calculator sidebar if container exists on root page
     if (document.getElementById('calc-sidebar-container')) {
       SiteIncludes.loadPartial('calculator-pages/calc-sidebar.html', 'calc-sidebar-container', function() {
-        var links = document.querySelectorAll('#calc-sidebar-container a');
-        for (var i = 0; i < links.length; i++) {
-          var href = links[i].getAttribute('href');
+        const links = document.querySelectorAll('#calc-sidebar-container a');
+        for (let i = 0; i < links.length; i++) {
+          const href = links[i].getAttribute('href');
           if (href && href.indexOf('://') === -1 && href.indexOf('#') !== 0 && href.indexOf('mailto:') !== 0) {
             if (href.indexOf('../') === 0) {
               links[i].setAttribute('href', href.substring(3));
