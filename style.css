@@ -1,6 +1,7 @@
 /* ====================================================
    Destroyere1107's Home Page - Stylesheet
    Style inspired by Microsoft Expression Web 4 templates
+   (I couldn't be bothered to actually use EW4 though)
    Dark mode default, optional light mode
    ==================================================== */
 
@@ -533,6 +534,8 @@ ul {
 /* ====================================================
    LIGHT MODE OVERRIDES
    Applied when body has class "light-mode"
+   Light mode is a relic from when I was only making this site in reasonable hours.
+   I really don't know why I did this instead of deleting it.
    ==================================================== */
 
 body.light-mode {
