@@ -6,7 +6,7 @@ This repo is primarily hosted on GitHub so I can use my existing key signing and
 
 ## For Adjustments
 
-This repo can be pushed to on Yugoslavia. I have it set so that changes here are sent to GitHub every hour, and changes to GitHub are pulled to Yugoslavia every 30 minutes.
+This repo can be pushed to on Yugoslavia. I have it set so that changes here are sent to GitHub every hour, and changes to GitHub are pulled to Yugoslavia every time a commit is made there (webhooks baby!)
 
 ## Setup on yuws
 
