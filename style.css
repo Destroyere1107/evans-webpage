@@ -194,6 +194,20 @@ ul {
   text-align: justify;
 }
 
+#content pre {
+  background-color: #1a1b20;
+  border: 1px solid #3a3b40;
+  padding: 10px;
+  overflow-x: auto;
+  margin-bottom: 12px;
+  font-family: Consolas, Monaco, "Courier New", Courier, monospace;
+  font-size: 11px;
+}
+
+#content code {
+  font-family: Consolas, Monaco, "Courier New", Courier, monospace;
+}
+
 .shout {
   font-size: 20px;
   font-weight: bold;
@@ -588,6 +602,11 @@ body.light-mode #navigation ul li a.active {
 body.light-mode #content { border-right-color: #d0d0d0; }
 body.light-mode #content h2 { color: #2E5B8A; border-bottom-color: #d0d8e0; }
 body.light-mode #content h3 { color: #3A6FA0; }
+body.light-mode #content pre {
+  background-color: #fafbfc;
+  border-color: #a0a8b0;
+  color: #333333;
+}
 
 body.light-mode .news-item {
   background-color: #f5f8fc;
