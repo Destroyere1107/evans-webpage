@@ -10,7 +10,9 @@ This repo can be pushed to on Yugoslavia. I have it set so that changes here are
 
 ## Setup on yuws
 
-On the server, I have a service to pull from the GitHub repo every 12 hours. Check evans-webpage-pull.service and site-pull.timer.
+On the server, ~~I have a service to pull from the GitHub repo every 12 hours. Check evans-webpage-pull.service and site-pull.timer.~~
+
+That service is now redundant. I have set up a webhook to pull from GitHub every time a commit is made there, too. Check webhook.service and /etc/webhook.conf.
 
 ## About AI Contributions
 
