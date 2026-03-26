@@ -18,6 +18,13 @@
   // Load shared museum sidebar
   SiteIncludes.loadPartial('calc-sidebar.html', 'calc-sidebar-container');
 
+  // Load main sidebar if container exists on this page
+  if (document.getElementById('main-sidebar-container')) {
+    SiteIncludes.loadPartial('../sidebar.html', 'main-sidebar-container', function() {
+      SiteIncludes.fixRelativeLinks('#main-sidebar-container');
+    });
+  }
+
   // Load shared license notice
   SiteIncludes.loadPartial('calc-license.html', 'calc-license-container');
 
