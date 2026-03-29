@@ -5,8 +5,90 @@
    Dark mode default, optional light mode
    ==================================================== */
 
+/* ====================================================
+   MAIN COLOR PALETTE (Dark Mode)
+   ====================================================
+   
+   -- Backgrounds --
+   --bg-page:           #1a1a1e     Page background (darkest)
+   --bg-deep:           #1e2028     Deep panels, code blocks, cards
+   --bg-surface:        #24252a     Main wrapper / surface
+   --bg-elevated:       #2a2b30     Elevated elements (nav, buttons)
+   --bg-hover:          #383a40     Hover states
+
+   -- Borders --
+   --border-default:    #3a3b40     Standard borders
+   --border-blue:       #3a4050     Blue-tinted borders (content area)
+   --border-btn:        #4a4b50     Button borders
+
+   -- Navy / Header Blues --
+   --navy-dark:         #0e1e30     Darkest navy (gradients)
+   --navy:              #1a3050     Primary navy (header, active nav)
+   --navy-light:        #243e5c     Lighter navy (gradients)
+
+   -- Accent Blues --
+   --accent-blue:       #6ea8da     Links, headings, primary accent
+   --accent-blue-muted: #7090b0     Tagline, subdued blue text
+   --header-border:     #4a6a8a     Header photo border
+
+   -- Accent Colors --
+   --accent-hover:      #e09050     Link hover (orange)
+   --accent-visited:    #9a80c0     Visited links (purple)
+
+   -- Text --
+   --text-primary:      #e0e4e8     Brightest text (headings, hovers)
+   --text-heading:      #e8ecf0     Header h1
+   --text-body:         #c8ccd0     Body text
+   --text-nav:          #b0b4b8     Nav links
+   --text-label:        #a0a4a8     Form labels, info labels
+   --text-muted:        #909498     Sidebar paragraphs, button card text
+   --text-dim:          #808890     Dates, photo captions, placeholders
+   --text-footer:       #808488     Footer text
+   --text-powered:      #606468     "Powered by" text
+
+   ==================================================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+  /* Backgrounds */
+  --bg-page:           #1a1a1e;
+  --bg-deep:           #1e2028;
+  --bg-surface:        #24252a;
+  --bg-elevated:       #2a2b30;
+  --bg-hover:          #383a40;
+
+  /* Borders */
+  --border-default:    #3a3b40;
+  --border-blue:       #3a4050;
+  --border-btn:        #4a4b50;
+
+  /* Navy / Header Blues */
+  --navy-dark:         #0e1e30;
+  --navy:              #1a3050;
+  --navy-light:        #243e5c;
+
+  /* Accent Blues */
+  --accent-blue:       #6ea8da;
+  --accent-blue-muted: #7090b0;
+  --header-border:     #4a6a8a;
+
+  /* Accent Colors */
+  --accent-hover:      #e09050;
+  --accent-visited:    #9a80c0;
+
+  /* Text */
+  --text-primary:      #e0e4e8;
+  --text-heading:      #e8ecf0;
+  --text-body:         #c8ccd0;
+  --text-nav:          #b0b4b8;
+  --text-label:        #a0a4a8;
+  --text-muted:        #909498;
+  --text-dim:          #808890;
+  --text-footer:       #808488;
+  --text-powered:      #606468;
+}
 
 /* --- Reset & Base --- */
 * {
@@ -18,22 +100,22 @@ body {
   font-family: "Open Sans", Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;
   font-size: 12px;
   line-height: 1.6;
-  color: #c8ccd0;
-  background-color: #1a1a1e;
+  color: var(--text-body);
+  background-color: var(--bg-page);
 }
 
 a {
-  color: #6ea8da;
+  color: var(--accent-blue);
   text-decoration: underline;
 }
 
 a:hover {
-  color: #e09050;
+  color: var(--accent-hover);
   text-decoration: none;
 }
 
 a:visited {
-  color: #9a80c0;
+  color: var(--accent-visited);
 }
 
 ul {
@@ -44,16 +126,16 @@ ul {
 #wrapper {
   width: 940px;
   margin: 20px auto;
-  background-color: #24252a;
-  border: 1px solid #3a3b40;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-default);
   box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
 }
 
 /* --- Header --- */
 #header {
-  background: #1a3050;
-  background: linear-gradient(to bottom, #243e5c 0%, #0e1e30 100%);
-  color: #e0e4e8;
+  background: var(--navy);
+  background: linear-gradient(to bottom, var(--navy-light) 0%, var(--navy-dark) 100%);
+  color: var(--text-primary);
   padding: 25px 30px 20px 30px;
   border-bottom: 3px solid #0a1520;
   display: flex;
@@ -64,7 +146,7 @@ ul {
   width: 80px;
   height: 80px;
   flex-shrink: 0;
-  border: 2px solid #4a6a8a;
+  border: 2px solid var(--header-border);
   overflow: hidden;
 }
 
@@ -86,12 +168,12 @@ ul {
   font-weight: normal;
   letter-spacing: 1px;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-  color: #e8ecf0;
+  color: var(--text-heading);
 }
 
 #header .tagline {
   font-size: 11px;
-  color: #7090b0;
+  color: var(--accent-blue-muted);
   margin-top: 4px;
   font-style: italic;
 }
@@ -103,18 +185,18 @@ ul {
 
 .header-contacts a {
   display: inline-block;
-  color: #7090b0;
+  color: var(--accent-blue-muted);
   margin-left: 18px;
   text-decoration: none;
 }
 
 .header-contacts a:hover {
-  color: #e0e4e8;
+  color: var(--text-primary);
 }
 
 /* --- Navigation --- */
 #navigation {
-  background: #2a2b30;
+  background: var(--bg-elevated);
   background: linear-gradient(to bottom, #333438 0%, #222226 100%);
   border-bottom: 1px solid #444448;
   padding: 0 20px;
@@ -134,12 +216,12 @@ ul {
 #navigation ul li a {
   display: block;
   padding: 8px 18px;
-  color: #b0b4b8;
+  color: var(--text-nav);
   text-decoration: none;
   font-size: 12px;
   font-weight: bold;
-  border-right: 1px solid #3a3b40;
-  border-left: 1px solid #3a3b40;
+  border-right: 1px solid var(--border-default);
+  border-left: 1px solid var(--border-default);
 }
 
 #navigation ul li:first-child a {
@@ -147,8 +229,8 @@ ul {
 }
 
 #navigation ul li a:hover {
-  background-color: #383a40;
-  color: #e0e4e8;
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
 }
 
 #nav-calculator-museum {
@@ -177,7 +259,7 @@ ul {
 }
 
 #navigation ul li a.active {
-  background-color: #1a3050;
+  background-color: var(--navy);
   color: #ffffff;
 }
 
@@ -192,23 +274,23 @@ ul {
   float: left;
   width: 620px;
   padding-right: 25px;
-  border-right: 1px solid #3a3b40;
+  border-right: 1px solid var(--border-default);
 }
 
 #content h2 {
   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
   font-size: 22px;
-  color: #6ea8da;
+  color: var(--accent-blue);
   font-weight: normal;
   margin-bottom: 12px;
   padding-bottom: 6px;
-  border-bottom: 1px solid #3a4050;
+  border-bottom: 1px solid var(--border-blue);
 }
 
 #content h3 {
   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
   font-size: 16px;
-  color: #7eb8e0;
+  color: var(--accent-blue);
   font-weight: normal;
   margin-top: 18px;
   margin-bottom: 8px;
@@ -220,8 +302,8 @@ ul {
 }
 
 #content pre {
-  background-color: #1a1b20;
-  border: 1px solid #3a3b40;
+  background-color: var(--bg-deep);
+  border: 1px solid var(--border-default);
   padding: 10px;
   overflow-x: auto;
   margin-bottom: 12px;
@@ -240,15 +322,15 @@ ul {
 
 /* --- News Items --- */
 .news-item {
-  background-color: #1e2028;
-  border: 1px solid #3a4050;
+  background-color: var(--bg-deep);
+  border: 1px solid var(--border-blue);
   padding: 10px 14px;
   margin-bottom: 12px;
 }
 
 .news-item .date {
   font-size: 10px;
-  color: #808890;
+  color: var(--text-dim);
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -266,8 +348,8 @@ ul {
 
 .sidebar-section {
   margin-bottom: 20px;
-  background-color: #1e2028;
-  border: 1px solid #3a4050;
+  background-color: var(--bg-deep);
+  border: 1px solid var(--border-blue);
   padding: 12px;
 }
 
@@ -275,9 +357,9 @@ ul {
   font-family: "Open Sans", Verdana, Tahoma, Geneva, sans-serif;
   font-size: 12px;
   font-weight: bold;
-  color: #e0e4e8;
-  background: #1a3050;
-  background: linear-gradient(to bottom, #243e5c 0%, #1a3050 100%);
+  color: var(--text-primary);
+  background: var(--navy);
+  background: linear-gradient(to bottom, var(--navy-light) 0%, var(--navy) 100%);
   padding: 5px 8px;
   margin: -12px -12px 10px -12px;
 }
@@ -288,7 +370,7 @@ ul {
 
 .sidebar-section ul li {
   padding: 3px 0;
-  border-bottom: 1px dotted #3a4050;
+  border-bottom: 1px dotted var(--border-blue);
 }
 
 .sidebar-section ul li:last-child {
@@ -306,16 +388,16 @@ ul {
 
 .sidebar-section p {
   font-size: 11px;
-  color: #909498;
+  color: var(--text-muted);
   margin-bottom: 6px;
 }
 
 /* --- Footer --- */
 #footer {
   clear: both;
-  background: #1e1f24;
-  background: linear-gradient(to bottom, #28292e 0%, #1a1b20 100%);
-  border-top: 1px solid #3a3b40;
+  background: var(--bg-deep);
+  background: linear-gradient(to bottom, #28292e 0%, var(--bg-deep) 100%);
+  border-top: 1px solid var(--border-default);
   padding: 12px 20px;
   text-align: center;
 }
@@ -332,8 +414,8 @@ ul {
   display: flex;
   align-items: center;
   gap: 10px;
-  background-color: #1a1b20;
-  border: 1px solid #3a3b40;
+  background-color: var(--bg-deep);
+  border: 1px solid var(--border-default);
   padding: 8px 12px;
   max-width: 500px;
   width: 100%;
@@ -351,7 +433,7 @@ ul {
 
 .button-card p {
   font-size: 10px;
-  color: #909498;
+  color: var(--text-muted);
   margin: 0;
   text-align: left;
 }
@@ -366,8 +448,8 @@ ul {
   width: 100%;
   box-sizing: border-box;
   margin: 0 auto 12px auto;
-  background-color: #1a1b20;
-  border: 1px solid #3a3b40;
+  background-color: var(--bg-deep);
+  border: 1px solid var(--border-default);
   padding: 8px 12px;
 }
 
@@ -382,12 +464,12 @@ ul {
 
 #footer p {
   font-size: 10px;
-  color: #808488;
+  color: var(--text-footer);
   margin-bottom: 2px;
 }
 
 #footer a {
-  color: #6ea8da;
+  color: var(--accent-blue);
   text-decoration: none;
   font-size: 10px;
 }
@@ -398,7 +480,7 @@ ul {
 
 .powered-by {
   font-size: 9px !important;
-  color: #606468 !important;
+  color: var(--text-powered) !important;
   margin-top: 4px;
   font-style: italic;
 }
@@ -414,14 +496,14 @@ ul {
   font-weight: bold;
   cursor: pointer;
   z-index: 1000;
-  border: 1px solid #3a3b40;
-  background: #2a2b30;
-  color: #b0b4b8;
+  border: 1px solid var(--border-default);
+  background: var(--bg-elevated);
+  color: var(--text-nav);
 }
 
 #theme-toggle:hover {
-  background: #383a40;
-  color: #e0e4e8;
+  background: var(--bg-hover);
+  color: var(--text-primary);
 }
 
 /* --- Content Lists --- */
@@ -456,9 +538,9 @@ ul {
 .photo-placeholder {
   width: 185px;
   height: 130px;
-  background: #2a2e38;
+  background: var(--bg-elevated);
   background: linear-gradient(to bottom, #303440 0%, #24282e 100%);
-  border: 1px solid #3a4050;
+  border: 1px solid var(--border-blue);
   display: table;
 }
 
@@ -467,13 +549,13 @@ ul {
   vertical-align: middle;
   text-align: center;
   font-size: 14px;
-  color: #808890;
+  color: var(--text-dim);
   font-style: italic;
 }
 
 .photo-caption {
   font-size: 10px;
-  color: #808890;
+  color: var(--text-dim);
   margin-top: 4px;
 }
 
@@ -490,7 +572,7 @@ ul {
 .form-label {
   font-weight: bold;
   font-size: 11px;
-  color: #a0a4a8;
+  color: var(--text-label);
   width: 80px;
   text-align: right;
   padding-right: 10px !important;
@@ -501,14 +583,14 @@ ul {
   font-family: "Open Sans", Verdana, Tahoma, Geneva, sans-serif;
   font-size: 11px;
   padding: 3px 5px;
-  border: 1px solid #3a4050;
-  background-color: #1a1b20;
-  color: #c8ccd0;
+  border: 1px solid var(--border-blue);
+  background-color: var(--bg-deep);
+  color: var(--text-body);
 }
 
 .form-table input[type="text"]:focus,
 .form-table textarea:focus {
-  border-color: #6ea8da;
+  border-color: var(--accent-blue);
   background-color: #20222a;
 }
 
@@ -517,24 +599,24 @@ ul {
   font-size: 11px;
   padding: 4px 14px;
   cursor: pointer;
-  border: 1px solid #4a4b50;
+  border: 1px solid var(--border-btn);
   margin-right: 4px;
 }
 
 .submit-btn {
-  background: #2a2b30;
+  background: var(--bg-elevated);
   background: linear-gradient(to bottom, #333438 0%, #28292e 100%);
-  color: #c8ccd0;
+  color: var(--text-body);
   font-weight: bold;
 }
 
 .submit-btn:hover {
-  background: linear-gradient(to bottom, #3a3b40 0%, #303138 100%);
+  background: linear-gradient(to bottom, var(--border-default) 0%, #303138 100%);
 }
 
 .reset-btn {
-  background: #2a2b30;
-  color: #909498;
+  background: var(--bg-elevated);
+  color: var(--text-muted);
 }
 
 /* --- Info Table --- */
@@ -550,7 +632,7 @@ ul {
 
 .info-label {
   font-weight: bold;
-  color: #a0a4a8;
+  color: var(--text-label);
   width: 70px;
 }
 
