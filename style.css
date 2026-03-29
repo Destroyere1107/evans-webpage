@@ -159,12 +159,12 @@ ul {
   -webkit-text-fill-color: transparent;
   text-shadow: none;
   filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.6));
-  animation: gold-sheen 4s linear infinite;
+  animation: gold-sheen 30s linear infinite;
 }
 
 @keyframes gold-sheen {
-  0% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
 }
 
 #nav-calculator-museum:hover {
@@ -626,7 +626,7 @@ body.light-mode #nav-calculator-museum {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 0 2px rgba(184, 134, 11, 0.5));
-  animation: gold-sheen 4s linear infinite;
+  animation: gold-sheen 30s linear infinite;
 }
 
 body.light-mode #nav-calculator-museum:hover {
