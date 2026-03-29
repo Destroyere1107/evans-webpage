@@ -151,6 +151,31 @@ ul {
   color: #e0e4e8;
 }
 
+#nav-calculator-museum {
+  background: linear-gradient(135deg, #b8860b, #ffd700, #fffacd, #ffd700, #b8860b, #ffd700, #fffacd, #ffd700, #b8860b);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.6));
+  animation: gold-sheen 4s linear infinite;
+}
+
+@keyframes gold-sheen {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+#nav-calculator-museum:hover {
+  background: linear-gradient(135deg, #b8860b, #ffd700, #fffacd, #ffd700, #b8860b);
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-text-fill-color: #5a3a00;
+  color: #5a3a00;
+  filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.8));
+}
+
 #navigation ul li a.active {
   background-color: #1a3050;
   color: #ffffff;
@@ -592,6 +617,25 @@ body.light-mode #navigation ul li a {
 body.light-mode #navigation ul li a:hover {
   background-color: #d0d8e0;
   color: #1E3F66;
+}
+
+body.light-mode #nav-calculator-museum {
+  background: linear-gradient(135deg, #7a5a00, #b8860b, #c99700, #b8860b, #7a5a00, #b8860b, #c99700, #b8860b, #7a5a00);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 2px rgba(184, 134, 11, 0.5));
+  animation: gold-sheen 4s linear infinite;
+}
+
+body.light-mode #nav-calculator-museum:hover {
+  background: linear-gradient(135deg, #b8860b, #ffd700, #fffacd, #ffd700, #b8860b);
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-text-fill-color: #5a3a00;
+  color: #5a3a00;
+  filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.8));
 }
 
 body.light-mode #navigation ul li a.active {
