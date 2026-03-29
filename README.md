@@ -17,3 +17,5 @@ That service is now redundant. I have set up a webhook to pull from GitHub every
 ## About AI Contributions
 
 I decided to try and test out Google's 'Jules' coding agent. I accidentally turned 'automatically look for shit to do' on. I do not know how to turn it off. Other than the security changes it suggests, I'm keeping those contained to non-prod branches.
+
+The important thing is that **I will mark any commit that I relied primarily on AI for.**
