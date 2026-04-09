@@ -1,0 +1,23 @@
+@{
+    Layout = "_Layout";
+    ViewData["ActiveNav"] = "nav-calculator-museum";
+}
+
+<!-- Main content area -->
+<div id="content">
+    @RenderBody()
+
+    <!-- License notice -->
+    <partial name="_CalcLicensePartial" />
+</div>
+
+<div id="sidebar">
+    <!-- Page-specific sidebar content -->
+    @await RenderSectionAsync("PageSidebar", required: false)
+
+    <!-- Shared calculator sidebar -->
+    <partial name="_CalcSidebarPartial" />
+
+    <!-- Main sidebar -->
+    <partial name="_SidebarPartial" />
+</div>

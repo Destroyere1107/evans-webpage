@@ -2,7 +2,70 @@
 
 > [!NOTE]
 > This branch is dedicated to transitioning from plain HTML to ASP.NET. As of now, a full ASP.NET transition is way
-> overkill, thus the branch name.
+> overkill, thus the branch name. This is all to facilitate more fluid changes in the future.
+
+> [!WARNING]
+> Almost all work in this branch is AI generated! These changes will not be merged to `main` until I've had a chance to
+> fully review and, if needed, rewrite them, as shown below.
+
+## CURRENT REVIEW STATUS
+
+- [ ] Review `_Layout.cshtml` and nested partial structure
+- [ ] Review stylesheet (`wwwroot/css/style.css`)
+- [ ] Verify Root Pages:
+  - [ ] `Index.cshtml`
+  - [ ] `About.cshtml`
+  - [ ] `Happenings.cshtml`
+  - [ ] `Guestbook.cshtml`
+  - [ ] `Yugoslavia.cshtml`
+  - [ ] `AiTopic.cshtml`
+  - [ ] `Contact.cshtml`
+  - [ ] `CalculatorMuseum.cshtml`
+  - [ ] `Photos.cshtml`
+  - [ ] `Links.cshtml`
+  - [ ] `Privacy.cshtml`
+  - [ ] `Sitemap.cshtml`
+- [ ] Verify Calculator Pages:
+  - [ ] `Calculators/Directory.cshtml`
+  - [ ] `Calculators/Hp50g.cshtml`
+  - [ ] `Calculators/Hp28c.cshtml`
+  - [ ] `Calculators/Hp48.cshtml`
+  - [ ] `Calculators/Prime.cshtml`
+  - [ ] `Calculators/NspireCx.cshtml`
+  - [ ] `Calculators/FxCg50.cshtml`
+- [ ] Verify Lite Pages:
+  - [ ] `Lite/Simple.cshtml`
+  - [ ] `Lite/AiSimple.cshtml`
+- [ ] Test Theme Toggle visual functionality
+- [ ] Verify active navigation state bindings
+
+## Running the Server
+
+(This is for me, not for anyone else.)
+
+### Locally
+
+To run the server locally, use `dotnet run` from inside the `EvansWebpage` directory:
+
+```bash
+cd EvansWebpage
+dotnet run --urls "http://localhost:5050"
+```
+
+The site will be available on `http://localhost:5050` (or whatever ports you configure in `Properties/launchSettings.json`).
+
+### Running on-VM
+
+To run in production on Yugoslavia:
+
+1.  ```bash
+    cd EvansWebpage
+    dotnet publish -c Release
+    ```
+2.  The compiled binary will be located in `bin/Release/net10.0/publish/`. I will eventually set it up to run continually in the background via a `systemd` service.
+3.  Make sure Caddy is config'd right.
+
+---
 
 This is Evan's webpage and Calculator Museum.
 

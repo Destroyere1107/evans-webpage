@@ -1,0 +1,26 @@
+@page
+@{
+    ViewData["Title"] = "Guestbook - Destroyere1107's Home Page";
+    ViewData["ActiveNav"] = "nav-guestbook";
+}
+
+<div id="content">
+    <p>
+        Here's a guestbook, powered by Atabook and shoved in an iframe.
+    </p>
+
+    <p>
+        Please feel free to sign it.
+        <sub>By that, I mean please sign it. Pretty please.</sub>
+    </p>
+    <iframe
+        src="https://destroyere.atabook.org/"
+        style="width: 100%; height: 600px; border: none"
+        title="My Guestbook"
+        >The guestbook is embedded with an inline frame, which your
+            browser doesn't support. Use a more complete browser or try
+            visiting
+            <a href="https://destroyere.atabook.org/">Atabook</a>
+            directly. (You still need JavaScript though)</iframe>
+    </p>
+</div>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script data-goatcounter="https://destroyere.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico?v=2" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    @if (ViewData["Keywords"] != null)
+    {
+        <meta name="keywords" content="@ViewData["Keywords"]" />
+    }
+    @if (ViewData["Description"] != null)
+    {
+        <meta name="description" content="@ViewData["Description"]" />
+    }
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
+    <script src="https://kit.fontawesome.com/cff3376d88.js" crossorigin="anonymous"></script>
+    @await RenderSectionAsync("Head", required: false)
+    <script>
+        // Apply saved theme immediately (before page renders)
+        (function () {
+            var saved = localStorage.getItem('theme');
+            if (saved === 'light') {
+                document.body.className = 'light-mode';
+            }
+        })();
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Header -->
+        <div id="header">
+            <div class="header-photo">
+                <img src="~/images/bad.jpg" alt="Profile Picture" />
+            </div>
+            <div class="header-text">
+                <h1>Destroyere1107's Home Page</h1>
+                <p class="tagline">
+                    It's amazing times we live in when even a shmuck like me can have one.
+                </p>
+                <div class="header-contacts">
+                    <a href="mailto:Destroyere1107@outlook.com" title="E-mail"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://github.com/Destroyere1107" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://steamcommunity.com/id/Destroyere1107" target="_blank" title="Steam"><i class="fa-brands fa-steam"></i></a>
+                    <a href="https://discord.com/users/735753453892010039" target="_blank" title="Discord"><i class="fa-brands fa-discord"></i></a>
+                    <p class="tagline">↑ Humans: Please add an 🧮 emoji in message ↑</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        @{
+            var activeNav = ViewData["ActiveNav"]?.ToString() ?? "";
+        }
+        <div id="navigation">
+            <ul>
+                <li><a href="/" id="nav-home" class="@(activeNav == "nav-home" ? "active" : "")">Home</a></li>
+                <li><a href="/About" id="nav-about" class="@(activeNav == "nav-about" ? "active" : "")">About Me</a></li>
+                <li><a href="/Happenings" id="nav-happenings" class="@(activeNav == "nav-happenings" ? "active" : "")">Happenings</a></li>
+                <li><a href="/Guestbook" id="nav-guestbook" class="@(activeNav == "nav-guestbook" ? "active" : "")">Guestbook</a></li>
+                <li><a href="/Yugoslavia" id="nav-yugoslavia-dev" class="@(activeNav == "nav-yugoslavia-dev" ? "active" : "")">Yugoslavia.dev</a></li>
+                <li><a href="/CalculatorMuseum" id="nav-calculator-museum" class="@(activeNav == "nav-calculator-museum" ? "active" : "")">Calculator Museum</a></li>
+                <li><a href="/AiTopic" id="nav-ai-topic" class="@(activeNav == "nav-ai-topic" ? "active" : "")">On the Topic of AI</a></li>
+                <li><a href="/Contact" id="nav-contact" class="@(activeNav == "nav-contact" ? "active" : "")">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Content area -->
+        <div id="content-wrapper">
+            @RenderBody()
+
+            @if (ViewData["HideSidebar"] == null)
+            {
+                <partial name="_SidebarPartial" />
+            }
+
+            <div class="clear"></div>
+        </div>
+
+        <!-- Footer -->
+        <div id="footer">
+            <div id="footer-buttons">
+                <div class="button-card">
+                    <a href="https://my.calcs.quest/u/1475?ref=1475" title="Destroyere1107's MyCalcs profile">
+                        <picture>
+                            <source width="350px" height="19px"
+                                    media="(prefers-color-scheme: dark)"
+                                    srcset="https://my.calcs.quest/userbar/1475?style=dark 1x, https://my.calcs.quest/userbar/1475?style=dark&supersize=1 2x" />
+                            <img loading="lazy" width="350px" height="19px"
+                                 src="https://my.calcs.quest/userbar/1475"
+                                 srcset="https://my.calcs.quest/userbar/1475?supersize=1 2x"
+                                 alt="Destroyere1107's MyCalcs userbar" />
+                        </picture>
+                    </a>
+                    <p>My graphing calculator collection on MyCalcs.</p>
+                </div>
+
+                <div class="button-card">
+                    <a href="https://random.diamondbyte.org/"><img src="~/assets/button-img/random.gif" alt="A link to Random's page." width="88" height="31" /></a>
+                    <p>Go check out my friend random()'s page.</p>
+                </div>
+                <div class="button-card">
+                    <a href="https://fedoraproject.org/"><img src="~/assets/button-img/fedora.gif" alt="Powered by Fedora" width="88" height="31" /></a>
+                    <p>
+                        My chosen operating system. If it's good enough for Linus Torvalds, it's
+                        good enough for me.
+                    </p>
+                </div>
+            </div>
+            <div class="button-grid">
+                <a href="https://planet.kde.org/"><img src="~/assets/button-img/kdenews.gif" alt="KDE Planet" width="88" height="31" /></a>
+                <a href="/CalculatorMuseum"><img src="~/assets/button-img/noequals.gif" alt="No Equals" width="88" height="31" /></a>
+                <img src="~/assets/button-img/browser.gif" alt="Best with any browser" width="88" height="31" />
+                <img src="~/assets/button-img/keep.gif" alt="Keep" width="88" height="31" />
+                <a href="https://kde.org/" target="_blank"><img src="~/assets/button-img/knbutton.gif" alt="KDE Now!" width="88" height="31" /></a>
+                <a href="https://www.kernel.org/" target="_blank"><img src="~/assets/button-img/linux_powered.gif" alt="Linux Powered" width="88" height="31" /></a>
+                <a href="https://palmdb.net/"><img src="~/assets/button-img/pdb.gif" alt="PalmDB" width="88" height="31" /></a>
+                <img src="~/assets/button-img/88x31gold.gif" alt="Gold" width="88" height="31" />
+                <img src="~/assets/button-img/ieexplode.gif" alt="Internet Exploder" width="88" height="31" />
+                <a href="https://www.firefox.com/"><img src="~/assets/button-img/firefox4.gif" alt="Tested on Firefox" width="88" height="31" /></a>
+                <a href="https://code.visualstudio.com/"><img src="~/assets/button-img/vscbutton.gif" alt="Made with Visual Studio Code" width="88" height="31" /></a>
+                <a href="https://www.gnu.org/"><img src="~/assets/button-img/gnubanner.gif" alt="GNU's Not UNIX" width="88" height="31" /></a>
+            </div>
+            <p>
+                &copy; 2026 Destroyere1107. All rights reserved. |
+                <a href="/Contact">Contact</a> | <a href="/Sitemap">Sitemap</a> |
+                <a href="/Privacy">Privacy Policy</a>
+            </p>
+            <p class="powered-by">
+                A part of this site's code (NOT and NEVER text or pictures) was made with AI
+                assistance.
+            </p>
+            <p class="powered-by">
+                Icons provided by
+                <a href="https://fontawesome.com/" target="_blank">Font Awesome</a>. Images
+                hosted by <a href="https://postimages.org/" target="_blank">Postimage.</a>.
+                Sidebar badges provided by
+                <a href="https://shields.io/" target="_blank">shields.io</a>.
+            </p>
+            <p class="powered-by">
+                This site is developed with a combination of <a href="https://code.visualstudio.com/" target="_blank">Visual Studio
+                Code</a> and <a href="https://www.jetbrains.com/webstorm/" target="_blank">JetBrains WebStorm</a>.
+            </p>
+        </div>
+    </div>
+
+    <!-- Theme toggle -->
+    <script>
+        (function () {
+            var btn = document.createElement('button');
+            btn.id = 'theme-toggle';
+            btn.textContent = document.body.className === 'light-mode' ? '[ Dark Mode ]' : '[ Light Mode ]';
+            btn.onclick = function () {
+                if (document.body.className === 'light-mode') {
+                    document.body.className = '';
+                    localStorage.setItem('theme', 'dark');
+                    btn.textContent = '[ Light Mode ]';
+                } else {
+                    document.body.className = 'light-mode';
+                    localStorage.setItem('theme', 'light');
+                    btn.textContent = '[ Dark Mode ]';
+                }
+            };
+            document.body.appendChild(btn);
+        })();
+    </script>
+</body>
+</html>

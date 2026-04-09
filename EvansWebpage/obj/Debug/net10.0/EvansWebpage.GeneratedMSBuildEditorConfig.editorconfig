@@ -1,0 +1,139 @@
+is_global = true
+build_property.TargetFramework = net10.0
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v10.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = EvansWebpage
+build_property.RootNamespace = EvansWebpage
+build_property.ProjectDir = /home/evan/evans-webpage/EvansWebpage/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /home/evan/evans-webpage/EvansWebpage
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 10.0
+build_property.EnableCodeStyleSeverity = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWJvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/AiTopic.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWlUb3BpYy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/CalculatorMuseum.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2FsY3VsYXRvck11c2V1bS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/Calculators/Directory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2FsY3VsYXRvcnMvRGlyZWN0b3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/Calculators/FxCg50.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2FsY3VsYXRvcnMvRnhDZzUwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/Calculators/Hp28c.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2FsY3VsYXRvcnMvSHAyOGMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/Calculators/Hp48.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2FsY3VsYXRvcnMvSHA0OC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/Calculators/Hp50g.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2FsY3VsYXRvcnMvSHA1MGcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/Calculators/NspireCx.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2FsY3VsYXRvcnMvTnNwaXJlQ3guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/Calculators/Prime.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2FsY3VsYXRvcnMvUHJpbWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ29udGFjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/Guestbook.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvR3Vlc3Rib29rLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/Happenings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSGFwcGVuaW5ncy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/Links.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTGlua3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/Lite/AiSimple.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTGl0ZS9BaVNpbXBsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/Lite/Simple.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTGl0ZS9TaW1wbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/Photos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUGhvdG9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/Shared/_CalcLicensePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19DYWxjTGljZW5zZVBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/Shared/_CalcSidebarPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19DYWxjU2lkZWJhclBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/Shared/_CalculatorLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19DYWxjdWxhdG9yTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/Shared/_SidebarPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19TaWRlYmFyUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/Sitemap.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2l0ZW1hcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/Yugoslavia.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvWXVnb3NsYXZpYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/evan/evans-webpage/EvansWebpage/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
