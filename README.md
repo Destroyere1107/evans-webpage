@@ -10,6 +10,8 @@
 
 ## CURRENT REVIEW STATUS
 
+### 0/25 DONE - 0%
+
 - [ ] Review `_Layout.cshtml` and nested partial structure
 - [ ] Review stylesheet (`wwwroot/css/style.css`)
 - [ ] Verify Root Pages:
