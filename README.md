@@ -1,4 +1,8 @@
-# Evan's Webpage
+# Evan's Webpage - Overkill Branch
+
+> [!NOTE]
+> This branch is dedicated to transitioning from plain HTML to ASP.NET. As of now, a full ASP.NET transition is way
+> overkill, thus the branch name.
 
 This is Evan's webpage and Calculator Museum.
 
