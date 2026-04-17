@@ -55,7 +55,12 @@ cd EvansWebpage
 dotnet run --urls "http://localhost:5050"
 ```
 
-The site will be available on `http://localhost:5050` (or whatever ports you configure in `Properties/launchSettings.json`).
+The site will be available on `http://localhost:5050` (or whatever ports config'd in `Properties/launchSettings.json`).
+
+THE PAGE REQUIRES THE FOLLOWING:
+- Microsoft.Extensions.FileProviders.Embedded
+
+
 
 ### Running on-VM
 
