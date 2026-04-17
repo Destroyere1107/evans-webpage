@@ -13,6 +13,7 @@
 ### 0/25 DONE - 0%
 
 - [ ] Review `_Layout.cshtml` and nested partial structure
+- [ ] Review `Program.cs` and adjust it to my needs
 - [ ] Review stylesheet (`wwwroot/css/style.css`)
 - [ ] Verify Root Pages:
   - [ ] `Index.cshtml`
