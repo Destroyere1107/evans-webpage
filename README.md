@@ -62,11 +62,14 @@ The site will be available on `http://localhost:5050` (or whatever ports you con
 To run in production on Yugoslavia:
 
 1.  ```bash
-    cd EvansWebpage
-    dotnet publish -c Release
+        cd EvansWebpage
+        dotnet publish -r [INSERT RUNTIME] -c Release
     ```
 2.  The compiled binary will be located in `bin/Release/net10.0/publish/`. I will eventually set it up to run continually in the background via a `systemd` service.
 3.  Make sure Caddy is config'd right.
+
+> [!NOTE]
+> In step 1, make sure the runtime is correct! Use `linux-musl-x64` for an Alpine machine and `linux-x64` for everything else.
 
 ---
 

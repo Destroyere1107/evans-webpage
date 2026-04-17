@@ -2,6 +2,9 @@
 [Bb]in/
 [Oo]bj/
 
+/EvansWebpage/[Bb]in/*
+/EvansWebpage/[Oo]bj/*
+
 # IDE files
 .idea/
 .vs/

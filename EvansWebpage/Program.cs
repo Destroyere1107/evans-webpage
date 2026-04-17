@@ -13,6 +13,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 // Backwards compatibility: redirect /index.html to /
+// I'm basically 100% sure that no one has bookmarked my site yet, but might as well.
 app.Use(async (context, next) =>
 {
     if (context.Request.Path.Value?.Equals("/index.html", StringComparison.OrdinalIgnoreCase) == true)
