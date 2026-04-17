@@ -18,8 +18,17 @@ jobs:
       - name: Publish
         run: dotnet publish EvansWebpage/EvansWebpage.csproj -c Release -o ./publish
 
+      - name: Publish (musl)
+        run: dotnet publish EvansWebpage/EvansWebpage.csproj -c Release -r linux-musl-x64 -o ./publish-musl
+
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: evans-webpage-bin
           path: ./publish/
+
+      - name: Upload Artifact (musl)
+        uses: actions/upload-artifact@v4
+        with:
+          name: evans-webpage-bin-musl
+          path: ./publish-musl/
