@@ -10,7 +10,7 @@
 
 ## CURRENT REVIEW STATUS
 
-### 0/25 DONE - 0%
+### DONE – Off to the races with this one!
 
 - [X] ~~Review `_Layout.cshtml` and nested partial structure~~ All good!
 - [X] ~~Review `Program.cs` and adjust it to my needs~~ Whole reason I did this
