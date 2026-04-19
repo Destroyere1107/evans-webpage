@@ -73,7 +73,9 @@
 
             @if (ViewData["HideSidebar"] == null)
             {
-                <partial name="_SidebarPartial" />
+                <div id="sidebar">
+                    <partial name="_SidebarPartial" />
+                </div>
             }
 
             <div class="clear"></div>
