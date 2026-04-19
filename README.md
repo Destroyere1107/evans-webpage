@@ -67,10 +67,9 @@ THE PAGE REQUIRES THE FOLLOWING:
 To run in production on Yugoslavia:
 
 1.  ```bash
-        cd EvansWebpage
-        dotnet publish -r [INSERT RUNTIME] -c Release
+        ./EvansWebpage --urls "http://0.0.0.0:5000"
     ```
-2.  The compiled binary will be located in `bin/Release/net10.0/publish/`. I will eventually set it up to run continually in the background via a `systemd` service.
+2.  It should be accessible from port 5000. I will eventually set it up to run continually in the background via a `systemd` service.
 3.  Make sure Caddy is config'd right.
 
 > [!NOTE]
