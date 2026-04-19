@@ -1,0 +1,122 @@
+@page
+@{
+    Layout = "_CalculatorLayout";
+    ViewData["Title"] = "[Calculator Name] - Destroyere1107's Calculator Museum";
+}
+
+@section PageSidebar {
+    <!-- TEMPLATE: Add page-specific sidebar content here (e.g. external links) -->
+    <div class="sidebar-section">
+        <h3>Further Info</h3>
+        <ul>
+            <li><a href="#">[Link to manual or datasheet]</a></li>
+            <li><a href="#">[Link to museum/wiki page]</a></li>
+        </ul>
+    </div>
+}
+
+<!-- TEMPLATE: Replace with the calculator's name -->
+<h2>[Calculator Name]</h2>
+
+<img src="~/assets/misc/underconstruction.png" alt="Under Construction"
+     style="display: block; margin: 0 auto; max-width: 620px; height: 100px;" />
+
+<!-- Breadcrumb navigation back to museum -->
+<p class="breadcrumb"><a href="/CalculatorMuseum">&laquo; Back to Calculator Museum</a></p>
+<p class="breadcrumb"><a href="/Calculators/Directory"> &laquo; Back to Collection Index</a></p>
+
+<p>
+    This is a template page. You're not supposed to be here. Click the
+    link above to return to front stage.
+</p>
+
+<!-- TEMPLATE: Quick facts table -->
+<div class="news-item">
+    <h3 style="margin-top: 0">Quick Facts</h3>
+    <!-- TEMPLATE: Calculator main image -->
+    <img src="" alt="[Calculator Name]"
+         style="max-width: 400px; height: auto; display: block; margin: 8px auto 16px auto;" />
+    <table style="border-collapse: collapse; width: 100%">
+        <tr>
+            <td style="padding: 4px 8px"><strong>Manufacturer:</strong></td>
+            <td style="padding: 4px 8px">
+                <div style="background-color: #ffffff; display: inline-block; padding: 4px 8px;">
+                    <!-- TEMPLATE: Replace with manufacturer logo img tag, e.g.:
+                         <img src="~/assets/logos/maker-logo.png" alt="[Maker Name]" style="max-height: 30px; height: auto;" />
+                    -->
+                </div>
+            </td>
+        </tr>
+        <tr><td style="padding: 4px 8px"><strong>Model:</strong></td><td style="padding: 4px 8px">[Insert model number]</td></tr>
+        <tr><td style="padding: 4px 8px"><strong>Year Introduced:</strong></td><td style="padding: 4px 8px">[Insert year]</td></tr>
+        <tr><td style="padding: 4px 8px"><strong>Type:</strong></td><td style="padding: 4px 8px">[Insert type]</td></tr>
+        <tr>
+            <td style="padding: 4px 8px"><strong>Similar Specimens on MyCalcs:</strong></td>
+            <td>
+                <a href="https://my.calcs.quest/search?models=whatever">https://my.calcs.quest/search?models=whatever</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<!-- TEMPLATE: History / Background -->
+<div class="news-item">
+    <h3 style="margin-top: 0">History &amp; Background</h3>
+    <p>
+        [This mythical calculator is the greatest calculator in the world.
+        There is no greater calculator and there has never been. Never
+        will be either. This is the holy grail of calculators.]
+    </p>
+</div>
+
+<!-- TEMPLATE: Specimens in Collection -->
+<div class="news-item">
+    <h3 style="margin-top: 0">Specimen(s) in Collection</h3>
+    <table class="specimen-table" style="border-collapse: collapse; width: 100%; margin-bottom: 12px;">
+        <tr style="background-color: #cccccc; color: #000000">
+            <th style="padding: 4px 8px; text-align: center; border: 1px solid #999999; width: 1%; white-space: nowrap;">#</th>
+            <th style="padding: 4px 8px; text-align: left; border: 1px solid #999999;">Variant</th>
+            <th style="padding: 4px 8px; text-align: left; border: 1px solid #999999;">Serial Number</th>
+            <th style="padding: 4px 8px; text-align: left; border: 1px solid #999999;">Condition</th>
+            <th style="padding: 4px 8px; text-align: left; border: 1px solid #999999;">Pictures</th>
+        </tr>
+        <tr>
+            <td style="padding: 4px 8px; border: 1px solid #999999; text-align: center;">1</td>
+            <td style="padding: 4px 8px; border: 1px solid #999999">[Insert variant]</td>
+            <td style="padding: 4px 8px; border: 1px solid #999999">[Insert SN]</td>
+            <td style="padding: 4px 8px; border: 1px solid #999999">[Insert condition]</td>
+            <td style="padding: 4px 8px; border: 1px solid #999999">
+                <!-- TEMPLATE: Insert img tags here -->
+                [Insert picture(s)]
+            </td>
+        </tr>
+        <!-- TEMPLATE: Duplicate the row above for additional specimens -->
+    </table>
+    <h3 style="margin-top: 0">About these specimen(s)</h3>
+    <p>
+        [I found the first specimen in the deepest darkest depths of the
+        Pacific ocean. I found the second in hell.]
+    </p>
+</div>
+
+<!-- TEMPLATE: Additional photos (optional, duplicate img tags as needed) -->
+<div class="news-item">
+    <h3 style="margin-top: 0">Gallery</h3>
+    <p>
+        [Add additional photos here. Copy/paste the img tag below for each
+        photo.]
+    </p>
+    <!--
+    <img src="" alt="[Description of photo]"
+         style="max-width: 400px; height: auto; display: block; margin: 8px 0;" />
+    -->
+</div>
+
+<!-- TEMPLATE: Additional notes (optional, remove if not needed) -->
+<div class="news-item">
+    <h3 style="margin-top: 0">Notes</h3>
+    <ul>
+        <li>[Interesting fact or note]</li>
+        <li>[Another fact or note]</li>
+    </ul>
+</div>
