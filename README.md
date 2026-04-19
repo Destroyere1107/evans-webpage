@@ -12,9 +12,9 @@
 
 ### 0/25 DONE - 0%
 
-- [ ] Review `_Layout.cshtml` and nested partial structure
-- [ ] Review `Program.cs` and adjust it to my needs
-- [ ] Review stylesheet (`wwwroot/css/style.css`)
+- [X] ~~Review `_Layout.cshtml` and nested partial structure~~ All good!
+- [X] ~~Review `Program.cs` and adjust it to my needs~~ Whole reason I did this
+- [X] ~~Review stylesheet (`wwwroot/css/style.css`)~~ It's exactly the same
 - [ ] Verify Root Pages:
   - [ ] `Index.cshtml`
   - [ ] `About.cshtml`
@@ -28,19 +28,19 @@
   - [ ] `Links.cshtml`
   - [ ] `Privacy.cshtml`
   - [ ] `Sitemap.cshtml`
-- [ ] Verify Calculator Pages:
-  - [ ] `Calculators/Directory.cshtml`
-  - [ ] `Calculators/Hp50g.cshtml`
-  - [ ] `Calculators/Hp28c.cshtml`
-  - [ ] `Calculators/Hp48.cshtml`
-  - [ ] `Calculators/Prime.cshtml`
-  - [ ] `Calculators/NspireCx.cshtml`
-  - [ ] `Calculators/FxCg50.cshtml`
-- [ ] Verify Lite Pages:
-  - [ ] `Lite/Simple.cshtml`
-  - [ ] `Lite/AiSimple.cshtml`
-- [ ] Test Theme Toggle visual functionality
-- [ ] Verify active navigation state bindings
+- [X] ~~Verify Calculator Pages:~~
+  - [X] ~~`Calculators/Directory.cshtml`~~
+  - [X] ~~`Calculators/Hp50g.cshtml`~~
+  - [X] ~~`Calculators/Hp28c.cshtml`~~
+  - [X] ~~`Calculators/Hp48.cshtml`~~
+  - [X] ~~`Calculators/Prime.cshtml`~~
+  - [X] ~~`Calculators/NspireCx.cshtml`~~
+  - [X] ~~`Calculators/FxCg50.cshtml`~~
+- [X] ~~Verify Lite Pages:~~ Apparently there ain't damn shit to verify in pages where there aren't even any divs
+  - [X] ~~`Lite/Simple.cshtml`~~
+  - [X] ~~`Lite/AiSimple.cshtml`~~
+- [X] ~~Test Theme Toggle visual functionality~~ I still don't know why I kept this
+- [X] ~~Verify active navigation state bindings~~
 
 ## Running the Server
 
