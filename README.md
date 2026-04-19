@@ -15,19 +15,19 @@
 - [X] ~~Review `_Layout.cshtml` and nested partial structure~~ All good!
 - [X] ~~Review `Program.cs` and adjust it to my needs~~ Whole reason I did this
 - [X] ~~Review stylesheet (`wwwroot/css/style.css`)~~ It's exactly the same
-- [ ] Verify Root Pages:
-  - [ ] `Index.cshtml`
-  - [ ] `About.cshtml`
-  - [ ] `Happenings.cshtml`
-  - [ ] `Guestbook.cshtml`
-  - [ ] `Yugoslavia.cshtml`
-  - [ ] `AiTopic.cshtml`
-  - [ ] `Contact.cshtml`
-  - [ ] `CalculatorMuseum.cshtml`
-  - [ ] `Photos.cshtml`
-  - [ ] `Links.cshtml`
-  - [ ] `Privacy.cshtml`
-  - [ ] `Sitemap.cshtml`
+- [X] ~~Verify Root Pages:~~ Everything's good.
+  - [X] ~~`Index.cshtml`~~
+  - [X] ~~`About.cshtml`~~
+  - [X] ~~`Happenings.cshtml`~~
+  - [X] ~~`Guestbook.cshtml`~~
+  - [X] ~~`Yugoslavia.cshtml`~~
+  - [X] ~~`AI.cshtml`~~
+  - [X] ~~`Contact.cshtml`~~
+  - [X] ~~`CalculatorMuseum.cshtml`~~
+  - [X] ~~`Photos.cshtml`~~ Nothing here.
+  - [X] ~~`Links.cshtml`~~ Still not much.
+  - [X] ~~`Privacy.cshtml`~~ Just as empty.
+  - [X] ~~`Sitemap.cshtml`~~ You get the point.
 - [X] ~~Verify Calculator Pages:~~
   - [X] ~~`Calculators/Directory.cshtml`~~
   - [X] ~~`Calculators/Hp50g.cshtml`~~
