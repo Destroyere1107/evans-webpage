@@ -38,9 +38,6 @@ To run in production on Yugoslavia:
 
 ---
 
-> [!NOTE]
-> A significant amount of upcoming development will be done on the `overkill` branch as I transition the site to ASP.NET. 
-
 This is Evan's webpage and Calculator Museum.
 
 This repo is primarily hosted on GitHub so I can use my existing key signing and extensions, but it is mirrored onto git.yugoslavia.dev.
