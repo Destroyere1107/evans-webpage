@@ -1,4 +1,42 @@
-# Evan's Webpage
+# Evan's Webpage - Overkill Branch
+
+> [!NOTE]
+> Merged to Main, we are fully running ASP.NET now! Next step: Make sure it can pull without my oversight.
+
+## Running the Server
+
+(This is for me, not for anyone else.)
+
+### Locally
+
+To run the server locally, use `dotnet run` from inside the `EvansWebpage` directory:
+
+```bash
+cd EvansWebpage
+dotnet run --urls "http://localhost:5050"
+```
+
+The site will be available on `http://localhost:5050` (or whatever ports config'd in `Properties/launchSettings.json`).
+
+THE PAGE REQUIRES THE FOLLOWING:
+- Microsoft.Extensions.FileProviders.Embedded
+
+
+
+### Running on-VM
+
+To run in production on Yugoslavia:
+
+1.  ```bash
+        ./EvansWebpage --urls "http://0.0.0.0:5000"
+    ```
+2.  It will run on port 5000 as set up in Caddy. I will eventually set it up to run continually in the background via a `systemd` service.
+3.  Make sure Caddy is config'd right.
+
+> [!NOTE]
+> In step 1, make sure the runtime is correct! Use `linux-musl-x64` for an Alpine machine and `linux-x64` for everything else.
+
+---
 
 > [!NOTE]
 > A significant amount of upcoming development will be done on the `overkill` branch as I transition the site to ASP.NET. 
@@ -13,9 +51,7 @@ This repo can be pushed to on Yugoslavia. I have it set so that changes here are
 
 ## Setup on yuws
 
-On the server, ~~I have a service to pull from the GitHub repo every 12 hours. Check evans-webpage-pull.service and site-pull.timer.~~
-
-That service is now redundant. I have set up a webhook to pull from GitHub every time a commit is made there, too. Check webhook.service and /etc/webhook.conf.
+[WILL ADD ONCE MORE PERMANENT SETUP IS MADE]
 
 ## About AI Contributions
 
