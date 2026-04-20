@@ -51,7 +51,8 @@ This repo can be pushed to on Yugoslavia. I have it set so that changes here are
 
 ## Setup on yuws
 
-[WILL ADD ONCE MORE PERMANENT SETUP IS MADE]
+Currently, there is a script (pull-bin.sh in my home folder) that pulls the latest artifact, copies the binary, and restarts evans-webpage.service.
+Current goal: Set this up on a webhook so I don't have to go into the console every update.
 
 ## About AI Contributions
 
