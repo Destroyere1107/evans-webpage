@@ -155,6 +155,34 @@
     ],
     "underConstruction": true,
     "category": "Calculator"
+  },
+  {
+    "id": "nspire-cx",
+    "name": "TI-Nspire CX Series",
+    "manufacturer": "Texas Instruments",
+    "manufacturerLogo": "/assets/logos/ti-logo.png",
+    "manufacturerSlug": "ti",
+    "mainImageUrl": "https://i.postimg.cc/d0pbm4FD/nspirecxiicas-graph.jpg",
+    "model": "TI-Nspire CX (II) (CAS)",
+    "modelSlug": "cx",
+    "yearIntroduced": 2019,
+    "type": "Graphing Calculator (CAS)",
+    "specimens": [
+      {
+        "number": 1,
+        "variant": "CX II CAS",
+        "serialNumber": "4A1B517107",
+        "condition": "Fair",
+        "imageUrl": "https://i.postimg.cc/nLgyY0x1/nspirecxiicas-ndless.jpg"
+      }
+    ],
+    "myCalcsLinks": [
+      { "id":  "2", "name": "CX" },
+      { "id":  "1", "name": "CX CAS" },
+      { "id":  "63", "name": "CX II" },
+      { "id":  "62", "name": "CX II CAS" }
+    ],
+    "underConstruction": true,
+    "category": "Calculator"
   }
-  
 ]
