@@ -18,6 +18,7 @@ namespace EvansWebpage.Pages.Calculators
         public Exhibit Exhibit { get; set; }
         public string DescriptionHtml { get; set; }
         public string NotesHtml { get; set; }
+        public string SpecimensHtml { get; set; }
 
         public IActionResult OnGet(string id)
         {
@@ -49,6 +50,7 @@ namespace EvansWebpage.Pages.Calculators
 
             DescriptionHtml = ParseMarkdownFile(targetDirectory, "description.md");
             NotesHtml = ParseMarkdownFile(targetDirectory, "notes.md");
+            SpecimensHtml = ParseMarkdownFile(targetDirectory, "specimens.md");
 
             return Page();
         }

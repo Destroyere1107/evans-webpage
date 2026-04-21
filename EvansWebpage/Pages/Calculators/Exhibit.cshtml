@@ -126,6 +126,7 @@
     {
         <p><i>No specimens documented yet.</i></p>
     }
+    @Html.Raw(Model.SpecimensHtml)
 </div>
 
 @if (Model.Exhibit.Gallery != null && Model.Exhibit.Gallery.Any())
