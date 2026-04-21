@@ -24,6 +24,13 @@
     <a href="/calculators/directory"> &laquo; Back to Collection Index</a>
 </p>
 
+@if (Model.Exhibit.UnderConstruction)
+{
+    <img src="/assets/misc/underconstruction.png"
+         alt="Under Construction"
+         style="display: block; margin: 0 auto; max-width: 620px; height: 100px;" />
+}
+
 <div class="news-item">
     <h3 style="margin-top: 0">Quick Facts</h3>
     @if (!string.IsNullOrEmpty(Model.Exhibit.MainImageUrl))

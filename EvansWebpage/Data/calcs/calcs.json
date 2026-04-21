@@ -1,7 +1,7 @@
 [
   {
     "id": "50g",
-    "name": "Hewlett-Packard 50g",
+    "name": "HP 50g",
     "category": "Calculator",
     "manufacturer": "Hewlett-Packard",
     "manufacturerLogo": "/assets/logos/hp-logo.png",
@@ -32,7 +32,7 @@
   },
   {
     "id": "fx-cg50",
-    "name": "Casio fx-CG50 PRIZMⓇ",
+    "name": "fx-CG50 PRIZMⓇ",
     "category": "Calculator",
     "manufacturer": "Casio",
     "manufacturerLogo": "/assets/logos/casio-logo.png",
@@ -51,20 +51,30 @@
         "imageUrl": "https://i.postimg.cc/9fK6tJ2d/IMG_0118.jpg"
       }
     ],
-    "myCalcsSearchId": "134"
+    "myCalcsSearchId": "134",
+    "underConstruction": true
   },
   {   
     "id": "",
     "name": "",
-    "manufacturer": "Hewlett-Packard",
-    "manufacturerLogo": "/assets/logos/hp-logo.png",
+    "manufacturer": "",
+    "manufacturerLogo": "",
     "manufacturerSlug": "",
     "mainImageUrl": "",
     "model": "",
     "modelSlug": "",
     "yearIntroduced": 0,
-    "type": "Graphing Calculator (CAS)",
-    "specimens": [],
-    "myCalcsSearchId": ""
+    "type": "",
+    "specimens": [
+      {
+        "number": 1,
+        "variant": "Normal",
+        "serialNumber": "",
+        "condition": "",
+        "imageUrl": ""
+      }
+    ],
+    "myCalcsSearchId": "",
+    "underConstruction": true
   }
 ]

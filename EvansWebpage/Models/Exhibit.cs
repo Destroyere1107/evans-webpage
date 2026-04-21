@@ -4,6 +4,7 @@ namespace EvansWebpage.Models
     {
         public string Id { get; set; }
         public string Name { get; set; }
+        public string Category { get; set; }
         public string Manufacturer { get; set; }
         public string ManufacturerLogo { get; set; }
         public string MainImageUrl { get; set; }
@@ -13,6 +14,7 @@ namespace EvansWebpage.Models
         public string MyCalcsSearchId { get; set; } = null!;
         public string ManufacturerSlug { get; set; }
         public string ModelSlug { get; set; }
+        public bool UnderConstruction { get; set; }
         public List<Specimen> Specimens { get; set; } = new List<Specimen>();
     }
 

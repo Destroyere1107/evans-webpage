@@ -109,6 +109,11 @@
       "mainImageUrl": {
         "type": "string",
         "description": "URL to the main feature image displayed above the Quick Facts table."
+      },
+      "underConstruction": {
+        "type": "boolean",
+        "description": "Determines whether the the 'Coming Soon' tag and 'Under Construction' banner are displayed.",
+        "default": false
       }
     },
     "required": [

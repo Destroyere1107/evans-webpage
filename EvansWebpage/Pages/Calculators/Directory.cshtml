@@ -1,4 +1,5 @@
 @page
+@model EvansWebpage.Pages.Calculators.DirectoryModel
 @{
     Layout = "_CalculatorLayout";
     ViewData["Title"] = "Calculator Directory - Destroyere1107's Calculator Museum";
@@ -11,8 +12,7 @@
 </p>
 
 <p>
-    Welcome to the directory of the calculator collection. Currently,
-    most pages are under construction. I'm working on it.
+    Welcome to the directory of the collection. This index is generated automatically from the museum database.
 </p>
 
 <img src="~/assets/misc/underconstruction.png"
@@ -21,56 +21,38 @@
 
 <hr />
 
-<div class="news-item">
-    <h3 style="margin-top: 0">Calculators</h3>
+@if (Model.DirectoryData.Any())
+{
+    // Force a specific order so "Calculators" always appears at the top
+    var orderedCategories = Model.DirectoryData
+        .OrderBy(c => c.Key == "Calculator" ? 0 : c.Key == "Accessory" ? 1 : 2);
 
-    <h4>Casio</h4>
-    <ul>
-        <li><a href="#">ClassPad 330</a> ← Coming Soon!</li>
-        <li><a href="#">fx-CP400 ClassPad II</a> ← Coming Soon!</li>
-        <li><a href="#">fx-7000g</a> ← Coming Soon!</li>
-        <li><a href="#">fx-9750g Plus</a> ← Coming Soon!</li>
-        <li><a href="/calculators/fxcg50">fx-CG50</a></li>
-        <li><a href="#">Various Scientific</a> ← Coming Soon!</li>
-        <li><a href="#">DR-250HD</a> ← Coming Soon!</li>
-        <li><a href="#">SH-4000 Digital Diary</a> ← Coming Soon!</li>
-    </ul>
+    foreach (var category in orderedCategories)
+    {
+        <div class="news-item">
+            <h3 style="margin-top: 0">@(category.Key)s</h3>
 
-    <h4>Hewlett-Packard</h4>
-    <ul>
-        <li><a href="/calculators/hp28c">28C</a></li>
-        <li><a href="/calculators/hp48">48</a></li>
-        <li><a href="/calculators/hp50g">50g</a></li>
-        <li><a href="/calculators/prime">Prime</a></li>
-        <li><a href="#">12C</a> ← Coming Soon!</li>
-    </ul>
-
-    <h4>Texas Instruments</h4>
-    <ul>
-        <li><a href="#">TI-81</a> ← Coming Soon!</li>
-        <li><a href="#">TI-83</a> ← Coming Soon!</li>
-        <li><a href="#">TI-84 Plus CE</a> ← Coming Soon!</li>
-        <li><a href="#">TI-Nspire CX II CAS</a> ← Coming Soon!</li>
-    </ul>
-
-    <h4>Other</h4>
-    <ul>
-        <li><a href="#">Tandy/Radio Shack EC-423</a> ← Coming Soon!</li>
-    </ul>
-</div>
-
-<div class="news-item">
-    <h3 style="margin-top: 0">Accessories</h3>
-    <ul>
-        <li><a href="#">TI Viewscreens</a> ← Coming Soon!</li>
-    </ul>
-</div>
-
-<div class="news-item">
-    <h3 style="margin-top: 0">
-        Not Calculators (But might be interesting)
-    </h3>
-    <ul>
-        <li><a href="#">Palm Tungsten|E</a> ← Coming Soon!</li>
-    </ul>
-</div>
+            @foreach (var manufacturer in category.Value.OrderBy(m => m.Key))
+            {
+                <h4>@manufacturer.Key</h4>
+                <ul>
+                    @foreach (var exhibit in manufacturer.Value)
+                    {
+                        <li>
+                            <a href="/calculators/exhibit/@exhibit.Id">@exhibit.Name</a>
+    
+                            @if (exhibit.UnderConstruction)
+                            {
+                                <span style="font-size: 0.8em; color: #666;"> &larr; Coming Soon!</span>
+                            }
+                        </li>
+                    }
+                </ul>
+            }
+        </div>
+    }
+}
+else
+{
+    <p><i>The directory is currently offline or updating. Please check back later.</i></p>
+}
