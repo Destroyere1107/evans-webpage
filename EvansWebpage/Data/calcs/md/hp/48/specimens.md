@@ -1,0 +1,1 @@
+This specimen was gifted to me by my dad, alongside the Sparcom Mathematics Pac slotted in it today.

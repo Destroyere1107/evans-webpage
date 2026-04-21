@@ -69,7 +69,7 @@
     "mainImageUrl": "https://i.postimg.cc/x8yHHzjR/28c.jpg",
     "model": "HP 28C/S",
     "modelSlug": "28",
-    "yearIntroduced": 0,
+    "yearIntroduced": 1987,
     "type": "Graphing Calculator",
     "specimens": [
       {
@@ -99,31 +99,54 @@
     "underConstruction": true,
     "category": "Calculator"
   },
-  {   
-    "id": "",
-    "name": "",
-    "manufacturer": "",
-    "manufacturerLogo": "",
-    "manufacturerSlug": "",
-    "mainImageUrl": "",
-    "model": "",
-    "modelSlug": "",
-    "yearIntroduced": 0,
-    "type": "",
+  {
+    "id": "48",
+    "name": "48 Series",
+    "manufacturer": "Hewlett-Packard",
+    "manufacturerLogo": "/assets/logos/hp-logo.png",
+    "manufacturerSlug": "hp",
+    "mainImageUrl": "https://i.postimg.cc/6p5x98zC/48gx-graph.jpg",
+    "model": "HP 48(S/SX/G/GX/G+)",
+    "modelSlug": "48",
+    "yearIntroduced": 1990,
+    "type": "Graphing Calculator",
     "specimens": [
       {
         "number": 1,
-        "variant": "Normal",
-        "serialNumber": "",
-        "condition": "",
-        "imageUrl": ""
+        "variant": "GX",
+        "serialNumber": "3349S01850",
+        "condition": "Good",
+        "imageUrl": "https://i.postimg.cc/xjM2gDcH/48gx-mathpac.jpg"
       }
     ],
-    "gallery": [
+    "myCalcsLinks": [
+      { "id":  "85", "name": "48S" },
+      { "id":  "86", "name": "48SX" },
+      { "id":  "87", "name": "48G" },
+      { "id":  "88", "name": "48GX" },
+      { "id":  "89", "name": "48G+" }
+    ],
+    "underConstruction": true,
+    "category": "Calculator"
+  },
+  {
+    "id": "prime",
+    "name": "Prime",
+    "manufacturer": "Hewlett-Packard",
+    "manufacturerLogo": "/assets/logos/hp-logo.png",
+    "manufacturerSlug": "hp",
+    "mainImageUrl": "https://i.postimg.cc/RFtjPKVZ/IMG_0114.jpg",
+    "model": "Prime G1/G2",
+    "modelSlug": "Prime",
+    "yearIntroduced": 2013,
+    "type": "Graphing Calculator (CAS)",
+    "specimens": [
       {
-        "url": "",
-        "altText": "",
-        "caption": ""
+        "number": 1,
+        "variant": "G2",
+        "serialNumber": "9CJ5170194",
+        "condition": "Good",
+        "imageUrl": "https://i.postimg.cc/vBnpPfHs/IMG_0115.jpg"
       }
     ],
     "myCalcsLinks": [
@@ -131,6 +154,7 @@
       { "id":  "", "name": "" }
     ],
     "underConstruction": true,
-    "category": ""
+    "category": "Calculator"
   }
+  
 ]
