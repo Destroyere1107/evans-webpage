@@ -1,16 +1,17 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Text.Json;
+using Microsoft.Extensions.FileProviders;
 using EvansWebpage.Models;
 
 namespace EvansWebpage.Pages.Calculators
 {
     public class DirectoryModel : PageModel
     {
-        private readonly IWebHostEnvironment _env;
+        private readonly IFileProvider _dataFiles;
 
-        public DirectoryModel(IWebHostEnvironment env)
+        public DirectoryModel([FromKeyedServices("DataFiles")] IFileProvider dataFiles)
         {
-            _env = env;
+            _dataFiles = dataFiles;
         }
 
         // Data structure: Category -> Manufacturer -> List of Exhibits
@@ -18,14 +19,16 @@ namespace EvansWebpage.Pages.Calculators
 
         public void OnGet()
         {
-            var jsonPath = Path.Combine(_env.ContentRootPath, "Data", "calcs", "calcs.json");
+            var fileInfo = _dataFiles.GetFileInfo("calcs/calcs.json");
             
-            if (!System.IO.File.Exists(jsonPath))
+            if (!fileInfo.Exists)
             {
                 return;
             }
 
-            var jsonString = System.IO.File.ReadAllText(jsonPath);
+            using var stream = fileInfo.CreateReadStream();
+            using var reader = new StreamReader(stream);
+            var jsonString = reader.ReadToEnd();
             var allExhibits = JsonSerializer.Deserialize<List<Exhibit>>(jsonString, 
                 new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 

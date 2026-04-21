@@ -1,7 +1,7 @@
-using System.Runtime.InteropServices;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Text.Json;
+using Microsoft.Extensions.FileProviders;
 using Markdig;
 using EvansWebpage.Models;
 
@@ -9,11 +9,11 @@ namespace EvansWebpage.Pages.Calculators
 {
     public class ExhibitModel : PageModel
     {
-        private readonly IWebHostEnvironment _env;
+        private readonly IFileProvider _dataFiles;
 
-        public ExhibitModel(IWebHostEnvironment env)
+        public ExhibitModel([FromKeyedServices("DataFiles")] IFileProvider dataFiles)
         {
-            _env = env;
+            _dataFiles = dataFiles;
         }
         
         public Exhibit Exhibit { get; set; }
@@ -23,14 +23,16 @@ namespace EvansWebpage.Pages.Calculators
 
         public IActionResult OnGet(string id)
         {
-            var jsonPath = Path.Combine(_env.ContentRootPath, "Data", "calcs", "calcs.json");
+            var fileInfo = _dataFiles.GetFileInfo("calcs/calcs.json");
             
-            if (!System.IO.File.Exists(jsonPath)) 
+            if (!fileInfo.Exists) 
             {
                 return NotFound();
             }
 
-            var jsonString = System.IO.File.ReadAllText(jsonPath);
+            using var stream = fileInfo.CreateReadStream();
+            using var reader = new StreamReader(stream);
+            var jsonString = reader.ReadToEnd();
             
             var allCalculators = JsonSerializer.Deserialize<List<Exhibit>>(jsonString, 
                 new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
@@ -42,29 +44,26 @@ namespace EvansWebpage.Pages.Calculators
                 return NotFound();
             }
             
-            var targetDirectory = Path.Combine(
-                _env.ContentRootPath, 
-                "Data", "calcs", "md", 
-                Exhibit.ManufacturerSlug, 
-                Exhibit.ModelSlug
-            );
+            var mdBasePath = $"calcs/md/{Exhibit.ManufacturerSlug}/{Exhibit.ModelSlug}";
 
-            DescriptionHtml = ParseMarkdownFile(targetDirectory, "description.md", "<p><i>Content coming soon.</i></p>");
-            NotesHtml = ParseMarkdownFile(targetDirectory, "notes.md", null);
-            SpecimensHtml = ParseMarkdownFile(targetDirectory, "specimens.md", "<p><i>Content coming soon.</i></p>");
+            DescriptionHtml = ParseMarkdownFile(mdBasePath, "description.md", "<p><i>Content coming soon.</i></p>");
+            NotesHtml = ParseMarkdownFile(mdBasePath, "notes.md", null);
+            SpecimensHtml = ParseMarkdownFile(mdBasePath, "specimens.md", "<p><i>Content coming soon.</i></p>");
 
             return Page();
         }
 
-        private string? ParseMarkdownFile(string directory, string fileName, string? fallback)
+        private string? ParseMarkdownFile(string basePath, string fileName, string? fallback)
         {
-            var filePath = Path.Combine(directory, fileName);
+            var fileInfo = _dataFiles.GetFileInfo($"{basePath}/{fileName}");
 
-            if (!System.IO.File.Exists(filePath)) return fallback;
-            var markdownText = System.IO.File.ReadAllText(filePath);
+            if (!fileInfo.Exists) return fallback;
+            
+            using var stream = fileInfo.CreateReadStream();
+            using var reader = new StreamReader(stream);
+            var markdownText = reader.ReadToEnd();
             var pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
             return Markdown.ToHtml(markdownText, pipeline);
-            
         }
     }
 }
