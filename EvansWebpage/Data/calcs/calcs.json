@@ -1,5 +1,61 @@
 [
   {
+    "id": "fx-cg50",
+    "name": "fx-CG50 PRIZMⓇ",
+    "category": "Calculator",
+    "manufacturer": "Casio",
+    "manufacturerLogo": "/assets/logos/casio-logo.png",
+    "manufacturerSlug": "casio",
+    "mainImageUrl": "https://i.postimg.cc/9fK6tJ2d/IMG_0118.jpg",
+    "model": "fx-CG50",
+    "modelSlug": "fx-cg50",
+    "yearIntroduced": 2017,
+    "type": "Graphing Calculator",
+    "specimens": [
+      {
+        "number": 1,
+        "variant": "Normal",
+        "serialNumber": "810AW84QA159866",
+        "condition": "Fair",
+        "imageUrl": "https://i.postimg.cc/9fK6tJ2d/IMG_0118.jpg"
+      }
+    ],
+    "myCalcsLinks": [
+      {
+        "id": "134"
+      }
+    ],
+    "underConstruction": true
+  },
+  {
+    "id": "fx-cg100",
+    "name": "fx-CG100 ClassWizⓇ",
+    "category": "Calculator",
+    "manufacturer": "Casio",
+    "manufacturerLogo": "/assets/logos/casio-logo.png",
+    "manufacturerSlug": "casio",
+    "mainImageUrl": "",
+    "model": "fx-CG100",
+    "modelSlug": "fx-cg100",
+    "yearIntroduced": 2025,
+    "type": "Graphing Calculator",
+    "specimens": [
+      {
+        "number": 1,
+        "variant": "Normal",
+        "serialNumber": "C876A2C008249BF_40",
+        "condition": "Good",
+        "imageUrl": ""
+      }
+    ],
+    "myCalcsLinks": [
+      {
+        "id": "340"
+      }
+    ],
+    "underConstruction": true
+  },
+  {
     "id": "50g",
     "name": "HP 50g",
     "category": "Calculator",
@@ -31,34 +87,6 @@
     "notes": "Specimen 1 is in good condition and is fully functional. I use it as my daily driver.",
     "manufacturerSlug": "hp",
     "modelSlug": "50g"
-  },
-  {
-    "id": "fx-cg50",
-    "name": "fx-CG50 PRIZMⓇ",
-    "category": "Calculator",
-    "manufacturer": "Casio",
-    "manufacturerLogo": "/assets/logos/casio-logo.png",
-    "manufacturerSlug": "casio",
-    "mainImageUrl": "https://i.postimg.cc/9fK6tJ2d/IMG_0118.jpg",
-    "model": "fx-CG50",
-    "modelSlug": "fx-cg50",
-    "yearIntroduced": 2017,
-    "type": "Graphing Calculator",
-    "specimens": [
-      {
-        "number": 1,
-        "variant": "Normal",
-        "serialNumber": "810AW84QA159866",
-        "condition": "Fair",
-        "imageUrl": "https://i.postimg.cc/9fK6tJ2d/IMG_0118.jpg"
-      }
-    ],
-    "myCalcsLinks": [
-      {
-        "id": "134"
-      }
-    ],
-    "underConstruction": true
   },
   {
     "id": "28",
