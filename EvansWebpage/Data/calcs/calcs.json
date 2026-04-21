@@ -9,7 +9,7 @@
     "model": "HP 50g",
     "yearIntroduced": 2006,
     "type": "Graphing Calculator (CAS)",
-    "myCalcsSearchId": "74",
+    "myCalcsSearchIds": ["74"],
     "specimens": [
       {
         "number": 1,
@@ -51,8 +51,47 @@
         "imageUrl": "https://i.postimg.cc/9fK6tJ2d/IMG_0118.jpg"
       }
     ],
-    "myCalcsSearchId": "134",
+    "myCalcsSearchIds": ["134"],
     "underConstruction": true
+  },
+  {
+    "id": "28",
+    "name": "28 Series",
+    "manufacturer": "Hewlett-Packard",
+    "manufacturerLogo": "/assets/logos/hp-logo.png",
+    "manufacturerSlug": "hp",
+    "mainImageUrl": "https://i.postimg.cc/x8yHHzjR/28c.jpg",
+    "model": "HP 28C/S",
+    "modelSlug": "28",
+    "yearIntroduced": 0,
+    "type": "Graphing Calculator",
+    "specimens": [
+      {
+        "number": 1,
+        "variant": "C",
+        "serialNumber": "2726A01877",
+        "condition": "Fair",
+        "imageUrl": "https://i.postimg.cc/x8yHHzjR/28c.jpg"
+      }
+    ],
+    "gallery": [
+      {
+        "url": "https://i.postimg.cc/brj44rs8/28c-closed-front.jpg",
+        "altText": "HP 28c Closed Front",
+        "caption": "The 28c, closed, front view"
+      },
+      {
+        "url": "https://i.postimg.cc/zv144vVz/28c-closed-back.jpg",
+        "altText": "HP 28c Closed Back",
+        "caption": "The 28c, closed, back view"
+      }
+    ],
+    "myCalcsSearchIds": [
+      "83",
+      "84"
+    ],
+    "underConstruction": true,
+    "category": "Calculator"
   },
   {   
     "id": "",
@@ -74,7 +113,15 @@
         "imageUrl": ""
       }
     ],
+    "gallery": [
+      {
+        "url": "",
+        "altText": "",
+        "caption": ""
+      }
+    ],
     "myCalcsSearchId": "",
-    "underConstruction": true
+    "underConstruction": true,
+    "category": ""
   }
 ]

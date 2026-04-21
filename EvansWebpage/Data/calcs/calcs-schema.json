@@ -55,9 +55,12 @@
         ],
         "description": "The category of the calculator."
       },
-      "myCalcsSearchId": {
-        "type": "string",
-        "description": "The numeric ID used in the MyCalcs URL, e.g. 74 for the HP 50g"
+      "myCalcsSearchIds": {
+        "type": "array",
+        "description": "An array of numeric IDs used in the MyCalcs URLs.",
+        "items": {
+          "type": "string"
+        }
       },
       "specimens": {
         "type": "array",
@@ -93,6 +96,28 @@
             "imageUrl": {
               "type": "string",
               "description": "URL to the hosted image of this specimen."
+            }
+          }
+        }
+      },
+      "gallery": {
+        "type": "array",
+        "description": "Additional photos for the gallery section.",
+        "items": {
+          "type": "object",
+          "required": ["url", "altText"],
+          "properties": {
+            "url": {
+              "type": "string",
+              "description": "URL of the image."
+            },
+            "altText": {
+              "type": "string",
+              "description": "Accessibility text for screen readers."
+            },
+            "caption": {
+              "type": "string",
+              "description": "Optional caption to display underneath the image."
             }
           }
         }

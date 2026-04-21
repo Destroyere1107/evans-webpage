@@ -63,12 +63,22 @@
             <td style="padding: 4px 8px"><strong>Type:</strong></td>
             <td style="padding: 4px 8px">@Model.Exhibit.Type</td>
         </tr>
-        @if (!string.IsNullOrEmpty(Model.Exhibit.MyCalcsSearchId))
+        @if (Model.Exhibit.MyCalcsSearchIds != null && Model.Exhibit.MyCalcsSearchIds.Any())
         {
             <tr>
                 <td style="padding: 4px 8px"><strong>Similar Specimens on MyCalcs:</strong></td>
                 <td style="padding: 4px 8px">
-                    <a href="https://my.calcs.quest/search?models=@Model.Exhibit.MyCalcsSearchId">https://my.calcs.quest/search?models=@Model.Exhibit.MyCalcsSearchId</a>
+                    @for (int i = 0; i < Model.Exhibit.MyCalcsSearchIds.Count; i++)
+                    {
+                        var searchId = Model.Exhibit.MyCalcsSearchIds[i];
+                        <a href="https://my.calcs.quest/search?models=@searchId">@searchId</a>
+                
+                        // Add a comma and space if it's NOT the last item in the list
+                        @if (i < Model.Exhibit.MyCalcsSearchIds.Count - 1)
+                        {
+                            <text>, </text>
+                        }
+                    }
                 </td>
             </tr>
         }
@@ -114,6 +124,29 @@
         <p><i>No specimens documented yet.</i></p>
     }
 </div>
+
+@if (Model.Exhibit.Gallery != null && Model.Exhibit.Gallery.Any())
+{
+    <div class="news-item">
+        <h3 style="margin-top: 0">Gallery</h3>
+        
+        @foreach (var img in Model.Exhibit.Gallery)
+        {
+            <figure style="margin: 16px auto; text-align: center;">
+                <img src="@img.Url" 
+                     alt="@img.AltText" 
+                     style="max-width: 100%; height: auto; display: block; margin: 0 auto;" />
+                     
+                @if (!string.IsNullOrEmpty(img.Caption))
+                {
+                    <figcaption style="font-size: 0.9em; color: #555; margin-top: 6px; font-style: italic;">
+                        @img.Caption
+                    </figcaption>
+                }
+            </figure>
+        }
+    </div>
+}
 
 <div class="news-item">
     <h3 style="margin-top: 0">Notes</h3>

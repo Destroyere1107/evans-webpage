@@ -11,11 +11,19 @@ namespace EvansWebpage.Models
         public string Model { get; set; }
         public int? YearIntroduced { get; set; }
         public string Type { get; set; }
-        public string MyCalcsSearchId { get; set; } = null!;
+        public List<string> MyCalcsSearchIds { get; set; } = new List<string>();
         public string ManufacturerSlug { get; set; }
         public string ModelSlug { get; set; }
         public bool UnderConstruction { get; set; }
         public List<Specimen> Specimens { get; set; } = new List<Specimen>();
+        public List<GalleryImage> Gallery { get; set; } = new List<GalleryImage>();
+    }
+    
+    public class GalleryImage
+    {
+        public string Url { get; set; }
+        public string AltText { get; set; }
+        public string Caption { get; set; }
     }
 
     public class Specimen
