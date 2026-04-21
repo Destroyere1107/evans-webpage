@@ -1,0 +1,114 @@
+@page "{id}"
+@model EvansWebpage.Pages.Calculators.ExhibitModel
+@{
+    Layout = "_CalculatorLayout";
+    ViewData["Title"] = $"{Model.Exhibit.Name} - Destroyere1107's Calculator Museum";
+}
+
+@section PageSidebar {
+    <div class="sidebar-section">
+        <h3>Further Info</h3>
+        <ul>
+            <li><a href="#">[Link to manual or datasheet]</a></li>
+            <li><a href="#">[Link to museum/wiki page]</a></li>
+        </ul>
+    </div>
+}
+
+<h2>@Model.Exhibit.Name</h2>
+
+<p class="breadcrumb">
+    <a href="/calculatormuseum">&laquo; Back to Calculator Museum</a>
+</p>
+<p class="breadcrumb">
+    <a href="/calculators/directory"> &laquo; Back to Collection Index</a>
+</p>
+
+<div class="news-item">
+    <h3 style="margin-top: 0">Quick Facts</h3>
+    @if (!string.IsNullOrEmpty(Model.Exhibit.MainImageUrl))
+    {
+        <img src="@Model.Exhibit.MainImageUrl" 
+             alt="@Model.Exhibit.Name"
+             style="max-width: 400px; height: auto; display: block; margin: 8px auto 16px auto;" />
+    }
+    <table style="border-collapse: collapse; width: 100%">
+        <tr>
+            <td style="padding: 4px 8px"><strong>Manufacturer:</strong></td>
+            <td style="padding: 4px 8px">
+                <div style="background-color: #ffffff; display: inline-block; padding: 4px 8px;">
+                    <img src="@Model.Exhibit.ManufacturerLogo" alt="@Model.Exhibit.Manufacturer" style="max-height: 30px; height: auto" />
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 4px 8px"><strong>Model:</strong></td>
+            <td style="padding: 4px 8px">@Model.Exhibit.Model</td>
+        </tr>
+        @if (Model.Exhibit.YearIntroduced.HasValue)
+        {
+            <tr>
+                <td style="padding: 4px 8px"><strong>Year Introduced:</strong></td>
+                <td style="padding: 4px 8px">@Model.Exhibit.YearIntroduced</td>
+            </tr>
+        }
+        <tr>
+            <td style="padding: 4px 8px"><strong>Type:</strong></td>
+            <td style="padding: 4px 8px">@Model.Exhibit.Type</td>
+        </tr>
+        @if (!string.IsNullOrEmpty(Model.Exhibit.MyCalcsSearchId))
+        {
+            <tr>
+                <td style="padding: 4px 8px"><strong>Similar Specimens on MyCalcs:</strong></td>
+                <td style="padding: 4px 8px">
+                    <a href="https://my.calcs.quest/search?models=@Model.Exhibit.MyCalcsSearchId">https://my.calcs.quest/search?models=@Model.Exhibit.MyCalcsSearchId</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+<div class="news-item">
+    <h3 style="margin-top: 0">History &amp; Background</h3>
+    @Html.Raw(Model.DescriptionHtml)
+</div>
+
+<div class="news-item">
+    <h3 style="margin-top: 0">Specimen(s) in Collection</h3>
+    @if (Model.Exhibit.Specimens != null && Model.Exhibit.Specimens.Any())
+    {
+        <table class="specimen-table" style="border-collapse: collapse; width: 100%; margin-bottom: 12px;">
+            <tr style="background-color: #cccccc; color: #000000">
+                <th style="padding: 4px 8px; text-align: center; border: 1px solid #999999; width: 1%; white-space: nowrap;">#</th>
+                <th style="padding: 4px 8px; text-align: left; border: 1px solid #999999;">Variant</th>
+                <th style="padding: 4px 8px; text-align: left; border: 1px solid #999999;">Serial Number</th>
+                <th style="padding: 4px 8px; text-align: left; border: 1px solid #999999;">Condition</th>
+                <th style="padding: 4px 8px; text-align: left; border: 1px solid #999999;">Pictures</th>
+            </tr>
+            @foreach (var specimen in Model.Exhibit.Specimens)
+            {
+                <tr>
+                    <td style="padding: 4px 8px; border: 1px solid #999999; text-align: center;">@specimen.Number</td>
+                    <td style="padding: 4px 8px; border: 1px solid #999999">@specimen.Variant</td>
+                    <td style="padding: 4px 8px; border: 1px solid #999999">@specimen.SerialNumber</td>
+                    <td style="padding: 4px 8px; border: 1px solid #999999">@specimen.Condition</td>
+                    <td style="padding: 4px 8px; border: 1px solid #999999">
+                        @if (!string.IsNullOrEmpty(specimen.ImageUrl))
+                        {
+                            <img src="@specimen.ImageUrl" alt="Specimen Image" style="max-width: 400px; height: auto; display: block; margin: 8px 0;" />
+                        }
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <p><i>No specimens documented yet.</i></p>
+    }
+</div>
+
+<div class="news-item">
+    <h3 style="margin-top: 0">Notes</h3>
+    @Html.Raw(Model.NotesHtml)
+</div>

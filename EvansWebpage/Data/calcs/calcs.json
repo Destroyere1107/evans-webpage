@@ -1,9 +1,11 @@
 [
   {
-    "id": "hp50g",
+    "id": "50g",
     "name": "Hewlett-Packard 50g",
     "manufacturer": "Hewlett-Packard",
-    "model": "50g",
+    "manufacturerLogo": "~/assets/logos/hp-logo.png",
+    "mainImageUrl": "https://i.postimg.cc/DyhKMjXb/50g-graph.jpg",
+    "model": "HP 50g",
     "yearIntroduced": 2006,
     "type": "Graphing Calculator (CAS)",
     "myCalcsSearchId": "74",
@@ -24,8 +26,30 @@
       }
     ],
     "notes": "Specimen 1 is in good condition and is fully functional. I use it as my daily driver.",
-    "manufacturerSlug": "",
-    "modelSlug": ""
+    "manufacturerSlug": "hp",
+    "modelSlug": "50g"
+  },
+  {
+    "id": "fx-cg50",
+    "name": "Casio fx-CG50 PRIZMⓇ",
+    "manufacturer": "Casio",
+    "manufacturerLogo": "~/assets/logos/casio-logo.png",
+    "manufacturerSlug": "casio",
+    "mainImageUrl": "https://i.postimg.cc/9fK6tJ2d/IMG_0118.jpg",
+    "model": "fx-CG50",
+    "modelSlug": "fx-cg50",
+    "yearIntroduced": 2017,
+    "type": "Graphing Calculator",
+    "specimens": [
+      {
+        "number": 1,
+        "variant": "Normal",
+        "serialNumber": "810AW84QA159866",
+        "condition": "Fair",
+        "imageUrl": "https://i.postimg.cc/9fK6tJ2d/IMG_0118.jpg"
+      }
+    ],
+    "myCalcsSearchId": "134"
   },
   {   
     "id": "",
@@ -33,6 +57,7 @@
     "manufacturer": "Hewlett-Packard",
     "manufacturerLogo": "~/assets/logos/hp-logo.png",
     "manufacturerSlug": "",
+    "mainImageUrl": "",
     "model": "",
     "modelSlug": "",
     "yearIntroduced": 0,

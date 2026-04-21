@@ -328,6 +328,15 @@ ul {
   margin-bottom: 12px;
 }
 
+/* Ensure images never spill out of their containers 
+I had to add this after the switch to Markdown via Markdig */
+.news-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 8px auto; /* Centers the image */
+}
+
 .news-item .date {
   font-size: 10px;
   color: var(--text-dim);

@@ -90,11 +90,16 @@
       },
       "manufacturerSlug": {
         "type": "string",
+        "enum": ["hp", "casio", "ti", "other"],
         "description": "The slug used for internally identifying the manufacturer"
       },
       "modelSlug": {
         "type": "string",
         "description": "The slug used for internally identifying the model"
+      },
+      "mainImageUrl": {
+        "type": "string",
+        "description": "URL to the main feature image displayed above the Quick Facts table."
       }
     },
     "required": [
