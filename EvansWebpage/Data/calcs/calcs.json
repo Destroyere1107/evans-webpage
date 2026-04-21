@@ -2,6 +2,7 @@
   {
     "id": "50g",
     "name": "Hewlett-Packard 50g",
+    "category": "Calculator",
     "manufacturer": "Hewlett-Packard",
     "manufacturerLogo": "/assets/logos/hp-logo.png",
     "mainImageUrl": "https://i.postimg.cc/DyhKMjXb/50g-graph.jpg",
@@ -32,6 +33,7 @@
   {
     "id": "fx-cg50",
     "name": "Casio fx-CG50 PRIZMⓇ",
+    "category": "Calculator",
     "manufacturer": "Casio",
     "manufacturerLogo": "/assets/logos/casio-logo.png",
     "manufacturerSlug": "casio",

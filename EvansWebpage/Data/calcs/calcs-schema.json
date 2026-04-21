@@ -12,6 +12,15 @@
         "type": "string",
         "description": "The full display name, e.g. Hewlett-Packard 50g"
       },
+      "category": {
+        "type": "string",
+        "enum": [
+          "Calculator",
+          "Accessory",
+          "Other"
+        ],
+        "description": "The broad classification of the exhibit, used for organizing in the directory."
+      },
       "manufacturer": {
         "type": "string",
         "enum": [
@@ -109,7 +118,8 @@
       "model",
       "type",
       "manufacturerSlug",
-      "modelSlug"
+      "modelSlug",
+      "category"
     ],
     "type": "object"
   }
