@@ -152,7 +152,10 @@
     </div>
 }
 
-<div class="news-item">
-    <h3 style="margin-top: 0">Notes</h3>
-    @Html.Raw(Model.NotesHtml)
-</div>
+@if (!string.IsNullOrWhiteSpace(Model.NotesHtml))
+{
+    <div class="news-item">
+        <h3 style="margin-top: 0">Notes</h3>
+        @Html.Raw(Model.NotesHtml)
+    </div>
+}

@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Text.Json;
@@ -16,9 +17,9 @@ namespace EvansWebpage.Pages.Calculators
         }
         
         public Exhibit Exhibit { get; set; }
-        public string DescriptionHtml { get; set; }
-        public string NotesHtml { get; set; }
-        public string SpecimensHtml { get; set; }
+        public string? DescriptionHtml { get; set; }
+        public string? NotesHtml { get; set; }
+        public string? SpecimensHtml { get; set; }
 
         public IActionResult OnGet(string id)
         {
@@ -48,22 +49,22 @@ namespace EvansWebpage.Pages.Calculators
                 Exhibit.ModelSlug
             );
 
-            DescriptionHtml = ParseMarkdownFile(targetDirectory, "description.md");
-            NotesHtml = ParseMarkdownFile(targetDirectory, "notes.md");
-            SpecimensHtml = ParseMarkdownFile(targetDirectory, "specimens.md");
+            DescriptionHtml = ParseMarkdownFile(targetDirectory, "description.md", "<p><i>Content coming soon.</i></p>");
+            NotesHtml = ParseMarkdownFile(targetDirectory, "notes.md", null);
+            SpecimensHtml = ParseMarkdownFile(targetDirectory, "specimens.md", "<p><i>Content coming soon.</i></p>");
 
             return Page();
         }
 
-        private string ParseMarkdownFile(string directory, string fileName)
+        private string? ParseMarkdownFile(string directory, string fileName, string? fallback)
         {
             var filePath = Path.Combine(directory, fileName);
 
-            if (!System.IO.File.Exists(filePath)) return "<p><i>Content coming soon.</i></p>";
+            if (!System.IO.File.Exists(filePath)) return fallback;
             var markdownText = System.IO.File.ReadAllText(filePath);
             var pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
             return Markdown.ToHtml(markdownText, pipeline);
-
+            
         }
     }
 }
