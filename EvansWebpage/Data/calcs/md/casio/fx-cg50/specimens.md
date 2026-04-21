@@ -1,0 +1,1 @@
+I got this specimen at an excellent price due to it missing a front cover and battery cover.

@@ -19,7 +19,8 @@ dotnet run --urls "http://localhost:5050"
 The site will be available on `http://localhost:5050` (or whatever ports config'd in `Properties/launchSettings.json`).
 
 THE PAGE REQUIRES THE FOLLOWING:
-- Microsoft.Extensions.FileProviders.Embedded
+- `Microsoft.Extensions.FileProviders.Embedded`
+- `Markdig`
 
 
 
@@ -36,6 +37,46 @@ To run in production on Yugoslavia:
 > [!NOTE]
 > In step 1, make sure the runtime is correct! Use `linux-musl-x64` for an Alpine machine and `linux-x64` for everything else.
 
+
+## Adding more calculators
+
+Use this empty template and add to /EvansWebpage/Data/calcs/calcs.json.
+```json
+{   
+    "id": "",
+    "name": "",
+    "manufacturer": "",
+    "manufacturerLogo": "",
+    "manufacturerSlug": "",
+    "mainImageUrl": "",
+    "model": "",
+    "modelSlug": "",
+    "yearIntroduced": 0,
+    "type": "",
+    "specimens": [
+      {
+        "number": 1,
+        "variant": "Normal",
+        "serialNumber": "",
+        "condition": "",
+        "imageUrl": ""
+      }
+    ],
+    "gallery": [
+      {
+        "url": "",
+        "altText": "",
+        "caption": ""
+      }
+    ],
+    "myCalcsLinks": [
+      { "id":  "", "name": "" },
+      { "id":  "", "name": "" }
+    ],
+    "underConstruction": true,
+    "category": ""
+  }
+```
 ---
 
 This is Evan's webpage and Calculator Museum.

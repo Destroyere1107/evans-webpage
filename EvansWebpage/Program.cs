@@ -8,6 +8,11 @@ internal class Program
 
         builder.Services.AddRazorPages();
 
+        // Register embedded file provider for Data folder so page models can
+        // read data files from the published single-file binary.
+        builder.Services.AddKeyedSingleton<IFileProvider>("DataFiles",
+            new ManifestEmbeddedFileProvider(typeof(Program).Assembly, "Data"));
+
         var app = builder.Build();
 
         if (!app.Environment.IsDevelopment())

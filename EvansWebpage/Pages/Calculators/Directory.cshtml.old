@@ -1,0 +1,76 @@
+@page
+@{
+    Layout = "_CalculatorLayout";
+    ViewData["Title"] = "Calculator Directory - Destroyere1107's Calculator Museum";
+}
+
+<h2>Collection Index / Directory</h2>
+
+<p class="breadcrumb">
+    <a href="/calculatormuseum">&laquo; Back to Calculator Museum</a>
+</p>
+
+<p>
+    Welcome to the directory of the calculator collection. Currently,
+    most pages are under construction. I'm working on it.
+</p>
+
+<img src="~/assets/misc/underconstruction.png"
+     alt="Under Construction"
+     style="display: block; margin: 0 auto; max-width: 620px; height: 100px;" />
+
+<hr />
+
+<div class="news-item">
+    <h3 style="margin-top: 0">Calculators</h3>
+
+    <h4>Casio</h4>
+    <ul>
+        <li><a href="#">ClassPad 330</a> ← Coming Soon!</li>
+        <li><a href="#">fx-CP400 ClassPad II</a> ← Coming Soon!</li>
+        <li><a href="#">fx-7000g</a> ← Coming Soon!</li>
+        <li><a href="#">fx-9750g Plus</a> ← Coming Soon!</li>
+        <li><a href="/calculators/fxcg50">fx-CG50</a></li>
+        <li><a href="#">Various Scientific</a> ← Coming Soon!</li>
+        <li><a href="#">DR-250HD</a> ← Coming Soon!</li>
+        <li><a href="#">SH-4000 Digital Diary</a> ← Coming Soon!</li>
+    </ul>
+
+    <h4>Hewlett-Packard</h4>
+    <ul>
+        <li><a href="/calculators/hp28c">28C</a></li>
+        <li><a href="/calculators/hp48">48</a></li>
+        <li><a href="/calculators/hp50g">50g</a></li>
+        <li><a href="/calculators/prime">Prime</a></li>
+        <li><a href="#">12C</a> ← Coming Soon!</li>
+    </ul>
+
+    <h4>Texas Instruments</h4>
+    <ul>
+        <li><a href="#">TI-81</a> ← Coming Soon!</li>
+        <li><a href="#">TI-83</a> ← Coming Soon!</li>
+        <li><a href="#">TI-84 Plus CE</a> ← Coming Soon!</li>
+        <li><a href="#">TI-Nspire CX II CAS</a> ← Coming Soon!</li>
+    </ul>
+
+    <h4>Other</h4>
+    <ul>
+        <li><a href="#">Tandy/Radio Shack EC-423</a> ← Coming Soon!</li>
+    </ul>
+</div>
+
+<div class="news-item">
+    <h3 style="margin-top: 0">Accessories</h3>
+    <ul>
+        <li><a href="#">TI Viewscreens</a> ← Coming Soon!</li>
+    </ul>
+</div>
+
+<div class="news-item">
+    <h3 style="margin-top: 0">
+        Not Calculators (But might be interesting)
+    </h3>
+    <ul>
+        <li><a href="#">Palm Tungsten|E</a> ← Coming Soon!</li>
+    </ul>
+</div>

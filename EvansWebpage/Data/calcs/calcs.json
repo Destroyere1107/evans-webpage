@@ -1,0 +1,160 @@
+[
+  {
+    "id": "50g",
+    "name": "HP 50g",
+    "category": "Calculator",
+    "manufacturer": "Hewlett-Packard",
+    "manufacturerLogo": "/assets/logos/hp-logo.png",
+    "mainImageUrl": "https://i.postimg.cc/DyhKMjXb/50g-graph.jpg",
+    "model": "HP 50g",
+    "yearIntroduced": 2006,
+    "type": "Graphing Calculator (CAS)",
+    "myCalcsLinks": [
+      { "id": "74" }
+    ],
+    "specimens": [
+      {
+        "number": 1,
+        "variant": "Black (Normal)",
+        "serialNumber": "CNA3090GVV",
+        "condition": "Good",
+        "imageUrl": "https://i.postimg.cc/WpgvSLhw/50g-stack.jpg"
+      },
+      {
+        "number": 2,
+        "variant": "Blue",
+        "serialNumber": "CNA10200307",
+        "condition": "Fair",
+        "imageUrl": "[Coming Soon]"
+      }
+    ],
+    "notes": "Specimen 1 is in good condition and is fully functional. I use it as my daily driver.",
+    "manufacturerSlug": "hp",
+    "modelSlug": "50g"
+  },
+  {
+    "id": "fx-cg50",
+    "name": "fx-CG50 PRIZMⓇ",
+    "category": "Calculator",
+    "manufacturer": "Casio",
+    "manufacturerLogo": "/assets/logos/casio-logo.png",
+    "manufacturerSlug": "casio",
+    "mainImageUrl": "https://i.postimg.cc/9fK6tJ2d/IMG_0118.jpg",
+    "model": "fx-CG50",
+    "modelSlug": "fx-cg50",
+    "yearIntroduced": 2017,
+    "type": "Graphing Calculator",
+    "specimens": [
+      {
+        "number": 1,
+        "variant": "Normal",
+        "serialNumber": "810AW84QA159866",
+        "condition": "Fair",
+        "imageUrl": "https://i.postimg.cc/9fK6tJ2d/IMG_0118.jpg"
+      }
+    ],
+    "myCalcsLinks": [
+      {
+        "id": "134"
+      }
+    ],
+    "underConstruction": true
+  },
+  {
+    "id": "28",
+    "name": "28 Series",
+    "manufacturer": "Hewlett-Packard",
+    "manufacturerLogo": "/assets/logos/hp-logo.png",
+    "manufacturerSlug": "hp",
+    "mainImageUrl": "https://i.postimg.cc/x8yHHzjR/28c.jpg",
+    "model": "HP 28C/S",
+    "modelSlug": "28",
+    "yearIntroduced": 1987,
+    "type": "Graphing Calculator",
+    "specimens": [
+      {
+        "number": 1,
+        "variant": "C",
+        "serialNumber": "2726A01877",
+        "condition": "Fair",
+        "imageUrl": "https://i.postimg.cc/x8yHHzjR/28c.jpg"
+      }
+    ],
+    "gallery": [
+      {
+        "url": "https://i.postimg.cc/brj44rs8/28c-closed-front.jpg",
+        "altText": "HP 28c Closed Front",
+        "caption": "The 28c, closed, front view"
+      },
+      {
+        "url": "https://i.postimg.cc/zv144vVz/28c-closed-back.jpg",
+        "altText": "HP 28c Closed Back",
+        "caption": "The 28c, closed, back view"
+      }
+    ],
+    "myCalcsLinks": [
+      { "id":  "83", "name": "28C" },
+      { "id":  "84", "name": "28S" }
+    ],
+    "underConstruction": true,
+    "category": "Calculator"
+  },
+  {
+    "id": "48",
+    "name": "48 Series",
+    "manufacturer": "Hewlett-Packard",
+    "manufacturerLogo": "/assets/logos/hp-logo.png",
+    "manufacturerSlug": "hp",
+    "mainImageUrl": "https://i.postimg.cc/6p5x98zC/48gx-graph.jpg",
+    "model": "HP 48(S/SX/G/GX/G+)",
+    "modelSlug": "48",
+    "yearIntroduced": 1990,
+    "type": "Graphing Calculator",
+    "specimens": [
+      {
+        "number": 1,
+        "variant": "GX",
+        "serialNumber": "3349S01850",
+        "condition": "Good",
+        "imageUrl": "https://i.postimg.cc/xjM2gDcH/48gx-mathpac.jpg"
+      }
+    ],
+    "myCalcsLinks": [
+      { "id":  "85", "name": "48S" },
+      { "id":  "86", "name": "48SX" },
+      { "id":  "87", "name": "48G" },
+      { "id":  "88", "name": "48GX" },
+      { "id":  "89", "name": "48G+" }
+    ],
+    "underConstruction": true,
+    "category": "Calculator"
+  },
+  {
+    "id": "prime",
+    "name": "Prime",
+    "manufacturer": "Hewlett-Packard",
+    "manufacturerLogo": "/assets/logos/hp-logo.png",
+    "manufacturerSlug": "hp",
+    "mainImageUrl": "https://i.postimg.cc/RFtjPKVZ/IMG_0114.jpg",
+    "model": "Prime G1/G2",
+    "modelSlug": "Prime",
+    "yearIntroduced": 2013,
+    "type": "Graphing Calculator (CAS)",
+    "specimens": [
+      {
+        "number": 1,
+        "variant": "G2",
+        "serialNumber": "9CJ5170194",
+        "condition": "Good",
+        "imageUrl": "https://i.postimg.cc/vBnpPfHs/IMG_0115.jpg"
+      }
+    ],
+    "myCalcsLinks": [
+      { "id":  "", "name": "" },
+      { "id":  "", "name": "" }
+    ],
+    "underConstruction": true,
+    "category": "Calculator"
+  }
+  
+]
