@@ -55,11 +55,22 @@
         ],
         "description": "The category of the calculator."
       },
-      "myCalcsSearchIds": {
+      "myCalcsLinks": {
         "type": "array",
-        "description": "An array of numeric IDs used in the MyCalcs URLs.",
+        "description": "Links to similar specimens on MyCalcs.",
         "items": {
-          "type": "string"
+          "type": "object",
+          "required": ["id"],
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "The numeric ID used in the MyCalcs URL."
+            },
+            "name": {
+              "type": "string",
+              "description": "Optional display name for the link (e.g., '48SX'). If left blank, the ID will be displayed."
+            }
+          }
         }
       },
       "specimens": {

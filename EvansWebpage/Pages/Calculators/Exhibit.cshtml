@@ -63,20 +63,23 @@
             <td style="padding: 4px 8px"><strong>Type:</strong></td>
             <td style="padding: 4px 8px">@Model.Exhibit.Type</td>
         </tr>
-        @if (Model.Exhibit.MyCalcsSearchIds != null && Model.Exhibit.MyCalcsSearchIds.Any())
+        @if (Model.Exhibit.MyCalcsLinks != null && Model.Exhibit.MyCalcsLinks.Any())
         {
             <tr>
                 <td style="padding: 4px 8px"><strong>Similar Specimens on MyCalcs:</strong></td>
                 <td style="padding: 4px 8px">
-                    @for (int i = 0; i < Model.Exhibit.MyCalcsSearchIds.Count; i++)
+                    @for (int i = 0; i < Model.Exhibit.MyCalcsLinks.Count; i++)
                     {
-                        var searchId = Model.Exhibit.MyCalcsSearchIds[i];
-                        <a href="https://my.calcs.quest/search?models=@searchId">@searchId</a>
+                        var link = Model.Exhibit.MyCalcsLinks[i];
+                        
+                        var displayText = !string.IsNullOrEmpty(link.Name) ? link.Name : link.Id;
+
+                        <a href="https://my.calcs.quest/search?models=@link.Id">@displayText</a>
                 
-                        // Add a comma and space if it's NOT the last item in the list
-                        @if (i < Model.Exhibit.MyCalcsSearchIds.Count - 1)
+                        // Add a space separator if it's not the last item in the list
+                        @if (i < Model.Exhibit.MyCalcsLinks.Count - 1)
                         {
-                            <text>, </text>
+                            <text>&nbsp; </text>
                         }
                     }
                 </td>

@@ -9,7 +9,9 @@
     "model": "HP 50g",
     "yearIntroduced": 2006,
     "type": "Graphing Calculator (CAS)",
-    "myCalcsSearchIds": ["74"],
+    "myCalcsLinks": [
+      { "id": "74" }
+    ],
     "specimens": [
       {
         "number": 1,
@@ -51,7 +53,11 @@
         "imageUrl": "https://i.postimg.cc/9fK6tJ2d/IMG_0118.jpg"
       }
     ],
-    "myCalcsSearchIds": ["134"],
+    "myCalcsLinks": [
+      {
+        "id": "134"
+      }
+    ],
     "underConstruction": true
   },
   {
@@ -86,9 +92,9 @@
         "caption": "The 28c, closed, back view"
       }
     ],
-    "myCalcsSearchIds": [
-      "83",
-      "84"
+    "myCalcsLinks": [
+      { "id":  "83", "name": "28C" },
+      { "id":  "84", "name": "28S" }
     ],
     "underConstruction": true,
     "category": "Calculator"
@@ -120,7 +126,10 @@
         "caption": ""
       }
     ],
-    "myCalcsSearchId": "",
+    "myCalcsLinks": [
+      { "id":  "", "name": "" },
+      { "id":  "", "name": "" }
+    ],
     "underConstruction": true,
     "category": ""
   }
