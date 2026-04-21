@@ -1,0 +1,111 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Calculator Exhibit Library",
+  "type": "array",
+  "items": {
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "The URL-friendly identifier for the page route, e.g. 50g"
+      },
+      "name": {
+        "type": "string",
+        "description": "The full display name, e.g. Hewlett-Packard 50g"
+      },
+      "manufacturer": {
+        "type": "string",
+        "enum": [
+          "Hewlett-Packard",
+          "Casio",
+          "Texas Instruments",
+          "Other"
+        ],
+        "description": "Manufacturer of the calculator."
+      },
+      "manufacturerLogo": {
+        "type": "string",
+        "default": "~/assets/logos/hp-logo.png",
+        "description": "Path to the logo image file."
+      },
+      "model": {
+        "type": "string",
+        "description": "The shortened model name, e.g. HP 50g"
+      },
+      "yearIntroduced": {
+        "type": "integer"
+      },
+      "type": {
+        "type": "string",
+        "enum": [
+          "Graphing Calculator (CAS)",
+          "Graphing Calculator",
+          "Scientific Calculator",
+          "Financial Calculator",
+          "Financial Calculator (Printing)",
+          "Four-Function Calculator"
+        ],
+        "description": "The category of the calculator."
+      },
+      "myCalcsSearchId": {
+        "type": "string",
+        "description": "The numeric ID used in the MyCalcs URL, e.g. 74 for the HP 50g"
+      },
+      "specimens": {
+        "type": "array",
+        "description": "The specific specimens in the collection.",
+        "items": {
+          "type": "object",
+          "required": [
+            "number",
+            "variant",
+            "serialNumber"
+          ],
+          "properties": {
+            "number": {
+              "type": "integer"
+            },
+            "variant": {
+              "type": "string",
+              "default": "Normal"
+            },
+            "serialNumber": {
+              "type": "string"
+            },
+            "condition": {
+              "type": "string",
+              "enum": [
+                "Mint",
+                "Good",
+                "Fair",
+                "Poor",
+                "Broken"
+              ]
+            },
+            "imageUrl": {
+              "type": "string",
+              "description": "URL to the hosted image of this specimen."
+            }
+          }
+        }
+      },
+      "manufacturerSlug": {
+        "type": "string",
+        "description": "The slug used for internally identifying the manufacturer"
+      },
+      "modelSlug": {
+        "type": "string",
+        "description": "The slug used for internally identifying the model"
+      }
+    },
+    "required": [
+      "id",
+      "name",
+      "manufacturer",
+      "model",
+      "type",
+      "manufacturerSlug",
+      "modelSlug"
+    ],
+    "type": "object"
+  }
+}

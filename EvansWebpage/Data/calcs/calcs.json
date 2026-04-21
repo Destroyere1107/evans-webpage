@@ -1,0 +1,43 @@
+[
+  {
+    "id": "hp50g",
+    "name": "Hewlett-Packard 50g",
+    "manufacturer": "Hewlett-Packard",
+    "model": "50g",
+    "yearIntroduced": 2006,
+    "type": "Graphing Calculator (CAS)",
+    "myCalcsSearchId": "74",
+    "specimens": [
+      {
+        "number": 1,
+        "variant": "Black (Normal)",
+        "serialNumber": "CNA3090GVV",
+        "condition": "Good",
+        "imageUrl": "https://i.postimg.cc/WpgvSLhw/50g-stack.jpg"
+      },
+      {
+        "number": 2,
+        "variant": "Blue",
+        "serialNumber": "CNA10200307",
+        "condition": "Fair",
+        "imageUrl": "[Coming Soon]"
+      }
+    ],
+    "notes": "Specimen 1 is in good condition and is fully functional. I use it as my daily driver.",
+    "manufacturerSlug": "",
+    "modelSlug": ""
+  },
+  {   
+    "id": "",
+    "name": "",
+    "manufacturer": "Hewlett-Packard",
+    "manufacturerLogo": "~/assets/logos/hp-logo.png",
+    "manufacturerSlug": "",
+    "model": "",
+    "modelSlug": "",
+    "yearIntroduced": 0,
+    "type": "Graphing Calculator (CAS)",
+    "specimens": [],
+    "myCalcsSearchId": ""
+  }
+]
