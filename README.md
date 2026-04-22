@@ -97,3 +97,21 @@ Current goal: Set this up on a webhook so I don't have to go into the console ev
 I decided to try and test out Google's 'Jules' coding agent. I accidentally turned 'automatically look for shit to do' on. I do not know how to turn it off. Other than the security changes it suggests, I'm keeping those contained to non-prod branches.
 
 The important thing is that **I will mark any commit that I relied primarily on AI for.**
+
+## Planned Additions
+
+### Front-facing
+- [ ] Make happenings dynamically built like the calcpages
+  - [ ] RSS Feed for happenings
+- [ ] RPN Calculator widget
+  - [ ] RPN challenge game (?)
+    - [ ] With leaderboard (?)
+- [ ] Projects Page (?)
+- [ ] Add sortable Attributes/Traits to calculators
+- [ ] Add Benchmarks for calculators
+- [ ] Stylize more/Add more themes
+  - [ ] 'Fancy' theme with more gradients and elegant colors
+
+### Backend
+- [ ] Force HTTPS/HSTS
+- [ ] Refine theme code and CSS
