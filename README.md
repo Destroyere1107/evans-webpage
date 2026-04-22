@@ -113,5 +113,4 @@ The important thing is that **I will mark any commit that I relied primarily on 
   - [ ] 'Fancy' theme with more gradients and elegant colors
 
 ### Backend
-- [ ] Force HTTPS/HSTS
 - [ ] Refine theme code and CSS
