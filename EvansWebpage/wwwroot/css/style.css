@@ -19,7 +19,6 @@
    -- Borders --
    --border-default:    #3a3b40     Standard borders
    --border-blue:       #3a4050     Blue-tinted borders (content area)
-   --border-btn:        #4a4b50     Button borders
 
    -- Navy / Header Blues --
    --navy-dark:         #0e1e30     Darkest navy (gradients)
@@ -46,14 +45,25 @@
    --text-footer:       #808488     Footer text
    --text-powered:      #606468     "Powered by" text
 
+   -- Gradients (overridden in light mode) --
+   --grad-header:       linear-gradient(to bottom, #243e5c 0%, #0e1e30 100%)
+   --grad-nav:          linear-gradient(to bottom, #333438 0%, #222226 100%)
+   --grad-sidebar-h3:   linear-gradient(to bottom, #243e5c 0%, #1a3050 100%)
+   --grad-footer:       linear-gradient(to bottom, #28292e 0%, #1e2028 100%)
+
    ==================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 :root {
+  /* Font stacks */
+  --font-body:         "Open Sans", Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  --font-heading:      "Merriweather", Georgia, "Times New Roman", Times, serif;
+  --font-mono:         Consolas, Monaco, "Courier New", Courier, monospace;
+
   /* Backgrounds */
-  --bg-page:           #1a1a1e;
+  --bg-page:           #1a1a1e; 
   --bg-deep:           #1e2028;
   --bg-surface:        #24252a;
   --bg-elevated:       #2a2b30;
@@ -62,7 +72,6 @@
   /* Borders */
   --border-default:    #3a3b40;
   --border-blue:       #3a4050;
-  --border-btn:        #4a4b50;
 
   /* Navy / Header Blues */
   --navy-dark:         #0e1e30;
@@ -88,6 +97,21 @@
   --text-dim:          #808890;
   --text-footer:       #808488;
   --text-powered:      #606468;
+
+  /* Gradients */
+  --grad-header:       linear-gradient(to bottom, #243e5c 0%, #0e1e30 100%);
+  --grad-nav:          linear-gradient(to bottom, #333438 0%, #222226 100%);
+  --grad-sidebar-h3:   linear-gradient(to bottom, #243e5c 0%, #1a3050 100%);
+  --grad-footer:       linear-gradient(to bottom, #28292e 0%, #1e2028 100%);
+
+  /* Header border-bottom */
+  --header-bottom:     #0a1520;
+
+  /* Nav borders */
+  --nav-border-bottom: #444448;
+
+  /* Wrapper shadow */
+  --wrapper-shadow:    2px 2px 8px rgba(0,0,0,0.4);
 }
 
 /* --- Reset & Base --- */
@@ -97,7 +121,7 @@
 }
 
 body {
-  font-family: "Open Sans", Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
   font-size: 12px;
   line-height: 1.6;
   color: var(--text-body);
@@ -118,7 +142,9 @@ a:visited {
   color: var(--accent-visited);
 }
 
-ul {
+#navigation ul,
+#sidebar ul,
+.sidebar-section ul {
   list-style: none;
 }
 
@@ -128,16 +154,15 @@ ul {
   margin: 20px auto;
   background-color: var(--bg-surface);
   border: 1px solid var(--border-default);
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+  box-shadow: var(--wrapper-shadow);
 }
 
 /* --- Header --- */
 #header {
-  background: var(--navy);
-  background: linear-gradient(to bottom, var(--navy-light) 0%, var(--navy-dark) 100%);
+  background: var(--grad-header);
   color: var(--text-primary);
   padding: 25px 30px 20px 30px;
-  border-bottom: 3px solid #0a1520;
+  border-bottom: 3px solid var(--header-bottom);
   display: flex;
   align-items: center;
 }
@@ -163,7 +188,7 @@ ul {
 }
 
 #header h1 {
-  font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
+  font-family: var(--font-heading);
   font-size: 28px;
   font-weight: normal;
   letter-spacing: 1px;
@@ -196,17 +221,9 @@ ul {
 
 /* --- Navigation --- */
 #navigation {
-  background: var(--bg-elevated);
-  background: linear-gradient(to bottom, #333438 0%, #222226 100%);
-  border-bottom: 1px solid #444448;
+  background: var(--grad-nav);
+  border-bottom: 1px solid var(--nav-border-bottom);
   padding: 0 20px;
-}
-
-#navigation ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
 }
 
 #navigation ul li {
@@ -266,7 +283,7 @@ ul {
 /* --- Content Wrapper --- */
 #content-wrapper {
   padding: 20px;
-  overflow: hidden;
+  display: flow-root;
 }
 
 /* --- Main Content --- */
@@ -278,7 +295,7 @@ ul {
 }
 
 #content h2 {
-  font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
+  font-family: var(--font-heading);
   font-size: 22px;
   color: var(--accent-blue);
   font-weight: normal;
@@ -288,7 +305,7 @@ ul {
 }
 
 #content h3 {
-  font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
+  font-family: var(--font-heading);
   font-size: 16px;
   color: var(--accent-blue);
   font-weight: normal;
@@ -307,12 +324,12 @@ ul {
   padding: 10px;
   overflow-x: auto;
   margin-bottom: 12px;
-  font-family: Consolas, Monaco, "Courier New", Courier, monospace;
+  font-family: var(--font-mono);
   font-size: 11px;
 }
 
 #content code {
-  font-family: Consolas, Monaco, "Courier New", Courier, monospace;
+  font-family: var(--font-mono);
 }
 
 .shout {
@@ -363,12 +380,10 @@ I had to add this after the switch to Markdown via Markdig */
 }
 
 .sidebar-section h3 {
-  font-family: "Open Sans", Verdana, Tahoma, Geneva, sans-serif;
   font-size: 12px;
   font-weight: bold;
   color: var(--text-primary);
-  background: var(--navy);
-  background: linear-gradient(to bottom, var(--navy-light) 0%, var(--navy) 100%);
+  background: var(--grad-sidebar-h3);
   padding: 5px 8px;
   margin: -12px -12px 10px -12px;
 }
@@ -404,8 +419,7 @@ I had to add this after the switch to Markdown via Markdig */
 /* --- Footer --- */
 #footer {
   clear: both;
-  background: var(--bg-deep);
-  background: linear-gradient(to bottom, #28292e 0%, var(--bg-deep) 100%);
+  background: var(--grad-footer);
   border-top: 1px solid var(--border-default);
   padding: 12px 20px;
   text-align: center;
@@ -500,7 +514,6 @@ I had to add this after the switch to Markdown via Markdig */
   top: 10px;
   right: 10px;
   padding: 5px 12px;
-  font-family: "Open Sans", Verdana, Tahoma, Geneva, sans-serif;
   font-size: 10px;
   font-weight: bold;
   cursor: pointer;
@@ -527,125 +540,29 @@ I had to add this after the switch to Markdown via Markdig */
   font-size: 12px;
 }
 
-/* --- Photo Gallery --- */
-.photo-gallery {
-  overflow: hidden;
-  margin-top: 10px;
+/* --- Specimen Table (Calculator Museum) --- */
+.specimen-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 12px;
 }
 
-.photo-item {
-  float: left;
-  width: 185px;
-  margin: 0 10px 15px 0;
-  text-align: center;
+.specimen-table td,
+.specimen-table th {
+  padding: 4px 8px;
+  border: 1px solid #999999;
 }
 
-.photo-item:nth-child(3n) {
-  margin-right: 0;
+.specimen-table thead tr,
+.specimen-table tr:first-child {
+  background-color: #cccccc;
+  color: #000000;
 }
 
-.photo-placeholder {
-  width: 185px;
-  height: 130px;
-  background: var(--bg-elevated);
-  background: linear-gradient(to bottom, #303440 0%, #24282e 100%);
-  border: 1px solid var(--border-blue);
-  display: table;
+.specimen-table th {
+  text-align: left;
 }
 
-.photo-placeholder span {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  font-size: 14px;
-  color: var(--text-dim);
-  font-style: italic;
-}
-
-.photo-caption {
-  font-size: 10px;
-  color: var(--text-dim);
-  margin-top: 4px;
-}
-
-/* --- Contact Form --- */
-.form-table {
-  margin-top: 10px;
-}
-
-.form-table td {
-  padding: 4px 6px;
-  vertical-align: middle;
-}
-
-.form-label {
-  font-weight: bold;
-  font-size: 11px;
-  color: var(--text-label);
-  width: 80px;
-  text-align: right;
-  padding-right: 10px !important;
-}
-
-.form-table input[type="text"],
-.form-table textarea {
-  font-family: "Open Sans", Verdana, Tahoma, Geneva, sans-serif;
-  font-size: 11px;
-  padding: 3px 5px;
-  border: 1px solid var(--border-blue);
-  background-color: var(--bg-deep);
-  color: var(--text-body);
-}
-
-.form-table input[type="text"]:focus,
-.form-table textarea:focus {
-  border-color: var(--accent-blue);
-  background-color: #20222a;
-}
-
-.submit-btn, .reset-btn {
-  font-family: "Open Sans", Verdana, Tahoma, Geneva, sans-serif;
-  font-size: 11px;
-  padding: 4px 14px;
-  cursor: pointer;
-  border: 1px solid var(--border-btn);
-  margin-right: 4px;
-}
-
-.submit-btn {
-  background: var(--bg-elevated);
-  background: linear-gradient(to bottom, #333438 0%, #28292e 100%);
-  color: var(--text-body);
-  font-weight: bold;
-}
-
-.submit-btn:hover {
-  background: linear-gradient(to bottom, var(--border-default) 0%, #303138 100%);
-}
-
-.reset-btn {
-  background: var(--bg-elevated);
-  color: var(--text-muted);
-}
-
-/* --- Info Table --- */
-.info-table {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.info-table td {
-  padding: 3px 8px;
-  font-size: 12px;
-}
-
-.info-label {
-  font-weight: bold;
-  color: var(--text-label);
-  width: 70px;
-}
-
-/* --- Specimen Table --- */
 .specimen-table td img {
   max-width: 150px !important;
   height: auto;
@@ -653,63 +570,92 @@ I had to add this after the switch to Markdown via Markdig */
   margin: 4px 0;
 }
 
-/* --- Utility --- */
-.clear {
-  clear: both;
-  height: 0;
-  line-height: 0;
-  font-size: 0;
+/* --- License Notice (Calculator Museum) --- */
+.license-notice {
+  font-size: 0.85em;
+  color: var(--text-dim);
+}
+
+/* --- Note Text --- */
+.note-text {
+  margin-top: 15px;
+  font-size: 11px;
+  color: var(--text-dim);
 }
 
 /* ====================================================
    LIGHT MODE OVERRIDES
    Applied when body has class "light-mode"
-   Light mode is a relic from when I was only making this site in reasonable hours.
-   I really don't know why I did this instead of deleting it.
+   Light mode is a relic from when I was only making
+   this site in reasonable hours.
+   I really don't know why I did this instead of
+   deleting it.
    ==================================================== */
 
 body.light-mode {
-  color: #333333;
-  background-color: #e8e8e8;
+  /* Backgrounds */
+  --bg-page:           #e8e8e8;
+  --bg-deep:           #f5f8fc;
+  --bg-surface:        #ffffff;
+  --bg-elevated:       #f0f0f0;
+  --bg-hover:          #d0d8e0;
+
+  /* Borders */
+  --border-default:    #a0a0a0;
+  --border-blue:       #d0d8e0;
+
+  /* Navy / Header Blues */
+  --navy-dark:         #1E3F66;
+  --navy:              #2E5B8A;
+  --navy-light:        #3A6FA0;
+
+  /* Accent Blues */
+  --accent-blue:       #2E5B8A;
+  --accent-blue-muted: #b0c8e0;
+  --header-border:     #2E5B8A;
+
+  /* Accent Colors */
+  --accent-hover:      #C05020;
+  --accent-visited:    #4A3070;
+
+  /* Text */
+  --text-primary:      #ffffff;
+  --text-heading:      #ffffff;
+  --text-body:         #333333;
+  --text-nav:          #333333;
+  --text-label:        #444444;
+  --text-muted:        #555555;
+  --text-dim:          #808080;
+  --text-footer:       #606060;
+  --text-powered:      #909090;
+
+  /* Gradients */
+  --grad-header:       linear-gradient(to bottom, #3A6FA0 0%, #1E3F66 100%);
+  --grad-nav:          linear-gradient(to bottom, #fafafa 0%, #e0e0e0 100%);
+  --grad-sidebar-h3:   linear-gradient(to bottom, #3A6FA0 0%, #2E5B8A 100%);
+  --grad-footer:       linear-gradient(to bottom, #e8e8e8 0%, #d0d0d0 100%);
+
+  /* Misc overrides */
+  --header-bottom:     #163050;
+  --nav-border-bottom: #b0b0b0;
+  --wrapper-shadow:    2px 2px 8px rgba(0,0,0,0.15);
+
+  /* Background pattern */
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHklEQVQIW2O8fPnyf0YGBgYmIAESYGJgYEAXAAcAJngEoX7h9scAAAAASUVORK5CYII=');
 }
 
-body.light-mode a { color: #2E5B8A; }
-body.light-mode a:hover { color: #C05020; }
-body.light-mode a:visited { color: #4A3070; }
-
-body.light-mode #wrapper {
-  background-color: #ffffff;
-  border-color: #a0a0a0;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
-}
-
-body.light-mode #header {
-  background: linear-gradient(to bottom, #3A6FA0 0%, #1E3F66 100%);
-  border-bottom-color: #163050;
-}
-
-body.light-mode #header h1 { color: #ffffff; }
-body.light-mode #header .tagline { color: #b0c8e0; }
-body.light-mode .header-contacts a { color: #b0c8e0; }
-body.light-mode .header-contacts a:hover { color: #ffffff; }
-
-body.light-mode #navigation {
-  background: linear-gradient(to bottom, #fafafa 0%, #e0e0e0 100%);
-  border-bottom-color: #b0b0b0;
-}
-
+/* Light-mode nav link borders need explicit override */
 body.light-mode #navigation ul li a {
-  color: #333333;
   border-right-color: #c8c8c8;
   border-left-color: #ffffff;
 }
 
+/* Light-mode active nav stays white-on-blue */
 body.light-mode #navigation ul li a:hover {
-  background-color: #d0d8e0;
   color: #1E3F66;
 }
 
+/* Gold sheen in light mode uses darker gold tones */
 body.light-mode #nav-calculator-museum {
   background: linear-gradient(135deg, #7a5a00, #b8860b, #c99700, #b8860b, #7a5a00, #b8860b, #c99700, #b8860b, #7a5a00);
   background-size: 300% 100%;
@@ -729,86 +675,23 @@ body.light-mode #nav-calculator-museum:hover {
   filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.8));
 }
 
-body.light-mode #navigation ul li a.active {
-  background-color: #2E5B8A;
-  color: #ffffff;
+/* Light-mode content text colors that can't use variables
+   (these are contextual - heading blue is also link blue in dark,
+    but different in light mode) */
+body.light-mode #content h3 {
+  color: #3A6FA0;
 }
 
-body.light-mode #content { border-right-color: #d0d0d0; }
-body.light-mode #content h2 { color: #2E5B8A; border-bottom-color: #d0d8e0; }
-body.light-mode #content h3 { color: #3A6FA0; }
 body.light-mode #content pre {
   background-color: #fafbfc;
   border-color: #a0a8b0;
   color: #333333;
 }
 
-body.light-mode .news-item {
-  background-color: #f5f8fc;
-  border-color: #d0d8e0;
-}
-body.light-mode .news-item .date { color: #808080; }
-
-body.light-mode .sidebar-section {
-  background-color: #f7f9fc;
-  border-color: #d0d8e0;
-}
-
-body.light-mode .sidebar-section h3 {
+body.light-mode .header-contacts a:hover {
   color: #ffffff;
-  background: linear-gradient(to bottom, #3A6FA0 0%, #2E5B8A 100%);
 }
 
-body.light-mode .sidebar-section ul li { border-bottom-color: #c0c8d0; }
-body.light-mode .sidebar-section p { color: #555555; }
-
-body.light-mode #footer {
-  background: linear-gradient(to bottom, #e8e8e8 0%, #d0d0d0 100%);
-  border-top-color: #b0b0b0;
+body.light-mode .button-card p {
+  color: #555555;
 }
-body.light-mode #footer p { color: #606060; }
-body.light-mode #footer a { color: #2E5B8A; }
-body.light-mode .powered-by { color: #909090 !important; }
-body.light-mode .button-card,
-body.light-mode .button-grid {
-  background-color: #f0f2f5;
-  border-color: #c0c4c8;
-}
-body.light-mode .button-card p { color: #555555; }
-
-body.light-mode #theme-toggle {
-  border-color: #a0a0a0;
-  background: #f0f0f0;
-  color: #444444;
-}
-body.light-mode #theme-toggle:hover {
-  background: #e0e0e0;
-  color: #222222;
-}
-
-body.light-mode .photo-placeholder {
-  background: linear-gradient(to bottom, #e0e8f0 0%, #c0c8d0 100%);
-  border-color: #a0a8b0;
-}
-body.light-mode .photo-placeholder span { color: #606870; }
-body.light-mode .photo-caption { color: #606060; }
-
-body.light-mode .form-label { color: #444444; }
-body.light-mode .form-table input[type="text"],
-body.light-mode .form-table textarea {
-  border-color: #a0a8b0;
-  background-color: #fafbfc;
-  color: #333333;
-}
-body.light-mode .form-table input[type="text"]:focus,
-body.light-mode .form-table textarea:focus {
-  border-color: #2E5B8A;
-  background-color: #ffffff;
-}
-body.light-mode .submit-btn {
-  background: linear-gradient(to bottom, #f0f0f0 0%, #d8d8d8 100%);
-  color: #333333;
-  border-color: #808080;
-}
-body.light-mode .reset-btn { background: #f0f0f0; color: #666666; }
-body.light-mode .info-label { color: #444444; }
