@@ -6,7 +6,7 @@
     "manufacturer": "Casio",
     "manufacturerLogo": "/assets/logos/casio-logo.png",
     "manufacturerSlug": "casio",
-    "mainImageUrl": "https://i.postimg.cc/9fK6tJ2d/IMG_0118.jpg",
+    "mainImageUrl": "https://i.postimg.cc/9fK6tJ2d/cg50-graph.jpg",
     "model": "fx-CG50",
     "modelSlug": "fx-cg50",
     "yearIntroduced": 2017,
@@ -17,7 +17,7 @@
         "variant": "Normal",
         "serialNumber": "810AW84QA159866",
         "condition": "Fair",
-        "imageUrl": "https://i.postimg.cc/9fK6tJ2d/IMG_0118.jpg"
+        "imageUrl": "https://i.postimg.cc/9fK6tJ2d/cg50-graph.jpg"
       }
     ],
     "myCalcsLinks": [
@@ -163,7 +163,7 @@
     "manufacturer": "Hewlett-Packard",
     "manufacturerLogo": "/assets/logos/hp-logo.png",
     "manufacturerSlug": "hp",
-    "mainImageUrl": "https://i.postimg.cc/RFtjPKVZ/IMG_0114.jpg",
+    "mainImageUrl": "https://i.postimg.cc/RFtjPKVZ/prime-crazygraph.jpg",
     "model": "Prime G1/G2",
     "modelSlug": "Prime",
     "yearIntroduced": 2013,
@@ -174,7 +174,7 @@
         "variant": "G2",
         "serialNumber": "9CJ5170194",
         "condition": "Good",
-        "imageUrl": "https://i.postimg.cc/vBnpPfHs/IMG_0115.jpg"
+        "imageUrl": "https://i.postimg.cc/vBnpPfHs/prime-graph.jpg"
       }
     ],
     "myCalcsLinks": [
