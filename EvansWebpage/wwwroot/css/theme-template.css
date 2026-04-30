@@ -6,49 +6,49 @@
 /* Replace .theme-name with the class name */
 html.theme-name {
   /* Backgrounds */
-  --bg-page:           /* e.g. #ffffff */; 
-  --bg-deep:           /* e.g. #f4f5f7 */;
-  --bg-surface:        /* e.g. #ffffff */;
-  --bg-elevated:       /* e.g. #f8f9fa */;
-  --bg-hover:          /* e.g. #e9ecef */;
+  --bg-page:           /* Main background color for the body/page area outside the main wrapper. e.g. #ffffff */; 
+  --bg-deep:           /* Secondary darker/deeper background (used for pre blocks, news items, sidebars, buttons). e.g. #f4f5f7 */;
+  --bg-surface:        /* Primary surface background for main content area (e.g. #wrapper, #theme-dialog). e.g. #ffffff */;
+  --bg-elevated:       /* Background for elevated interactive elements (e.g. #theme-toggle button, close buttons). e.g. #f8f9fa */;
+  --bg-hover:          /* Background color when hovering over interactive elements (e.g. navigation items, theme buttons). e.g. #e9ecef */;
 
   /* Borders */
-  --border-default:    /* e.g. #dee2e6 */;
-  --border-blue:       /* e.g. #b8daff */;
+  --border-default:    /* Default border color (used for #wrapper, #navigation, <pre>, buttons, dialogs). e.g. #dee2e6 */;
+  --border-blue:       /* Secondary border color, typically blue-ish (used for #content h2, .news-item, .sidebar-section). e.g. #b8daff */;
 
   /* Navy / Header Colors (Primary brand colors) */
-  --navy-dark:         /* e.g. #003366 */;
-  --navy:              /* e.g. #004080 */;
-  --navy-light:        /* e.g. #0059b3 */;
+  --navy-dark:         /* Darkest navy color (currently unused, good for deep header gradients). e.g. #003366 */;
+  --navy:              /* Standard navy color (used for the active navigation tab background). e.g. #004080 */;
+  --navy-light:        /* Lighter navy color (currently unused, good for bright header elements). e.g. #0059b3 */;
 
   /* Accent Colors */
-  --accent-blue:       /* e.g. #0056b3 */;
-  --accent-blue-muted: /* e.g. #337ab7 */;
-  --header-border:     /* e.g. #002244 */;
-  --accent-hover:      /* e.g. #cc5200 */;
-  --accent-visited:    /* e.g. #551a8b */;
+  --accent-blue:       /* Primary link and accent color (used for standard <a> tags, headings, active theme border). e.g. #0056b3 */;
+  --accent-blue-muted: /* Muted accent color (used for header tagline and contacts). e.g. #337ab7 */;
+  --header-border:     /* Border color around the header photo. e.g. #002244 */;
+  --accent-hover:      /* Color for hovered links and hovered theme buttons. e.g. #cc5200 */;
+  --accent-visited:    /* Color for visited links. e.g. #551a8b */;
 
   /* Text Colors */
-  --text-primary:      /* e.g. #212529 */;
-  --text-heading:      /* e.g. #000000 */;
-  --text-body:         /* e.g. #333333 */;
-  --text-nav:          /* e.g. #495057 */;
-  --text-label:        /* e.g. #6c757d */;
-  --text-muted:        /* e.g. #868e96 */;
-  --text-dim:          /* e.g. #adb5bd */;
-  --text-footer:       /* e.g. #666666 */;
-  --text-powered:      /* e.g. #999999 */;
+  --text-primary:      /* Primary bright text color (used for header text, sidebar headings, hovered navigation). e.g. #212529 */;
+  --text-heading:      /* Main site heading text color (#header h1). e.g. #000000 */;
+  --text-body:         /* Standard body text color. e.g. #333333 */;
+  --text-nav:          /* Text color for standard un-hovered navigation and theme toggle buttons. e.g. #495057 */;
+  --text-label:        /* Unused (good for form labels or minor text). e.g. #6c757d */;
+  --text-muted:        /* Muted text color for secondary info (e.g. button card descriptions, sidebar paragraphs). e.g. #868e96 */;
+  --text-dim:          /* Dimmer text color for metadata (e.g. news item dates, license notices). e.g. #adb5bd */;
+  --text-footer:       /* Text color for standard footer text. e.g. #666666 */;
+  --text-powered:      /* Text color for the "Powered by" footer attribution. e.g. #999999 */;
 
   /* Gradients */
-  --grad-header:       /* e.g. linear-gradient(to bottom, #0059b3 0%, #003366 100%) */;
-  --grad-nav:          /* e.g. linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%) */;
-  --grad-sidebar-h3:   /* e.g. linear-gradient(to bottom, #0059b3 0%, #004080 100%) */;
-  --grad-footer:       /* e.g. linear-gradient(to bottom, #e9ecef 0%, #dee2e6 100%) */;
+  --grad-header:       /* Gradient background for the main page #header. e.g. linear-gradient(to bottom, #0059b3 0%, #003366 100%) */;
+  --grad-nav:          /* Gradient background for the main #navigation bar. e.g. linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%) */;
+  --grad-sidebar-h3:   /* Gradient background for sidebar section headers (.sidebar-section h3). e.g. linear-gradient(to bottom, #0059b3 0%, #004080 100%) */;
+  --grad-footer:       /* Gradient background for the #footer area. e.g. linear-gradient(to bottom, #e9ecef 0%, #dee2e6 100%) */;
 
   /* Misc Elements */
-  --header-bottom:     /* e.g. #002244 */;
-  --nav-border-bottom: /* e.g. #ced4da */;
-  --wrapper-shadow:    /* e.g. 2px 2px 8px rgba(0,0,0,0.1) */;
+  --header-bottom:     /* Color for the thick bottom border of the main header. e.g. #002244 */;
+  --nav-border-bottom: /* Color for the bottom border of the navigation bar. e.g. #ced4da */;
+  --wrapper-shadow:    /* Box shadow applied to the main #wrapper container. e.g. 2px 2px 8px rgba(0,0,0,0.1) */;
 }
 
 /* ====================================================
