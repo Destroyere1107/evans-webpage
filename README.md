@@ -19,10 +19,9 @@ dotnet run --urls "http://localhost:5050"
 The site will be available on `http://localhost:5050` (or whatever ports config'd in `Properties/launchSettings.json`).
 
 THE PAGE REQUIRES THE FOLLOWING:
+
 - `Microsoft.Extensions.FileProviders.Embedded`
 - `Markdig`
-
-
 
 ### Running on-VM
 
@@ -61,6 +60,7 @@ The important thing is that **I will mark any commit that I relied primarily on 
 ## Planned Additions
 
 ### Front-facing
+
 - [ ] Make happenings dynamically built like the calcpages
   - [ ] RSS Feed for happenings
 - [ ] RPN Calculator widget
@@ -69,8 +69,9 @@ The important thing is that **I will mark any commit that I relied primarily on 
 - [ ] Projects Page (?)
 - [ ] Add sortable Attributes/Traits to calculators
 - [ ] Add Benchmarks for calculators
-- [ ] Stylize more/Add more themes
-  - [ ] 'Fancy' theme with more gradients and elegant colors
+- [x] Stylize more/Add more themes
+  - [x] 'Fancy' theme with more gradients and elegant colors
 
 ### Backend
-- [ ] Refine theme code and CSS
+
+- [x] Refine theme code and CSS
