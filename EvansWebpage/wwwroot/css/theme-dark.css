@@ -1,0 +1,55 @@
+/* ====================================================
+   MAIN COLOR PALETTE (Dark Mode)
+   ==================================================== */
+:root {
+  /* Backgrounds */
+  --bg-page:           #1a1a1e; 
+  --bg-deep:           #1e2028;
+  --bg-surface:        #24252a;
+  --bg-elevated:       #2a2b30;
+  --bg-hover:          #383a40;
+
+  /* Borders */
+  --border-default:    #3a3b40;
+  --border-blue:       #3a4050;
+
+  /* Navy / Header Blues */
+  --navy-dark:         #0e1e30;
+  --navy:              #1a3050;
+  --navy-light:        #243e5c;
+
+  /* Accent Blues */
+  --accent-blue:       #6ea8da;
+  --accent-blue-muted: #7090b0;
+  --header-border:     #4a6a8a;
+
+  /* Accent Colors */
+  --accent-hover:      #e09050;
+  --accent-visited:    #9a80c0;
+
+  /* Text */
+  --text-primary:      #e0e4e8;
+  --text-heading:      #e8ecf0;
+  --text-body:         #c8ccd0;
+  --text-nav:          #b0b4b8;
+  --text-label:        #a0a4a8;
+  --text-muted:        #909498;
+  --text-dim:          #808890;
+  --text-footer:       #808488;
+  --text-powered:      #606468;
+
+  /* Gradients */
+  --grad-header:       linear-gradient(to bottom, #243e5c 0%, #0e1e30 100%);
+  --grad-nav:          linear-gradient(to bottom, #333438 0%, #222226 100%);
+  --grad-sidebar-h3:   linear-gradient(to bottom, #243e5c 0%, #1a3050 100%);
+  --grad-footer:       linear-gradient(to bottom, #28292e 0%, #1e2028 100%);
+
+  /* Header border-bottom */
+  --header-bottom:     #0a1520;
+
+  /* Nav borders */
+  --nav-border-bottom: #444448;
+
+  /* Wrapper shadow */
+  --wrapper-shadow:    2px 2px 8px rgba(0,0,0,0.4);
+}

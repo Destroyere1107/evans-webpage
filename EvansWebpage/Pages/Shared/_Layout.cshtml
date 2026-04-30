@@ -15,18 +15,22 @@
         <meta name="description" content="@ViewData["Description"]" />
     }
     <title>@ViewData["Title"]</title>
-    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
-    <script src="https://kit.fontawesome.com/cff3376d88.js" crossorigin="anonymous"></script>
-    @await RenderSectionAsync("Head", required: false)
     <script>
         // Apply saved theme immediately (before page renders)
         (function () {
-            var saved = localStorage.getItem('theme');
-            if (saved === 'light') {
-                document.body.className = 'light-mode';
+            var saved = localStorage.getItem('theme') || 'dark';
+            if (saved !== 'dark') {
+                document.documentElement.className = saved + '-mode';
             }
         })();
     </script>
+    <link rel="stylesheet" type="text/css" href="~/css/theme-dark.css" asp-append-version="true" />
+    <link rel="stylesheet" type="text/css" href="~/css/theme-light.css" asp-append-version="true" />
+    <link rel="stylesheet" type="text/css" href="~/css/theme-blue.css" asp-append-version="true" />
+    <link rel="stylesheet" type="text/css" href="~/css/theme-fancy.css" asp-append-version="true" />
+    <link rel="stylesheet" type="text/css" href="~/css/style.css" asp-append-version="true" />
+    <script src="https://kit.fontawesome.com/cff3376d88.js" crossorigin="anonymous"></script>
+    @await RenderSectionAsync("Head", required: false)
 </head>
 <body>
     <div id="wrapper">
@@ -78,7 +82,6 @@
                 </div>
             }
 
-            <div class="clear"></div>
         </div>
 
         <!-- Footer -->
@@ -148,25 +151,105 @@
         </div>
     </div>
 
-    <!-- Theme toggle -->
+        <!-- Theme Selector Dialog -->
     <script>
         (function () {
-            var btn = document.createElement('button');
-            btn.id = 'theme-toggle';
-            btn.textContent = document.body.className === 'light-mode' ? '[ Dark Mode ]' : '[ Light Mode ]';
-            btn.onclick = function () {
-                if (document.body.className === 'light-mode') {
-                    document.body.className = '';
-                    localStorage.setItem('theme', 'dark');
-                    btn.textContent = '[ Light Mode ]';
-                } else {
-                    document.body.className = 'light-mode';
-                    localStorage.setItem('theme', 'light');
-                    btn.textContent = '[ Dark Mode ]';
+            // Available themes
+            const themes = [
+                { id: 'dark', label: 'Dark' },
+                { id: 'light', label: 'Light' },
+                { id: 'blue', label: 'Blue' },
+                { id: 'fancy', label: 'Fancy' }
+            ];
+            
+            // Get current theme from localStorage, default to 'dark'
+            let currentThemeId = localStorage.getItem('theme') || 'dark';
+            if (!themes.some(t => t.id === currentThemeId)) {
+                currentThemeId = 'dark';
+            }
+            
+            // Create the main button that opens the dialog
+            const toggleBtn = document.createElement('button');
+            toggleBtn.id = 'theme-toggle';
+            toggleBtn.textContent = '[ Themes ]';
+            document.body.appendChild(toggleBtn);
+
+            // Create the dialog element
+            const dialog = document.createElement('dialog');
+            dialog.id = 'theme-dialog';
+            
+            // Add a header/title to the dialog
+            const dialogTitle = document.createElement('h3');
+            dialogTitle.textContent = 'Select a Theme';
+            dialogTitle.style.marginTop = '0';
+            dialogTitle.style.color = 'var(--accent-blue)';
+            dialog.appendChild(dialogTitle);
+
+            // Create a button for each theme
+            themes.forEach(theme => {
+                const themeBtn = document.createElement('button');
+                themeBtn.className = 'theme-select-btn';
+                themeBtn.textContent = theme.label;
+                
+                // Highlight the currently active theme
+                if (theme.id === currentThemeId) {
+                    themeBtn.classList.add('active');
                 }
+
+                themeBtn.onclick = function() {
+                    // Remove existing theme classes from HTML tag
+                    themes.forEach(t => {
+                        if (t.id !== 'dark') {
+                            document.documentElement.classList.remove(t.id + '-mode');
+                        }
+                    });
+                    
+                    // Add new theme class (if not default dark)
+                    if (theme.id !== 'dark') {
+                        document.documentElement.classList.add(theme.id + '-mode');
+                    }
+                    
+                    // Save preference
+                    localStorage.setItem('theme', theme.id);
+                    currentThemeId = theme.id;
+
+                    // Update active styling in the dialog
+                    dialog.querySelectorAll('.theme-select-btn').forEach(b => b.classList.remove('active'));
+                    themeBtn.classList.add('active');
+                };
+                
+                dialog.appendChild(themeBtn);
+            });
+
+            // Add a close button at the bottom
+            const closeBtn = document.createElement('button');
+            closeBtn.textContent = 'Close';
+            closeBtn.className = 'theme-dialog-close';
+            closeBtn.onclick = () => dialog.close();
+            
+            // Wrap close button in a div for layout
+            const closeContainer = document.createElement('div');
+            closeContainer.style.marginTop = '15px';
+            closeContainer.style.textAlign = 'right';
+            closeContainer.appendChild(closeBtn);
+            dialog.appendChild(closeContainer);
+
+            // Add the dialog to the page
+            document.body.appendChild(dialog);
+
+            // Wire up the main toggle button to open the dialog
+            toggleBtn.onclick = function () {
+                dialog.showModal();
             };
-            document.body.appendChild(btn);
+            
+            // Close dialog when clicking outside of it
+            dialog.addEventListener('click', function(event) {
+                if (event.target === dialog) {
+                    dialog.close();
+                }
+            });
         })();
     </script>
+
 </body>
 </html>

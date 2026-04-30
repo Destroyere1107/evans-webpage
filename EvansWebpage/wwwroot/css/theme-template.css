@@ -1,0 +1,122 @@
+/* ====================================================
+   THEME TEMPLATE
+   The existing commented-out colors are copied from light mode. 
+   ==================================================== */
+
+/* Replace .theme-name with the class name */
+html.theme-name {
+  /* Backgrounds */
+  --bg-page:           /* Main background color for the body/page area outside the main wrapper. e.g. #ffffff */; 
+  --bg-deep:           /* Secondary darker/deeper background (used for pre blocks, news items, sidebars, buttons). e.g. #f4f5f7 */;
+  --bg-surface:        /* Primary surface background for main content area (e.g. #wrapper, #theme-dialog). e.g. #ffffff */;
+  --bg-elevated:       /* Background for elevated interactive elements (e.g. #theme-toggle button, close buttons). e.g. #f8f9fa */;
+  --bg-hover:          /* Background color when hovering over interactive elements (e.g. navigation items, theme buttons). e.g. #e9ecef */;
+
+  /* Borders */
+  --border-default:    /* Default border color (used for #wrapper, #navigation, <pre>, buttons, dialogs). e.g. #dee2e6 */;
+  --border-blue:       /* Secondary border color, typically blue-ish (used for #content h2, .news-item, .sidebar-section). e.g. #b8daff */;
+
+  /* Navy / Header Colors (Primary brand colors) */
+  --navy-dark:         /* Darkest navy color (currently unused, good for deep header gradients). e.g. #003366 */;
+  --navy:              /* Standard navy color (used for the active navigation tab background). e.g. #004080 */;
+  --navy-light:        /* Lighter navy color (currently unused, good for bright header elements). e.g. #0059b3 */;
+
+  /* Accent Colors */
+  --accent-blue:       /* Primary link and accent color (used for standard <a> tags, headings, active theme border). e.g. #0056b3 */;
+  --accent-blue-muted: /* Muted accent color (used for header tagline and contacts). e.g. #337ab7 */;
+  --header-border:     /* Border color around the header photo. e.g. #002244 */;
+  --accent-hover:      /* Color for hovered links and hovered theme buttons. e.g. #cc5200 */;
+  --accent-visited:    /* Color for visited links. e.g. #551a8b */;
+
+  /* Text Colors */
+  --text-primary:      /* Primary bright text color (used for header text, sidebar headings, hovered navigation). e.g. #212529 */;
+  --text-heading:      /* Main site heading text color (#header h1). e.g. #000000 */;
+  --text-body:         /* Standard body text color. e.g. #333333 */;
+  --text-nav:          /* Text color for standard un-hovered navigation and theme toggle buttons. e.g. #495057 */;
+  --text-label:        /* Unused (good for form labels or minor text). e.g. #6c757d */;
+  --text-muted:        /* Muted text color for secondary info (e.g. button card descriptions, sidebar paragraphs). e.g. #868e96 */;
+  --text-dim:          /* Dimmer text color for metadata (e.g. news item dates, license notices). e.g. #adb5bd */;
+  --text-footer:       /* Text color for standard footer text. e.g. #666666 */;
+  --text-powered:      /* Text color for the "Powered by" footer attribution. e.g. #999999 */;
+
+  /* Gradients */
+  --grad-header:       /* Gradient background for the main page #header. e.g. linear-gradient(to bottom, #0059b3 0%, #003366 100%) */;
+  --grad-nav:          /* Gradient background for the main #navigation bar. e.g. linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%) */;
+  --grad-sidebar-h3:   /* Gradient background for sidebar section headers (.sidebar-section h3). e.g. linear-gradient(to bottom, #0059b3 0%, #004080 100%) */;
+  --grad-footer:       /* Gradient background for the #footer area. e.g. linear-gradient(to bottom, #e9ecef 0%, #dee2e6 100%) */;
+
+  /* Misc Elements */
+  --header-bottom:     /* Color for the thick bottom border of the main header. e.g. #002244 */;
+  --nav-border-bottom: /* Color for the bottom border of the navigation bar. e.g. #ced4da */;
+  --wrapper-shadow:    /* Box shadow applied to the main #wrapper container. e.g. 2px 2px 8px rgba(0,0,0,0.1) */;
+}
+
+/* ====================================================
+   OVERRIDES
+   These are the same overrides copied over from the Lig
+   ==================================================== */
+
+/* Background pattern */
+/*
+html.theme-name body {
+  background-image: none;
+}
+*/
+
+/* Nav link borders explicit override */
+/*
+html.theme-name #navigation ul li a {
+  border-right-color: #3a3b40;
+  border-left-color: #3a3b40;
+}
+*/
+
+/* Active nav hover */
+/*
+html.theme-name #navigation ul li a:hover {
+  color: #e0e4e8;
+}
+*/
+
+/* Gold sheen effect for specific elements */
+/*
+html.theme-name #nav-calculator-museum {
+  background: linear-gradient(135deg, #b8860b, #ffd700, #fffacd, #ffd700, #b8860b, #ffd700, #fffacd, #ffd700, #b8860b);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.6));
+  animation: gold-sheen 30s linear infinite;
+}
+
+html.theme-name #nav-calculator-museum:hover {
+  background: linear-gradient(135deg, #b8860b, #ffd700, #fffacd, #ffd700, #b8860b);
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-text-fill-color: #5a3a00;
+  color: #5a3a00;
+  filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.8));
+}
+*/
+
+/* Content text colors that can't use variables */
+/*
+html.theme-name #content h3 {
+  color: #6ea8da;
+}
+
+html.theme-name #content pre {
+  background-color: #1e2028;
+  border-color: #3a3b40;
+  color: #c8ccd0;
+}
+
+html.theme-name .header-contacts a:hover {
+  color: #e0e4e8;
+}
+
+html.theme-name .button-card p {
+  color: #909498;
+}
+*/

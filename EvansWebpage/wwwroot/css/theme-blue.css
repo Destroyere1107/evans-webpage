@@ -1,0 +1,105 @@
+/* ====================================================
+   BLUE MODE OVERRIDES
+   Applied when html has class "blue-mode"
+   ==================================================== */
+
+html.blue-mode {
+  /* Backgrounds */
+  --bg-page:           #0a192f; 
+  --bg-deep:           #112240;
+  --bg-surface:        #172a45;
+  --bg-elevated:       #233554;
+  --bg-hover:          #2c3e50;
+
+  /* Borders */
+  --border-default:    #303c55;
+  --border-blue:       #4d5b7a;
+
+  /* Navy / Header Colors (Primary brand colors) */
+  --navy-dark:         #020c1b;
+  --navy:              #0a192f;
+  --navy-light:        #112240;
+
+  /* Accent Colors */
+  --accent-blue:       #64ffda;
+  --accent-blue-muted: #52e0c4;
+  --header-border:     #64ffda;
+  --accent-hover:      #ffffff;
+  --accent-visited:    #ccd6f6;
+
+  /* Text Colors */
+  --text-primary:      #e6f1ff;
+  --text-heading:      #ccd6f6;
+  --text-body:         #8892b0;
+  --text-nav:          #a8b2d1;
+  --text-label:        #8892b0;
+  --text-muted:        #64ffda;
+  --text-dim:          #4d5b7a;
+  --text-footer:       #a8b2d1;
+  --text-powered:      #8892b0;
+
+  /* Gradients */
+  --grad-header:       linear-gradient(to bottom, #112240 0%, #0a192f 100%);
+  --grad-nav:          linear-gradient(to bottom, #0a192f 0%, #020c1b 100%);
+  --grad-sidebar-h3:   linear-gradient(to bottom, #112240 0%, #0a192f 100%);
+  --grad-footer:       linear-gradient(to bottom, #112240 0%, #0a192f 100%);
+
+  /* Misc Elements */
+  --header-bottom:     #64ffda;
+  --nav-border-bottom: #233554;
+  --wrapper-shadow:    2px 2px 8px rgba(0,0,0,0.5);
+}
+
+/* ====================================================
+   OVERRIDES
+   ==================================================== */
+
+html.blue-mode body {
+  background-image: none;
+}
+
+html.blue-mode #navigation ul li a {
+  border-right-color: #233554;
+  border-left-color: #0a192f;
+}
+
+html.blue-mode #navigation ul li a:hover {
+  color: #64ffda;
+}
+
+html.blue-mode #nav-calculator-museum {
+  background: linear-gradient(135deg, #b8860b, #ffd700, #fffacd, #ffd700, #b8860b, #ffd700, #fffacd, #ffd700, #b8860b);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.6));
+  animation: gold-sheen 30s linear infinite;
+}
+
+html.blue-mode #nav-calculator-museum:hover {
+  background: linear-gradient(135deg, #b8860b, #ffd700, #fffacd, #ffd700, #b8860b);
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-text-fill-color: #5a3a00;
+  color: #5a3a00;
+  filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.8));
+}
+
+html.blue-mode #content h3 {
+  color: #64ffda;
+}
+
+html.blue-mode #content pre {
+  background-color: #112240;
+  border-color: #233554;
+  color: #a8b2d1;
+}
+
+html.blue-mode .header-contacts a:hover {
+  color: #64ffda;
+}
+
+html.blue-mode .button-card p {
+  color: #8892b0;
+}

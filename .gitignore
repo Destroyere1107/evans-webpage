@@ -9,6 +9,8 @@
 /EvansWebpage/[Oo]bj/*
 
 # IDE files
+.vscode/
 .idea/
 .vs/
 *.user
+.vscode/
