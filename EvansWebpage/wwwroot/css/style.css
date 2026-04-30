@@ -488,3 +488,64 @@ I had to add this after the switch to Markdown via Markdig */
   font-size: 11px;
   color: var(--text-dim);
 }
+
+/* --- Theme Dialog --- */
+#theme-dialog {
+  background-color: var(--bg-deep);
+  border: 1px solid var(--border-default);
+  color: var(--text-body);
+  padding: 20px;
+  max-width: 300px;
+  width: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  inset: 0;
+  margin: auto;
+}
+
+/* Backdrop behind the dialog (dims the rest of the page) */
+#theme-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* The individual theme buttons inside the dialog */
+.theme-select-btn {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  color: var(--text-body);
+  font-family: var(--font-body);
+  font-size: 12px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.theme-select-btn:hover {
+  background-color: var(--bg-hover);
+  border-color: var(--accent-hover);
+}
+
+/* Highlight the currently active theme */
+.theme-select-btn.active {
+  border-color: var(--accent-blue);
+  background-color: rgba(30, 144, 255, 0.1);
+  font-weight: bold;
+}
+
+/* The close button */
+.theme-dialog-close {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  color: var(--text-body);
+  padding: 5px 15px;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.theme-dialog-close:hover {
+  background: var(--bg-hover);
+  color: var(--accent-hover);
+}
