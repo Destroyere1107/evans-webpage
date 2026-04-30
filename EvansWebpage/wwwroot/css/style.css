@@ -5,113 +5,17 @@
    Dark mode default, optional light mode
    ==================================================== */
 
-/* ====================================================
-   MAIN COLOR PALETTE (Dark Mode)
-   ====================================================
-   
-   -- Backgrounds --
-   --bg-page:           #1a1a1e     Page background (darkest)
-   --bg-deep:           #1e2028     Deep panels, code blocks, cards
-   --bg-surface:        #24252a     Main wrapper / surface
-   --bg-elevated:       #2a2b30     Elevated elements (nav, buttons)
-   --bg-hover:          #383a40     Hover states
-
-   -- Borders --
-   --border-default:    #3a3b40     Standard borders
-   --border-blue:       #3a4050     Blue-tinted borders (content area)
-
-   -- Navy / Header Blues --
-   --navy-dark:         #0e1e30     Darkest navy (gradients)
-   --navy:              #1a3050     Primary navy (header, active nav)
-   --navy-light:        #243e5c     Lighter navy (gradients)
-
-   -- Accent Blues --
-   --accent-blue:       #6ea8da     Links, headings, primary accent
-   --accent-blue-muted: #7090b0     Tagline, subdued blue text
-   --header-border:     #4a6a8a     Header photo border
-
-   -- Accent Colors --
-   --accent-hover:      #e09050     Link hover (orange)
-   --accent-visited:    #9a80c0     Visited links (purple)
-
-   -- Text --
-   --text-primary:      #e0e4e8     Brightest text (headings, hovers)
-   --text-heading:      #e8ecf0     Header h1
-   --text-body:         #c8ccd0     Body text
-   --text-nav:          #b0b4b8     Nav links
-   --text-label:        #a0a4a8     Form labels, info labels
-   --text-muted:        #909498     Sidebar paragraphs, button card text
-   --text-dim:          #808890     Dates, photo captions, placeholders
-   --text-footer:       #808488     Footer text
-   --text-powered:      #606468     "Powered by" text
-
-   -- Gradients (overridden in light mode) --
-   --grad-header:       linear-gradient(to bottom, #243e5c 0%, #0e1e30 100%)
-   --grad-nav:          linear-gradient(to bottom, #333438 0%, #222226 100%)
-   --grad-sidebar-h3:   linear-gradient(to bottom, #243e5c 0%, #1a3050 100%)
-   --grad-footer:       linear-gradient(to bottom, #28292e 0%, #1e2028 100%)
-
-   ==================================================== */
-
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@import url('theme-dark.css');
+@import url('theme-light.css');
 
 :root {
   /* Font stacks */
   --font-body:         "Open Sans", Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;
   --font-heading:      "Merriweather", Georgia, "Times New Roman", Times, serif;
   --font-mono:         Consolas, Monaco, "Courier New", Courier, monospace;
-
-  /* Backgrounds */
-  --bg-page:           #1a1a1e; 
-  --bg-deep:           #1e2028;
-  --bg-surface:        #24252a;
-  --bg-elevated:       #2a2b30;
-  --bg-hover:          #383a40;
-
-  /* Borders */
-  --border-default:    #3a3b40;
-  --border-blue:       #3a4050;
-
-  /* Navy / Header Blues */
-  --navy-dark:         #0e1e30;
-  --navy:              #1a3050;
-  --navy-light:        #243e5c;
-
-  /* Accent Blues */
-  --accent-blue:       #6ea8da;
-  --accent-blue-muted: #7090b0;
-  --header-border:     #4a6a8a;
-
-  /* Accent Colors */
-  --accent-hover:      #e09050;
-  --accent-visited:    #9a80c0;
-
-  /* Text */
-  --text-primary:      #e0e4e8;
-  --text-heading:      #e8ecf0;
-  --text-body:         #c8ccd0;
-  --text-nav:          #b0b4b8;
-  --text-label:        #a0a4a8;
-  --text-muted:        #909498;
-  --text-dim:          #808890;
-  --text-footer:       #808488;
-  --text-powered:      #606468;
-
-  /* Gradients */
-  --grad-header:       linear-gradient(to bottom, #243e5c 0%, #0e1e30 100%);
-  --grad-nav:          linear-gradient(to bottom, #333438 0%, #222226 100%);
-  --grad-sidebar-h3:   linear-gradient(to bottom, #243e5c 0%, #1a3050 100%);
-  --grad-footer:       linear-gradient(to bottom, #28292e 0%, #1e2028 100%);
-
-  /* Header border-bottom */
-  --header-bottom:     #0a1520;
-
-  /* Nav borders */
-  --nav-border-bottom: #444448;
-
-  /* Wrapper shadow */
-  --wrapper-shadow:    2px 2px 8px rgba(0,0,0,0.4);
 }
 
 /* --- Reset & Base --- */
@@ -224,6 +128,7 @@ a:visited {
   background: var(--grad-nav);
   border-bottom: 1px solid var(--nav-border-bottom);
   padding: 0 20px;
+  display: flow-root;
 }
 
 #navigation ul li {
@@ -581,117 +486,4 @@ I had to add this after the switch to Markdown via Markdig */
   margin-top: 15px;
   font-size: 11px;
   color: var(--text-dim);
-}
-
-/* ====================================================
-   LIGHT MODE OVERRIDES
-   Applied when body has class "light-mode"
-   Light mode is a relic from when I was only making
-   this site in reasonable hours.
-   I really don't know why I did this instead of
-   deleting it.
-   ==================================================== */
-
-body.light-mode {
-  /* Backgrounds */
-  --bg-page:           #e8e8e8;
-  --bg-deep:           #f5f8fc;
-  --bg-surface:        #ffffff;
-  --bg-elevated:       #f0f0f0;
-  --bg-hover:          #d0d8e0;
-
-  /* Borders */
-  --border-default:    #a0a0a0;
-  --border-blue:       #d0d8e0;
-
-  /* Navy / Header Blues */
-  --navy-dark:         #1E3F66;
-  --navy:              #2E5B8A;
-  --navy-light:        #3A6FA0;
-
-  /* Accent Blues */
-  --accent-blue:       #2E5B8A;
-  --accent-blue-muted: #b0c8e0;
-  --header-border:     #2E5B8A;
-
-  /* Accent Colors */
-  --accent-hover:      #C05020;
-  --accent-visited:    #4A3070;
-
-  /* Text */
-  --text-primary:      #ffffff;
-  --text-heading:      #ffffff;
-  --text-body:         #333333;
-  --text-nav:          #333333;
-  --text-label:        #444444;
-  --text-muted:        #555555;
-  --text-dim:          #808080;
-  --text-footer:       #606060;
-  --text-powered:      #909090;
-
-  /* Gradients */
-  --grad-header:       linear-gradient(to bottom, #3A6FA0 0%, #1E3F66 100%);
-  --grad-nav:          linear-gradient(to bottom, #fafafa 0%, #e0e0e0 100%);
-  --grad-sidebar-h3:   linear-gradient(to bottom, #3A6FA0 0%, #2E5B8A 100%);
-  --grad-footer:       linear-gradient(to bottom, #e8e8e8 0%, #d0d0d0 100%);
-
-  /* Misc overrides */
-  --header-bottom:     #163050;
-  --nav-border-bottom: #b0b0b0;
-  --wrapper-shadow:    2px 2px 8px rgba(0,0,0,0.15);
-
-  /* Background pattern */
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHklEQVQIW2O8fPnyf0YGBgYmIAESYGJgYEAXAAcAJngEoX7h9scAAAAASUVORK5CYII=');
-}
-
-/* Light-mode nav link borders need explicit override */
-body.light-mode #navigation ul li a {
-  border-right-color: #c8c8c8;
-  border-left-color: #ffffff;
-}
-
-/* Light-mode active nav stays white-on-blue */
-body.light-mode #navigation ul li a:hover {
-  color: #1E3F66;
-}
-
-/* Gold sheen in light mode uses darker gold tones */
-body.light-mode #nav-calculator-museum {
-  background: linear-gradient(135deg, #7a5a00, #b8860b, #c99700, #b8860b, #7a5a00, #b8860b, #c99700, #b8860b, #7a5a00);
-  background-size: 300% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 2px rgba(184, 134, 11, 0.5));
-  animation: gold-sheen 30s linear infinite;
-}
-
-body.light-mode #nav-calculator-museum:hover {
-  background: linear-gradient(135deg, #b8860b, #ffd700, #fffacd, #ffd700, #b8860b);
-  -webkit-background-clip: border-box;
-  background-clip: border-box;
-  -webkit-text-fill-color: #5a3a00;
-  color: #5a3a00;
-  filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.8));
-}
-
-/* Light-mode content text colors that can't use variables
-   (these are contextual - heading blue is also link blue in dark,
-    but different in light mode) */
-body.light-mode #content h3 {
-  color: #3A6FA0;
-}
-
-body.light-mode #content pre {
-  background-color: #fafbfc;
-  border-color: #a0a8b0;
-  color: #333333;
-}
-
-body.light-mode .header-contacts a:hover {
-  color: #ffffff;
-}
-
-body.light-mode .button-card p {
-  color: #555555;
 }

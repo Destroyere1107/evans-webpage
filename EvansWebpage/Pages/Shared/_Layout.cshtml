@@ -15,18 +15,18 @@
         <meta name="description" content="@ViewData["Description"]" />
     }
     <title>@ViewData["Title"]</title>
-    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
-    <script src="https://kit.fontawesome.com/cff3376d88.js" crossorigin="anonymous"></script>
-    @await RenderSectionAsync("Head", required: false)
     <script>
         // Apply saved theme immediately (before page renders)
         (function () {
             var saved = localStorage.getItem('theme');
             if (saved === 'light') {
-                document.body.className = 'light-mode';
+                document.documentElement.className = 'light-mode';
             }
         })();
     </script>
+    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
+    <script src="https://kit.fontawesome.com/cff3376d88.js" crossorigin="anonymous"></script>
+    @await RenderSectionAsync("Head", required: false)
 </head>
 <body>
     <div id="wrapper">
@@ -152,14 +152,14 @@
         (function () {
             var btn = document.createElement('button');
             btn.id = 'theme-toggle';
-            btn.textContent = document.body.className === 'light-mode' ? '[ Dark Mode ]' : '[ Light Mode ]';
+            btn.textContent = document.documentElement.classList.contains('light-mode') ? '[ Dark Mode ]' : '[ Light Mode ]';
             btn.onclick = function () {
-                if (document.body.className === 'light-mode') {
-                    document.body.className = '';
+                if (document.documentElement.classList.contains('light-mode')) {
+                    document.documentElement.classList.remove('light-mode');
                     localStorage.setItem('theme', 'dark');
                     btn.textContent = '[ Light Mode ]';
                 } else {
-                    document.body.className = 'light-mode';
+                    document.documentElement.classList.add('light-mode');
                     localStorage.setItem('theme', 'light');
                     btn.textContent = '[ Dark Mode ]';
                 }
