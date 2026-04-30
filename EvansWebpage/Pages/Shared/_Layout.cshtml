@@ -29,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="~/css/theme-blue.css" asp-append-version="true" />
     <link rel="stylesheet" type="text/css" href="~/css/theme-fancy.css" asp-append-version="true" />
     <link rel="stylesheet" type="text/css" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" type="text/css" href="~/css/theme-cool.css" asp-append-version="true"/>
     <script src="https://kit.fontawesome.com/cff3376d88.js" crossorigin="anonymous"></script>
     @await RenderSectionAsync("Head", required: false)
 </head>
@@ -159,7 +160,8 @@
                 { id: 'dark', label: 'Dark' },
                 { id: 'light', label: 'Light' },
                 { id: 'blue', label: 'Blue' },
-                { id: 'fancy', label: 'Fancy' }
+                { id: 'fancy', label: 'Fancy' },
+                { id: 'cool', label: 'Cool' }
             ];
             
             // Get current theme from localStorage, default to 'dark'
