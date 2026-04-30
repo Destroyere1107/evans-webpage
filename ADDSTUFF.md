@@ -1,0 +1,65 @@
+# How to add more stuff
+
+## Calculators
+
+Use this empty template and add to /EvansWebpage/Data/calcs/calcs.json.
+
+```json
+{
+  "id": "",
+  "name": "",
+  "manufacturer": "",
+  "manufacturerLogo": "",
+  "manufacturerSlug": "",
+  "mainImageUrl": "",
+  "model": "",
+  "modelSlug": "",
+  "yearIntroduced": 0,
+  "type": "",
+  "specimens": [
+    {
+      "number": 1,
+      "variant": "Normal",
+      "serialNumber": "",
+      "condition": "",
+      "imageUrl": ""
+    }
+  ],
+  "gallery": [
+    {
+      "url": "",
+      "altText": "",
+      "caption": ""
+    }
+  ],
+  "myCalcsLinks": [
+    { "id": "", "name": "" },
+    { "id": "", "name": "" }
+  ],
+  "underConstruction": true,
+  "category": ""
+}
+```
+
+## Themes
+
+1. Copy `theme-template.css` to `whatever-new-theme.css`.
+2. Fill in the new theme with the appropriate colors and uncomment any needed overrides.
+3. Import the theme to style.css, as follows:
+
+```css
+@import url("theme-dark.css");
+@import url("theme-light.css");
+@import url("whatever-new-theme.css"); /* New theme */
+```
+
+4. Add it to the `themes` array in the theme toggle script at the bottom of `_Layout.cshtml`:
+
+```javascript
+const themes = [
+  { id: "dark", label: "Dark" },
+  { id: "light", label: "Light" },
+  { id: "blue", label: "Blue" },
+  { id: "whatever", label: "Whatever" }, // New theme
+];
+```
