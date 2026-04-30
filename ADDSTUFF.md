@@ -63,3 +63,26 @@ const themes = [
   { id: "whatever", label: "Whatever" }, // New theme
 ];
 ```
+
+5. And also link it above that in `_Layout.cshtml`:
+
+```html
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="~/css/theme-dark.css"
+  asp-append-version="true"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="~/css/theme-light.css"
+  asp-append-version="true"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="~/css/theme-whatever.css"
+  asp-append-version="true"
+/>
+```
