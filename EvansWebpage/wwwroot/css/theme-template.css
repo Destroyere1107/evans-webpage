@@ -1,0 +1,122 @@
+/* ====================================================
+   THEME TEMPLATE
+   The existing commented-out colors are copied from light mode. 
+   ==================================================== */
+
+/* Replace .theme-name with the class name */
+html.theme-name {
+  /* Backgrounds */
+  --bg-page:           /* e.g. #ffffff */; 
+  --bg-deep:           /* e.g. #f4f5f7 */;
+  --bg-surface:        /* e.g. #ffffff */;
+  --bg-elevated:       /* e.g. #f8f9fa */;
+  --bg-hover:          /* e.g. #e9ecef */;
+
+  /* Borders */
+  --border-default:    /* e.g. #dee2e6 */;
+  --border-blue:       /* e.g. #b8daff */;
+
+  /* Navy / Header Colors (Primary brand colors) */
+  --navy-dark:         /* e.g. #003366 */;
+  --navy:              /* e.g. #004080 */;
+  --navy-light:        /* e.g. #0059b3 */;
+
+  /* Accent Colors */
+  --accent-blue:       /* e.g. #0056b3 */;
+  --accent-blue-muted: /* e.g. #337ab7 */;
+  --header-border:     /* e.g. #002244 */;
+  --accent-hover:      /* e.g. #cc5200 */;
+  --accent-visited:    /* e.g. #551a8b */;
+
+  /* Text Colors */
+  --text-primary:      /* e.g. #212529 */;
+  --text-heading:      /* e.g. #000000 */;
+  --text-body:         /* e.g. #333333 */;
+  --text-nav:          /* e.g. #495057 */;
+  --text-label:        /* e.g. #6c757d */;
+  --text-muted:        /* e.g. #868e96 */;
+  --text-dim:          /* e.g. #adb5bd */;
+  --text-footer:       /* e.g. #666666 */;
+  --text-powered:      /* e.g. #999999 */;
+
+  /* Gradients */
+  --grad-header:       /* e.g. linear-gradient(to bottom, #0059b3 0%, #003366 100%) */;
+  --grad-nav:          /* e.g. linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%) */;
+  --grad-sidebar-h3:   /* e.g. linear-gradient(to bottom, #0059b3 0%, #004080 100%) */;
+  --grad-footer:       /* e.g. linear-gradient(to bottom, #e9ecef 0%, #dee2e6 100%) */;
+
+  /* Misc Elements */
+  --header-bottom:     /* e.g. #002244 */;
+  --nav-border-bottom: /* e.g. #ced4da */;
+  --wrapper-shadow:    /* e.g. 2px 2px 8px rgba(0,0,0,0.1) */;
+}
+
+/* ====================================================
+   OVERRIDES
+   These are the same overrides copied over from the Lig
+   ==================================================== */
+
+/* Background pattern */
+/*
+html.theme-name body {
+  background-image: none;
+}
+*/
+
+/* Nav link borders explicit override */
+/*
+html.theme-name #navigation ul li a {
+  border-right-color: #3a3b40;
+  border-left-color: #3a3b40;
+}
+*/
+
+/* Active nav hover */
+/*
+html.theme-name #navigation ul li a:hover {
+  color: #e0e4e8;
+}
+*/
+
+/* Gold sheen effect for specific elements */
+/*
+html.theme-name #nav-calculator-museum {
+  background: linear-gradient(135deg, #b8860b, #ffd700, #fffacd, #ffd700, #b8860b, #ffd700, #fffacd, #ffd700, #b8860b);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.6));
+  animation: gold-sheen 30s linear infinite;
+}
+
+html.theme-name #nav-calculator-museum:hover {
+  background: linear-gradient(135deg, #b8860b, #ffd700, #fffacd, #ffd700, #b8860b);
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-text-fill-color: #5a3a00;
+  color: #5a3a00;
+  filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.8));
+}
+*/
+
+/* Content text colors that can't use variables */
+/*
+html.theme-name #content h3 {
+  color: #6ea8da;
+}
+
+html.theme-name #content pre {
+  background-color: #1e2028;
+  border-color: #3a3b40;
+  color: #c8ccd0;
+}
+
+html.theme-name .header-contacts a:hover {
+  color: #e0e4e8;
+}
+
+html.theme-name .button-card p {
+  color: #909498;
+}
+*/

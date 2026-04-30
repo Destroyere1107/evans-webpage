@@ -18,9 +18,9 @@
     <script>
         // Apply saved theme immediately (before page renders)
         (function () {
-            var saved = localStorage.getItem('theme');
-            if (saved === 'light') {
-                document.documentElement.className = 'light-mode';
+            var saved = localStorage.getItem('theme') || 'dark';
+            if (saved !== 'dark') {
+                document.documentElement.className = saved + '-mode';
             }
         })();
     </script>
@@ -150,20 +150,57 @@
     <!-- Theme toggle -->
     <script>
         (function () {
-            var btn = document.createElement('button');
+            // Define available themes in order.
+            // "dark" is the default (empty class), others map to "theme-mode" class.
+            const themes = [
+                { id: 'dark', label: 'Dark' },
+                { id: 'light', label: 'Light' },
+                { id: 'blue', label: 'Blue' }
+            ];
+            
+            // Get current theme from localStorage, default to 'dark'
+            let currentThemeId = localStorage.getItem('theme') || 'dark';
+            // Verify if the retrieved theme actually exists in our list.
+            if (!themes.some(t => t.id === currentThemeId)) {
+                currentThemeId = 'dark';
+            }
+            
+            const btn = document.createElement('button');
             btn.id = 'theme-toggle';
-            btn.textContent = document.documentElement.classList.contains('light-mode') ? '[ Dark Mode ]' : '[ Light Mode ]';
-            btn.onclick = function () {
-                if (document.documentElement.classList.contains('light-mode')) {
-                    document.documentElement.classList.remove('light-mode');
-                    localStorage.setItem('theme', 'dark');
-                    btn.textContent = '[ Light Mode ]';
-                } else {
-                    document.documentElement.classList.add('light-mode');
-                    localStorage.setItem('theme', 'light');
-                    btn.textContent = '[ Dark Mode ]';
+            
+            function updateTheme(themeId) {
+                // Remove any existing theme classes
+                themes.forEach(t => {
+                    if (t.id !== 'dark') {
+                        document.documentElement.classList.remove(t.id + '-mode');
+                    }
+                });
+                
+                // Add new theme class if not default dark
+                if (themeId !== 'dark') {
+                    document.documentElement.classList.add(themeId + '-mode');
                 }
+                
+                localStorage.setItem('theme', themeId);
+                currentThemeId = themeId;
+                
+                // Find next theme to update button text
+                const currentIndex = themes.findIndex(t => t.id === themeId);
+                const nextTheme = themes[(currentIndex + 1) % themes.length];
+                btn.textContent = `[ ${nextTheme.label} Mode ]`;
+            }
+
+            // Initial setup for the button text
+            const initialIndex = themes.findIndex(t => t.id === currentThemeId);
+            const nextTheme = themes[(initialIndex + 1) % themes.length];
+            btn.textContent = `[ ${nextTheme.label} Mode ]`;
+
+            btn.onclick = function () {
+                const currentIndex = themes.findIndex(t => t.id === currentThemeId);
+                const nextThemeId = themes[(currentIndex + 1) % themes.length].id;
+                updateTheme(nextThemeId);
             };
+
             document.body.appendChild(btn);
         })();
     </script>

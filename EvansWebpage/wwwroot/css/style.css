@@ -10,6 +10,7 @@
 
 @import url('theme-dark.css');
 @import url('theme-light.css');
+@import url('theme-blue.css');
 
 :root {
   /* Font stacks */
