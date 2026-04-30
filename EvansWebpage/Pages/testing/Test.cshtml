@@ -1,0 +1,14 @@
+@page
+@{
+    ViewData["Title"] = "Test - Destroyere1107's Home Page";
+}
+
+<p>This is a special page that is used for testing some random stuff. I buried it in a folder so you wouldn't find it.
+</p>
+<p>But you did. Please click one of the above links to get back to front stage.</p>
+
+<dialog id="myDialog" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    <p>This is, in fact, a dialog.</p>
+    <button onclick="myDialog.close()">Close this thing</button>
+</dialog>
+<button onclick="myDialog.showModal()">Open dialog...</button>
