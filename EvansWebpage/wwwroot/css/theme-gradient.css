@@ -1,0 +1,409 @@
+/* ====================================================
+   GRADIENT MODE — "every pixel bleeds color"
+   A maximalist gradient theme. Gradients on backgrounds,
+   borders, text, shadows, hovers — everything.
+   ==================================================== */
+
+html.gradient-mode {
+  /* Backgrounds — deep space purples & navy */
+  --bg-page:           #0a0a1a;
+  --bg-deep:           #0f0e1a;
+  --bg-surface:        #12111f;
+  --bg-elevated:       #1a1830;
+  --bg-hover:          #252340;
+
+  /* Borders — these are fallbacks; most borders get
+     overridden with border-image gradients below */
+  --border-default:    #3a2e6e;
+  --border-blue:       #5b3fa0;
+
+  /* Navy / Header Colors */
+  --navy-dark:         #1a0533;
+  --navy:              #2d1066;
+  --navy-light:        #4b1d99;
+
+  /* Accent Colors */
+  --accent-blue:       #a78bfa;
+  --accent-blue-muted: #8b7bcf;
+  --header-border:     #6d28d9;
+  --accent-hover:      #f472b6;
+  --accent-visited:    #c084fc;
+
+  /* Text Colors */
+  --text-primary:      #e8e0f0;
+  --text-heading:      #f0e8ff;
+  --text-body:         #cdc4e0;
+  --text-nav:          #b8aed0;
+  --text-label:        #9f94b8;
+  --text-muted:        #8a80a4;
+  --text-dim:          #706890;
+  --text-footer:       #807898;
+  --text-powered:      #5c5670;
+
+  /* Gradients — multi-stop, angled, vivid */
+  --grad-header:       linear-gradient(135deg, #1a0533 0%, #2d1066 30%, #4b1d99 60%, #6d28d9 100%);
+  --grad-nav:          linear-gradient(90deg, #0f0e1a 0%, #1a1040 40%, #2d1066 70%, #1a1040 100%);
+  --grad-sidebar-h3:   linear-gradient(135deg, #6d28d9, #a855f7, #ec4899);
+  --grad-footer:       linear-gradient(135deg, #0f0e1a 0%, #1a1040 50%, #2d1066 100%);
+
+  /* Misc Elements */
+  --header-bottom:     #a855f7;
+  --nav-border-bottom: #4b1d99;
+  --wrapper-shadow:    0 0 30px rgba(168, 85, 247, 0.15), 0 0 60px rgba(109, 40, 217, 0.1);
+}
+
+
+/* ====================================================
+   ANIMATED PAGE BACKGROUND
+   Slow-drifting aurora behind everything
+   ==================================================== */
+
+html.gradient-mode body {
+  background: linear-gradient(
+    -45deg,
+    #0a0a1a,
+    #1a0533,
+    #0f0e1a,
+    #0d1b2a,
+    #1a0533,
+    #0a0a1a
+  );
+  background-size: 600% 600%;
+  animation: aurora-drift 20s ease infinite;
+}
+
+@keyframes aurora-drift {
+  0%   { background-position: 0% 50%; }
+  25%  { background-position: 50% 0%; }
+  50%  { background-position: 100% 50%; }
+  75%  { background-position: 50% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/* ====================================================
+   GRADIENT BORDER — WRAPPER
+   Rainbow-ish border around the whole page container
+   ==================================================== */
+
+html.gradient-mode #wrapper {
+  border: 2px solid transparent;
+  border-image: linear-gradient(
+    180deg,
+    #6d28d9,
+    #a855f7,
+    #ec4899,
+    #f472b6,
+    #a855f7,
+    #6d28d9
+  ) 1;
+  box-shadow:
+    -3px 0  20px rgba(168, 85, 247, 0.15),
+     3px 0  20px rgba(236, 72, 153, 0.15),
+     0   5px 25px rgba(109, 40, 217, 0.20);
+}
+
+
+/* ====================================================
+   HEADER — gradient text + gradient bottom border
+   ==================================================== */
+
+html.gradient-mode #header {
+  border-image: linear-gradient(
+    to right,
+    #6d28d9 0%,
+    #a855f7 25%,
+    #ec4899 50%,
+    #f472b6 75%,
+    #a855f7 100%
+  ) 1;
+}
+
+html.gradient-mode #header h1 {
+  background: linear-gradient(to right, #c084fc, #f0abfc, #f472b6, #fb923c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.4));
+}
+
+html.gradient-mode #header .tagline {
+  color: #b8aed0;
+}
+
+html.gradient-mode .header-photo {
+  border: 2px solid transparent;
+  border-image: linear-gradient(135deg, #a855f7, #ec4899, #fb923c) 1;
+}
+
+html.gradient-mode .header-contacts a {
+  color: #a78bfa;
+  transition: color 0.3s ease, filter 0.3s ease;
+}
+
+html.gradient-mode .header-contacts a:hover {
+  color: #f472b6;
+  filter: drop-shadow(0 0 6px rgba(244, 114, 182, 0.5));
+}
+
+
+/* ====================================================
+   NAVIGATION — gradient hover sweep + gradient borders
+   ==================================================== */
+
+html.gradient-mode #navigation {
+  border-image: linear-gradient(to right, #2d1066, #4b1d99, #6d28d9, #4b1d99, #2d1066) 1;
+}
+
+html.gradient-mode #navigation ul li a {
+  border-right: 1px solid #2d1066;
+  border-left: 1px solid #2d1066;
+  transition: background 0.4s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+html.gradient-mode #navigation ul li a:hover {
+  background: linear-gradient(to bottom, rgba(168, 85, 247, 0.2), rgba(236, 72, 153, 0.1));
+  color: #f0abfc;
+  text-shadow: 0 0 8px rgba(168, 85, 247, 0.4);
+}
+
+html.gradient-mode #navigation ul li a.active {
+  background: linear-gradient(135deg, #4b1d99, #6d28d9);
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+}
+
+/* Rainbow sheen on the Calculator Museum nav link */
+html.gradient-mode #nav-calculator-museum {
+  background: linear-gradient(
+    90deg,
+    #a855f7, #ec4899, #fb923c, #facc15, #4ade80,
+    #22d3ee, #818cf8, #a855f7, #ec4899, #fb923c, 
+    #a855f7
+  );
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(0 0 4px rgba(168, 85, 247, 0.5));
+  animation: rainbow-sheen 12s linear infinite;
+}
+
+@keyframes rainbow-sheen {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
+}
+
+html.gradient-mode #nav-calculator-museum:hover {
+  background: linear-gradient(to bottom, rgba(168, 85, 247, 0.2), rgba(236, 72, 153, 0.1));
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-text-fill-color: #f0abfc;
+  color: #f0abfc;
+  text-shadow: 0 0 8px rgba(168, 85, 247, 0.4);
+  filter: none;
+}
+
+html.gradient-mode #nav-calculator-museum.active {
+  background: linear-gradient(135deg, #4b1d99, #6d28d9);
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-text-fill-color: #ffffff;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+  filter: none;
+}
+
+
+/* ====================================================
+   CONTENT AREA — gradient headings + gradient borders
+   ==================================================== */
+
+html.gradient-mode #content {
+  border-right: 1px solid transparent;
+  border-image: linear-gradient(to bottom, #6d28d9, #a855f7, #ec4899, transparent) 1;
+}
+
+html.gradient-mode #content h2 {
+  background: linear-gradient(to right, #818cf8, #a78bfa, #c084fc, #e879f9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(to right, #a855f7, #ec4899, transparent) 1;
+  filter: drop-shadow(0 0 4px rgba(168, 85, 247, 0.3));
+}
+
+html.gradient-mode #content h3 {
+  background: linear-gradient(to right, #a78bfa, #f0abfc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html.gradient-mode #content pre {
+  background: linear-gradient(145deg, #0f0e1a, #1a1040);
+  border: 1px solid transparent;
+  border-image: linear-gradient(135deg, #3a2e6e, #5b3fa0) 1;
+  color: #cdc4e0;
+}
+
+
+/* ====================================================
+   NEWS ITEMS — gradient border + subtle gradient bg
+   ==================================================== */
+
+html.gradient-mode .news-item {
+  background: linear-gradient(145deg, #0f0e1a 0%, #161328 100%);
+  border: 1px solid transparent;
+  border-image: linear-gradient(135deg, #4b1d99, #a855f7, #ec4899) 1;
+}
+
+html.gradient-mode .news-item .date {
+  background: linear-gradient(to right, #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 2px rgba(168, 85, 247, 0.3));
+}
+
+
+/* ====================================================
+   SIDEBAR — gradient section headers + borders
+   ==================================================== */
+
+html.gradient-mode .sidebar-section {
+  background: linear-gradient(160deg, #0f0e1a 0%, #161328 100%);
+  border: 1px solid transparent;
+  border-image: linear-gradient(to bottom, #5b3fa0, #a855f7, #5b3fa0) 1;
+}
+
+html.gradient-mode .sidebar-section h3 {
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+html.gradient-mode .sidebar-section ul li {
+  border-bottom: 1px dotted #3a2e6e;
+}
+
+html.gradient-mode .sidebar-section ul li:last-child {
+  border-bottom: none;
+}
+
+
+/* ====================================================
+   FOOTER — gradient cards, gradient borders
+   ==================================================== */
+
+html.gradient-mode #footer {
+  border-image: linear-gradient(to right, #2d1066, #6d28d9, #a855f7, #6d28d9, #2d1066) 1;
+}
+
+html.gradient-mode .button-card {
+  background: linear-gradient(145deg, #12111f, #1a1830);
+  border: 1px solid transparent;
+  border-image: linear-gradient(135deg, #3a2e6e, #5b3fa0) 1;
+}
+
+html.gradient-mode .button-card p {
+  color: #8a80a4;
+}
+
+html.gradient-mode .button-grid {
+  background: linear-gradient(145deg, #12111f, #1a1830);
+  border: 1px solid transparent;
+  border-image: linear-gradient(135deg, #3a2e6e, #5b3fa0) 1;
+}
+
+html.gradient-mode #footer a {
+  color: #a78bfa;
+  transition: color 0.3s ease;
+}
+
+html.theme-gradient #footer a:hover {
+  color: #f472b6;
+}
+
+
+/* ====================================================
+   LINKS — gradient visited links
+   ==================================================== */
+
+html.theme-gradient a {
+  transition: color 0.3s ease;
+}
+
+
+/* ====================================================
+   THEME TOGGLE BUTTON
+   ==================================================== */
+
+html.theme-gradient #theme-toggle {
+  background: linear-gradient(135deg, #1a1830, #2d1066);
+  border: 1px solid transparent;
+  border-image: linear-gradient(135deg, #4b1d99, #a855f7) 1;
+  color: #b8aed0;
+  transition: box-shadow 0.3s ease, color 0.3s ease;
+}
+
+html.theme-gradient #theme-toggle:hover {
+  background: linear-gradient(135deg, #2d1066, #4b1d99);
+  color: #f0abfc;
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.4);
+}
+
+
+/* ====================================================
+   THEME DIALOG — gradient everything
+   ==================================================== */
+
+html.theme-gradient #theme-dialog {
+  background: linear-gradient(145deg, #0f0e1a, #1a1040, #12111f);
+  border: 2px solid transparent;
+  border-image: linear-gradient(135deg, #6d28d9, #a855f7, #ec4899, #a855f7, #6d28d9) 1;
+  box-shadow:
+    0 0 40px rgba(168, 85, 247, 0.25),
+    0 0 80px rgba(109, 40, 217, 0.15);
+}
+
+html.theme-gradient #theme-dialog::backdrop {
+  background: linear-gradient(135deg,
+    rgba(10, 10, 26, 0.85),
+    rgba(26, 5, 51, 0.85),
+    rgba(15, 14, 26, 0.85)
+  );
+}
+
+html.theme-gradient .theme-select-btn {
+  background: linear-gradient(135deg, #12111f, #1a1830);
+  border: 1px solid #3a2e6e;
+  color: #cdc4e0;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+html.theme-gradient .theme-select-btn:hover {
+  background: linear-gradient(135deg, #1a1830, #2d1066);
+  border-color: #a855f7;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+}
+
+html.theme-gradient .theme-select-btn.active {
+  border: 1px solid transparent;
+  border-image: linear-gradient(135deg, #a855f7, #ec4899) 1;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(236, 72, 153, 0.1));
+}
+
+html.theme-gradient .theme-dialog-close {
+  background: linear-gradient(135deg, #1a1830, #2d1066);
+  border: 1px solid #4b1d99;
+  color: #b8aed0;
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+html.theme-gradient .theme-dialog-close:hover {
+  background: linear-gradient(135deg, #2d1066, #4b1d99);
+  color: #f472b6;
+  box-shadow: 0 0 10px rgba(236, 72, 153, 0.3);
+}
