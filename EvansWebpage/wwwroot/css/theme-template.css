@@ -7,14 +7,14 @@
 html.theme-name {
   /* Backgrounds */
   --bg-page:           /* Main background color for the body/page area outside the main wrapper. e.g. #ffffff */; 
-  --bg-deep:           /* Secondary darker/deeper background (used for pre blocks, news items, sidebars, buttons). e.g. #f4f5f7 */;
-  --bg-surface:        /* Primary surface background for main content area (e.g. #wrapper, #theme-dialog). e.g. #ffffff */;
-  --bg-elevated:       /* Background for elevated interactive elements (e.g. #theme-toggle button, close buttons). e.g. #f8f9fa */;
-  --bg-hover:          /* Background color when hovering over interactive elements (e.g. navigation items, theme buttons). e.g. #e9ecef */;
+  --bg-deep:           /* Secondary darker/deeper background (used for #content pre, .news-item, .sidebar-section, .button-card, .button-grid, #theme-dialog). e.g. #f4f5f7 */;
+  --bg-surface:        /* Primary surface background for main content area (e.g. #wrapper, .theme-select-btn). e.g. #ffffff */;
+  --bg-elevated:       /* Background for elevated interactive elements (e.g. #theme-toggle, .theme-dialog-close). e.g. #f8f9fa */;
+  --bg-hover:          /* Background color when hovering over interactive elements (e.g. #navigation a:hover, #theme-toggle:hover, .theme-select-btn:hover, .theme-dialog-close:hover). e.g. #e9ecef */;
 
   /* Borders */
-  --border-default:    /* Default border color (used for #wrapper, #navigation, <pre>, buttons, dialogs). e.g. #dee2e6 */;
-  --border-blue:       /* Secondary border color, typically blue-ish (used for #content h2, .news-item, .sidebar-section). e.g. #b8daff */;
+  --border-default:    /* Default border color (used for #wrapper, #navigation a, #content pre, .button-card, .button-grid, #theme-toggle, #theme-dialog, .theme-select-btn, .theme-dialog-close, #footer). e.g. #dee2e6 */;
+  --border-blue:       /* Secondary border color, typically blue-ish (used for #content h2, .news-item, .sidebar-section, .sidebar-section ul li). e.g. #b8daff */;
 
   /* Navy / Header Colors (Primary brand colors) */
   --navy-dark:         /* Darkest navy color (currently unused, good for deep header gradients). e.g. #003366 */;
@@ -22,22 +22,22 @@ html.theme-name {
   --navy-light:        /* Lighter navy color (currently unused, good for bright header elements). e.g. #0059b3 */;
 
   /* Accent Colors */
-  --accent-blue:       /* Primary link and accent color (used for standard <a> tags, headings, active theme border). e.g. #0056b3 */;
-  --accent-blue-muted: /* Muted accent color (used for header tagline and contacts). e.g. #337ab7 */;
+  --accent-blue:       /* Primary link and accent color (used for standard <a> tags, #content h2, #content h3, #footer a, .theme-select-btn.active border). e.g. #0056b3 */;
+  --accent-blue-muted: /* Muted accent color (used for #header .tagline and .header-contacts a). e.g. #337ab7 */;
   --header-border:     /* Border color around the header photo. e.g. #002244 */;
-  --accent-hover:      /* Color for hovered links and hovered theme buttons. e.g. #cc5200 */;
+  --accent-hover:      /* Color for hovered links (a:hover), hovered theme buttons (.theme-select-btn:hover border), and .theme-dialog-close:hover text. e.g. #cc5200 */;
   --accent-visited:    /* Color for visited links. e.g. #551a8b */;
 
   /* Text Colors */
-  --text-primary:      /* Primary bright text color (used for header text, sidebar headings, hovered navigation). e.g. #212529 */;
+  --text-primary:      /* Primary emphasis text color (used for #header, .sidebar-section h3, #navigation a:hover, .header-contacts a:hover, #theme-toggle:hover). e.g. #212529 */;
   --text-heading:      /* Main site heading text color (#header h1). e.g. #000000 */;
-  --text-body:         /* Standard body text color. e.g. #333333 */;
-  --text-nav:          /* Text color for standard un-hovered navigation and theme toggle buttons. e.g. #495057 */;
+  --text-body:         /* Standard body text color (used for body, #theme-dialog, .theme-select-btn, .theme-dialog-close). e.g. #333333 */;
+  --text-nav:          /* Text color for standard un-hovered navigation (#navigation a) and #theme-toggle. e.g. #495057 */;
   --text-label:        /* Unused (good for form labels or minor text). e.g. #6c757d */;
-  --text-muted:        /* Muted text color for secondary info (e.g. button card descriptions, sidebar paragraphs). e.g. #868e96 */;
-  --text-dim:          /* Dimmer text color for metadata (e.g. news item dates, license notices). e.g. #adb5bd */;
-  --text-footer:       /* Text color for standard footer text. e.g. #666666 */;
-  --text-powered:      /* Text color for the "Powered by" footer attribution. e.g. #999999 */;
+  --text-muted:        /* Muted text color for secondary info (e.g. .button-card p, .sidebar-section p). e.g. #868e96 */;
+  --text-dim:          /* Dimmer text color for metadata (e.g. .news-item .date, .license-notice, .note-text). e.g. #adb5bd */;
+  --text-footer:       /* Text color for #footer p. e.g. #666666 */;
+  --text-powered:      /* Text color for the .powered-by footer attribution. e.g. #999999 */;
 
   /* Gradients */
   --grad-header:       /* Gradient background for the main page #header. e.g. linear-gradient(to bottom, #0059b3 0%, #003366 100%) */;

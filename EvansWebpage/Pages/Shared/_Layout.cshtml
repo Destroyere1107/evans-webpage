@@ -29,6 +29,8 @@
     <link rel="stylesheet" type="text/css" href="~/css/theme-blue.css" asp-append-version="true" />
     <link rel="stylesheet" type="text/css" href="~/css/theme-fancy.css" asp-append-version="true" />
     <link rel="stylesheet" type="text/css" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" type="text/css" href="~/css/theme-cool.css" asp-append-version="true"/>
+    <link rel="stylesheet" type="text/css" href="~/css/theme-gradient.css" asp-append-version="true"/>
     <script src="https://kit.fontawesome.com/cff3376d88.js" crossorigin="anonymous"></script>
     @await RenderSectionAsync("Head", required: false)
 </head>
@@ -146,7 +148,7 @@
             </p>
             <p class="powered-by">
                 This site is developed with a combination of <a href="https://code.visualstudio.com/" target="_blank">Visual Studio
-                Code</a> and <a href="https://www.jetbrains.com/webstorm/" target="_blank">JetBrains WebStorm</a>.
+                Code</a> and <a href="https://www.jetbrains.com/rider/" target="_blank">JetBrains Rider</a>.
             </p>
         </div>
     </div>
@@ -159,7 +161,9 @@
                 { id: 'dark', label: 'Dark' },
                 { id: 'light', label: 'Light' },
                 { id: 'blue', label: 'Blue' },
-                { id: 'fancy', label: 'Fancy' }
+                { id: 'fancy', label: 'Fancy' },
+                { id: 'cool', label: 'Cool' },
+                { id: 'gradient', label: 'Gradient' }
             ];
             
             // Get current theme from localStorage, default to 'dark'
