@@ -18,7 +18,7 @@
     <script>
         // Apply saved theme immediately (before page renders)
         (function () {
-            var saved = localStorage.getItem('theme') || 'dark';
+            var saved = localStorage.getItem('theme') || 'gradient';
             if (saved !== 'dark') {
                 document.documentElement.className = saved + '-mode';
             }
@@ -166,10 +166,10 @@
                 { id: 'gradient', label: 'Gradient' }
             ];
             
-            // Get current theme from localStorage, default to 'dark'
-            let currentThemeId = localStorage.getItem('theme') || 'dark';
+            // Get current theme from localStorage, default to 'gradient'
+            let currentThemeId = localStorage.getItem('theme') || 'gradient';
             if (!themes.some(t => t.id === currentThemeId)) {
-                currentThemeId = 'dark';
+                currentThemeId = 'gradient';
             }
             
             // Create the main button that opens the dialog
