@@ -1,5 +1,7 @@
 using Microsoft.Extensions.FileProviders;
 
+namespace EvansWebpage;
+
 internal class Program
 {
     public static void Main(string[] args)
