@@ -9,16 +9,16 @@
     @RenderBody()
 
     <!-- License notice -->
-    <partial name="_CalcLicensePartial" />
+    <partial name="_CalcLicensePartial"/>
 </div>
 
 <div id="sidebar">
     <!-- Page-specific sidebar content -->
-    @await RenderSectionAsync("PageSidebar", required: false)
+    @await RenderSectionAsync("PageSidebar", false)
 
     <!-- Shared calculator sidebar -->
-    <partial name="_CalcSidebarPartial" />
+    <partial name="_CalcSidebarPartial"/>
 
     <!-- Main sidebar -->
-    <partial name="_SidebarPartial" />
+    <partial name="_SidebarPartial"/>
 </div>

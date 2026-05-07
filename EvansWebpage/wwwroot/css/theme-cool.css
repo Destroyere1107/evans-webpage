@@ -5,49 +5,49 @@
 
 /* Replace .theme-name with the class name */
 html.cool-mode {
- /* Backgrounds */
-  --bg-page:           midnightblue; 
-  --bg-deep:           #1e2028;
-  --bg-surface:        #24252a;
-  --bg-elevated:       #2a2b30;
-  --bg-hover:          #383a40;
+    /* Backgrounds */
+    --bg-page: midnightblue;
+    --bg-deep: #1e2028;
+    --bg-surface: #24252a;
+    --bg-elevated: #2a2b30;
+    --bg-hover: #383a40;
 
-  /* Borders */
-  --border-default:    darkblue;
-  --border-blue:       dodgerblue;
+    /* Borders */
+    --border-default: darkblue;
+    --border-blue: dodgerblue;
 
-  /* Navy / Header Colors (Primary brand colors) */
-  --navy-dark:         black;
-  --navy:              navy;
-  --navy-light:        deepskyblue;
+    /* Navy / Header Colors (Primary brand colors) */
+    --navy-dark: black;
+    --navy: navy;
+    --navy-light: deepskyblue;
 
-  /* Accent Colors */
-  --accent-blue:       dodgerblue;
-  --accent-blue-muted: white;
-  --header-border:     silver;
-  --accent-hover:      white;
-  --accent-visited:    gold;
+    /* Accent Colors */
+    --accent-blue: dodgerblue;
+    --accent-blue-muted: white;
+    --header-border: silver;
+    --accent-hover: white;
+    --accent-visited: gold;
 
-  /* Text Colors */
-   --text-primary:      #e0e4e8;
-  --text-heading:      #e8ecf0;
-  --text-body:         #c8ccd0;
-  --text-nav:          #b0b4b8;
-  --text-label:        #a0a4a8;
-  --text-muted:        #909498;
-  --text-dim:          #808890;
-  --text-footer:       #808488;
-  --text-powered:      #606468;
+    /* Text Colors */
+    --text-primary: #e0e4e8;
+    --text-heading: #e8ecf0;
+    --text-body: #c8ccd0;
+    --text-nav: #b0b4b8;
+    --text-label: #a0a4a8;
+    --text-muted: #909498;
+    --text-dim: #808890;
+    --text-footer: #808488;
+    --text-powered: #606468;
 
-  /* Gradients */
-  --grad-header:       linear-gradient(to right, silver 0%, darkblue 45%, darkblue 100%);
-  --grad-nav:          linear-gradient(to bottom, #333438 0%, #222226 100%);
-  --grad-sidebar-h3:   linear-gradient(to right, grey 0%, darkblue 100%);
-  --grad-footer:       linear-gradient(to bottom, #28292e 0%, #1e2028 100%);
-  /* Misc Elements */
-  --header-bottom:     #ffd700;
-  --nav-border-bottom: darkblue;
-  --wrapper-shadow:    2px 2px 8px rgba(0,0,0,0.4);
+    /* Gradients */
+    --grad-header: linear-gradient(to right, silver 0%, darkblue 45%, darkblue 100%);
+    --grad-nav: linear-gradient(to bottom, #333438 0%, #222226 100%);
+    --grad-sidebar-h3: linear-gradient(to right, grey 0%, darkblue 100%);
+    --grad-footer: linear-gradient(to bottom, #28292e 0%, #1e2028 100%);
+    /* Misc Elements */
+    --header-bottom: #ffd700;
+    --nav-border-bottom: darkblue;
+    --wrapper-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* ====================================================
@@ -80,22 +80,22 @@ html.theme-name #navigation ul li a:hover {
 /* Gold sheen effect for specific elements */
 
 html.cool-mode #nav-calculator-museum {
-  background: linear-gradient(135deg, silver, grey, white, grey, silver);
-  background-size: 300% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 3px darkgray);
-  animation: gold-sheen 30s linear infinite;
+    background: linear-gradient(135deg, silver, grey, white, grey, silver);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 3px darkgray);
+    animation: gold-sheen 30s linear infinite;
 }
 
 html.cool-mode #nav-calculator-museum:hover {
-  background: linear-gradient(135deg, grey, silver, white, silver, grey);
-  -webkit-background-clip: border-box;
-  background-clip: border-box;
-  -webkit-text-fill-color: black;
-  color: black;
-  filter: drop-shadow(0 0 5px darkgray);
+    background: linear-gradient(135deg, grey, silver, white, silver, grey);
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-text-fill-color: black;
+    color: black;
+    filter: drop-shadow(0 0 5px darkgray);
 }
 
 /* Content text colors that can't use variables */
@@ -120,6 +120,6 @@ html.theme-name .button-card p {
 */
 
 html.cool-mode #header {
-  /* Use border-image to allow a gradient on the bottom border */
-  border-image: linear-gradient(to right, silver 0%, darkblue 45%, darkblue 100%) 1;
+    /* Use border-image to allow a gradient on the bottom border */
+    border-image: linear-gradient(to right, silver 0%, darkblue 45%, darkblue 100%) 1;
 }

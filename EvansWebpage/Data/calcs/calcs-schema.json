@@ -60,7 +60,9 @@
         "description": "Links to similar specimens on MyCalcs.",
         "items": {
           "type": "object",
-          "required": ["id"],
+          "required": [
+            "id"
+          ],
           "properties": {
             "id": {
               "type": "string",
@@ -116,7 +118,10 @@
         "description": "Additional photos for the gallery section.",
         "items": {
           "type": "object",
-          "required": ["url", "altText"],
+          "required": [
+            "url",
+            "altText"
+          ],
           "properties": {
             "url": {
               "type": "string",
@@ -135,7 +140,12 @@
       },
       "manufacturerSlug": {
         "type": "string",
-        "enum": ["hp", "casio", "ti", "other"],
+        "enum": [
+          "hp",
+          "casio",
+          "ti",
+          "other"
+        ],
         "description": "The slug used for internally identifying the manufacturer"
       },
       "modelSlug": {
