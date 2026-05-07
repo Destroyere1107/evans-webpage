@@ -1,5 +1,6 @@
 /* ====================================================
    AERO MODE - Because I really need to distract myself from working on the museum.
+   Also because I learned 'bout color-mix.
    ==================================================== */
 
 html.aero-mode {
@@ -61,7 +62,7 @@ html.aero-mode body {
   background-attachment: fixed;
 }
 
-/* Glassmorphism main wrapper - Heavy blur, transparent border, white inner glow */
+/* Main wrapper*/
 html.aero-mode #wrapper {
   background-color: color-mix(in srgb, black 30%, transparent);
   backdrop-filter: blur(20px);
@@ -80,12 +81,6 @@ html.aero-mode #header {
 html.aero-mode #footer {
   border-radius: 0 0 7px 7px;
   border-top: 1px solid color-mix(in srgb, white 10%, transparent);
-}
-
-/* Solid white or near-white content areas so text is readable over the heavy glass background */
-html.aero-mode #content,
-html.aero-mode #sidebar {
-  /* Give the content area itself a solid backdrop so text isn't lost in the blur */
 }
 
 html.aero-mode .sidebar-section,
@@ -113,7 +108,7 @@ html.aero-mode .header-photo {
   border: 1px solid color-mix(in srgb, white 20%, transparent);
 }
 
-/* Header text needs a glow/shadow to be readable on glass */
+/* Shadow for the header text readability */
 html.aero-mode #header h1 {
   text-shadow: 0 0 8px color-mix(in srgb, white 30%, transparent), 0 0 15px color-mix(in srgb, black 80%, transparent), 0 2px 4px color-mix(in srgb, black 90%, transparent);
   color: white;
@@ -129,7 +124,7 @@ html.aero-mode .header-contacts a {
   text-shadow: 0 1px 3px black;
 }
 
-/* Theme Dialog Heavy Glassmorphism */
+/* Theme Dialog */
 html.aero-mode #theme-dialog {
   background-color: color-mix(in srgb, black 50%, transparent);
   backdrop-filter: blur(25px);
