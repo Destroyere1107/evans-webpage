@@ -4,51 +4,51 @@
    ==================================================== */
 
 html.bling-mode {
-  /* Backgrounds */
-  --bg-page:           black;
-  --bg-deep:           black;
-  --bg-surface:        goldenrod;
-  --grad-wrapper:      linear-gradient(135deg, gold, white, gold, silver, gold);
-  --bg-elevated:       dimgray;
-  --bg-hover:          dimgray;
+    /* Backgrounds */
+    --bg-page: black;
+    --bg-deep: black;
+    --bg-surface: goldenrod;
+    --grad-wrapper: linear-gradient(135deg, gold, white, gold, silver, gold);
+    --bg-elevated: dimgray;
+    --bg-hover: dimgray;
 
-  /* Borders */
-  --border-default:    darkgoldenrod;
-  --border-blue:       gold;
+    /* Borders */
+    --border-default: darkgoldenrod;
+    --border-blue: gold;
 
-  /* Navy / Header Colors */
-  --navy-dark:         saddlebrown;
-  --navy:              darkgoldenrod;
-  --navy-light:        gold;
+    /* Navy / Header Colors */
+    --navy-dark: saddlebrown;
+    --navy: darkgoldenrod;
+    --navy-light: gold;
 
-  /* Accent Colors */
-  --accent-blue:       darkgoldenrod;
-  --accent-blue-muted: darkgoldenrod;
-  --header-border:     gold;
-  --accent-hover:      white;
-  --accent-visited:    darkgoldenrod;
+    /* Accent Colors */
+    --accent-blue: darkgoldenrod;
+    --accent-blue-muted: darkgoldenrod;
+    --header-border: gold;
+    --accent-hover: white;
+    --accent-visited: darkgoldenrod;
 
-  /* Text Colors */
-  --text-primary:      black;
-  --text-heading:      black;
-  --text-body:         black;
-  --text-nav:          darkslategray;
-  --text-label:        dimgray;
-  --text-muted:        gray;
-  --text-dim:          gray;
-  --text-footer:       darkslategray;
-  --text-powered:      gray;
+    /* Text Colors */
+    --text-primary: black;
+    --text-heading: black;
+    --text-body: black;
+    --text-nav: darkslategray;
+    --text-label: dimgray;
+    --text-muted: gray;
+    --text-dim: gray;
+    --text-footer: darkslategray;
+    --text-powered: gray;
 
-  /* Gradients */
-  --grad-header:       linear-gradient(135deg, gold 0%, goldenrod 50%, darkgoldenrod 100%);
-  --grad-nav:          linear-gradient(90deg, darkgoldenrod 0%, gold 50%, darkgoldenrod 100%);
-  --grad-sidebar-h3:   linear-gradient(135deg, darkgoldenrod, gold, darkgoldenrod);
-  --grad-footer:       linear-gradient(135deg, darkgoldenrod 0%, gold 50%, darkgoldenrod 100%);
+    /* Gradients */
+    --grad-header: linear-gradient(135deg, gold 0%, goldenrod 50%, darkgoldenrod 100%);
+    --grad-nav: linear-gradient(90deg, darkgoldenrod 0%, gold 50%, darkgoldenrod 100%);
+    --grad-sidebar-h3: linear-gradient(135deg, darkgoldenrod, gold, darkgoldenrod);
+    --grad-footer: linear-gradient(135deg, darkgoldenrod 0%, gold 50%, darkgoldenrod 100%);
 
-  /* Misc Elements */
-  --header-bottom:     black;
-  --nav-border-bottom: black;
-  --wrapper-shadow:    0 0 30px rgba(255, 215, 0, 0.3), 0 0 60px rgba(184, 134, 11, 0.2);
+    /* Misc Elements */
+    --header-bottom: black;
+    --nav-border-bottom: black;
+    --wrapper-shadow: 0 0 30px rgba(255, 215, 0, 0.3), 0 0 60px rgba(184, 134, 11, 0.2);
 }
 
 /* ====================================================
@@ -57,12 +57,12 @@ html.bling-mode {
    ==================================================== */
 
 html.bling-mode body {
-  background: linear-gradient(
-          -45deg,
-          goldenrod,
-          silver,
-          goldenrod
-  );
+    background: linear-gradient(
+            -45deg,
+            goldenrod,
+            silver,
+            goldenrod
+    );
 
 }
 
@@ -72,27 +72,32 @@ html.bling-mode body {
    ==================================================== */
 
 html.bling-mode #wrapper {
-  background: goldenrod; /* fallback */
-  background: var(--grad-wrapper);
-  background-size: 200% 200%;
-  animation: shine-sweep 10s ease infinite;
-  border: 3px solid transparent;
-  border-image: linear-gradient(
-    to bottom,
-    gold,
-    darkgoldenrod,
-    gold
-  ) 1;
-  box-shadow:
-    -5px 0 25px rgba(218, 165, 32, 0.3),
-     5px 0 25px rgba(255, 215, 0, 0.3),
-     0 10px 40px rgba(0, 0, 0, 0.5);
+    background: goldenrod; /* fallback */
+    background: var(--grad-wrapper);
+    background-size: 200% 200%;
+    animation: shine-sweep 10s ease infinite;
+    border: 3px solid transparent;
+    border-image: linear-gradient(
+            to bottom,
+            gold,
+            darkgoldenrod,
+            gold
+    ) 1;
+    box-shadow: -5px 0 25px rgba(218, 165, 32, 0.3),
+    5px 0 25px rgba(255, 215, 0, 0.3),
+    0 10px 40px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes shine-sweep {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* ====================================================
@@ -100,37 +105,37 @@ html.bling-mode #wrapper {
    ==================================================== */
 
 html.bling-mode #header {
-  border-bottom: 5px solid saddlebrown;
-  background: linear-gradient(35deg, goldenrod, silver);
+    border-bottom: 5px solid saddlebrown;
+    background: linear-gradient(35deg, goldenrod, silver);
 }
 
 html.bling-mode #header h1 {
-  color: black;
-  text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.3);
-  background: none;
-  -webkit-background-clip: initial;
-  background-clip: initial;
-  -webkit-text-fill-color: initial;
+    color: black;
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.3);
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    -webkit-text-fill-color: initial;
 }
 
 html.bling-mode #header .tagline {
-  color: darkslategray;
-  font-weight: bold;
+    color: darkslategray;
+    font-weight: bold;
 }
 
 html.bling-mode .header-photo {
-  border: 3px solid saddlebrown;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border: 3px solid saddlebrown;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 html.bling-mode .header-contacts a {
-  color: black;
-  font-weight: bold;
+    color: black;
+    font-weight: bold;
 }
 
 html.bling-mode .header-contacts a:hover {
-  color: white;
-  text-shadow: 0 0 5px gold;
+    color: white;
+    text-shadow: 0 0 5px gold;
 }
 
 /* ====================================================
@@ -138,56 +143,60 @@ html.bling-mode .header-contacts a:hover {
    ==================================================== */
 
 html.bling-mode #navigation {
-  background: var(--grad-nav);
-  border-bottom: 2px solid saddlebrown;
+    background: var(--grad-nav);
+    border-bottom: 2px solid saddlebrown;
 }
 
 html.bling-mode #navigation ul li a {
-  border-right: 1px solid rgba(0,0,0,0.1);
-  color: black;
-  font-weight: bold;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    color: black;
+    font-weight: bold;
 }
 
 html.bling-mode #navigation ul li a:hover {
-  background: rgba(255, 255, 255, 0.3);
-  color: black;
+    background: rgba(255, 255, 255, 0.3);
+    color: black;
 }
 
 html.bling-mode #navigation ul li a.active {
-  background: saddlebrown;
-  color: gold;
+    background: saddlebrown;
+    color: gold;
 }
 
 /* Gold sheen effect for specific elements */
 html.bling-mode #nav-calculator-museum {
-  background: linear-gradient(
-    90deg,
-    saddlebrown, darkgoldenrod, gold, white, gold, darkgoldenrod, saddlebrown
-  );
-  background-size: 300% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 900;
-  filter: drop-shadow(0 0 1px rgba(0,0,0,0.2));
-  animation: gold-sheen 8s linear infinite;
+    background: linear-gradient(
+            90deg,
+            saddlebrown, darkgoldenrod, gold, white, gold, darkgoldenrod, saddlebrown
+    );
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.2));
+    animation: gold-sheen 8s linear infinite;
 }
 
 @keyframes gold-sheen {
-  0%   { background-position: 0% 50%; }
-  100% { background-position: 300% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 300% 50%;
+    }
 }
 
 html.bling-mode #nav-calculator-museum:hover {
-  -webkit-text-fill-color: black;
-  background: rgba(255, 255, 255, 0.4);
+    -webkit-text-fill-color: black;
+    background: rgba(255, 255, 255, 0.4);
 }
 
 html.bling-mode #nav-calculator-museum.active {
-  background: saddlebrown;
-  -webkit-background-clip: initial;
-  background-clip: initial;
-  -webkit-text-fill-color: gold;
+    background: saddlebrown;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    -webkit-text-fill-color: gold;
 }
 
 /* ====================================================
@@ -195,31 +204,31 @@ html.bling-mode #nav-calculator-museum.active {
    ==================================================== */
 
 html.bling-mode #content {
-  background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 html.bling-mode #content h2 {
-  color: black;
-  border-bottom: 2px solid saddlebrown;
-  background: none;
-  -webkit-background-clip: initial;
-  background-clip: initial;
-  -webkit-text-fill-color: initial;
+    color: black;
+    border-bottom: 2px solid saddlebrown;
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    -webkit-text-fill-color: initial;
 }
 
 html.bling-mode #content h3 {
-  color: saddlebrown;
-  background: none;
-  -webkit-background-clip: initial;
-  background-clip: initial;
-  -webkit-text-fill-color: initial;
-  font-weight: bold;
+    color: saddlebrown;
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    -webkit-text-fill-color: initial;
+    font-weight: bold;
 }
 
 html.bling-mode #content pre {
-  background: black;
-  color: gold;
-  border: 1px solid gold;
+    background: black;
+    color: gold;
+    border: 1px solid gold;
 }
 
 /* ====================================================
@@ -227,17 +236,17 @@ html.bling-mode #content pre {
    ==================================================== */
 
 html.bling-mode .news-item {
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid darkgoldenrod;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid darkgoldenrod;
 }
 
 html.bling-mode .news-item .date {
-  color: saddlebrown;
-  font-weight: bold;
-  background: none;
-  -webkit-background-clip: initial;
-  background-clip: initial;
-  -webkit-text-fill-color: initial;
+    color: saddlebrown;
+    font-weight: bold;
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    -webkit-text-fill-color: initial;
 }
 
 /* ====================================================
@@ -245,18 +254,18 @@ html.bling-mode .news-item .date {
    ==================================================== */
 
 html.bling-mode .sidebar-section {
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid darkgoldenrod;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid darkgoldenrod;
 }
 
 html.bling-mode .sidebar-section h3 {
-  background: var(--grad-sidebar-h3);
-  color: black;
-  text-shadow: none;
+    background: var(--grad-sidebar-h3);
+    color: black;
+    text-shadow: none;
 }
 
 html.bling-mode .sidebar-section ul li {
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* ====================================================
@@ -264,28 +273,28 @@ html.bling-mode .sidebar-section ul li {
    ==================================================== */
 
 html.bling-mode #footer {
-  background: var(--grad-footer);
-  border-top: 3px solid saddlebrown;
-  color: black;
+    background: var(--grad-footer);
+    border-top: 3px solid saddlebrown;
+    color: black;
 }
 
 html.bling-mode .button-card,
 html.bling-mode .button-grid {
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid saddlebrown;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid saddlebrown;
 }
 
 html.bling-mode .button-card p {
-  color: darkslategray;
+    color: darkslategray;
 }
 
 html.bling-mode #footer a {
-  color: black;
-  font-weight: bold;
+    color: black;
+    font-weight: bold;
 }
 
 html.bling-mode #footer a:hover {
-  color: white;
+    color: white;
 }
 
 /* ====================================================
@@ -293,47 +302,47 @@ html.bling-mode #footer a:hover {
    ==================================================== */
 
 html.bling-mode #theme-toggle {
-  background: saddlebrown;
-  color: gold;
-  border: 1px solid gold;
+    background: saddlebrown;
+    color: gold;
+    border: 1px solid gold;
 }
 
 html.bling-mode #theme-toggle:hover {
-  background: darkgoldenrod;
-  color: white;
+    background: darkgoldenrod;
+    color: white;
 }
 
 html.bling-mode #theme-dialog {
-  background: gold;
-  border: 5px solid saddlebrown;
-  color: black;
+    background: gold;
+    border: 5px solid saddlebrown;
+    color: black;
 }
 
 html.bling-mode .theme-select-btn {
-  background: darkgoldenrod;
-  color: black;
-  border: 1px solid saddlebrown;
+    background: darkgoldenrod;
+    color: black;
+    border: 1px solid saddlebrown;
 }
 
 html.bling-mode .theme-select-btn:hover {
-  background: gold;
-  color: black;
+    background: gold;
+    color: black;
 }
 
 html.bling-mode .theme-select-btn.active {
-  background: saddlebrown;
-  color: gold;
-  border: 2px solid white;
+    background: saddlebrown;
+    color: gold;
+    border: 2px solid white;
 }
 
 html.bling-mode .theme-dialog-close {
-  background: saddlebrown;
-  color: gold;
+    background: saddlebrown;
+    color: gold;
 }
 
 html.bling-mode .theme-dialog-close:hover {
-  background: darkgoldenrod;
-  color: white;
+    background: darkgoldenrod;
+    color: white;
 }
 
 /* ====================================================
@@ -341,34 +350,34 @@ html.bling-mode .theme-dialog-close:hover {
    ==================================================== */
 
 html.bling-mode ::selection {
-  background: gold;
-  color: black;
+    background: gold;
+    color: black;
 }
 
 html.bling-mode .shout {
-  color: saddlebrown;
-  text-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
-  font-size: 24px;
+    color: saddlebrown;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+    font-size: 24px;
 }
 
 html.bling-mode .specimen-table thead tr,
 html.bling-mode .specimen-table tr:first-child {
-  background: var(--grad-header);
-  color: black;
+    background: var(--grad-header);
+    color: black;
 }
 
 html.bling-mode .specimen-table td,
 html.bling-mode .specimen-table th {
-  border: 1px solid saddlebrown;
+    border: 1px solid saddlebrown;
 }
 
 html.bling-mode img {
-  filter: drop-shadow(0 0 5px rgba(218, 165, 32, 0.2));
-  transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 0 5px rgba(218, 165, 32, 0.2));
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 html.bling-mode img:hover {
-  transform: scale(1.02);
-  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
 }
 

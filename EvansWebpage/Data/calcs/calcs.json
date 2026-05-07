@@ -66,7 +66,9 @@
     "yearIntroduced": 2006,
     "type": "Graphing Calculator (CAS)",
     "myCalcsLinks": [
-      { "id": "74" }
+      {
+        "id": "74"
+      }
     ],
     "specimens": [
       {
@@ -121,8 +123,14 @@
       }
     ],
     "myCalcsLinks": [
-      { "id":  "83", "name": "28C" },
-      { "id":  "84", "name": "28S" }
+      {
+        "id": "83",
+        "name": "28C"
+      },
+      {
+        "id": "84",
+        "name": "28S"
+      }
     ],
     "underConstruction": true,
     "category": "Calculator"
@@ -148,11 +156,26 @@
       }
     ],
     "myCalcsLinks": [
-      { "id":  "85", "name": "48S" },
-      { "id":  "86", "name": "48SX" },
-      { "id":  "87", "name": "48G" },
-      { "id":  "88", "name": "48GX" },
-      { "id":  "89", "name": "48G+" }
+      {
+        "id": "85",
+        "name": "48S"
+      },
+      {
+        "id": "86",
+        "name": "48SX"
+      },
+      {
+        "id": "87",
+        "name": "48G"
+      },
+      {
+        "id": "88",
+        "name": "48GX"
+      },
+      {
+        "id": "89",
+        "name": "48G+"
+      }
     ],
     "underConstruction": true,
     "category": "Calculator"
@@ -178,8 +201,14 @@
       }
     ],
     "myCalcsLinks": [
-      { "id":  "", "name": "" },
-      { "id":  "", "name": "" }
+      {
+        "id": "",
+        "name": ""
+      },
+      {
+        "id": "",
+        "name": ""
+      }
     ],
     "underConstruction": true,
     "category": "Calculator"
@@ -205,10 +234,22 @@
       }
     ],
     "myCalcsLinks": [
-      { "id":  "2", "name": "CX" },
-      { "id":  "1", "name": "CX CAS" },
-      { "id":  "63", "name": "CX II" },
-      { "id":  "62", "name": "CX II CAS" }
+      {
+        "id": "2",
+        "name": "CX"
+      },
+      {
+        "id": "1",
+        "name": "CX CAS"
+      },
+      {
+        "id": "63",
+        "name": "CX II"
+      },
+      {
+        "id": "62",
+        "name": "CX II CAS"
+      }
     ],
     "underConstruction": true,
     "category": "Calculator"

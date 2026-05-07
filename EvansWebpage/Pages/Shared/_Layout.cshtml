@@ -4,269 +4,291 @@
     <script data-goatcounter="https://destroyere.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
 
-    <link rel="icon" type="image/x-icon" href="~/favicon.ico?v=2" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico?v=2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     @if (ViewData["Keywords"] != null)
     {
-        <meta name="keywords" content="@ViewData["Keywords"]" />
+        <meta name="keywords" content="@ViewData["Keywords"]"/>
     }
     @if (ViewData["Description"] != null)
     {
-        <meta name="description" content="@ViewData["Description"]" />
+        <meta name="description" content="@ViewData["Description"]"/>
     }
     <title>@ViewData["Title"]</title>
     <script>
         // Apply theme immediately (checks URL parameters first, then localStorage)
-(function () {
-    // Add new themes here as well...
-    const themes = ['dark', 'light', 'blue', 'fancy', 'cool', 'gradient', 'bling', 'aero'];
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlTheme = urlParams.get('theme');
-    
-    let saved = localStorage.getItem('theme') || 'gradient';
+        (function () {
+            // Add new themes here as well...
+            const themes = ['dark', 'light', 'blue', 'fancy', 'cool', 'gradient', 'bling', 'aero'];
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlTheme = urlParams.get('theme');
 
-    if (urlTheme && themes.includes(urlTheme)) {
-        saved = urlTheme;
-        localStorage.setItem('theme', urlTheme);
-    }
+            let saved = localStorage.getItem('theme') || 'gradient';
 
-    if (saved !== 'dark') {
-        document.documentElement.className = saved + '-mode';
-    }
-})();
+            if (urlTheme && themes.includes(urlTheme)) {
+                saved = urlTheme;
+                localStorage.setItem('theme', urlTheme);
+            }
+
+            if (saved !== 'dark') {
+                document.documentElement.className = saved + '-mode';
+            }
+        })();
     </script>
-    <link rel="stylesheet" type="text/css" href="~/css/theme-dark.css" asp-append-version="true" />
-    <link rel="stylesheet" type="text/css" href="~/css/theme-light.css" asp-append-version="true" />
-    <link rel="stylesheet" type="text/css" href="~/css/theme-blue.css" asp-append-version="true" />
-    <link rel="stylesheet" type="text/css" href="~/css/theme-fancy.css" asp-append-version="true" />
-    <link rel="stylesheet" type="text/css" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" type="text/css" href="~/css/theme-dark.css" asp-append-version="true"/>
+    <link rel="stylesheet" type="text/css" href="~/css/theme-light.css" asp-append-version="true"/>
+    <link rel="stylesheet" type="text/css" href="~/css/theme-blue.css" asp-append-version="true"/>
+    <link rel="stylesheet" type="text/css" href="~/css/theme-fancy.css" asp-append-version="true"/>
+    <link rel="stylesheet" type="text/css" href="~/css/style.css" asp-append-version="true"/>
     <link rel="stylesheet" type="text/css" href="~/css/theme-cool.css" asp-append-version="true"/>
     <link rel="stylesheet" type="text/css" href="~/css/theme-gradient.css" asp-append-version="true"/>
     <link rel="stylesheet" type="text/css" href="~/css/theme-bling.css" asp-append-version="true"/>
     <link rel="stylesheet" type="text/css" href="~/css/theme-aero.css" asp-append-version="true"/>
     <script src="https://kit.fontawesome.com/cff3376d88.js" crossorigin="anonymous"></script>
-    @await RenderSectionAsync("Head", required: false)
+    @await RenderSectionAsync("Head", false)
 </head>
 <body>
-    <div id="wrapper">
-        <!-- Header -->
-        <div id="header">
-            <div class="header-photo">
-                <img src="~/images/bad.jpg" alt="Profile Picture" />
-            </div>
-            <div class="header-text">
-                <h1>Destroyere1107's Home Page</h1>
-                <p class="tagline">
-                    It's amazing times we live in when even a shmuck like me can have one.
-                </p>
-                <div class="header-contacts">
-                    <a href="mailto:Destroyere1107@outlook.com" title="E-mail"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="https://github.com/Destroyere1107" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://steamcommunity.com/id/Destroyere1107" target="_blank" title="Steam"><i class="fa-brands fa-steam"></i></a>
-                    <a href="https://discord.com/users/735753453892010039" target="_blank" title="Discord"><i class="fa-brands fa-discord"></i></a>
-                    <p class="tagline">↑ Humans: Please add an 🧮 emoji in message ↑</p>
-                </div>
-            </div>
+<div id="wrapper">
+    <!-- Header -->
+    <div id="header">
+        <div class="header-photo">
+            <img src="~/images/bad.jpg" alt="Profile Picture"/>
         </div>
-
-        <!-- Navigation -->
-        @{
-            var activeNav = ViewData["ActiveNav"]?.ToString() ?? "";
-        }
-        <div id="navigation">
-            <ul>
-                <li><a href="/" id="nav-home" class="@(activeNav == "nav-home" ? "active" : "")">Home</a></li>
-                <li><a href="/about" id="nav-about" class="@(activeNav == "nav-about" ? "active" : "")">About Me</a></li>
-                <li><a href="/happenings" id="nav-happenings" class="@(activeNav == "nav-happenings" ? "active" : "")">Happenings</a></li>
-                <li><a href="/guestbook" id="nav-guestbook" class="@(activeNav == "nav-guestbook" ? "active" : "")">Guestbook</a></li>
-                <li><a href="/yugoslavia" id="nav-yugoslavia-dev" class="@(activeNav == "nav-yugoslavia-dev" ? "active" : "")">Yugoslavia.dev</a></li>
-                <li><a href="/calculatormuseum" id="nav-calculator-museum" class="@(activeNav == "nav-calculator-museum" ? "active" : "")">Calculator Museum</a></li>
-                <li><a href="/ai" id="nav-ai-topic" class="@(activeNav == "nav-ai-topic" ? "active" : "")">On the Topic of AI</a></li>
-                <li><a href="/contact" id="nav-contact" class="@(activeNav == "nav-contact" ? "active" : "")">Contact</a></li>
-            </ul>
-        </div>
-
-        <!-- Content area -->
-        <div id="content-wrapper">
-            @RenderBody()
-
-            @if (ViewData["HideSidebar"] == null)
-            {
-                <div id="sidebar">
-                    <partial name="_SidebarPartial" />
-                </div>
-            }
-
-        </div>
-
-        <!-- Footer -->
-        <div id="footer">
-            <div id="footer-buttons">
-                <div class="button-card">
-                    <a href="https://my.calcs.quest/u/1475?ref=1475" title="Destroyere1107's MyCalcs profile">
-                        <picture>
-                            <source width="350px" height="19px"
-                                    media="(prefers-color-scheme: dark)"
-                                    srcset="https://my.calcs.quest/userbar/1475?style=dark 1x, https://my.calcs.quest/userbar/1475?style=dark&supersize=1 2x" />
-                            <img loading="lazy" width="350px" height="19px"
-                                 src="https://my.calcs.quest/userbar/1475"
-                                 srcset="https://my.calcs.quest/userbar/1475?supersize=1 2x"
-                                 alt="Destroyere1107's MyCalcs userbar" />
-                        </picture>
-                    </a>
-                    <p>My graphing calculator collection on MyCalcs.</p>
-                </div>
-
-                <div class="button-card">
-                    <a href="https://random.diamondbyte.org/"><img src="~/assets/button-img/random.gif" alt="A link to Random's page." width="88" height="31" /></a>
-                    <p>Go check out my friend random()'s page.</p>
-                </div>
-                <div class="button-card">
-                    <a href="https://fedoraproject.org/"><img src="~/assets/button-img/fedora.gif" alt="Powered by Fedora" width="88" height="31" /></a>
-                    <p>
-                        My chosen operating system. If it's good enough for Linus Torvalds, it's
-                        good enough for me.
-                    </p>
-                </div>
+        <div class="header-text">
+            <h1>Destroyere1107's Home Page</h1>
+            <p class="tagline">
+                It's amazing times we live in when even a shmuck like me can have one.
+            </p>
+            <div class="header-contacts">
+                <a href="mailto:Destroyere1107@outlook.com" title="E-mail"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://github.com/Destroyere1107" target="_blank" title="GitHub"><i
+                        class="fa-brands fa-github"></i></a>
+                <a href="https://steamcommunity.com/id/Destroyere1107" target="_blank" title="Steam"><i
+                        class="fa-brands fa-steam"></i></a>
+                <a href="https://discord.com/users/735753453892010039" target="_blank" title="Discord"><i
+                        class="fa-brands fa-discord"></i></a>
+                <p class="tagline">↑ Humans: Please add an 🧮 emoji in message ↑</p>
             </div>
-            <div class="button-grid">
-                <a href="https://planet.kde.org/"><img src="~/assets/button-img/kdenews.gif" alt="KDE Planet" width="88" height="31" /></a>
-                <a href="/calculatormuseum"><img src="~/assets/button-img/noequals.gif" alt="No Equals" width="88" height="31" /></a>
-                <img src="~/assets/button-img/browser.gif" alt="Best with any browser" width="88" height="31" />
-                <img src="~/assets/button-img/keep.gif" alt="Keep" width="88" height="31" />
-                <a href="https://kde.org/" target="_blank"><img src="~/assets/button-img/knbutton.gif" alt="KDE Now!" width="88" height="31" /></a>
-                <a href="https://www.kernel.org/" target="_blank"><img src="~/assets/button-img/linux_powered.gif" alt="Linux Powered" width="88" height="31" /></a>
-                <a href="https://palmdb.net/"><img src="~/assets/button-img/pdb.gif" alt="PalmDB" width="88" height="31" /></a>
-                <img src="~/assets/button-img/88x31gold.gif" alt="Gold" width="88" height="31" />
-                <img src="~/assets/button-img/ieexplode.gif" alt="Internet Exploder" width="88" height="31" />
-                <a href="https://www.firefox.com/"><img src="~/assets/button-img/firefox4.gif" alt="Tested on Firefox" width="88" height="31" /></a>
-                <a href="https://code.visualstudio.com/"><img src="~/assets/button-img/vscbutton.gif" alt="Made with Visual Studio Code" width="88" height="31" /></a>
-                <a href="https://www.gnu.org/"><img src="~/assets/button-img/gnubanner.gif" alt="GNU's Not UNIX" width="88" height="31" /></a>
-                <img src="~/assets/button-img/ally.png" alt="Ally flag" width="88" height="31" />
-            </div>
-            <p>
-                &copy; 2026 Destroyere1107. All rights reserved. |
-                <a href="/contact">Contact</a> | <a href="/sitemap">Sitemap</a> |
-                <a href="/privacy">Privacy Policy</a>
-            </p>
-            <p class="powered-by">
-                A part of this site's code (NOT and NEVER text or pictures) was made with AI
-                assistance.
-            </p>
-            <p class="powered-by">
-                Icons provided by
-                <a href="https://fontawesome.com/" target="_blank">Font Awesome</a>. Images
-                hosted by <a href="https://postimages.org/" target="_blank">Postimage.</a>.
-                Sidebar badges provided by
-                <a href="https://shields.io/" target="_blank">shields.io</a>.
-            </p>
-            <p class="powered-by">
-                This site is developed with a combination of <a href="https://code.visualstudio.com/" target="_blank">Visual Studio
-                Code</a> and <a href="https://www.jetbrains.com/rider/" target="_blank">JetBrains Rider</a>.
-            </p>
         </div>
     </div>
 
-        <!-- Theme Selector Dialog -->
-    <script>
-        (function () {
-            // Available themes - Paste new ones here
-            const themes = [
-                { id: 'dark', label: 'Simple Dark' },
-                { id: 'light', label: 'Simple Light' },
-                { id: 'blue', label: 'Blue' },
-                { id: 'fancy', label: 'Fancy' },
-                { id: 'cool', label: 'Cool' },
-                { id: 'gradient', label: 'Gradient' },
-                { id: 'aero', label: 'Aero' },
-                { id: 'bling', label: 'Bling (WIP)' }
-            ];
-            
-            // Get current theme from localStorage, default to 'gradient'
-            let currentThemeId = localStorage.getItem('theme') || 'gradient';
-            if (!themes.some(t => t.id === currentThemeId)) {
-                currentThemeId = 'gradient';
+    <!-- Navigation -->
+    @{
+        var activeNav = ViewData["ActiveNav"]?.ToString() ?? "";
+    }
+    <div id="navigation">
+        <ul>
+            <li><a href="/" id="nav-home" class="@(activeNav == "nav-home" ? "active" : "")">Home</a></li>
+            <li><a href="/about" id="nav-about" class="@(activeNav == "nav-about" ? "active" : "")">About Me</a></li>
+            <li><a href="/happenings" id="nav-happenings" class="@(activeNav == "nav-happenings" ? "active" : "")">Happenings</a>
+            </li>
+            <li><a href="/guestbook" id="nav-guestbook" class="@(activeNav == "nav-guestbook" ? "active" : "")">Guestbook</a>
+            </li>
+            <li><a href="/yugoslavia" id="nav-yugoslavia-dev"
+                   class="@(activeNav == "nav-yugoslavia-dev" ? "active" : "")">Yugoslavia.dev</a></li>
+            <li><a href="/calculatormuseum" id="nav-calculator-museum"
+                   class="@(activeNav == "nav-calculator-museum" ? "active" : "")">Calculator Museum</a></li>
+            <li><a href="/ai" id="nav-ai-topic" class="@(activeNav == "nav-ai-topic" ? "active" : "")">On the Topic of
+                    AI</a></li>
+            <li><a href="/contact" id="nav-contact" class="@(activeNav == "nav-contact" ? "active" : "")">Contact</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Content area -->
+    <div id="content-wrapper">
+        @RenderBody()
+
+        @if (ViewData["HideSidebar"] == null)
+        {
+            <div id="sidebar">
+                <partial name="_SidebarPartial"/>
+            </div>
+        }
+
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+        <div id="footer-buttons">
+            <div class="button-card">
+                <a href="https://my.calcs.quest/u/1475?ref=1475" title="Destroyere1107's MyCalcs profile">
+                    <picture>
+                        <source width="350px" height="19px"
+                                media="(prefers-color-scheme: dark)"
+                                srcset="https://my.calcs.quest/userbar/1475?style=dark 1x, https://my.calcs.quest/userbar/1475?style=dark&supersize=1 2x"/>
+                        <img loading="lazy" width="350px" height="19px"
+                             src="https://my.calcs.quest/userbar/1475"
+                             srcset="https://my.calcs.quest/userbar/1475?supersize=1 2x"
+                             alt="Destroyere1107's MyCalcs userbar"/>
+                    </picture>
+                </a>
+                <p>My graphing calculator collection on MyCalcs.</p>
+            </div>
+
+            <div class="button-card">
+                <a href="https://random.diamondbyte.org/"><img src="~/assets/button-img/random.gif"
+                                                               alt="A link to Random's page." width="88"
+                                                               height="31"/></a>
+                <p>Go check out my friend random()'s page.</p>
+            </div>
+            <div class="button-card">
+                <a href="https://fedoraproject.org/"><img src="~/assets/button-img/fedora.gif" alt="Powered by Fedora"
+                                                          width="88" height="31"/></a>
+                <p>
+                    My chosen operating system. If it's good enough for Linus Torvalds, it's
+                    good enough for me.
+                </p>
+            </div>
+        </div>
+        <div class="button-grid">
+            <a href="https://planet.kde.org/"><img src="~/assets/button-img/kdenews.gif" alt="KDE Planet" width="88"
+                                                   height="31"/></a>
+            <a href="/calculatormuseum"><img src="~/assets/button-img/noequals.gif" alt="No Equals" width="88"
+                                             height="31"/></a>
+            <img src="~/assets/button-img/browser.gif" alt="Best with any browser" width="88" height="31"/>
+            <img src="~/assets/button-img/keep.gif" alt="Keep" width="88" height="31"/>
+            <a href="https://kde.org/" target="_blank"><img src="~/assets/button-img/knbutton.gif" alt="KDE Now!"
+                                                            width="88" height="31"/></a>
+            <a href="https://www.kernel.org/" target="_blank"><img src="~/assets/button-img/linux_powered.gif"
+                                                                   alt="Linux Powered" width="88" height="31"/></a>
+            <a href="https://palmdb.net/"><img src="~/assets/button-img/pdb.gif" alt="PalmDB" width="88"
+                                               height="31"/></a>
+            <img src="~/assets/button-img/88x31gold.gif" alt="Gold" width="88" height="31"/>
+            <img src="~/assets/button-img/ieexplode.gif" alt="Internet Exploder" width="88" height="31"/>
+            <a href="https://www.firefox.com/"><img src="~/assets/button-img/firefox4.gif" alt="Tested on Firefox"
+                                                    width="88" height="31"/></a>
+            <a href="https://code.visualstudio.com/"><img src="~/assets/button-img/vscbutton.gif"
+                                                          alt="Made with Visual Studio Code" width="88"
+                                                          height="31"/></a>
+            <a href="https://www.gnu.org/"><img src="~/assets/button-img/gnubanner.gif" alt="GNU's Not UNIX" width="88"
+                                                height="31"/></a>
+            <img src="~/assets/button-img/ally.png" alt="Ally flag" width="88" height="31"/>
+        </div>
+        <p>
+            &copy; 2026 Destroyere1107. All rights reserved. |
+            <a href="/contact">Contact</a> | <a href="/sitemap">Sitemap</a> |
+            <a href="/privacy">Privacy Policy</a>
+        </p>
+        <p class="powered-by">
+            A part of this site's code (NOT and NEVER text or pictures) was made with AI
+            assistance.
+        </p>
+        <p class="powered-by">
+            Icons provided by
+            <a href="https://fontawesome.com/" target="_blank">Font Awesome</a>. Images
+            hosted by <a href="https://postimages.org/" target="_blank">Postimage.</a>.
+            Sidebar badges provided by
+            <a href="https://shields.io/" target="_blank">shields.io</a>.
+        </p>
+        <p class="powered-by">
+            This site is developed with a combination of <a href="https://code.visualstudio.com/" target="_blank">Visual
+                Studio
+                Code</a> and <a href="https://www.jetbrains.com/rider/" target="_blank">JetBrains Rider</a>.
+        </p>
+    </div>
+</div>
+
+<!-- Theme Selector Dialog -->
+<script>
+    (function () {
+        // Available themes - Paste new ones here
+        const themes = [
+            {id: 'dark', label: 'Simple Dark'},
+            {id: 'light', label: 'Simple Light'},
+            {id: 'blue', label: 'Blue'},
+            {id: 'fancy', label: 'Fancy'},
+            {id: 'cool', label: 'Cool'},
+            {id: 'gradient', label: 'Gradient'},
+            {id: 'aero', label: 'Aero'},
+            {id: 'bling', label: 'Bling (WIP)'}
+        ];
+
+        // Get current theme from localStorage, default to 'gradient'
+        let currentThemeId = localStorage.getItem('theme') || 'gradient';
+        if (!themes.some(t => t.id === currentThemeId)) {
+            currentThemeId = 'gradient';
+        }
+
+        // Main button that opens the dialog
+        const toggleBtn = document.createElement('button');
+        toggleBtn.id = 'theme-toggle';
+        toggleBtn.textContent = '[ Themes ]';
+        document.body.appendChild(toggleBtn);
+
+        // Create the dialog element
+        const dialog = document.createElement('dialog');
+        dialog.id = 'theme-dialog';
+
+        const dialogTitle = document.createElement('h3');
+        dialogTitle.textContent = 'Select a Theme';
+        dialogTitle.style.marginTop = '0';
+        dialogTitle.style.color = 'var(--accent-blue)';
+        dialog.appendChild(dialogTitle);
+
+        // Create a button for each theme
+        themes.forEach(theme => {
+            const themeBtn = document.createElement('button');
+            themeBtn.className = 'theme-select-btn';
+            themeBtn.textContent = theme.label;
+
+            // Highlight the currently active theme
+            if (theme.id === currentThemeId) {
+                themeBtn.classList.add('active');
             }
-            
-            // Main button that opens the dialog
-            const toggleBtn = document.createElement('button');
-            toggleBtn.id = 'theme-toggle';
-            toggleBtn.textContent = '[ Themes ]';
-            document.body.appendChild(toggleBtn);
 
-            // Create the dialog element
-            const dialog = document.createElement('dialog');
-            dialog.id = 'theme-dialog';
-            
-            const dialogTitle = document.createElement('h3');
-            dialogTitle.textContent = 'Select a Theme';
-            dialogTitle.style.marginTop = '0';
-            dialogTitle.style.color = 'var(--accent-blue)';
-            dialog.appendChild(dialogTitle);
-
-            // Create a button for each theme
-            themes.forEach(theme => {
-                const themeBtn = document.createElement('button');
-                themeBtn.className = 'theme-select-btn';
-                themeBtn.textContent = theme.label;
-                
-                // Highlight the currently active theme
-                if (theme.id === currentThemeId) {
-                    themeBtn.classList.add('active');
-                }
-
-                themeBtn.onclick = function() {
-                    // Remove existing theme classes from HTML tag
-                    themes.forEach(t => {
-                        if (t.id !== 'dark') {
-                            document.documentElement.classList.remove(t.id + '-mode');
-                        }
-                    });
-                    
-                    // Add new theme class (if not default dark)
-                    if (theme.id !== 'dark') {
-                        document.documentElement.classList.add(theme.id + '-mode');
+            themeBtn.onclick = function () {
+                // Remove existing theme classes from HTML tag
+                themes.forEach(t => {
+                    if (t.id !== 'dark') {
+                        document.documentElement.classList.remove(t.id + '-mode');
                     }
-                    
-                    // Save preference
-                    localStorage.setItem('theme', theme.id);
-                    currentThemeId = theme.id;
+                });
 
-                    // Update active styling in the dialog
-                    dialog.querySelectorAll('.theme-select-btn').forEach(b => b.classList.remove('active'));
-                    themeBtn.classList.add('active');
-                };
-                
-                dialog.appendChild(themeBtn);
-            });
-
-            // Close button
-            const closeBtn = document.createElement('button');
-            closeBtn.textContent = 'Close';
-            closeBtn.className = 'theme-dialog-close';
-            closeBtn.onclick = () => dialog.close();
-            
-            const closeContainer = document.createElement('div');
-            closeContainer.style.marginTop = '15px';
-            closeContainer.style.textAlign = 'right';
-            closeContainer.appendChild(closeBtn);
-            dialog.appendChild(closeContainer);
-
-            // Add this dialog to the page
-            document.body.appendChild(dialog);
-
-            toggleBtn.onclick = function () {
-                dialog.showModal();
-            };
-            
-            // Close dialog when clicking outside of it
-            dialog.addEventListener('click', function(event) {
-                if (event.target === dialog) {
-                    dialog.close();
+                // Add new theme class (if not default dark)
+                if (theme.id !== 'dark') {
+                    document.documentElement.classList.add(theme.id + '-mode');
                 }
-            });
-        })();
-    </script>
+
+                // Save preference
+                localStorage.setItem('theme', theme.id);
+                currentThemeId = theme.id;
+
+                // Update active styling in the dialog
+                dialog.querySelectorAll('.theme-select-btn').forEach(b => b.classList.remove('active'));
+                themeBtn.classList.add('active');
+            };
+
+            dialog.appendChild(themeBtn);
+        });
+
+        // Close button
+        const closeBtn = document.createElement('button');
+        closeBtn.textContent = 'Close';
+        closeBtn.className = 'theme-dialog-close';
+        closeBtn.onclick = () => dialog.close();
+
+        const closeContainer = document.createElement('div');
+        closeContainer.style.marginTop = '15px';
+        closeContainer.style.textAlign = 'right';
+        closeContainer.appendChild(closeBtn);
+        dialog.appendChild(closeContainer);
+
+        // Add this dialog to the page
+        document.body.appendChild(dialog);
+
+        toggleBtn.onclick = function () {
+            dialog.showModal();
+        };
+
+        // Close dialog when clicking outside of it
+        dialog.addEventListener('click', function (event) {
+            if (event.target === dialog) {
+                dialog.close();
+            }
+        });
+    })();
+</script>
 
 </body>
 </html>

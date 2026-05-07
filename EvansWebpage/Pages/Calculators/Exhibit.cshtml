@@ -1,5 +1,5 @@
 @page "{id}"
-@model EvansWebpage.Pages.Calculators.ExhibitModel
+@model ExhibitModel
 @{
     Layout = "_CalculatorLayout";
     ViewData["Title"] = $"{Model.Exhibit.Name} - Destroyere1107's Calculator Museum";
@@ -19,23 +19,24 @@
 {
     <img src="/assets/misc/underconstruction.png"
          alt="Under Construction"
-         style="display: block; margin: 0 auto; max-width: 620px; height: 100px;" />
+         style="display: block; margin: 0 auto; max-width: 620px; height: 100px;"/>
 }
 
 <div class="news-item">
     <h3 style="margin-top: 0">Quick Facts</h3>
     @if (!string.IsNullOrEmpty(Model.Exhibit.MainImageUrl))
     {
-        <img src="@Model.Exhibit.MainImageUrl" 
+        <img src="@Model.Exhibit.MainImageUrl"
              alt="@Model.Exhibit.Name"
-             style="max-width: 400px; height: auto; display: block; margin: 8px auto 16px auto;" />
+             style="max-width: 400px; height: auto; display: block; margin: 8px auto 16px auto;"/>
     }
     <table style="border-collapse: collapse; width: 100%">
         <tr>
             <td style="padding: 4px 8px"><strong>Manufacturer:</strong></td>
             <td style="padding: 4px 8px">
                 <div style="background-color: #ffffff; display: inline-block; padding: 4px 8px;">
-                    <img src="@Model.Exhibit.ManufacturerLogo" alt="@Model.Exhibit.Manufacturer" style="max-height: 30px; height: auto" />
+                    <img src="@Model.Exhibit.ManufacturerLogo" alt="@Model.Exhibit.Manufacturer"
+                         style="max-height: 30px; height: auto"/>
                 </div>
             </td>
         </tr>
@@ -59,14 +60,14 @@
             <tr>
                 <td style="padding: 4px 8px"><strong>Similar Specimens on MyCalcs:</strong></td>
                 <td style="padding: 4px 8px">
-                    @for (int i = 0; i < Model.Exhibit.MyCalcsLinks.Count; i++)
+                    @for (var i = 0; i < Model.Exhibit.MyCalcsLinks.Count; i++)
                     {
                         var link = Model.Exhibit.MyCalcsLinks[i];
-                        
+
                         var displayText = !string.IsNullOrEmpty(link.Name) ? link.Name : link.Id;
 
                         <a href="https://my.calcs.quest/search?models=@link.Id">@displayText</a>
-                
+
                         // Add a space separator if it's not the last item in the list
                         @if (i < Model.Exhibit.MyCalcsLinks.Count - 1)
                         {
@@ -90,7 +91,9 @@
     {
         <table class="specimen-table" style="border-collapse: collapse; width: 100%; margin-bottom: 12px;">
             <tr style="background-color: #cccccc; color: #000000">
-                <th style="padding: 4px 8px; text-align: center; border: 1px solid #999999; width: 1%; white-space: nowrap;">#</th>
+                <th style="padding: 4px 8px; text-align: center; border: 1px solid #999999; width: 1%; white-space: nowrap;">
+                    #
+                </th>
                 <th style="padding: 4px 8px; text-align: left; border: 1px solid #999999;">Variant</th>
                 <th style="padding: 4px 8px; text-align: left; border: 1px solid #999999;">Serial Number</th>
                 <th style="padding: 4px 8px; text-align: left; border: 1px solid #999999;">Condition</th>
@@ -106,7 +109,8 @@
                     <td style="padding: 4px 8px; border: 1px solid #999999">
                         @if (!string.IsNullOrEmpty(specimen.ImageUrl))
                         {
-                            <img src="@specimen.ImageUrl" alt="Specimen Image" style="max-width: 400px; height: auto; display: block; margin: 8px 0;" />
+                            <img src="@specimen.ImageUrl" alt="Specimen Image"
+                                 style="max-width: 400px; height: auto; display: block; margin: 8px 0;"/>
                         }
                     </td>
                 </tr>
@@ -124,14 +128,14 @@
 {
     <div class="news-item">
         <h3 style="margin-top: 0">Gallery</h3>
-        
+
         @foreach (var img in Model.Exhibit.Gallery)
         {
             <figure style="margin: 16px auto; text-align: center;">
-                <img src="@img.Url" 
-                     alt="@img.AltText" 
-                     style="max-width: 100%; height: auto; display: block; margin: 0 auto;" />
-                     
+                <img src="@img.Url"
+                     alt="@img.AltText"
+                     style="max-width: 100%; height: auto; display: block; margin: 0 auto;"/>
+
                 @if (!string.IsNullOrEmpty(img.Caption))
                 {
                     <figcaption style="font-size: 0.9em; color: #555; margin-top: 6px; font-style: italic;">
