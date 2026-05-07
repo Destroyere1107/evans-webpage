@@ -22,7 +22,7 @@ Every single line of code that I didn't write (and I o try to limit it as much a
 
 In addition, under no circumstances will I ever use an LLM to generate any **content**, meaning any text or images that your average John Taxpayer will ever lay his eyes on, such as my news posts or the museum.
 
--# Also, I did finally figure out how to turn of Jules. I am quite happy about that.
+-# Also, I did finally figure out how to turn off Jules. I am quite happy about that.
 
 ## Planned Additions
 
