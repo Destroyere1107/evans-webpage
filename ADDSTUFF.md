@@ -45,26 +45,7 @@ Use this empty template and add to /EvansWebpage/Data/calcs/calcs.json.
 
 1. Copy `theme-template.css` to `whatever-new-theme.css`.
 2. Fill in the new theme with the appropriate colors and uncomment any needed overrides.
-3. Import the theme to style.css, as follows:
-
-```css
-@import url("theme-dark.css");
-@import url("theme-light.css");
-@import url("whatever-new-theme.css"); /* New theme */
-```
-
-4. Add it to the `themes` array in the theme toggle script at the bottom of `_Layout.cshtml`:
-
-```javascript
-const themes = [
-  { id: "dark", label: "Dark" },
-  { id: "light", label: "Light" },
-  { id: "blue", label: "Blue" },
-  { id: "whatever", label: "Whatever" }, // New theme
-];
-```
-
-5. And also link it above that in `_Layout.cshtml`:
+3. Link the theme in `<head>` in `_Layout.cshtml`:
 
 ```html
 <link
@@ -85,4 +66,15 @@ const themes = [
   href="~/css/theme-whatever.css"
   asp-append-version="true"
 />
+```
+
+4. Add it to the `themes` array in the theme toggle script at the bottom of `_Layout.cshtml`:
+
+```javascript
+const themes = [
+  { id: "dark", label: "Dark" },
+  { id: "light", label: "Light" },
+  { id: "blue", label: "Blue" },
+  { id: "whatever", label: "Whatever" }, // New theme
+];
 ```
