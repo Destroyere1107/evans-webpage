@@ -17,9 +17,12 @@ internal class Program
 
         var app = builder.Build();
 
-        if (!app.Environment.IsDevelopment()) app.UseExceptionHandler("/Error");
+        if (!app.Environment.IsDevelopment())
+        {
+            app.UseExceptionHandler("/Error");
+        }
 
-        // app.UseStaticFiles(); used to be here, but packaging wwwroot into the binary with the functionality added
+// app.UseStaticFiles(); used to be here, but packaging wwwroot into the binary with the functionality added
 // by Microsoft.Extensions.FileProviders.Embedded requires this
         app.UseStaticFiles(new StaticFileOptions
         {
@@ -35,10 +38,9 @@ internal class Program
         {
             if (context.Request.Path.Value?.Equals("/index.html", StringComparison.OrdinalIgnoreCase) == true)
             {
-                context.Response.Redirect("/", true);
+                context.Response.Redirect("/", permanent: true);
                 return;
             }
-
             await next();
         });
 

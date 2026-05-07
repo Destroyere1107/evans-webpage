@@ -1,5 +1,5 @@
 @page
-@model DirectoryModel
+@model EvansWebpage.Pages.Calculators.DirectoryModel
 @{
     Layout = "_CalculatorLayout";
     ViewData["Title"] = "Calculator Directory - Destroyere1107's Calculator Museum";
@@ -12,16 +12,15 @@
 </p>
 
 <p>
-    Welcome to the directory of the collection. This index is generated automatically from a (soon-to-be) massive JSON
-    file.
+    Welcome to the directory of the collection. This index is generated automatically from a (soon-to-be) massive JSON file.
 </p>
 <p>Until I have added more, this list is incomplete. Go look at my MyCalcs collection to see a more up-to-date list.</p>
 
 <img src="~/assets/misc/underconstruction.png"
      alt="Under Construction"
-     style="display: block; margin: 0 auto; max-width: 620px; height: 100px;"/>
+     style="display: block; margin: 0 auto; max-width: 620px; height: 100px;" />
 
-<hr/>
+<hr />
 
 @if (Model.DirectoryData.Any())
 {
@@ -42,7 +41,7 @@
                     {
                         <li>
                             <a href="/calculators/exhibit/@exhibit.Id">@exhibit.Name</a>
-
+    
                             @if (exhibit.UnderConstruction)
                             {
                                 <span style="font-size: 0.8em; color: #666;"> &larr; Coming Soon!</span>

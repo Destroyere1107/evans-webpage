@@ -1,6 +1,3 @@
-The fx-CG50 is Casio's response to the TI-84+CE. Powered by standard batteries (instead of a recharging LiIon like its
-bretheren) the CG50 packs an impressive amount of capability for a calculator of its class.
+The fx-CG50 is Casio's response to the TI-84+CE. Powered by standard batteries (instead of a recharging LiIon like its bretheren) the CG50 packs an impressive amount of capability for a calculator of its class.
 
-Notably, like its predecessors and relatives in Casio, the CG50 handles multiple types of functions on one graph very
-well, especially in comparison to the HP 50/40 (Which allow multiple types, but have to be done seperately and slowly)
-and the TI-84 (which can't).
+Notably, like its predecessors and relatives in Casio, the CG50 handles multiple types of functions on one graph very well, especially in comparison to the HP 50/40 (Which allow multiple types, but have to be done seperately and slowly) and the TI-84 (which can't).

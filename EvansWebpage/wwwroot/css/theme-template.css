@@ -5,50 +5,50 @@
 
 /* Replace .theme-name with the class name */
 html.theme-name {
-    /* Backgrounds */
-    --bg-page: /* Main background color for the body/page area outside the main wrapper. e.g. #ffffff */;
-    --bg-deep: /* Secondary darker/deeper background (used for #content pre, .news-item, .sidebar-section, .button-card, .button-grid, #theme-dialog). e.g. #f4f5f7 */;
-    --bg-surface: /* Primary surface background for main content area (e.g. #wrapper, .theme-select-btn). e.g. #ffffff */;
-    --bg-elevated: /* Background for elevated interactive elements (e.g. #theme-toggle, .theme-dialog-close). e.g. #f8f9fa */;
-    --bg-hover: /* Background color when hovering over interactive elements (e.g. #navigation a:hover, #theme-toggle:hover, .theme-select-btn:hover, .theme-dialog-close:hover). e.g. #e9ecef */;
+  /* Backgrounds */
+  --bg-page:           /* Main background color for the body/page area outside the main wrapper. e.g. #ffffff */; 
+  --bg-deep:           /* Secondary darker/deeper background (used for #content pre, .news-item, .sidebar-section, .button-card, .button-grid, #theme-dialog). e.g. #f4f5f7 */;
+  --bg-surface:        /* Primary surface background for main content area (e.g. #wrapper, .theme-select-btn). e.g. #ffffff */;
+  --bg-elevated:       /* Background for elevated interactive elements (e.g. #theme-toggle, .theme-dialog-close). e.g. #f8f9fa */;
+  --bg-hover:          /* Background color when hovering over interactive elements (e.g. #navigation a:hover, #theme-toggle:hover, .theme-select-btn:hover, .theme-dialog-close:hover). e.g. #e9ecef */;
 
-    /* Borders */
-    --border-default: /* Default border color (used for #wrapper, #navigation a, #content pre, .button-card, .button-grid, #theme-toggle, #theme-dialog, .theme-select-btn, .theme-dialog-close, #footer). e.g. #dee2e6 */;
-    --border-blue: /* Secondary border color, typically blue-ish (used for #content h2, .news-item, .sidebar-section, .sidebar-section ul li). e.g. #b8daff */;
+  /* Borders */
+  --border-default:    /* Default border color (used for #wrapper, #navigation a, #content pre, .button-card, .button-grid, #theme-toggle, #theme-dialog, .theme-select-btn, .theme-dialog-close, #footer). e.g. #dee2e6 */;
+  --border-blue:       /* Secondary border color, typically blue-ish (used for #content h2, .news-item, .sidebar-section, .sidebar-section ul li). e.g. #b8daff */;
 
-    /* Navy / Header Colors (Primary brand colors) */
-    --navy-dark: /* Darkest navy color (currently unused, good for deep header gradients). e.g. #003366 */;
-    --navy: /* Standard navy color (used for the active navigation tab background). e.g. #004080 */;
-    --navy-light: /* Lighter navy color (currently unused, good for bright header elements). e.g. #0059b3 */;
+  /* Navy / Header Colors (Primary brand colors) */
+  --navy-dark:         /* Darkest navy color (currently unused, good for deep header gradients). e.g. #003366 */;
+  --navy:              /* Standard navy color (used for the active navigation tab background). e.g. #004080 */;
+  --navy-light:        /* Lighter navy color (currently unused, good for bright header elements). e.g. #0059b3 */;
 
-    /* Accent Colors */
-    --accent-blue: /* Primary link and accent color (used for standard <a> tags, #content h2, #content h3, #footer a, .theme-select-btn.active border). e.g. #0056b3 */;
-    --accent-blue-muted: /* Muted accent color (used for #header .tagline and .header-contacts a). e.g. #337ab7 */;
-    --header-border: /* Border color around the header photo. e.g. #002244 */;
-    --accent-hover: /* Color for hovered links (a:hover), hovered theme buttons (.theme-select-btn:hover border), and .theme-dialog-close:hover text. e.g. #cc5200 */;
-    --accent-visited: /* Color for visited links. e.g. #551a8b */;
+  /* Accent Colors */
+  --accent-blue:       /* Primary link and accent color (used for standard <a> tags, #content h2, #content h3, #footer a, .theme-select-btn.active border). e.g. #0056b3 */;
+  --accent-blue-muted: /* Muted accent color (used for #header .tagline and .header-contacts a). e.g. #337ab7 */;
+  --header-border:     /* Border color around the header photo. e.g. #002244 */;
+  --accent-hover:      /* Color for hovered links (a:hover), hovered theme buttons (.theme-select-btn:hover border), and .theme-dialog-close:hover text. e.g. #cc5200 */;
+  --accent-visited:    /* Color for visited links. e.g. #551a8b */;
 
-    /* Text Colors */
-    --text-primary: /* Primary emphasis text color (used for #header, .sidebar-section h3, #navigation a:hover, .header-contacts a:hover, #theme-toggle:hover). e.g. #212529 */;
-    --text-heading: /* Main site heading text color (#header h1). e.g. #000000 */;
-    --text-body: /* Standard body text color (used for body, #theme-dialog, .theme-select-btn, .theme-dialog-close). e.g. #333333 */;
-    --text-nav: /* Text color for standard un-hovered navigation (#navigation a) and #theme-toggle. e.g. #495057 */;
-    --text-label: /* Unused (good for form labels or minor text). e.g. #6c757d */;
-    --text-muted: /* Muted text color for secondary info (e.g. .button-card p, .sidebar-section p). e.g. #868e96 */;
-    --text-dim: /* Dimmer text color for metadata (e.g. .news-item .date, .license-notice, .note-text). e.g. #adb5bd */;
-    --text-footer: /* Text color for #footer p. e.g. #666666 */;
-    --text-powered: /* Text color for the .powered-by footer attribution. e.g. #999999 */;
+  /* Text Colors */
+  --text-primary:      /* Primary emphasis text color (used for #header, .sidebar-section h3, #navigation a:hover, .header-contacts a:hover, #theme-toggle:hover). e.g. #212529 */;
+  --text-heading:      /* Main site heading text color (#header h1). e.g. #000000 */;
+  --text-body:         /* Standard body text color (used for body, #theme-dialog, .theme-select-btn, .theme-dialog-close). e.g. #333333 */;
+  --text-nav:          /* Text color for standard un-hovered navigation (#navigation a) and #theme-toggle. e.g. #495057 */;
+  --text-label:        /* Unused (good for form labels or minor text). e.g. #6c757d */;
+  --text-muted:        /* Muted text color for secondary info (e.g. .button-card p, .sidebar-section p). e.g. #868e96 */;
+  --text-dim:          /* Dimmer text color for metadata (e.g. .news-item .date, .license-notice, .note-text). e.g. #adb5bd */;
+  --text-footer:       /* Text color for #footer p. e.g. #666666 */;
+  --text-powered:      /* Text color for the .powered-by footer attribution. e.g. #999999 */;
 
-    /* Gradients */
-    --grad-header: /* Gradient background for the main page #header. e.g. linear-gradient(to bottom, #0059b3 0%, #003366 100%) */;
-    --grad-nav: /* Gradient background for the main #navigation bar. e.g. linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%) */;
-    --grad-sidebar-h3: /* Gradient background for sidebar section headers (.sidebar-section h3). e.g. linear-gradient(to bottom, #0059b3 0%, #004080 100%) */;
-    --grad-footer: /* Gradient background for the #footer area. e.g. linear-gradient(to bottom, #e9ecef 0%, #dee2e6 100%) */;
+  /* Gradients */
+  --grad-header:       /* Gradient background for the main page #header. e.g. linear-gradient(to bottom, #0059b3 0%, #003366 100%) */;
+  --grad-nav:          /* Gradient background for the main #navigation bar. e.g. linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%) */;
+  --grad-sidebar-h3:   /* Gradient background for sidebar section headers (.sidebar-section h3). e.g. linear-gradient(to bottom, #0059b3 0%, #004080 100%) */;
+  --grad-footer:       /* Gradient background for the #footer area. e.g. linear-gradient(to bottom, #e9ecef 0%, #dee2e6 100%) */;
 
-    /* Misc Elements */
-    --header-bottom: /* Color for the thick bottom border of the main header. e.g. #002244 */;
-    --nav-border-bottom: /* Color for the bottom border of the navigation bar. e.g. #ced4da */;
-    --wrapper-shadow: /* Box shadow applied to the main #wrapper container. e.g. 2px 2px 8px rgba(0,0,0,0.1) */;
+  /* Misc Elements */
+  --header-bottom:     /* Color for the thick bottom border of the main header. e.g. #002244 */;
+  --nav-border-bottom: /* Color for the bottom border of the navigation bar. e.g. #ced4da */;
+  --wrapper-shadow:    /* Box shadow applied to the main #wrapper container. e.g. 2px 2px 8px rgba(0,0,0,0.1) */;
 }
 
 /* ====================================================

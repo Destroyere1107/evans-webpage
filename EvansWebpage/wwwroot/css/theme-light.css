@@ -3,107 +3,107 @@
    Applied when body has class "light-mode"
    ==================================================== */
 html.light-mode {
-    /* Backgrounds */
-    --bg-page: #e8e8e8;
-    --bg-deep: #f5f8fc;
-    --bg-surface: #ffffff;
-    --bg-elevated: #f0f0f0;
-    --bg-hover: #d0d8e0;
+  /* Backgrounds */
+  --bg-page:           #e8e8e8;
+  --bg-deep:           #f5f8fc;
+  --bg-surface:        #ffffff;
+  --bg-elevated:       #f0f0f0;
+  --bg-hover:          #d0d8e0;
 
-    /* Borders */
-    --border-default: #a0a0a0;
-    --border-blue: #d0d8e0;
+  /* Borders */
+  --border-default:    #a0a0a0;
+  --border-blue:       #d0d8e0;
 
-    /* Navy / Header Blues */
-    --navy-dark: #1E3F66;
-    --navy: #2E5B8A;
-    --navy-light: #3A6FA0;
+  /* Navy / Header Blues */
+  --navy-dark:         #1E3F66;
+  --navy:              #2E5B8A;
+  --navy-light:        #3A6FA0;
 
-    /* Accent Blues */
-    --accent-blue: #2E5B8A;
-    --accent-blue-muted: #b0c8e0;
-    --header-border: #2E5B8A;
+  /* Accent Blues */
+  --accent-blue:       #2E5B8A;
+  --accent-blue-muted: #b0c8e0;
+  --header-border:     #2E5B8A;
 
-    /* Accent Colors */
-    --accent-hover: #C05020;
-    --accent-visited: #4A3070;
+  /* Accent Colors */
+  --accent-hover:      #C05020;
+  --accent-visited:    #4A3070;
 
-    /* Text */
-    --text-primary: #ffffff;
-    --text-heading: #ffffff;
-    --text-body: #333333;
-    --text-nav: #333333;
-    --text-label: #444444;
-    --text-muted: #555555;
-    --text-dim: #808080;
-    --text-footer: #606060;
-    --text-powered: #909090;
+  /* Text */
+  --text-primary:      #ffffff;
+  --text-heading:      #ffffff;
+  --text-body:         #333333;
+  --text-nav:          #333333;
+  --text-label:        #444444;
+  --text-muted:        #555555;
+  --text-dim:          #808080;
+  --text-footer:       #606060;
+  --text-powered:      #909090;
 
-    /* Gradients */
-    --grad-header: linear-gradient(to bottom, #3A6FA0 0%, #1E3F66 100%);
-    --grad-nav: linear-gradient(to bottom, #fafafa 0%, #e0e0e0 100%);
-    --grad-sidebar-h3: linear-gradient(to bottom, #3A6FA0 0%, #2E5B8A 100%);
-    --grad-footer: linear-gradient(to bottom, #e8e8e8 0%, #d0d0d0 100%);
+  /* Gradients */
+  --grad-header:       linear-gradient(to bottom, #3A6FA0 0%, #1E3F66 100%);
+  --grad-nav:          linear-gradient(to bottom, #fafafa 0%, #e0e0e0 100%);
+  --grad-sidebar-h3:   linear-gradient(to bottom, #3A6FA0 0%, #2E5B8A 100%);
+  --grad-footer:       linear-gradient(to bottom, #e8e8e8 0%, #d0d0d0 100%);
 
-    /* Misc overrides */
-    --header-bottom: #163050;
-    --nav-border-bottom: #b0b0b0;
-    --wrapper-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+  /* Misc overrides */
+  --header-bottom:     #163050;
+  --nav-border-bottom: #b0b0b0;
+  --wrapper-shadow:    2px 2px 8px rgba(0,0,0,0.15);
 }
 
 html.light-mode body {
-    /* Background pattern */
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHklEQVQIW2O8fPnyf0YGBgYmIAESYGJgYEAXAAcAJngEoX7h9scAAAAASUVORK5CYII=');
+  /* Background pattern */
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHklEQVQIW2O8fPnyf0YGBgYmIAESYGJgYEAXAAcAJngEoX7h9scAAAAASUVORK5CYII=');
 }
 
 /* Light-mode nav link borders need explicit override */
 html.light-mode #navigation ul li a {
-    border-right-color: #c8c8c8;
-    border-left-color: #ffffff;
+  border-right-color: #c8c8c8;
+  border-left-color: #ffffff;
 }
 
 /* Light-mode active nav stays white-on-blue */
 html.light-mode #navigation ul li a:hover {
-    color: #1E3F66;
+  color: #1E3F66;
 }
 
 /* Gold sheen in light mode uses darker gold tones */
 html.light-mode #nav-calculator-museum {
-    background: linear-gradient(135deg, #7a5a00, #b8860b, #c99700, #b8860b, #7a5a00, #b8860b, #c99700, #b8860b, #7a5a00);
-    background-size: 300% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 2px rgba(184, 134, 11, 0.5));
-    animation: gold-sheen 30s linear infinite;
+  background: linear-gradient(135deg, #7a5a00, #b8860b, #c99700, #b8860b, #7a5a00, #b8860b, #c99700, #b8860b, #7a5a00);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 2px rgba(184, 134, 11, 0.5));
+  animation: gold-sheen 30s linear infinite;
 }
 
 html.light-mode #nav-calculator-museum:hover {
-    background: linear-gradient(135deg, #b8860b, #ffd700, #fffacd, #ffd700, #b8860b);
-    -webkit-background-clip: border-box;
-    background-clip: border-box;
-    -webkit-text-fill-color: #5a3a00;
-    color: #5a3a00;
-    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.8));
+  background: linear-gradient(135deg, #b8860b, #ffd700, #fffacd, #ffd700, #b8860b);
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-text-fill-color: #5a3a00;
+  color: #5a3a00;
+  filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.8));
 }
 
 /* Light-mode content text colors that can't use variables
    (these are contextual - heading blue is also link blue in dark,
     but different in light mode) */
 html.light-mode #content h3 {
-    color: #3A6FA0;
+  color: #3A6FA0;
 }
 
 html.light-mode #content pre {
-    background-color: #fafbfc;
-    border-color: #a0a8b0;
-    color: #333333;
+  background-color: #fafbfc;
+  border-color: #a0a8b0;
+  color: #333333;
 }
 
 html.light-mode .header-contacts a:hover {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 html.light-mode .button-card p {
-    color: #555555;
+  color: #555555;
 }
