@@ -68,7 +68,13 @@ Use this empty template and add to /EvansWebpage/Data/calcs/calcs.json.
 />
 ```
 
-4. Add it to the `themes` array in the theme toggle script at the bottom of `_Layout.cshtml`:
+4. Add the theme just above that to the function:
+
+```javascript
+const themes = ["dark", "light", "whatever"];
+```
+
+5. Add it to the `themes` array in the theme toggle script at the bottom of `_Layout.cshtml`:
 
 ```javascript
 const themes = [

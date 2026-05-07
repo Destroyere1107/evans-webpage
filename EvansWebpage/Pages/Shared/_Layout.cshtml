@@ -16,13 +16,24 @@
     }
     <title>@ViewData["Title"]</title>
     <script>
-        // Apply saved theme immediately (before page renders)
-        (function () {
-            var saved = localStorage.getItem('theme') || 'gradient';
-            if (saved !== 'dark') {
-                document.documentElement.className = saved + '-mode';
-            }
-        })();
+        // Apply theme immediately (checks URL parameters first, then localStorage)
+(function () {
+    // Add new themes here as well...
+    const themes = ['dark', 'light', 'blue', 'fancy', 'cool', 'gradient', 'bling', 'aero'];
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlTheme = urlParams.get('theme');
+    
+    let saved = localStorage.getItem('theme') || 'gradient';
+
+    if (urlTheme && themes.includes(urlTheme)) {
+        saved = urlTheme;
+        localStorage.setItem('theme', urlTheme);
+    }
+
+    if (saved !== 'dark') {
+        document.documentElement.className = saved + '-mode';
+    }
+})();
     </script>
     <link rel="stylesheet" type="text/css" href="~/css/theme-dark.css" asp-append-version="true" />
     <link rel="stylesheet" type="text/css" href="~/css/theme-light.css" asp-append-version="true" />
