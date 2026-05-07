@@ -31,6 +31,8 @@
     <link rel="stylesheet" type="text/css" href="~/css/style.css" asp-append-version="true" />
     <link rel="stylesheet" type="text/css" href="~/css/theme-cool.css" asp-append-version="true"/>
     <link rel="stylesheet" type="text/css" href="~/css/theme-gradient.css" asp-append-version="true"/>
+    <link rel="stylesheet" type="text/css" href="~/css/theme-bling.css" asp-append-version="true"/>
+    <link rel="stylesheet" type="text/css" href="~/css/theme-aero.css" asp-append-version="true"/>
     <script src="https://kit.fontawesome.com/cff3376d88.js" crossorigin="anonymous"></script>
     @await RenderSectionAsync("Head", required: false)
 </head>
@@ -129,6 +131,7 @@
                 <a href="https://www.firefox.com/"><img src="~/assets/button-img/firefox4.gif" alt="Tested on Firefox" width="88" height="31" /></a>
                 <a href="https://code.visualstudio.com/"><img src="~/assets/button-img/vscbutton.gif" alt="Made with Visual Studio Code" width="88" height="31" /></a>
                 <a href="https://www.gnu.org/"><img src="~/assets/button-img/gnubanner.gif" alt="GNU's Not UNIX" width="88" height="31" /></a>
+                <img src="~/assets/button-img/ally.png" alt="Ally flag" width="88" height="31" />
             </div>
             <p>
                 &copy; 2026 Destroyere1107. All rights reserved. |
@@ -158,12 +161,14 @@
         (function () {
             // Available themes
             const themes = [
-                { id: 'dark', label: 'Dark' },
-                { id: 'light', label: 'Light' },
+                { id: 'dark', label: 'Simple Dark' },
+                { id: 'light', label: 'Simple Light' },
                 { id: 'blue', label: 'Blue' },
                 { id: 'fancy', label: 'Fancy' },
                 { id: 'cool', label: 'Cool' },
-                { id: 'gradient', label: 'Gradient' }
+                { id: 'gradient', label: 'Gradient' },
+                { id: 'bling', label: 'Bling' },
+                { id: 'aero', label: 'Aero' }
             ];
             
             // Get current theme from localStorage, default to 'gradient'
