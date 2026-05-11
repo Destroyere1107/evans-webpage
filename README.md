@@ -60,8 +60,9 @@ The site will be available on `http://localhost:5050` (or whatever ports config'
 
 THE PAGE REQUIRES THE FOLLOWING:
 
-- `Microsoft.Extensions.FileProviders.Embedded`
-- `Markdig`
+- `Microsoft.Extensions.FileProviders.Embedded` - Allows for everything to be bundled as one big binary
+- `Markdig` - For the dynamic Happenings and Calcpages.
+- `System.ServiceModel.Syndication` - For the RSS feed.
 
 ### Running on-VM
 
