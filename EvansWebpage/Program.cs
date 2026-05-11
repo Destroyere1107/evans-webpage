@@ -14,6 +14,8 @@ internal class Program
         // read data files from the published single-file binary.
         builder.Services.AddKeyedSingleton<IFileProvider>("DataFiles",
             new ManifestEmbeddedFileProvider(typeof(Program).Assembly, "Data"));
+        
+        builder.Services.AddTransient<EvansWebpage.Services.HappeningsService>();
 
         var app = builder.Build();
 
