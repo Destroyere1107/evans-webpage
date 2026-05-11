@@ -1,4 +1,5 @@
 using System.ServiceModel.Syndication;
+using System.Text;
 using System.Xml;
 using EvansWebpage.Services;
 using Microsoft.Extensions.FileProviders;
@@ -82,14 +83,21 @@ internal class Program
 
             // 4. Serialize to XML
             using var stringWriter = new StringWriter();
-            using var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true });
-    
-            var rssFormatter = new Rss20FeedFormatter(feed, serializeExtensionsAsAtom: false);
-            rssFormatter.WriteTo(xmlWriter);
-            xmlWriter.Flush();
+            using var stream = new MemoryStream();
+            var settings = new XmlWriterSettings 
+            { 
+                Indent = true,
+                Encoding = new UTF8Encoding(false)
+            };
 
-            // 5. Return as the correct MIME type so browsers and feed readers recognize it
-            return Results.Text(stringWriter.ToString(), "application/rss+xml");
+            using (var xmlWriter = XmlWriter.Create(stream, settings))
+            {
+                var rssFormatter = new Rss20FeedFormatter(feed, false);
+                rssFormatter.WriteTo(xmlWriter);
+                xmlWriter.Flush();
+            }
+
+            return Results.File(stream.ToArray(), "application/rss+xml");
         });
 
         app.MapRazorPages();
