@@ -28,8 +28,8 @@ In addition, under no circumstances will I ever use an LLM to generate any **con
 
 ### Front-facing
 
-- [ ] Make happenings dynamically built like the calcpages
-  - [ ] RSS Feed for happenings
+- [x] Make happenings dynamically built like the calcpages
+  - [x] RSS Feed for happenings
 - [ ] RPN Calculator widget
   - [ ] RPN challenge game (?)
     - [ ] With leaderboard (?)
