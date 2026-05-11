@@ -47,9 +47,9 @@ internal class Program
             await next();
         });
         
-        app.MapGet("/rss.xml", (HappeningsService happeningsService) =>
+        app.MapGet("/rss.xml", async (HappeningsService happeningsService) =>
         {
-            var posts = happeningsService.GetAllPosts();
+            var posts = await happeningsService.GetAllPostsAsync();
             
             var feed = new SyndicationFeed(
                 "Destroyere1107's Happenings",

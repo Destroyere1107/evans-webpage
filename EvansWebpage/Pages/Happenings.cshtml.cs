@@ -18,10 +18,10 @@ namespace EvansWebpage.Pages
             _happeningsService = happeningsService;
         }
 
-        public void OnGet()
+        public async Task OnGetAsync()
         {
             // Call the service to grab all posts, already sorted by date
-            Posts = _happeningsService.GetAllPosts();
+            Posts = await _happeningsService.GetAllPostsAsync();
         }
     }
 }

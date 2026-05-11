@@ -17,7 +17,7 @@ public class DirectoryModel : PageModel
     // Data structure: Category -> Manufacturer -> List of Exhibits
     public Dictionary<string, Dictionary<string, List<Exhibit>>> DirectoryData { get; set; } = new();
 
-    public void OnGet()
+    public async Task OnGetAsync()
     {
         var fileInfo = _dataFiles.GetFileInfo("calcs/calcs.json");
 
@@ -26,8 +26,10 @@ public class DirectoryModel : PageModel
         using var stream = fileInfo.CreateReadStream();
         using var reader = new StreamReader(stream);
         var jsonString = reader.ReadToEnd();
-        var allExhibits = JsonSerializer.Deserialize<List<Exhibit>>(jsonString,
-            new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+        var allExhibits = await JsonSerializer.DeserializeAsync<List<Exhibit>>(
+            stream, 
+            new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
+        );
 
         if (allExhibits != null && allExhibits.Any())
             // Use LINQ to group the data cleanly

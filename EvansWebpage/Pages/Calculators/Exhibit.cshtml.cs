@@ -20,18 +20,17 @@ public class ExhibitModel : PageModel
     public string? DescriptionHtml { get; set; }
     public string? NotesHtml { get; set; }
     public string? SpecimensHtml { get; set; }
-
-    public IActionResult OnGet(string id)
+    
+    public async Task<IActionResult> OnGetAsync(string id)
     {
         var fileInfo = _dataFiles.GetFileInfo("calcs/calcs.json");
 
         if (!fileInfo.Exists) return NotFound();
 
         using var stream = fileInfo.CreateReadStream();
-        using var reader = new StreamReader(stream);
-        var jsonString = reader.ReadToEnd();
-
-        var allCalculators = JsonSerializer.Deserialize<List<Exhibit>>(jsonString,
+        
+        var allCalculators = await JsonSerializer.DeserializeAsync<List<Exhibit>>(
+            stream,
             new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
         Exhibit = allCalculators?.FirstOrDefault(c => c.Id == id);
@@ -40,14 +39,15 @@ public class ExhibitModel : PageModel
 
         var mdBasePath = $"calcs/md/{Exhibit.ManufacturerSlug}/{Exhibit.ModelSlug}";
 
-        DescriptionHtml = ParseMarkdownFile(mdBasePath, "description.md", "<p><i>Content coming soon.</i></p>");
-        NotesHtml = ParseMarkdownFile(mdBasePath, "notes.md", null);
-        SpecimensHtml = ParseMarkdownFile(mdBasePath, "specimens.md", "<p><i>Content coming soon.</i></p>");
+        // 3. Await the updated helper method
+        DescriptionHtml = await ParseMarkdownFileAsync(mdBasePath, "description.md", "<p><i>Content coming soon.</i></p>");
+        NotesHtml = await ParseMarkdownFileAsync(mdBasePath, "notes.md", null);
+        SpecimensHtml = await ParseMarkdownFileAsync(mdBasePath, "specimens.md", "<p><i>Content coming soon.</i></p>");
 
         return Page();
     }
-
-    private string? ParseMarkdownFile(string basePath, string fileName, string? fallback)
+    
+    private async Task<string?> ParseMarkdownFileAsync(string basePath, string fileName, string? fallback)
     {
         var fileInfo = _dataFiles.GetFileInfo($"{basePath}/{fileName}");
 
@@ -55,7 +55,9 @@ public class ExhibitModel : PageModel
 
         using var stream = fileInfo.CreateReadStream();
         using var reader = new StreamReader(stream);
-        var markdownText = reader.ReadToEnd();
+        
+        var markdownText = await reader.ReadToEndAsync();
+        
         var pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
         return Markdown.ToHtml(markdownText, pipeline);
     }

@@ -15,10 +15,11 @@ namespace EvansWebpage.Pages
             _happeningsService = happeningsService;
         }
 
-        public void OnGet()
+        public async Task OnGetAsync()
         {
             // Fetch all posts, take the top 3, and save to the RecentPosts list
-            RecentPosts = _happeningsService.GetAllPosts().Take(3).ToList();
+            var allPosts = await _happeningsService.GetAllPostsAsync();
+            RecentPosts = allPosts.Take(3).ToList();
         }
     }
 }

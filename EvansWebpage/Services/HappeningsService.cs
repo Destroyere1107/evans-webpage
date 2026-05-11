@@ -15,7 +15,7 @@ namespace EvansWebpage.Services
             _env = env;
         }
 
-        public List<NewsPost> GetAllPosts()
+        public async Task<List<NewsPost>> GetAllPostsAsync()
         {
             var posts = new List<NewsPost>();
             var pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
@@ -31,7 +31,7 @@ namespace EvansWebpage.Services
                 if (stream == null) continue;
 
                 using StreamReader reader = new StreamReader(stream);
-                string rawText = reader.ReadToEnd();
+                string rawText = await reader.ReadToEndAsync();
                 
                 var sections = rawText.Split("---", StringSplitOptions.RemoveEmptyEntries);
 
