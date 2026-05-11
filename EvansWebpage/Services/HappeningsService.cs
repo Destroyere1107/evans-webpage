@@ -1,6 +1,8 @@
 using EvansWebpage.Models;
 using Markdig;
 using Microsoft.AspNetCore.Hosting;
+using System.IO;
+using System.Reflection; // Required for reading embedded resources
 
 namespace EvansWebpage.Services
 {
@@ -16,16 +18,21 @@ namespace EvansWebpage.Services
         public List<NewsPost> GetAllPosts()
         {
             var posts = new List<NewsPost>();
-            string postsDirectory = Path.Combine(_env.ContentRootPath, "Data", "happenings", "posts");
-
-            if (!Directory.Exists(postsDirectory)) return posts;
-
             var pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
-            string[] files = Directory.GetFiles(postsDirectory, "*.md");
+            
+            var assembly = Assembly.GetExecutingAssembly();
+            
+            var resourceNames = assembly.GetManifestResourceNames()
+                .Where(n => n.Contains(".Data.happenings.posts.") && n.EndsWith(".md"));
 
-            foreach (var file in files)
+            foreach (var resourceName in resourceNames)
             {
-                string rawText = File.ReadAllText(file);
+                using Stream? stream = assembly.GetManifestResourceStream(resourceName);
+                if (stream == null) continue;
+
+                using StreamReader reader = new StreamReader(stream);
+                string rawText = reader.ReadToEnd();
+                
                 var sections = rawText.Split("---", StringSplitOptions.RemoveEmptyEntries);
 
                 if (sections.Length >= 2)
@@ -51,7 +58,6 @@ namespace EvansWebpage.Services
                 }
             }
 
-            // Return the list sorted from newest to oldest
             return posts.OrderByDescending(p => p.Date).ToList();
         }
     }
