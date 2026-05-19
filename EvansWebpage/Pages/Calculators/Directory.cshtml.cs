@@ -24,8 +24,6 @@ public class DirectoryModel : PageModel
         if (!fileInfo.Exists) return;
 
         using var stream = fileInfo.CreateReadStream();
-        using var reader = new StreamReader(stream);
-        var jsonString = reader.ReadToEnd();
         var allExhibits = await JsonSerializer.DeserializeAsync<List<Exhibit>>(
             stream, 
             new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
