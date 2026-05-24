@@ -413,8 +413,120 @@ html.theme-gradient .theme-dialog-close {
     transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
-html.theme-gradient .theme-dialog-close:hover {
+html.gradient-mode .theme-dialog-close:hover {
     background: linear-gradient(135deg, #2d1066, #4b1d99);
     color: #f472b6;
     box-shadow: 0 0 10px rgba(236, 72, 153, 0.3);
+}
+
+
+/* ====================================================
+   CALCULATOR MUSEUM — Gradient Overrides
+   ==================================================== */
+
+/* Hero — deep gradient background with shimmer */
+html.gradient-mode .museum-hero {
+    background: linear-gradient(145deg, #0f0e1a 0%, #1a1040 40%, #2d1066 100%);
+    border: 1px solid transparent;
+    border-image: linear-gradient(135deg, #4b1d99, #a855f7, #ec4899) 1;
+}
+
+html.gradient-mode .museum-hero h2 {
+    background: linear-gradient(to right, #c084fc, #f0abfc, #f472b6, #fb923c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+    filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.4));
+    font-size: 32px;
+    border-bottom: none;
+    border-image: none;
+}
+
+html.gradient-mode .museum-hero .subtitle {
+    color: #8a80a4;
+}
+
+html.gradient-mode .cta-button {
+    background: linear-gradient(135deg, #4b1d99, #6d28d9);
+    border: 1px solid transparent;
+    border-image: linear-gradient(135deg, #a855f7, #ec4899) 1;
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+html.gradient-mode .cta-button:hover {
+    background: linear-gradient(135deg, #6d28d9, #a855f7);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Stats — gradient borders and gradient text numbers */
+html.gradient-mode .museum-stats {
+    background: linear-gradient(145deg, #0f0e1a 0%, #161328 100%);
+    border: 1px solid transparent;
+    border-image: linear-gradient(135deg, #4b1d99, #a855f7, #ec4899) 1;
+}
+
+html.gradient-mode .stat-pill {
+    background: linear-gradient(145deg, #12111f, #1a1830);
+    border: 1px solid #3a2e6e;
+}
+
+html.gradient-mode .stat-pill i {
+    background: linear-gradient(to right, #a78bfa, #f472b6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+html.gradient-mode .stat-number {
+    background: linear-gradient(to right, #818cf8, #a78bfa, #c084fc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 4px rgba(168, 85, 247, 0.3));
+}
+
+/* Exhibit Cards — gradient borders */
+html.gradient-mode .exhibit-card {
+    background: linear-gradient(145deg, #0f0e1a 0%, #161328 100%);
+    border: 1px solid transparent;
+    border-image: linear-gradient(135deg, #4b1d99, #a855f7, #ec4899) 1;
+}
+
+html.gradient-mode .badge-featured {
+    background: linear-gradient(135deg, #6d28d9, #a855f7);
+}
+
+html.gradient-mode .badge-curators {
+    background: linear-gradient(135deg, #065f46, #10b981);
+}
+
+html.gradient-mode .badge-newest {
+    background: linear-gradient(135deg, #92400e, #f59e0b);
+}
+
+html.gradient-mode .badge-random {
+    background: linear-gradient(135deg, #4b1d99, #6d28d9);
+}
+
+html.gradient-mode .card-body h3 {
+    background: linear-gradient(to right, #a78bfa, #f0abfc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Explore — gradient border */
+html.gradient-mode .museum-explore {
+    background: linear-gradient(145deg, #0f0e1a 0%, #161328 100%);
+    border: 1px solid transparent;
+    border-image: linear-gradient(135deg, #4b1d99, #a855f7, #ec4899) 1;
+}
+
+/* Why Calculators — gradient left accent */
+html.gradient-mode .museum-why {
+    background: linear-gradient(145deg, #0f0e1a 0%, #161328 100%);
+    border-left: 3px solid transparent;
+    border-image: linear-gradient(to bottom, #a855f7, #ec4899, #fb923c) 1;
 }

@@ -169,6 +169,7 @@ a:visited {
     0% {
         background-position: 0% 50%;
     }
+
     100% {
         background-position: 300% 50%;
     }
@@ -259,7 +260,8 @@ I had to add this after the switch to Markdown via Markdig */
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 8px auto; /* Centers the image */
+    margin: 8px auto;
+    /* Centers the image */
 }
 
 .news-item .date {
@@ -550,4 +552,242 @@ I had to add this after the switch to Markdown via Markdig */
 .theme-dialog-close:hover {
     background: var(--bg-hover);
     color: var(--accent-hover);
+}
+
+/* ====================================================
+   CALCULATOR MUSEUM — Landing Page Components
+   ==================================================== */
+
+/* --- Hero Section --- */
+.museum-hero {
+    background-color: var(--bg-deep);
+    border: 1px solid var(--border-blue);
+    padding: 30px 24px 24px 24px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.museum-hero h2 {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    color: var(--accent-blue);
+    font-weight: normal;
+    margin-bottom: 4px;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.museum-hero .subtitle {
+    font-size: 12px;
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+}
+
+.museum-hero p {
+    text-align: center;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--navy);
+    color: #ffffff !important;
+    padding: 10px 24px;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: var(--font-body);
+    text-decoration: none;
+    border: 1px solid var(--border-default);
+    margin-top: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--navy-light);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    color: #ffffff !important;
+}
+
+.cta-button:visited {
+    color: #ffffff !important;
+}
+
+.cta-button i {
+    margin-right: 6px;
+}
+
+/* --- Stats Section --- */
+.museum-stats {
+    background-color: var(--bg-deep);
+    border: 1px solid var(--border-blue);
+    padding: 16px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.stat-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.stat-pill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    padding: 10px 14px;
+    min-width: 80px;
+    flex: 1;
+    max-width: 120px;
+}
+
+.stat-pill-wide {
+    max-width: 160px;
+}
+
+.stat-pill i {
+    font-size: 16px;
+    color: var(--accent-blue);
+    margin-bottom: 4px;
+}
+
+.stat-number {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--accent-blue);
+    line-height: 1.2;
+}
+
+.stat-label {
+    font-size: 9px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ====================================================
+   The following properties are dedicated to the 
+   Featured Exhibits section on CalculatorMuseum.cshtml.
+
+   These include the section itself and the 'cards' 
+   that are inside it.
+   ==================================================== */
+
+.museum-featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.exhibit-card {
+    flex: 1;
+    background-color: var(--bg-deep);
+    border: 1px solid var(--border-blue);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exhibit-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.exhibit-card img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.exhibit-card .badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 4px 10px;
+    margin: 10px 10px 0 10px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-featured {
+    background-color: var(--navy);
+}
+
+.badge-curators {
+    background-color: #1a6b5a;
+}
+
+.badge-newest {
+    background-color: #8b6914;
+}
+
+.badge-random {
+    background-color: var(--navy-dark);
+}
+
+.card-body {
+    padding: 10px 14px 14px 14px;
+}
+
+.card-body h3 {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    color: var(--accent-blue);
+    font-weight: normal;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.card-body p {
+    font-size: 11px;
+    margin-bottom: 6px;
+}
+
+.card-meta {
+    font-size: 10px !important;
+    color: var(--text-dim) !important;
+    font-style: italic;
+}
+
+.card-coming-soon {
+    font-size: 10px !important;
+    color: var(--text-dim) !important;
+}
+
+.card-body a {
+    font-size: 11px;
+}
+
+/* ====================================================
+   ============ End of Featured Exhibits. =============
+   ==================================================== */
+
+/* --- Explore Section on CalculatorMuseum.cshtml --- */
+.museum-explore {
+    background-color: var(--bg-deep);
+    border: 1px solid var(--border-blue);
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.museum-explore p {
+    text-align: center;
+}
+
+/* --- Why Calculators secrion on CalculatorMuseum.cshtml --- */
+.museum-why {
+    background-color: var(--bg-deep);
+    border-left: 3px solid var(--accent-blue);
+    padding: 14px 18px;
+    margin-bottom: 16px;
 }
