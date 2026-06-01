@@ -27,6 +27,8 @@ public class ExhibitService
     public string YearRange { get; }
     public Exhibit? OldestExhibit { get; }
     public Exhibit? NewestExhibit { get; }
+    public (Exhibit Exhibit, Specimen Specimen)? OldestSpecimen { get; }
+    public (Exhibit Exhibit, Specimen Specimen)? NewestSpecimen { get; }
 
     // Pre-grouped directory data: Category -> Manufacturer -> List<Exhibit>
     private readonly Dictionary<string, Dictionary<string, List<Exhibit>>> _groupedDirectory;
@@ -86,6 +88,18 @@ public class ExhibitService
         else
         {
             YearRange = "";
+        }
+
+        var specimensWithYears = allExhibits
+            .Where(e => e.Specimens != null)
+            .SelectMany(e => e.Specimens.Select(s => (Exhibit: e, Specimen: s)))
+            .Where(x => x.Specimen.ManufactureYear.HasValue)
+            .ToList();
+
+        if (specimensWithYears.Count > 0)
+        {
+            OldestSpecimen = specimensWithYears.OrderBy(x => x.Specimen.ManufactureYear).First();
+            NewestSpecimen = specimensWithYears.OrderByDescending(x => x.Specimen.ManufactureYear).First();
         }
 
         // --- Pre-group for Directory page ---

@@ -109,6 +109,21 @@
             "imageUrl": {
               "type": "string",
               "description": "URL to the hosted image of this specimen."
+            },
+            "manufactureDate": {
+              "type": "string"
+            },
+            "datecode": {
+              "type": "string"
+            },
+            "countryOfManufacture": {
+              "type": "string"
+            },
+            "hardwareRevision": {
+              "type": "string"
+            },
+            "acquisitionDate": {
+              "type": "string"
             }
           }
         }

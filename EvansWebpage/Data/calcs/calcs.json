@@ -17,7 +17,10 @@
         "variant": "Normal",
         "serialNumber": "810AW84QA159866",
         "condition": "Fair",
-        "imageUrl": "https://i.postimg.cc/9fK6tJ2d/cg50-graph.jpg"
+        "imageUrl": "https://i.postimg.cc/9fK6tJ2d/cg50-graph.jpg",
+        "manufactureDate": "April 2018",
+        "countryOfManufacture": "China",
+        "acquisitionDate": "2026-02-02"
       }
     ],
     "myCalcsLinks": [
@@ -48,7 +51,10 @@
         "variant": "Normal",
         "serialNumber": "C876A2C008249BF_40",
         "condition": "Good",
-        "imageUrl": ""
+        "imageUrl": "",
+        "manufactureDate": "February 2025",
+        "countryOfManufacture": "Thailand",
+        "acquisitionDate": "2026-04-19"
       }
     ],
     "myCalcsLinks": [
@@ -82,14 +88,20 @@
         "variant": "Black (Normal)",
         "serialNumber": "CNA3090GVV",
         "condition": "Good",
-        "imageUrl": "https://i.postimg.cc/WpgvSLhw/50g-stack.jpg"
+        "imageUrl": "https://i.postimg.cc/WpgvSLhw/50g-stack.jpg",
+        "manufactureDate": "Week 9 of 2013",
+        "countryOfManufacture": "China",
+        "acquisitionDate": "2026-02-20"
       },
       {
         "number": 2,
         "variant": "Blue",
         "serialNumber": "CNA10200307",
         "condition": "Fair",
-        "imageUrl": "[Coming Soon]"
+        "imageUrl": "[Coming Soon]",
+        "manufactureDate": "Week 2 of 2011",
+        "countryOfManufacture": "China",
+        "acquisitionDate": "2026-03-28"
       }
     ],
     "notes": "Specimen 1 is in good condition and is fully functional. I use it as my daily driver.",
@@ -116,7 +128,10 @@
         "variant": "C",
         "serialNumber": "2726A01877",
         "condition": "Fair",
-        "imageUrl": "https://i.postimg.cc/x8yHHzjR/28c.jpg"
+        "imageUrl": "https://i.postimg.cc/x8yHHzjR/28c.jpg",
+        "manufactureDate": "Week 26 of 1987",
+        "countryOfManufacture": "United States",
+        "acquisitionDate": "2026-03-16"
       }
     ],
     "gallery": [
@@ -164,7 +179,9 @@
         "variant": "GX",
         "serialNumber": "3349S01850",
         "condition": "Good",
-        "imageUrl": "https://i.postimg.cc/xjM2gDcH/48gx-mathpac.jpg"
+        "imageUrl": "https://i.postimg.cc/xjM2gDcH/48gx-mathpac.jpg",
+        "manufactureDate": "Week 49 of 1993",
+        "countryOfManufacture": "Singapore"
       }
     ],
     "myCalcsLinks": [
@@ -212,7 +229,11 @@
         "variant": "G2",
         "serialNumber": "9CJ5170194",
         "condition": "Good",
-        "imageUrl": "https://i.postimg.cc/vBnpPfHs/prime-graph.jpg"
+        "imageUrl": "https://i.postimg.cc/vBnpPfHs/prime-graph.jpg",
+        "manufactureDate": "April 2025",
+        "countryOfManufacture": "China",
+        "hardwareRevision": "D",
+        "acquisitionDate": "2025-12-25"
       }
     ],
     "myCalcsLinks": [
@@ -248,7 +269,11 @@
         "variant": "CX II CAS",
         "serialNumber": "4A1B517107",
         "condition": "Fair",
-        "imageUrl": "https://i.postimg.cc/nLgyY0x1/nspirecxiicas-ndless.jpg"
+        "imageUrl": "https://i.postimg.cc/nLgyY0x1/nspirecxiicas-ndless.jpg",
+        "manufactureDate": "June 2022",
+        "datecode": "M-0622AP",
+        "countryOfManufacture": "Malaysia",
+        "hardwareRevision": "AP"
       }
     ],
     "myCalcsLinks": [

@@ -22,6 +22,8 @@ public class CalculatorMuseumModel : PageModel
     public int TotalSpecimens { get; set; }
     public Exhibit? OldestCalculator { get; set; }
     public Exhibit? NewestCalculator { get; set; }
+    public (Exhibit Exhibit, Specimen Specimen)? OldestSpecimen { get; set; }
+    public (Exhibit Exhibit, Specimen Specimen)? NewestSpecimen { get; set; }
     public int TotalPhotos { get; set; }
     public int DocumentedSpecimens { get; set; }
 
@@ -54,6 +56,8 @@ public class CalculatorMuseumModel : PageModel
         YearRange = _exhibitService.YearRange;
         OldestCalculator = _exhibitService.OldestExhibit;
         NewestCalculator = _exhibitService.NewestExhibit;
+        OldestSpecimen = _exhibitService.OldestSpecimen;
+        NewestSpecimen = _exhibitService.NewestSpecimen;
 
         // 2. Fetch manual featured exhibits (O(1) dictionary lookups)
         ExhibitOfTheMonth = _exhibitService.GetById(ExhibitOfTheMonthId);

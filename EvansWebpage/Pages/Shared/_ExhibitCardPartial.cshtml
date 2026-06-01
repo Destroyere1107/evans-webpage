@@ -25,7 +25,9 @@
             </p>
             @if (Model.Exhibit.UnderConstruction)
             {
-                <p class="card-coming-soon"><i>(Exhibit page coming soon)</i></p>
+                <div style="margin-bottom: 12px;">
+                    <span class="showroom-meta-tag" style="border-color: #8b6914; color: #f59e0b;">Under Construction</span>
+                </div>
             }
             <a href="/calculators/exhibit/@Model.Exhibit.Id" class="stretched-link">View Exhibit →</a>
         </div>

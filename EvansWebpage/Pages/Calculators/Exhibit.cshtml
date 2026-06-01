@@ -104,12 +104,20 @@
     <h3 style="margin-top: 0"><i class="fa-solid fa-boxes-stacked" style="color: var(--accent-blue); margin-right: 6px;"></i> Specimen(s) in Collection</h3>
     @if (Model.Exhibit.Specimens != null && Model.Exhibit.Specimens.Any())
     {
+        bool hasDatecode = Model.Exhibit.Specimens.Any(s => !string.IsNullOrEmpty(s.Datecode));
         <table class="specimen-table">
             <thead>
                 <tr>
                     <th class="specimen-number-col" style="text-align: center;">#</th>
                     <th>Variant</th>
                     <th>Serial Number</th>
+                    @if (hasDatecode)
+                    {
+                        <th>Datecode</th>
+                    }
+                    <th>Mfd. Date</th>
+                    <th>Country</th>
+                    <th>Acquired</th>
                     <th>Condition</th>
                     <th>Picture</th>
                 </tr>
@@ -121,6 +129,13 @@
                         <td class="specimen-number-col" style="text-align: center; font-weight: bold; vertical-align: middle;">@specimen.Number</td>
                         <td style="vertical-align: middle;">@specimen.Variant</td>
                         <td style="vertical-align: middle; font-family: var(--font-mono); font-size: 11px;">@specimen.SerialNumber</td>
+                        @if (hasDatecode)
+                        {
+                            <td style="vertical-align: middle; font-family: var(--font-mono); font-size: 11px;">@specimen.Datecode</td>
+                        }
+                        <td style="vertical-align: middle;">@specimen.ManufactureDate</td>
+                        <td style="vertical-align: middle;">@specimen.CountryOfManufacture</td>
+                        <td style="vertical-align: middle;">@specimen.AcquisitionDate</td>
                         <td style="vertical-align: middle;">
                             <span class="showroom-meta-tag" style="border-color: var(--border-default);">@specimen.Condition</span>
                         </td>

@@ -43,4 +43,14 @@ public class Specimen
     public string SerialNumber { get; set; }
     public string Condition { get; set; }
     public string ImageUrl { get; set; }
+    public string ManufactureDate { get; set; }
+    public string Datecode { get; set; }
+    public string CountryOfManufacture { get; set; }
+    public string HardwareRevision { get; set; }
+    public string AcquisitionDate { get; set; }
+
+    public int? ManufactureYear =>
+        !string.IsNullOrEmpty(ManufactureDate) && System.Text.RegularExpressions.Regex.IsMatch(ManufactureDate, @"\d{4}")
+            ? int.Parse(System.Text.RegularExpressions.Regex.Match(ManufactureDate, @"\d{4}").Value)
+            : null;
 }

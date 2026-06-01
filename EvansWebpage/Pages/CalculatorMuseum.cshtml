@@ -63,7 +63,7 @@
                 <div class="stat-pill stat-pill-wide">
                     <i class="fa-solid fa-hourglass-start"></i>
                     <span class="stat-number">@Model.OldestCalculator.YearIntroduced</span>
-                    <span class="stat-label">Oldest Calculator - @Model.OldestCalculator.Name</span>
+                    <span class="stat-label">Oldest Model - @Model.OldestCalculator.Name</span>
                 </div>
             }
             @if (Model.NewestCalculator != null)
@@ -71,7 +71,23 @@
                 <div class="stat-pill stat-pill-wide">
                     <i class="fa-solid fa-hourglass-end"></i>
                     <span class="stat-number">@Model.NewestCalculator.YearIntroduced</span>
-                    <span class="stat-label">Newest Calculator - @Model.NewestCalculator.Name</span>
+                    <span class="stat-label">Youngest Model - @Model.NewestCalculator.Name</span>
+                </div>
+            }
+            @if (Model.OldestSpecimen != null)
+            {
+                <div class="stat-pill stat-pill-wide">
+                    <i class="fa-solid fa-calendar-minus"></i>
+                    <span class="stat-number">@Model.OldestSpecimen.Value.Specimen.ManufactureDate</span>
+                    <span class="stat-label">Oldest Calc - @Model.OldestSpecimen.Value.Exhibit.Name</span>
+                </div>
+            }
+            @if (Model.NewestSpecimen != null)
+            {
+                <div class="stat-pill stat-pill-wide">
+                    <i class="fa-solid fa-calendar-plus"></i>
+                    <span class="stat-number">@Model.NewestSpecimen.Value.Specimen.ManufactureDate</span>
+                    <span class="stat-label">Youngest Calc - @Model.NewestSpecimen.Value.Exhibit.Name</span>
                 </div>
             }
         </div>
