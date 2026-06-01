@@ -63,7 +63,7 @@ THE PAGE REQUIRES THE FOLLOWING:
 - `Microsoft.Extensions.FileProviders.Embedded` - Allows for everything to be bundled as one big binary
 - `Markdig` - For the dynamic Happenings and Calcpages.
 - `System.ServiceModel.Syndication` - For the RSS feed.
-- `Microsoft.Data.Sqlite` - For the sqlite database
+- `Microsoft.Data.Sqlite` - For the SQLsite database
 
 ### Running on-VM
 
