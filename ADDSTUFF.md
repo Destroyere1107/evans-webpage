@@ -2,58 +2,26 @@
 
 ## Calculators
 
-Use this empty template and add to `/EvansWebpage/Data/calcs/calcs.json`.
+Use an editor that can edit SQLite to open `/EvansWebpage/Data/calcs/calcs.db`.
 
-> **`manufactureDate`**: Valid formats include: `"YYYY"` (e.g., `"1992"`), `"Month YYYY"` (e.g., `"April 2006"`), `"Week n of YYYY"` (e.g., `"Week 35 of 1992"`), or `"YYYY-MM-DD"` (e.g., `"2006-04-12"`). As long as there is a 4-digit year somewhere in the string, the program will automatically extract it to calculate the "Oldest Calc" and "Youngest Calc" stats on the homepage.
+1. Select the **Exhibits** table and add a new row.
+2. Fill in the exhibit details (Id, Name, Category, Manufacturer, etc.). Set boolean columns (`HasCas`, `UnderConstruction`, etc.) to `1` for true or `0` for false.
+3. To add specimens, select the **Specimens** table. Add a row and make sure the **ExhibitId** matches the Id you gave your exhibit.
+4. Do the same for **GalleryImages** and **MyCalcsLinks** if needed.
+5. Click **Write Changes** to save.
+
+> **`manufactureDate`**: Valid formats are:
+>
+> - `"YYYY"` (e.g., `"1992"`)
+> - `"Month YYYY"` (e.g., `"April 2006"`)
+> - `"Week n of YYYY"` (e.g., `"Week 35 of 1992"`)
+> - `"YYYY-MM-DD"` (e.g., `"2006-04-12"`)
+>
+> As long as there is a 4-digit year somewhere in the string, the program will automatically extract it to calculate the "Oldest Calc" and "Youngest Calc" stats on the homepage.
 >
 > Don't put two 4-digit years. I don't know what that does, but it'll probably break shit.
 >
-> **`acquisitionDate`**: Please use the standard ISO format `"YYYY-MM-DD"` (e.g., `"2026-02-02"`).
-
-```json
-{
-  "id": "",
-  "name": "",
-  "manufacturer": "",
-  "manufacturerLogo": "",
-  "manufacturerSlug": "",
-  "mainImageUrl": "",
-  "model": "",
-  "modelSlug": "",
-  "yearIntroduced": 0,
-  "type": "",
-  "hasCas": false,
-  "hasGraphing": false,
-  "hasColor": false,
-  "specimens": [
-    {
-      "number": 1,
-      "variant": "Normal",
-      "serialNumber": "",
-      "condition": "",
-      "imageUrl": "",
-      "manufactureDate": "",
-      "datecode": "",
-      "countryOfManufacture": "",
-      "hardwareRevision": "",
-      "acquisitionDate": ""
-    }
-  ],
-  "gallery": [
-    {
-      "url": "",
-      "altText": "",
-      "caption": ""
-    }
-  ],
-  "myCalcsLinks": [
-    { "id": "", "name": "" },
-    { "id": "", "name": "" }
-  ],
-  "underConstruction": true,
-  "category": ""
-}
-```
+> **`acquisitionDate`**: Use the standard ISO 8601 format `"YYYY-MM-DD"` (e.g., `"2026-02-02"`).
 
 ## Themes
 
