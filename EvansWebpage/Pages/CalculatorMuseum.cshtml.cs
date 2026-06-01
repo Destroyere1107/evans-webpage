@@ -1,18 +1,18 @@
-using System.Text.Json;
-using System.Text.RegularExpressions;
 using EvansWebpage.Models;
+using EvansWebpage.Services;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.FileProviders;
 
 namespace EvansWebpage.Pages;
 
 public class CalculatorMuseumModel : PageModel
 {
-    private readonly IFileProvider _dataFiles;
+    private readonly ExhibitService _exhibitService;
+    private readonly MarkdownService _markdownService;
 
-    public CalculatorMuseumModel([FromKeyedServices("DataFiles")] IFileProvider dataFiles)
+    public CalculatorMuseumModel(ExhibitService exhibitService, MarkdownService markdownService)
     {
-        _dataFiles = dataFiles;
+        _exhibitService = exhibitService;
+        _markdownService = markdownService;
     }
 
     // --- Collection Stats ---
@@ -43,110 +43,43 @@ public class CalculatorMuseumModel : PageModel
     public Exhibit? RandomExhibit { get; set; }
     public string? RandomExhibitDescription { get; set; }
 
-    public async Task OnGetAsync()
+    public void OnGet()
     {
-        var fileInfo = _dataFiles.GetFileInfo("calcs/calcs.json");
+        // 1. Pull pre-computed stats from the singleton service
+        TotalCalculators = _exhibitService.TotalCalculators;
+        TotalManufacturers = _exhibitService.TotalManufacturers;
+        TotalSpecimens = _exhibitService.TotalSpecimens;
+        TotalPhotos = _exhibitService.TotalPhotos;
+        DocumentedSpecimens = _exhibitService.DocumentedSpecimens;
+        YearRange = _exhibitService.YearRange;
+        OldestCalculator = _exhibitService.OldestExhibit;
+        NewestCalculator = _exhibitService.NewestExhibit;
 
-        if (!fileInfo.Exists) return;
+        // 2. Fetch manual featured exhibits (O(1) dictionary lookups)
+        ExhibitOfTheMonth = _exhibitService.GetById(ExhibitOfTheMonthId);
+        ExhibitOfTheMonthDescription = LoadDescriptionSnippet(ExhibitOfTheMonth);
 
-        using var stream = fileInfo.CreateReadStream();
-        var allExhibits = await JsonSerializer.DeserializeAsync<List<Exhibit>>(
-            stream,
-            new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
-        );
+        CuratorsChoice = _exhibitService.GetById(CuratorsChoiceId);
+        CuratorsChoiceDescription = LoadDescriptionSnippet(CuratorsChoice);
 
-        if (allExhibits == null || !allExhibits.Any()) return;
-
-        // 1. Compute Collection Stats
-        TotalCalculators = allExhibits.Count;
-        TotalManufacturers = allExhibits.Select(e => e.Manufacturer).Distinct().Count();
-        TotalSpecimens = allExhibits.Sum(e => e.Specimens?.Count ?? 0);
-
-        // Calculate visual photo assets in the museum catalog
-        TotalPhotos = allExhibits.Sum(e =>
-            (!string.IsNullOrEmpty(e.MainImageUrl) && !e.MainImageUrl.Equals("[coming soon]", StringComparison.OrdinalIgnoreCase) ? 1 : 0) +
-            (e.Gallery?.Count ?? 0) +
-            (e.Specimens?.Count(s => !string.IsNullOrEmpty(s.ImageUrl) && !s.ImageUrl.Equals("[coming soon]", StringComparison.OrdinalIgnoreCase)) ?? 0)
-        );
-
-        // Count specimens that have been photographed (non-empty, non-placeholder image)
-        DocumentedSpecimens = allExhibits.Sum(e =>
-            e.Specimens?.Count(s => !string.IsNullOrEmpty(s.ImageUrl) && !s.ImageUrl.Equals("[coming soon]", StringComparison.OrdinalIgnoreCase)) ?? 0
-        );
-
-        var withYears = allExhibits.Where(e => e.YearIntroduced.HasValue).ToList();
-        if (withYears.Any())
-        {
-            var minYear = withYears.Min(e => e.YearIntroduced!.Value);
-            var maxYear = withYears.Max(e => e.YearIntroduced!.Value);
-            YearRange = $"{minYear}–{maxYear}";
-
-            OldestCalculator = withYears.OrderBy(e => e.YearIntroduced).First();
-            NewestCalculator = withYears.OrderByDescending(e => e.YearIntroduced).First();
-        }
-
-        // 2. Fetch manual featured exhibits
-        ExhibitOfTheMonth = allExhibits.FirstOrDefault(e => e.Id == ExhibitOfTheMonthId);
-        ExhibitOfTheMonthDescription = await LoadDescriptionSnippetAsync(ExhibitOfTheMonth);
-
-        CuratorsChoice = allExhibits.FirstOrDefault(e => e.Id == CuratorsChoiceId);
-        CuratorsChoiceDescription = await LoadDescriptionSnippetAsync(CuratorsChoice);
-
-        NewestAddition = allExhibits.FirstOrDefault(e => e.Id == NewestAdditionId);
-        NewestAdditionDescription = await LoadDescriptionSnippetAsync(NewestAddition);
+        NewestAddition = _exhibitService.GetById(NewestAdditionId);
+        NewestAdditionDescription = LoadDescriptionSnippet(NewestAddition);
 
         // 3. Pick a random exhibit, excluding any manual picks to avoid duplication
-        var manualIds = new HashSet<string> { ExhibitOfTheMonthId, CuratorsChoiceId, NewestAdditionId };
-        var candidates = allExhibits.Where(e => !manualIds.Contains(e.Id)).ToList();
-        if (candidates.Any())
+        var candidates = _exhibitService.GetExcluding(
+            [ExhibitOfTheMonthId, CuratorsChoiceId, NewestAdditionId]);
+        if (candidates.Count > 0)
         {
             RandomExhibit = candidates[Random.Shared.Next(candidates.Count)];
-            RandomExhibitDescription = await LoadDescriptionSnippetAsync(RandomExhibit);
+            RandomExhibitDescription = LoadDescriptionSnippet(RandomExhibit);
         }
     }
 
-    private async Task<string?> LoadDescriptionSnippetAsync(Exhibit? exhibit)
+    private string? LoadDescriptionSnippet(Exhibit? exhibit)
     {
         if (exhibit == null) return null;
 
         var mdPath = $"calcs/md/{exhibit.ManufacturerSlug}/{exhibit.ModelSlug}/description.md";
-        var fileInfo = _dataFiles.GetFileInfo(mdPath);
-
-        if (!fileInfo.Exists) return null;
-
-        using var stream = fileInfo.CreateReadStream();
-        using var reader = new StreamReader(stream);
-        var rawMarkdown = await reader.ReadToEndAsync();
-
-        var cleanText = StripMarkdown(rawMarkdown);
-
-        if (cleanText.Length > 200)
-        {
-            // Find last space before the 200-char limit to avoid cutting mid-word
-            var cutoff = cleanText.LastIndexOf(' ', 200);
-            if (cutoff <= 0) cutoff = 200;
-            return cleanText.Substring(0, cutoff).Trim() + "…";
-        }
-
-        return cleanText;
-    }
-
-    private string StripMarkdown(string markdown)
-    {
-        if (string.IsNullOrEmpty(markdown)) return "";
-
-        // Strip markdown images: ![alt](url)
-        var text = Regex.Replace(markdown, @"!\[.*?\]\(.*?\)", "");
-
-        // Replace markdown links [text](url) with just the text
-        text = Regex.Replace(text, @"\[(.*?)\]\(.*?\)", "$1");
-
-        // Remove inline formatting symbols like asterisks, underscores, backticks, hashes
-        text = Regex.Replace(text, @"[\*_`#]", "");
-
-        // Normalize spaces and newlines
-        text = Regex.Replace(text, @"\s+", " ").Trim();
-
-        return text;
+        return _markdownService.GetSnippet(mdPath);
     }
 }

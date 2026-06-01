@@ -460,13 +460,13 @@ I had to add this after the switch to Markdown via Markdig */
 .specimen-table td,
 .specimen-table th {
     padding: 4px 8px;
-    border: 1px solid #999999;
+    border: 1px solid var(--border-default);
 }
 
 .specimen-table thead tr,
 .specimen-table tr:first-child {
-    background-color: #cccccc;
-    color: #000000;
+    background-color: var(--bg-elevated, #cccccc);
+    color: var(--text-primary, #000000);
 }
 
 .specimen-table th {
@@ -479,6 +479,105 @@ I had to add this after the switch to Markdown via Markdig */
     display: block;
     margin: 4px 0;
 }
+
+/* --- Exhibit Detail Page --- */
+
+/* Quick Facts table */
+.exhibit-facts-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.exhibit-facts-table td {
+    padding: 4px 8px;
+}
+
+/* Manufacturer logo container — needs visible bg so logos are legible on dark themes */
+.exhibit-mfg-logo {
+    background-color: #ffffff;
+    display: inline-block;
+    padding: 4px 8px;
+}
+
+.exhibit-mfg-logo img {
+    max-height: 30px;
+    height: auto;
+}
+
+/* Main exhibit image */
+.exhibit-main-image {
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 8px auto 16px auto;
+}
+
+/* Specimen image within the table */
+.specimen-inline-image {
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 8px 0;
+}
+
+/* Gallery figure */
+.exhibit-gallery-figure {
+    margin: 16px auto;
+    text-align: center;
+}
+
+.exhibit-gallery-figure img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.exhibit-gallery-caption {
+    font-size: 0.9em;
+    color: var(--text-muted);
+    margin-top: 6px;
+    font-style: italic;
+}
+
+/* Breadcrumb links */
+.exhibit-breadcrumbs {
+    margin-bottom: 8px;
+}
+
+.exhibit-breadcrumbs a {
+    font-size: 11px;
+}
+
+/* Under construction banner */
+.exhibit-construction-banner {
+    display: block;
+    margin: 0 auto;
+    max-width: 620px;
+    height: 100px;
+}
+
+/* Specimen number column */
+.specimen-number-col {
+    width: 1%;
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* Directory page construction banner */
+.directory-construction-banner {
+    display: block;
+    margin: 0 auto;
+    max-width: 620px;
+    height: 100px;
+}
+
+/* "Coming Soon" tag next to directory entries */
+.directory-coming-soon {
+    font-size: 0.8em;
+    color: var(--text-dim);
+}
+
 
 /* --- License Notice (Calculator Museum) --- */
 .license-notice {

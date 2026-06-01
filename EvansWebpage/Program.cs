@@ -20,6 +20,8 @@ internal class Program
             new ManifestEmbeddedFileProvider(typeof(Program).Assembly, "Data"));
         
         builder.Services.AddTransient<EvansWebpage.Services.HappeningsService>();
+        builder.Services.AddSingleton<EvansWebpage.Services.ExhibitService>();
+        builder.Services.AddSingleton<EvansWebpage.Services.MarkdownService>();
 
         var app = builder.Build();
 

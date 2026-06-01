@@ -8,18 +8,16 @@
 
 <h2>@Model.Exhibit.Manufacturer @Model.Exhibit.Name</h2>
 
-<p class="breadcrumb">
-    <a href="/calculatormuseum">&laquo; Back to Calculator Museum</a>
-</p>
-<p class="breadcrumb">
-    <a href="/calculators/directory"> &laquo; Back to Collection Index</a>
-</p>
+<div class="exhibit-breadcrumbs">
+    <p><a href="/calculatormuseum">&laquo; Back to Calculator Museum</a></p>
+    <p><a href="/calculators/directory"> &laquo; Back to Collection Index</a></p>
+</div>
 
 @if (Model.Exhibit.UnderConstruction)
 {
     <img src="/assets/misc/underconstruction.png"
          alt="Under Construction"
-         style="display: block; margin: 0 auto; max-width: 620px; height: 100px;"/>
+         class="exhibit-construction-banner"/>
 }
 
 <div class="news-item">
@@ -28,38 +26,37 @@
     {
         <img src="@Model.Exhibit.MainImageUrl"
              alt="@Model.Exhibit.Name"
-             style="max-width: 400px; height: auto; display: block; margin: 8px auto 16px auto;"/>
+             class="exhibit-main-image"/>
     }
-    <table style="border-collapse: collapse; width: 100%">
+    <table class="exhibit-facts-table">
         <tr>
-            <td style="padding: 4px 8px"><strong>Manufacturer:</strong></td>
-            <td style="padding: 4px 8px">
-                <div style="background-color: #ffffff; display: inline-block; padding: 4px 8px;">
-                    <img src="@Model.Exhibit.ManufacturerLogo" alt="@Model.Exhibit.Manufacturer"
-                         style="max-height: 30px; height: auto"/>
+            <td><strong>Manufacturer:</strong></td>
+            <td>
+                <div class="exhibit-mfg-logo">
+                    <img src="@Model.Exhibit.ManufacturerLogo" alt="@Model.Exhibit.Manufacturer"/>
                 </div>
             </td>
         </tr>
         <tr>
-            <td style="padding: 4px 8px"><strong>Model:</strong></td>
-            <td style="padding: 4px 8px">@Model.Exhibit.Model</td>
+            <td><strong>Model:</strong></td>
+            <td>@Model.Exhibit.Model</td>
         </tr>
         @if (Model.Exhibit.YearIntroduced.HasValue)
         {
             <tr>
-                <td style="padding: 4px 8px"><strong>Year Introduced:</strong></td>
-                <td style="padding: 4px 8px">@Model.Exhibit.YearIntroduced</td>
+                <td><strong>Year Introduced:</strong></td>
+                <td>@Model.Exhibit.YearIntroduced</td>
             </tr>
         }
         <tr>
-            <td style="padding: 4px 8px"><strong>Type:</strong></td>
-            <td style="padding: 4px 8px">@Model.Exhibit.Type</td>
+            <td><strong>Type:</strong></td>
+            <td>@Model.Exhibit.Type</td>
         </tr>
         @if (Model.Exhibit.MyCalcsLinks != null && Model.Exhibit.MyCalcsLinks.Any())
         {
             <tr>
-                <td style="padding: 4px 8px"><strong>Similar Specimens on MyCalcs:</strong></td>
-                <td style="padding: 4px 8px">
+                <td><strong>Similar Specimens on MyCalcs:</strong></td>
+                <td>
                     @for (var i = 0; i < Model.Exhibit.MyCalcsLinks.Count; i++)
                     {
                         var link = Model.Exhibit.MyCalcsLinks[i];
@@ -89,28 +86,26 @@
     <h3 style="margin-top: 0">Specimen(s) in Collection</h3>
     @if (Model.Exhibit.Specimens != null && Model.Exhibit.Specimens.Any())
     {
-        <table class="specimen-table" style="border-collapse: collapse; width: 100%; margin-bottom: 12px;">
-            <tr style="background-color: #cccccc; color: #000000">
-                <th style="padding: 4px 8px; text-align: center; border: 1px solid #999999; width: 1%; white-space: nowrap;">
-                    #
-                </th>
-                <th style="padding: 4px 8px; text-align: left; border: 1px solid #999999;">Variant</th>
-                <th style="padding: 4px 8px; text-align: left; border: 1px solid #999999;">Serial Number</th>
-                <th style="padding: 4px 8px; text-align: left; border: 1px solid #999999;">Condition</th>
-                <th style="padding: 4px 8px; text-align: left; border: 1px solid #999999;">Pictures</th>
+        <table class="specimen-table">
+            <tr>
+                <th class="specimen-number-col">#</th>
+                <th>Variant</th>
+                <th>Serial Number</th>
+                <th>Condition</th>
+                <th>Pictures</th>
             </tr>
             @foreach (var specimen in Model.Exhibit.Specimens)
             {
                 <tr>
-                    <td style="padding: 4px 8px; border: 1px solid #999999; text-align: center;">@specimen.Number</td>
-                    <td style="padding: 4px 8px; border: 1px solid #999999">@specimen.Variant</td>
-                    <td style="padding: 4px 8px; border: 1px solid #999999">@specimen.SerialNumber</td>
-                    <td style="padding: 4px 8px; border: 1px solid #999999">@specimen.Condition</td>
-                    <td style="padding: 4px 8px; border: 1px solid #999999">
+                    <td class="specimen-number-col">@specimen.Number</td>
+                    <td>@specimen.Variant</td>
+                    <td>@specimen.SerialNumber</td>
+                    <td>@specimen.Condition</td>
+                    <td>
                         @if (!string.IsNullOrEmpty(specimen.ImageUrl))
                         {
                             <img src="@specimen.ImageUrl" alt="Specimen Image"
-                                 style="max-width: 400px; height: auto; display: block; margin: 8px 0;"/>
+                                 class="specimen-inline-image"/>
                         }
                     </td>
                 </tr>
@@ -131,14 +126,12 @@
 
         @foreach (var img in Model.Exhibit.Gallery)
         {
-            <figure style="margin: 16px auto; text-align: center;">
-                <img src="@img.Url"
-                     alt="@img.AltText"
-                     style="max-width: 100%; height: auto; display: block; margin: 0 auto;"/>
+            <figure class="exhibit-gallery-figure">
+                <img src="@img.Url" alt="@img.AltText"/>
 
                 @if (!string.IsNullOrEmpty(img.Caption))
                 {
-                    <figcaption style="font-size: 0.9em; color: #555; margin-top: 6px; font-style: italic;">
+                    <figcaption class="exhibit-gallery-caption">
                         @img.Caption
                     </figcaption>
                 }
