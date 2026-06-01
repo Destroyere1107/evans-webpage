@@ -2,17 +2,20 @@
 
 ## Calculators
 
-Use an editor that can edit SQLite (like [DB Browser for SQLite](https://sqlitebrowser.org/)) to open `/EvansWebpage/Data/calcs/calcs.db`.
+Open `/EvansWebpage/Data/calcs/calcs.db` in an SQL editor.
 
-The database contains five tables: `Manufacturers`, `Exhibits`, `Specimens`, `GalleryImages`, and `MyCalcsLinks`. When adding a new calculator, you will generally add a row to `Exhibits` first, and then add rows to the other tables linking back to your new exhibit. Ensure the `Manufacturer` is documented in the `Manufacturers` table before linking it.
+The database contains five tables: `Manufacturers`, `Exhibits`, `Specimens`, `GalleryImages`, and `MyCalcsLinks`. Add a row to `Exhibits` first, and then add rows to the other tables linking back to it. Ensure the `Manufacturer` is documented in the `Manufacturers` table _before_ linking it.
 
-### Manufacturers Table
+#### Manufacturers Table
 
-This table stores data for calculator manufacturers.
+This table stores data for the manufacturers.
 
-- **`Id`**: A URL-friendly identifier for the manufacturer (e.g., `hp`, `ti`, `casio`).
+- **`Id`**: A URL-friendly identifier for the manufacturer, used as the linking key for other tables. (e.g., `hp`, `ti`, `casio`).
 - **`Name`**: The full display name of the manufacturer (e.g., `Hewlett-Packard`, `Texas Instruments`).
 - **`LogoUrl`**: Path to the logo image file (e.g., `/assets/logos/hp-logo.png`).
+- **`LegalName`**: The full legal name of the company (e.g., `Hewlett-Packard Company`).
+- **`HomeCountry`**: The country of the company's headquarters (e.g., `USA`, `Japan`).
+- **`Website`**: URL to the company's website (e.g., `https://www.hp.com`).
 
 ### Exhibits Table
 
@@ -30,7 +33,7 @@ This table holds the high-level information for individual exhibits.
 - **`UnderConstruction`**: Determines whether the 'Under Construction' banner and tag are displayed (`1` for true, `0` for false).
 - **`HasColor`**: Set to `1` (true) if the calculator features a color screen, or `0` (false) otherwise.
 
-### Specimens Table
+#### Specimens Table
 
 This table logs the specific specimens in the collection.
 
@@ -55,9 +58,9 @@ This table logs the specific specimens in the collection.
 - **`HardwareRevision`**: Hardware revision code if known.
 - **`AcquisitionDate`**: Use the standard ISO 8601 format `"YYYY-MM-DD"` (e.g., `"2026-02-02"`).
 
-### GalleryImages Table
+#### GalleryImages Table
 
-This table holds additional photos for the gallery section.
+This table holds the links to additional photos for the gallery section.
 
 - **`Id`**: Auto-incrementing primary key (leave blank).
 - **`ExhibitId`**: Must exactly match the `Id` from the `Exhibits` table.
@@ -65,7 +68,7 @@ This table holds additional photos for the gallery section.
 - **`AltText`**: Accessibility text for screen readers.
 - **`Caption`**: Optional caption to display underneath the image.
 
-### MyCalcsLinks Table
+#### MyCalcsLinks Table
 
 This table holds links to similar specimens on MyCalcs.
 
@@ -73,6 +76,19 @@ This table holds links to similar specimens on MyCalcs.
 - **`ExhibitId`**: Must exactly match the `Id` from the `Exhibits` table.
 - **`LinkId`**: The numeric ID used in the MyCalcs URL.
 - **`Name`**: Optional display name for the link (e.g., `48SX`). If left blank, the ID will be displayed.
+
+### Exhibit Markdown Files
+
+Each exhibit has its own text in Markdown. These files must be placed in a directory matching the exhibit's manufacturer and model:
+`/EvansWebpage/Data/calcs/md/{ManufacturerId}/{ModelSlug}/`
+
+The directory names _must_ exactly match the `ManufacturerId` (e.g., `hp`) and `ModelSlug` (e.g., `50g`) defined in the `Exhibits` table.
+
+Inside this folder, there can be three files:
+
+- **`description.md`**: The main body of the exhibit page, displayed under History and Background. If missing, it defaults to a _"Content coming soon."_ placeholder.
+- **`specimens.md`**: Notes about the physical specimens in the collection, displayed below the table. If missing, it defaults to a _"Content coming soon."_ placeholder.
+- **`notes.md`**: Optional technical, programming, or miscellaneous notes. If this file is missing or empty, the entire 'Notes' section will be fully omitted.
 
 ## Themes
 
