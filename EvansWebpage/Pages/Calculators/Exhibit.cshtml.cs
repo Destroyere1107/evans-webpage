@@ -27,7 +27,7 @@ public class ExhibitModel : PageModel
 
         if (Exhibit == null) return NotFound();
 
-        var mdBasePath = $"calcs/md/{Exhibit.ManufacturerSlug}/{Exhibit.ModelSlug}";
+        var mdBasePath = $"calcs/md/{Exhibit.ManufacturerId}/{Exhibit.ModelSlug}";
 
         DescriptionHtml = _markdownService.GetHtml($"{mdBasePath}/description.md", "<p><i>Content coming soon.</i></p>");
         NotesHtml = _markdownService.GetHtml($"{mdBasePath}/notes.md");

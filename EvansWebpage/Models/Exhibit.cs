@@ -5,17 +5,15 @@ public class Exhibit
     public string Id { get; set; }
     public string Name { get; set; }
     public string Category { get; set; }
-    public string Manufacturer { get; set; }
-    public string ManufacturerLogo { get; set; }
-    public string ManufacturerSlug { get; set; }
+    public string ManufacturerId { get; set; }
+    public Manufacturer Manufacturer { get; set; }
     public string Model { get; set; }
     public string ModelSlug { get; set; }
     public string Type { get; set; }
     public int? YearIntroduced { get; set; }
     public string MainImageUrl { get; set; }
     public bool UnderConstruction { get; set; }
-    public bool HasCas { get; set; }
-    public bool HasGraphing { get; set; }
+    public bool HasCas => Type?.Contains("(CAS)", StringComparison.OrdinalIgnoreCase) ?? false;
     public bool HasColor { get; set; }
 
     public List<MyCalcsLink> MyCalcsLinks { get; set; } = new();

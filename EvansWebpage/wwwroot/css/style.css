@@ -1451,6 +1451,21 @@ html.bling-mode {
     color: #10b981;
 }
 
+.showroom-meta-tag-scientific {
+    border-color: rgba(59, 130, 246, 0.4);
+    color: #3b82f6;
+}
+
+.showroom-meta-tag-financial {
+    border-color: rgba(245, 158, 11, 0.4);
+    color: #f59e0b;
+}
+
+.showroom-meta-tag-basic {
+    border-color: rgba(156, 163, 175, 0.4);
+    color: #9ca3af;
+}
+
 .showroom-meta-tag-color {
     border-color: rgba(139, 92, 246, 0.4);
     color: #8b5cf6;

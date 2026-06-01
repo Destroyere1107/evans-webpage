@@ -7,7 +7,7 @@
 
 
 
-<h2>@Model.Exhibit.Manufacturer @Model.Exhibit.Name</h2>
+<h2>@Model.Exhibit.Manufacturer?.Name @Model.Exhibit.Name</h2>
 
 <div class="exhibit-breadcrumbs" style="margin-bottom: 16px;">
     <p>
@@ -43,7 +43,7 @@
                         @if (!string.IsNullOrEmpty(Model.Exhibit.MainImageUrl))
                         {
                             <div style="text-align: center; margin-bottom: 16px;">
-                                <img src="@Model.Exhibit.MainImageUrl" alt="@Model.Exhibit.Manufacturer @Model.Exhibit.Name"
+                                <img src="@Model.Exhibit.MainImageUrl" alt="@Model.Exhibit.Manufacturer?.Name @Model.Exhibit.Name"
                                      style="max-width: 300px; width: 100%; height: auto; display: block; margin: 0 auto;" />
                             </div>
                         }
@@ -51,17 +51,17 @@
                         <div class="spec-field-row">
                             <span class="spec-label"><i class="fa-solid fa-industry"></i> Manufacturer</span>
                             <span class="spec-value">
-                                @if (!string.IsNullOrEmpty(Model.Exhibit.ManufacturerLogo))
+                                @if (!string.IsNullOrEmpty(Model.Exhibit.Manufacturer?.LogoUrl))
                                 {
                                     <span class="exhibit-mfg-logo"
                                           style="padding: 2px 6px; border-radius: 2px; display: inline-flex; align-items: center; background-color: white;">
-                                        <img src="@Model.Exhibit.ManufacturerLogo" alt="@Model.Exhibit.Manufacturer"
+                                        <img src="@Model.Exhibit.Manufacturer.LogoUrl" alt="@Model.Exhibit.Manufacturer.Name"
                                              style="max-height: 14px; width: auto;" />
                                     </span>
                                 }
                                 else
                                 {
-                                    @Model.Exhibit.Manufacturer
+                                    @Model.Exhibit.Manufacturer?.Name
                                 }
                             </span>
                         </div>
@@ -87,7 +87,7 @@
                         @if (Model.Exhibit.MyCalcsLinks != null && Model.Exhibit.MyCalcsLinks.Any())
                         {
                             <div class="spec-field-row" style="flex-direction: column; align-items: flex-start; gap: 6px;">
-                                <span class="spec-label"><i class="fa-solid fa-link"></i> Database Matches</span>
+                                <span class="spec-label"><i class="fa-solid fa-link"></i> Similar Specimens on MyCalcs</span>
                                 <div style="font-size: 8px; width: 100%; text-align: right; margin-top: 4px;">
                                     @for (var i = 0; i < Model.Exhibit.MyCalcsLinks.Count; i++)
                                     {
@@ -128,7 +128,7 @@
                                                 <th>Datecode</th>
                                             }
                                             <th>Mfd. Date</th>
-                                            <th>Country</th>
+                                            <th>Mfd. In</th>
                                             <th>Acquired</th>
                                             <th>Condition</th>
                                             <th>Picture</th>

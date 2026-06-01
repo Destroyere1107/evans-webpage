@@ -112,7 +112,7 @@ public class ExhibitService
                 .ToDictionary(
                     catGroup => catGroup.Key,
                     catGroup => catGroup
-                        .GroupBy(e => string.IsNullOrEmpty(e.Manufacturer) ? "Unknown" : e.Manufacturer)
+                        .GroupBy(e => e.Manufacturer?.Name ?? "Unknown")
                         .ToDictionary(
                             mfgGroup => mfgGroup.Key,
                             mfgGroup => mfgGroup.OrderBy(e => e.Model).ToList()
@@ -129,9 +129,27 @@ public class ExhibitService
     private static List<Exhibit> LoadFromDatabase(string dbPath)
     {
         var exhibits = new Dictionary<string, Exhibit>();
+        var manufacturers = new Dictionary<string, Manufacturer>();
 
         using var conn = new SqliteConnection($"Data Source={dbPath};Mode=ReadOnly");
         conn.Open();
+
+        // Load manufacturers
+        using (var cmd = conn.CreateCommand())
+        {
+            cmd.CommandText = "SELECT * FROM Manufacturers";
+            using var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                var mfg = new Manufacturer
+                {
+                    Id = reader.GetString(reader.GetOrdinal("Id")),
+                    Name = reader.GetString(reader.GetOrdinal("Name")),
+                    LogoUrl = GetStringOrEmpty(reader, "LogoUrl")
+                };
+                manufacturers[mfg.Id] = mfg;
+            }
+        }
 
         // Load exhibits
         using (var cmd = conn.CreateCommand())
@@ -145,9 +163,7 @@ public class ExhibitService
                     Id = reader.GetString(reader.GetOrdinal("Id")),
                     Name = reader.GetString(reader.GetOrdinal("Name")),
                     Category = GetStringOrEmpty(reader, "Category"),
-                    Manufacturer = GetStringOrEmpty(reader, "Manufacturer"),
-                    ManufacturerLogo = GetStringOrEmpty(reader, "ManufacturerLogo"),
-                    ManufacturerSlug = GetStringOrEmpty(reader, "ManufacturerSlug"),
+                    ManufacturerId = GetStringOrEmpty(reader, "ManufacturerId"),
                     Model = GetStringOrEmpty(reader, "Model"),
                     ModelSlug = GetStringOrEmpty(reader, "ModelSlug"),
                     Type = GetStringOrEmpty(reader, "Type"),
@@ -156,10 +172,18 @@ public class ExhibitService
                         : reader.GetInt32(reader.GetOrdinal("YearIntroduced")),
                     MainImageUrl = GetStringOrEmpty(reader, "MainImageUrl"),
                     UnderConstruction = reader.GetInt32(reader.GetOrdinal("UnderConstruction")) != 0,
-                    HasCas = reader.GetInt32(reader.GetOrdinal("HasCas")) != 0,
-                    HasGraphing = reader.GetInt32(reader.GetOrdinal("HasGraphing")) != 0,
                     HasColor = reader.GetInt32(reader.GetOrdinal("HasColor")) != 0,
                 };
+
+                if (!string.IsNullOrEmpty(exhibit.ManufacturerId) && manufacturers.TryGetValue(exhibit.ManufacturerId, out var manufacturer))
+                {
+                    exhibit.Manufacturer = manufacturer;
+                }
+                else
+                {
+                    exhibit.Manufacturer = new Manufacturer { Id = "unknown", Name = "Unknown", LogoUrl = "" };
+                }
+
                 exhibits[exhibit.Id] = exhibit;
             }
         }

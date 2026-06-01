@@ -58,10 +58,10 @@
                         <div class="showroom-card">
                             <div class="showroom-header">
                                 <h4>
-                                    @if (firstExhibit != null && !string.IsNullOrEmpty(firstExhibit.ManufacturerLogo))
+                                    @if (firstExhibit != null && !string.IsNullOrEmpty(firstExhibit.Manufacturer?.LogoUrl))
                                     {
                                         <span class="showroom-logo">
-                                            <img src="@firstExhibit.ManufacturerLogo" alt="@manufacturer.Key" />
+                                            <img src="@firstExhibit.Manufacturer.LogoUrl" alt="@manufacturer.Key" />
                                         </span>
                                     }
                                     @manufacturer.Key
@@ -83,9 +83,17 @@
                                             {
                                                 <span class="showroom-meta-tag">@exhibit.YearIntroduced</span>
                                             }
-                                            @if (exhibit.HasGraphing)
+                                            @if (!string.IsNullOrEmpty(exhibit.Type))
                                             {
-                                                <span class="showroom-meta-tag showroom-meta-tag-graphing">Graphing</span>
+                                                var typeClass = exhibit.Type.ToLower() switch
+                                                {
+                                                    "graphing" => "showroom-meta-tag-graphing",
+                                                    "scientific" => "showroom-meta-tag-scientific",
+                                                    "financial" => "showroom-meta-tag-financial",
+                                                    "basic" => "showroom-meta-tag-basic",
+                                                    _ => ""
+                                                };
+                                                <span class="showroom-meta-tag @typeClass">@exhibit.Type</span>
                                             }
                                             @if (exhibit.HasColor)
                                             {

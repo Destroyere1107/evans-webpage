@@ -2,26 +2,77 @@
 
 ## Calculators
 
-Use an editor that can edit SQLite to open `/EvansWebpage/Data/calcs/calcs.db`.
+Use an editor that can edit SQLite (like [DB Browser for SQLite](https://sqlitebrowser.org/)) to open `/EvansWebpage/Data/calcs/calcs.db`.
 
-1. Select the **Exhibits** table and add a new row.
-2. Fill in the exhibit details (Id, Name, Category, Manufacturer, etc.). Set boolean columns (`HasCas`, `UnderConstruction`, etc.) to `1` for true or `0` for false.
-3. To add specimens, select the **Specimens** table. Add a row and make sure the **ExhibitId** matches the Id you gave your exhibit.
-4. Do the same for **GalleryImages** and **MyCalcsLinks** if needed.
-5. Click **Write Changes** to save.
+The database contains five tables: `Manufacturers`, `Exhibits`, `Specimens`, `GalleryImages`, and `MyCalcsLinks`. When adding a new calculator, you will generally add a row to `Exhibits` first, and then add rows to the other tables linking back to your new exhibit. Ensure the `Manufacturer` is documented in the `Manufacturers` table before linking it.
 
-> **`manufactureDate`**: Valid formats are:
->
-> - `"YYYY"` (e.g., `"1992"`)
-> - `"Month YYYY"` (e.g., `"April 2006"`)
-> - `"Week n of YYYY"` (e.g., `"Week 35 of 1992"`)
-> - `"YYYY-MM-DD"` (e.g., `"2006-04-12"`)
->
-> As long as there is a 4-digit year somewhere in the string, the program will automatically extract it to calculate the "Oldest Calc" and "Youngest Calc" stats on the homepage.
->
-> Don't put two 4-digit years. I don't know what that does, but it'll probably break shit.
->
-> **`acquisitionDate`**: Use the standard ISO 8601 format `"YYYY-MM-DD"` (e.g., `"2026-02-02"`).
+### Manufacturers Table
+
+This table stores data for calculator manufacturers.
+
+- **`Id`**: A URL-friendly identifier for the manufacturer (e.g., `hp`, `ti`, `casio`).
+- **`Name`**: The full display name of the manufacturer (e.g., `Hewlett-Packard`, `Texas Instruments`).
+- **`LogoUrl`**: Path to the logo image file (e.g., `/assets/logos/hp-logo.png`).
+
+### Exhibits Table
+
+This table holds the high-level information for individual exhibits.
+
+- **`Id`**: The URL-friendly identifier for the page route (e.g., `50g`, `nspire-cx`). This is used to link all other tables to this exhibit.
+- **`Name`**: The full display name of the exhibit (e.g., `50g`).
+- **`Category`**: The broad classification of the exhibit, used for organizing in the directory (e.g., `Calculator`, `Accessory`, `Computer`). The directory groups these dynamically. If left blank, it defaults to `Other`.
+- **`ManufacturerId`**: The foreign key linking to the `Id` column in the `Manufacturers` table (e.g., `hp`, `ti`).
+- **`Model`**: The shortened model name (e.g., `HP 50g`).
+- **`ModelSlug`**: The slug used for internally identifying the model.
+- **`Type`**: The type of calculator. Any string is valid, but the museum has special colored badges for `Graphing`, `Scientific`, `Financial`, and `Basic`. If the calculator has CAS, append ` (CAS)` to the end (e.g., `Graphing (CAS)`).
+- **`YearIntroduced`**: The 4-digit year the calculator was released (integer).
+- **`MainImageUrl`**: URL to the main feature image displayed above the Quick Facts table.
+- **`UnderConstruction`**: Determines whether the 'Under Construction' banner and tag are displayed (`1` for true, `0` for false).
+- **`HasColor`**: Set to `1` (true) if the calculator features a color screen, or `0` (false) otherwise.
+
+### Specimens Table
+
+This table logs the specific specimens in the collection.
+
+- **`Id`**: Auto-incrementing primary key (leave blank or let SQLite handle it).
+- **`ExhibitId`**: Must exactly match the `Id` from the `Exhibits` table.
+- **`Number`**: The sequential specimen number for this exhibit (integer).
+- **`Variant`**: Any specific variant information (e.g., `Normal`, `Blue Prototype`).
+- **`SerialNumber`**: The serial number printed on the device.
+- **`Condition`**: The condition of the unit (e.g., `Mint`, `Good`, `Fair`, `Poor`, `Broken`). Any string is valid.
+- **`ImageUrl`**: URL to the hosted image of this specimen. Use `[coming soon]` if you don't have a picture yet.
+- **`ManufactureDate`**: Valid formats are:
+  - `"YYYY"` (e.g., `"1992"`)
+  - `"Month YYYY"` (e.g., `"April 2006"`)
+  - `"Week n of YYYY"` (e.g., `"Week 35 of 1992"`)
+  - `"YYYY-MM-DD"` (e.g., `"2006-04-12"`)
+
+  > As long as there is a 4-digit year somewhere in the string, the program will automatically extract it to calculate the "Oldest Calc" and "Youngest Calc" stats on the homepage.
+  > Don't put two 4-digit years. I don't know what that does, but it'll probably break shit.
+
+- **`Datecode`**: The raw datecode stamped on the unit.
+- **`CountryOfManufacture`**: Where it was made (e.g., `China`, `USA`).
+- **`HardwareRevision`**: Hardware revision code if known.
+- **`AcquisitionDate`**: Use the standard ISO 8601 format `"YYYY-MM-DD"` (e.g., `"2026-02-02"`).
+
+### GalleryImages Table
+
+This table holds additional photos for the gallery section.
+
+- **`Id`**: Auto-incrementing primary key (leave blank).
+- **`ExhibitId`**: Must exactly match the `Id` from the `Exhibits` table.
+- **`Url`**: URL of the image.
+- **`AltText`**: Accessibility text for screen readers.
+- **`Caption`**: Optional caption to display underneath the image.
+
+### MyCalcsLinks Table
+
+This table holds links to similar specimens on MyCalcs.
+
+- **`Id`**: Auto-incrementing primary key (leave blank).
+- **`ExhibitId`**: Must exactly match the `Id` from the `Exhibits` table.
+- **`LinkId`**: The numeric ID used in the MyCalcs URL.
+- **`Name`**: Optional display name for the link (e.g., `48SX`). If left blank, the ID will be displayed.
 
 ## Themes
 

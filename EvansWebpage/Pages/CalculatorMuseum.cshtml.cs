@@ -83,7 +83,7 @@ public class CalculatorMuseumModel : PageModel
     {
         if (exhibit == null) return null;
 
-        var mdPath = $"calcs/md/{exhibit.ManufacturerSlug}/{exhibit.ModelSlug}/description.md";
+        var mdPath = $"calcs/md/{exhibit.ManufacturerId}/{exhibit.ModelSlug}/description.md";
         return _markdownService.GetSnippet(mdPath);
     }
 }
