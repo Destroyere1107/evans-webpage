@@ -890,3 +890,658 @@ I had to add this after the switch to Markdown via Markdig */
     padding: 14px 18px;
     margin-bottom: 16px;
 }
+
+/* ====================================================
+   CALCULATOR MUSEUM OVERHAUL — DESIGN SYSTEM VARIABLES
+   ==================================================== */
+:root {
+    --calc-console-bg: #13121d;
+    --calc-console-border: #2c2b3e;
+    --calc-console-shadow: rgba(0, 0, 0, 0.5);
+    
+    --calc-screen-bg: #070e0a;
+    --calc-screen-border: #142a1b;
+    --calc-screen-glow: rgba(0, 255, 128, 0.25);
+    --calc-screen-text: #00ff80;
+    --calc-screen-dim: #004422;
+    
+    --calc-key-bg: linear-gradient(180deg, #262536 0%, #1c1b29 100%);
+    --calc-key-border: #33324c;
+    --calc-key-shadow: #0f0e1a;
+    --calc-key-text: #e2e1ec;
+    --calc-key-hover-bg: linear-gradient(180deg, #323147 0%, #222133 100%);
+    --calc-key-hover-glow: rgba(255, 255, 255, 0.15);
+    
+    --calc-case-bg: #0f0e1a;
+    --calc-case-border: #232235;
+    --calc-case-sheen: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 60%);
+    --calc-case-glow: rgba(30, 144, 255, 0.15);
+    
+    --calc-brass-bg: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
+    --calc-brass-border: #f3e5ab;
+    --calc-brass-text: #2f2000;
+}
+
+/* --- Theme Overrides --- */
+
+/* 1. Light Mode */
+html.light-mode {
+    --calc-console-bg: #f0f0f4;
+    --calc-console-border: #c8c8d0;
+    --calc-console-shadow: rgba(0, 0, 0, 0.08);
+    
+    --calc-screen-bg: #e2e4e0;
+    --calc-screen-border: #a4a8a0;
+    --calc-screen-glow: rgba(0, 0, 0, 0.02);
+    --calc-screen-text: #2b302c;
+    --calc-screen-dim: #a4a8a0;
+    
+    --calc-key-bg: linear-gradient(180deg, #ffffff 0%, #e2e2ea 100%);
+    --calc-key-border: #b8b8c4;
+    --calc-key-shadow: #9898a4;
+    --calc-key-text: #222233;
+    --calc-key-hover-bg: linear-gradient(180deg, #f4f4fa 0%, #d8d8e2 100%);
+    --calc-key-hover-glow: rgba(0, 0, 0, 0.05);
+    
+    --calc-case-bg: #ffffff;
+    --calc-case-border: #e2e2ea;
+    --calc-case-sheen: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 60%);
+    --calc-case-glow: rgba(0, 0, 0, 0.05);
+}
+
+/* 2. Blue Mode */
+html.blue-mode {
+    --calc-console-bg: #0a1128;
+    --calc-console-border: #1e3a8a;
+    --calc-console-shadow: rgba(30, 64, 175, 0.3);
+    
+    --calc-screen-bg: #03071e;
+    --calc-screen-border: #3b82f6;
+    --calc-screen-glow: rgba(59, 130, 246, 0.3);
+    --calc-screen-text: #60a5fa;
+    --calc-screen-dim: #1e3a8a;
+    
+    --calc-key-bg: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+    --calc-key-border: #334155;
+    --calc-key-shadow: #020617;
+    --calc-key-text: #f1f5f9;
+    --calc-key-hover-bg: linear-gradient(180deg, #334155 0%, #1e293b 100%);
+    --calc-key-hover-glow: rgba(96, 165, 250, 0.2);
+    
+    --calc-case-bg: #0f172a;
+    --calc-case-border: #1e3989;
+    --calc-case-sheen: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 60%);
+    --calc-case-glow: rgba(59, 130, 246, 0.15);
+}
+
+/* 3. Fancy Mode */
+html.fancy-mode {
+    --calc-console-bg: #2d0b1a;
+    --calc-console-border: #b91c1c;
+    --calc-console-shadow: rgba(185, 28, 28, 0.25);
+    
+    --calc-screen-bg: #110208;
+    --calc-screen-border: #f43f5e;
+    --calc-screen-glow: rgba(244, 63, 94, 0.35);
+    --calc-screen-text: #fda4af;
+    --calc-screen-dim: #881337;
+    
+    --calc-key-bg: linear-gradient(180deg, #4c0519 0%, #31000e 100%);
+    --calc-key-border: #be123c;
+    --calc-key-shadow: #1c0005;
+    --calc-key-text: #ffe4e6;
+    --calc-key-hover-bg: linear-gradient(180deg, #881337 0%, #4c0519 100%);
+    --calc-key-hover-glow: rgba(244, 63, 94, 0.25);
+    
+    --calc-case-bg: #31000e;
+    --calc-case-border: #be123c;
+    --calc-case-sheen: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 60%);
+    --calc-case-glow: rgba(244, 63, 94, 0.15);
+}
+
+/* 4. Cool Mode */
+html.cool-mode {
+    --calc-console-bg: #091a1e;
+    --calc-console-border: #0d9488;
+    --calc-console-shadow: rgba(13, 148, 136, 0.25);
+    
+    --calc-screen-bg: #020f12;
+    --calc-screen-border: #14b8a6;
+    --calc-screen-glow: rgba(20, 184, 166, 0.4);
+    --calc-screen-text: #99f6e4;
+    --calc-screen-dim: #115e59;
+    
+    --calc-key-bg: linear-gradient(180deg, #115e59 0%, #064e3b 100%);
+    --calc-key-border: #14b8a6;
+    --calc-key-shadow: #022c22;
+    --calc-key-text: #ccfbf1;
+    --calc-key-hover-bg: linear-gradient(180deg, #14b8a6 0%, #115e59 100%);
+    --calc-key-hover-glow: rgba(20, 184, 166, 0.3);
+    
+    --calc-case-bg: #0b1a1f;
+    --calc-case-border: #0d9488;
+    --calc-case-sheen: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 60%);
+    --calc-case-glow: rgba(20, 184, 166, 0.15);
+}
+
+/* 5. Gradient Mode */
+html.gradient-mode {
+    --calc-console-bg: linear-gradient(145deg, #0e051c 0%, #190a36 100%);
+    --calc-console-border: #a855f7;
+    --calc-console-shadow: rgba(168, 85, 247, 0.25);
+    
+    --calc-screen-bg: #05000c;
+    --calc-screen-border: #ec4899;
+    --calc-screen-glow: rgba(236, 72, 153, 0.4);
+    --calc-screen-text: #f0abfc;
+    --calc-screen-dim: #701a75;
+    
+    --calc-key-bg: linear-gradient(180deg, #581c87 0%, #3b0764 100%);
+    --calc-key-border: #a855f7;
+    --calc-key-shadow: #1e0036;
+    --calc-key-text: #f3e8ff;
+    --calc-key-hover-bg: linear-gradient(180deg, #701a75 0%, #581c87 100%);
+    --calc-key-hover-glow: rgba(236, 72, 153, 0.3);
+    
+    --calc-case-bg: #0f0e24;
+    --calc-case-border: #4b1d99;
+    --calc-case-sheen: linear-gradient(135deg, rgba(236, 72, 153, 0.12) 0%, rgba(255, 255, 255, 0) 60%);
+    --calc-case-glow: rgba(168, 85, 247, 0.2);
+}
+
+/* 6. Aero Mode */
+html.aero-mode {
+    --calc-console-bg: color-mix(in srgb, black 35%, transparent);
+    --calc-console-border: color-mix(in srgb, white 20%, transparent);
+    --calc-console-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    
+    --calc-screen-bg: color-mix(in srgb, black 65%, transparent);
+    --calc-screen-border: color-mix(in srgb, white 20%, transparent);
+    --calc-screen-glow: rgba(255, 255, 255, 0.1);
+    --calc-screen-text: #e2e8f0;
+    --calc-screen-dim: #475569;
+    
+    --calc-key-bg: linear-gradient(180deg, color-mix(in srgb, white 15%, transparent) 0%, color-mix(in srgb, black 30%, transparent) 100%);
+    --calc-key-border: color-mix(in srgb, white 20%, transparent);
+    --calc-key-shadow: rgba(0, 0, 0, 0.3);
+    --calc-key-text: #ffffff;
+    --calc-key-hover-bg: linear-gradient(180deg, color-mix(in srgb, white 25%, transparent) 0%, color-mix(in srgb, black 15%, transparent) 100%);
+    --calc-key-hover-glow: rgba(255, 255, 255, 0.2);
+    
+    --calc-case-bg: color-mix(in srgb, black 20%, transparent);
+    --calc-case-border: color-mix(in srgb, white 10%, transparent);
+    --calc-case-sheen: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 60%);
+    --calc-case-glow: rgba(255, 255, 255, 0.1);
+}
+
+/* 7. Bling Mode */
+html.bling-mode {
+    --calc-console-bg: linear-gradient(145deg, #2b2512 0%, #151105 100%);
+    --calc-console-border: #d4af37;
+    --calc-console-shadow: rgba(212, 175, 55, 0.25);
+    
+    --calc-screen-bg: #0e0a02;
+    --calc-screen-border: #ffdf00;
+    --calc-screen-glow: rgba(255, 223, 0, 0.35);
+    --calc-screen-text: #ffdf00;
+    --calc-screen-dim: #5c4308;
+    
+    --calc-key-bg: linear-gradient(180deg, #aa7c11 0%, #442f04 100%);
+    --calc-key-border: #d4af37;
+    --calc-key-shadow: #191202;
+    --calc-key-text: #ffffff;
+    --calc-key-hover-bg: linear-gradient(180deg, #d4af37 0%, #aa7c11 100%);
+    --calc-key-hover-glow: rgba(255, 223, 0, 0.3);
+    
+    --calc-case-bg: rgba(255, 255, 255, 0.08);
+    --calc-case-border: #aa7c11;
+    --calc-case-sheen: linear-gradient(135deg, rgba(255, 223, 0, 0.15) 0%, rgba(255, 255, 255, 0) 60%);
+    --calc-case-glow: rgba(218, 165, 32, 0.2);
+}
+
+/* ====================================================
+   CALCULATOR MUSEUM OVERHAUL — STYLES & LAYOUTS
+   ==================================================== */
+
+/* --- The Physical Console Frame --- */
+.calculator-console {
+    background: var(--calc-console-bg);
+    border: 1px solid var(--calc-console-border);
+    border-radius: 8px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), var(--calc-console-shadow);
+    padding: 24px;
+    margin-bottom: 24px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* --- The Digital LCD/VFD Screen --- */
+.museum-dashboard {
+    background: var(--calc-screen-bg);
+    border: 2px solid var(--calc-screen-border);
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.8), 0 0 15px var(--calc-screen-glow);
+}
+
+/* Scanlines overlay */
+.museum-dashboard::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+    background-size: 100% 3px;
+    z-index: 2;
+    opacity: 0.45;
+}
+
+/* Glare effect */
+.museum-dashboard::before {
+    content: "";
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 45%, rgba(255, 255, 255, 0) 50%);
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* LCD panel inside screen */
+.stat-dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+}
+
+.stat-lcd-panel {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    padding: 8px 12px;
+    text-align: center;
+    position: relative;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.stat-lcd-num {
+    font-family: var(--font-mono);
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--calc-screen-text);
+    text-shadow: 0 0 8px var(--calc-screen-glow);
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+}
+
+.stat-lcd-label {
+    font-size: 8px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+}
+
+.stat-lcd-panel-wide {
+    grid-column: span 2;
+}
+
+@media (max-width: 500px) {
+    .stat-lcd-panel-wide {
+        grid-column: span 1;
+    }
+}
+
+/* --- Tactile Calculator Keycaps (3D Buttons) --- */
+.cta-key {
+    display: inline-block;
+    background: var(--calc-key-bg);
+    color: var(--calc-key-text) !important;
+    font-family: var(--font-heading);
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-top: 1px solid var(--calc-key-border);
+    border-left: 1px solid var(--calc-key-border);
+    border-right: 1px solid var(--calc-key-border);
+    border-bottom: 4px solid var(--calc-key-shadow);
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.05s ease, border-bottom-width 0.05s ease, box-shadow 0.15s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+.cta-key:hover {
+    background: var(--calc-key-hover-bg);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4), 0 0 10px var(--calc-key-hover-glow), inset 0 1px 0 rgba(255,255,255,0.15);
+    text-decoration: none;
+}
+
+.cta-key:active {
+    transform: translateY(2px);
+    border-bottom-width: 2px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.cta-key i {
+    margin-right: 6px;
+}
+
+/* --- Specimen Glass Showcase Cards --- */
+.exhibit-card {
+    background: var(--calc-case-bg);
+    border: 1px solid var(--calc-case-border);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.exhibit-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--calc-case-sheen);
+    pointer-events: none;
+    z-index: 3;
+}
+
+.exhibit-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-blue);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 15px var(--calc-case-glow);
+}
+
+.exhibit-card img {
+    width: 100%;
+    height: 180px !important;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid var(--calc-case-border);
+    transition: transform 0.5s ease;
+}
+
+.exhibit-card:hover img {
+    transform: scale(1.03);
+}
+
+/* Labeled brass stands inside case */
+.brass-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--calc-brass-bg);
+    border: 1px solid var(--calc-brass-border);
+    color: var(--calc-brass-text) !important;
+    font-size: 8px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    padding: 3px 8px;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    margin: 12px 14px 0 14px;
+    position: relative;
+    z-index: 4;
+    align-self: flex-start;
+}
+
+.brass-badge i {
+    font-size: 8px;
+}
+
+/* --- Brand Showroom Directory Panels --- */
+.showroom-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.showroom-card {
+    background: var(--calc-case-bg);
+    border: 1px solid var(--calc-case-border);
+    border-radius: 6px;
+    padding: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: border-color 0.2s ease;
+}
+
+.showroom-card:hover {
+    border-color: var(--accent-blue-muted);
+}
+
+.showroom-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--calc-case-border);
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+.showroom-header h4 {
+    margin: 0;
+    font-size: 14px;
+    color: var(--accent-blue);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.showroom-logo {
+    background-color: #ffffff;
+    padding: 2px 6px;
+    border-radius: 2px;
+    display: inline-flex;
+    align-items: center;
+    height: 18px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.showroom-logo img {
+    max-height: 14px;
+    width: auto;
+}
+
+.showroom-count-pill {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-default);
+    color: var(--text-muted);
+    font-size: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 10px;
+    letter-spacing: 0.5px;
+}
+
+.showroom-list {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin: 0;
+}
+
+.stretched-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+}
+
+.showroom-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 4px;
+    gap: 6px;
+    border-bottom: 1px dotted var(--border-default);
+    transition: background-color 0.2s ease, padding-left 0.2s ease;
+}
+
+.showroom-item:last-child {
+    border-bottom: none;
+}
+
+.showroom-item:hover {
+    background-color: var(--bg-hover);
+    padding-left: 8px;
+}
+
+.showroom-link {
+    font-weight: bold;
+    font-size: 11px;
+    text-decoration: none !important;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.showroom-item-indicator {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--border-default);
+    display: inline-block;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.showroom-item:hover .showroom-item-indicator {
+    background-color: var(--calc-screen-text);
+    box-shadow: 0 0 6px var(--calc-screen-text);
+}
+
+.showroom-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-left: 11px;
+}
+
+.showroom-meta-tag {
+    font-size: 8px;
+    color: var(--text-muted);
+    background: var(--bg-elevated);
+    padding: 1px 4px;
+    border-radius: 2px;
+    border: 1px solid var(--border-default);
+    white-space: nowrap;
+}
+
+.showroom-meta-tag-cas {
+    border-color: var(--accent-blue-muted);
+    color: var(--accent-blue);
+}
+
+.showroom-meta-tag-graphing {
+    border-color: rgba(16, 185, 129, 0.4);
+    color: #10b981;
+}
+
+.showroom-meta-tag-color {
+    border-color: rgba(139, 92, 246, 0.4);
+    color: #8b5cf6;
+}
+
+/* --- Spec Plate Info Sidebars --- */
+.catalog-spec-plate {
+    background: var(--calc-console-bg);
+    border: 1px solid var(--calc-console-border);
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 20px;
+    box-shadow: var(--calc-console-shadow);
+    position: relative;
+    box-sizing: border-box;
+}
+
+.catalog-spec-plate h3 {
+    background: var(--grad-sidebar-h3) !important;
+    color: var(--text-primary) !important;
+    margin: -16px -16px 12px -16px !important;
+    padding: 8px 12px !important;
+    font-size: 11px !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+}
+
+.catalog-img-frame {
+    border: 1px solid var(--calc-console-border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    position: relative;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.catalog-img-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.catalog-img-frame:hover img {
+    transform: scale(1.04);
+}
+
+.spec-field-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 10px;
+}
+
+.spec-field-row:last-of-type {
+    border-bottom: none;
+}
+
+.spec-label {
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.spec-label i {
+    color: var(--accent-blue-muted);
+    width: 12px;
+    text-align: center;
+}
+
+.spec-value {
+    color: var(--text-primary);
+    font-weight: bold;
+    text-align: right;
+}
+
+.spec-value a {
+    text-decoration: none;
+}
+
+.spec-value a:hover {
+    text-decoration: underline;
+}
+
+/* Dynamic glow elements styling */
+.glass-glow-effect {
+    box-shadow: 0 0 10px var(--calc-screen-glow);
+}

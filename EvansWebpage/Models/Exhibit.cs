@@ -14,6 +14,9 @@ public class Exhibit
     public int? YearIntroduced { get; set; }
     public string MainImageUrl { get; set; }
     public bool UnderConstruction { get; set; }
+    public bool HasCas { get; set; }
+    public bool HasGraphing { get; set; }
+    public bool HasColor { get; set; }
 
     public List<MyCalcsLink> MyCalcsLinks { get; set; } = new();
     public List<Specimen> Specimens { get; set; } = new();

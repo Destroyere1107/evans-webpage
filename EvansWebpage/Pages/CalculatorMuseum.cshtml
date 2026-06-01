@@ -51,7 +51,12 @@
             <div class="stat-pill">
                 <i class="fa-solid fa-camera-retro"></i>
                 <span class="stat-number">@Model.TotalPhotos</span>
-                <span class="stat-label">@Model.DocumentedSpecimens of @Model.TotalSpecimens Documented</span>
+                <span class="stat-label">Total Photos</span>
+            </div>
+            <div class="stat-pill">
+                <i class="fa-solid fa-camera-retro"></i>
+                <span class="stat-number">@Model.DocumentedSpecimens of @Model.TotalSpecimens</span>
+                <span class="stat-label">Specimens have Pictures</span>
             </div>
             @if (Model.OldestCalculator != null)
             {
@@ -134,6 +139,7 @@
                      alt="Destroyere1107's MyCalcs userbar" />
             </picture>
         </a>
+
         <p>
             ...or take a look at the exhibit directory by clicking the button
             below - If you dare!

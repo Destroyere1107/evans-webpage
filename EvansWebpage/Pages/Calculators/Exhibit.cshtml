@@ -6,115 +6,144 @@
 }
 
 
+
 <h2>@Model.Exhibit.Manufacturer @Model.Exhibit.Name</h2>
 
-<div class="exhibit-breadcrumbs">
-    <p><a href="/calculatormuseum">&laquo; Back to Calculator Museum</a></p>
-    <p><a href="/calculators/directory"> &laquo; Back to Collection Index</a></p>
+<div class="exhibit-breadcrumbs" style="margin-bottom: 16px;">
+    <p>
+        <a href="/calculatormuseum" style="text-decoration: none;"><i class="fa-solid fa-chevron-left"></i> Museum Entrance</a> &nbsp;|&nbsp; 
+        <a href="/calculators/directory" style="text-decoration: none;"><i class="fa-solid fa-list"></i> Showrooms Index</a>
+    </p>
+</div>
+
+<div class="news-item">
+    <h3 style="margin-top: 0"><i class="fa-solid fa-clipboard-list" style="color: var(--accent-blue); margin-right: 6px;"></i> Quick Facts</h3>
+    @if (!string.IsNullOrEmpty(Model.Exhibit.MainImageUrl))
+    {
+        <div class="catalog-img-frame" style="max-width: 300px; margin-bottom: 12px;">
+            <img src="@Model.Exhibit.MainImageUrl" alt="@Model.Exhibit.Manufacturer @Model.Exhibit.Name" />
+        </div>
+    }
+
+    <div class="catalog-spec-plate" style="margin-bottom: 0;">
+        <div class="spec-field-row">
+            <span class="spec-label"><i class="fa-solid fa-industry"></i> Manufacturer</span>
+            <span class="spec-value">
+                @if (!string.IsNullOrEmpty(Model.Exhibit.ManufacturerLogo))
+                {
+                    <span class="exhibit-mfg-logo" style="padding: 2px 6px; border-radius: 2px; display: inline-flex; align-items: center; background-color: white;">
+                        <img src="@Model.Exhibit.ManufacturerLogo" alt="@Model.Exhibit.Manufacturer" style="max-height: 14px; width: auto;" />
+                    </span>
+                }
+                else
+                {
+                    @Model.Exhibit.Manufacturer
+                }
+            </span>
+        </div>
+
+        <div class="spec-field-row">
+            <span class="spec-label"><i class="fa-solid fa-tag"></i> Model</span>
+            <span class="spec-value">@Model.Exhibit.Model</span>
+        </div>
+
+        @if (Model.Exhibit.YearIntroduced.HasValue)
+        {
+            <div class="spec-field-row">
+                <span class="spec-label"><i class="fa-solid fa-calendar-days"></i> Year Released</span>
+                <span class="spec-value">@Model.Exhibit.YearIntroduced</span>
+            </div>
+        }
+
+        <div class="spec-field-row">
+            <span class="spec-label"><i class="fa-solid fa-microchip"></i> Type</span>
+            <span class="spec-value">@Model.Exhibit.Type</span>
+        </div>
+
+        @if (Model.Exhibit.MyCalcsLinks != null && Model.Exhibit.MyCalcsLinks.Any())
+        {
+            <div class="spec-field-row" style="flex-direction: column; align-items: flex-start; gap: 6px;">
+                <span class="spec-label"><i class="fa-solid fa-link"></i> Database Matches</span>
+                <div style="font-size: 8px; width: 100%; text-align: right; margin-top: 4px;">
+                    @for (var i = 0; i < Model.Exhibit.MyCalcsLinks.Count; i++)
+                    {
+                        var link = Model.Exhibit.MyCalcsLinks[i];
+                        var displayText = !string.IsNullOrEmpty(link.Name) ? link.Name : link.Id;
+
+                        <a href="https://my.calcs.quest/search?models=@link.Id" target="_blank" class="showroom-meta-tag" style="display: inline-block; margin: 1px; font-weight: bold; text-decoration: none;">
+                            <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 7px;"></i> @displayText
+                        </a>
+                    }
+                </div>
+            </div>
+        }
+    </div>
 </div>
 
 @if (Model.Exhibit.UnderConstruction)
 {
-    <img src="/assets/misc/underconstruction.png"
-         alt="Under Construction"
-         class="exhibit-construction-banner"/>
+    <div class="news-item" style="border-left: 3px solid #8b6914; background: linear-gradient(145deg, rgba(139, 105, 20, 0.05) 0%, rgba(0,0,0,0.1) 100%); margin-bottom: 20px;">
+        <div style="display: flex; align-items: center; gap: 14px; padding: 6px 4px;">
+            <i class="fa-solid fa-screwdriver-wrench" style="font-size: 24px; color: #f59e0b;"></i>
+            <div>
+                <h4 style="margin: 0; color: #f59e0b; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: bold;">Under Construction</h4>
+                <p style="margin: 4px 0 0 0; font-size: 11px; color: var(--text-muted); line-height: 1.4;">
+                    This exhibit is still being worked on. Some text, diagrams, or images may be missing temporarily.
+                </p>
+            </div>
+        </div>
+    </div>
 }
 
 <div class="news-item">
-    <h3 style="margin-top: 0">Quick Facts</h3>
-    @if (!string.IsNullOrEmpty(Model.Exhibit.MainImageUrl))
-    {
-        <img src="@Model.Exhibit.MainImageUrl"
-             alt="@Model.Exhibit.Name"
-             class="exhibit-main-image"/>
-    }
-    <table class="exhibit-facts-table">
-        <tr>
-            <td><strong>Manufacturer:</strong></td>
-            <td>
-                <div class="exhibit-mfg-logo">
-                    <img src="@Model.Exhibit.ManufacturerLogo" alt="@Model.Exhibit.Manufacturer"/>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td><strong>Model:</strong></td>
-            <td>@Model.Exhibit.Model</td>
-        </tr>
-        @if (Model.Exhibit.YearIntroduced.HasValue)
-        {
-            <tr>
-                <td><strong>Year Introduced:</strong></td>
-                <td>@Model.Exhibit.YearIntroduced</td>
-            </tr>
-        }
-        <tr>
-            <td><strong>Type:</strong></td>
-            <td>@Model.Exhibit.Type</td>
-        </tr>
-        @if (Model.Exhibit.MyCalcsLinks != null && Model.Exhibit.MyCalcsLinks.Any())
-        {
-            <tr>
-                <td><strong>Similar Specimens on MyCalcs:</strong></td>
-                <td>
-                    @for (var i = 0; i < Model.Exhibit.MyCalcsLinks.Count; i++)
-                    {
-                        var link = Model.Exhibit.MyCalcsLinks[i];
-
-                        var displayText = !string.IsNullOrEmpty(link.Name) ? link.Name : link.Id;
-
-                        <a href="https://my.calcs.quest/search?models=@link.Id">@displayText</a>
-
-                        // Add a space separator if it's not the last item in the list
-                        @if (i < Model.Exhibit.MyCalcsLinks.Count - 1)
-                        {
-                            <text>&nbsp; </text>
-                        }
-                    }
-                </td>
-            </tr>
-        }
-    </table>
-</div>
-
-<div class="news-item">
-    <h3 style="margin-top: 0">History &amp; Background</h3>
+    <h3 style="margin-top: 0"><i class="fa-solid fa-book-open" style="color: var(--accent-blue); margin-right: 6px;"></i> History &amp; Background</h3>
     @Html.Raw(Model.DescriptionHtml)
 </div>
 
 <div class="news-item">
-    <h3 style="margin-top: 0">Specimen(s) in Collection</h3>
+    <h3 style="margin-top: 0"><i class="fa-solid fa-boxes-stacked" style="color: var(--accent-blue); margin-right: 6px;"></i> Specimen(s) in Collection</h3>
     @if (Model.Exhibit.Specimens != null && Model.Exhibit.Specimens.Any())
     {
         <table class="specimen-table">
-            <tr>
-                <th class="specimen-number-col">#</th>
-                <th>Variant</th>
-                <th>Serial Number</th>
-                <th>Condition</th>
-                <th>Pictures</th>
-            </tr>
-            @foreach (var specimen in Model.Exhibit.Specimens)
-            {
+            <thead>
                 <tr>
-                    <td class="specimen-number-col">@specimen.Number</td>
-                    <td>@specimen.Variant</td>
-                    <td>@specimen.SerialNumber</td>
-                    <td>@specimen.Condition</td>
-                    <td>
-                        @if (!string.IsNullOrEmpty(specimen.ImageUrl))
-                        {
-                            <img src="@specimen.ImageUrl" alt="Specimen Image"
-                                 class="specimen-inline-image"/>
-                        }
-                    </td>
+                    <th class="specimen-number-col" style="text-align: center;">#</th>
+                    <th>Variant</th>
+                    <th>Serial Number</th>
+                    <th>Condition</th>
+                    <th>Picture</th>
                 </tr>
-            }
+            </thead>
+            <tbody>
+                @foreach (var specimen in Model.Exhibit.Specimens)
+                {
+                    <tr>
+                        <td class="specimen-number-col" style="text-align: center; font-weight: bold; vertical-align: middle;">@specimen.Number</td>
+                        <td style="vertical-align: middle;">@specimen.Variant</td>
+                        <td style="vertical-align: middle; font-family: var(--font-mono); font-size: 11px;">@specimen.SerialNumber</td>
+                        <td style="vertical-align: middle;">
+                            <span class="showroom-meta-tag" style="border-color: var(--border-default);">@specimen.Condition</span>
+                        </td>
+                        <td style="vertical-align: middle;">
+                            @if (!string.IsNullOrEmpty(specimen.ImageUrl) && !specimen.ImageUrl.Equals("[coming soon]", StringComparison.OrdinalIgnoreCase))
+                            {
+                                <div class="catalog-img-frame" style="max-width: 140px; margin: 4px 0; border-width: 1px; box-shadow: 0 1px 3px rgba(0,0,0,0.2);">
+                                    <img src="@specimen.ImageUrl" alt="Specimen Snapshot" style="width: 100%; height: auto;" />
+                                </div>
+                            }
+                            else
+                            {
+                                <span style="font-size: 10px; color: var(--text-muted); font-style: italic;">Picture coming soon</span>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
         </table>
     }
     else
     {
-        <p><i>No specimens documented yet.</i></p>
+        <p style="font-style: italic; color: var(--text-muted); padding: 6px 0;"><i class="fa-solid fa-circle-info"></i> No specimens documented yet.</p>
     }
     @Html.Raw(Model.SpecimensHtml)
 </div>
@@ -122,28 +151,31 @@
 @if (Model.Exhibit.Gallery != null && Model.Exhibit.Gallery.Any())
 {
     <div class="news-item">
-        <h3 style="margin-top: 0">Gallery</h3>
-
-        @foreach (var img in Model.Exhibit.Gallery)
-        {
-            <figure class="exhibit-gallery-figure">
-                <img src="@img.Url" alt="@img.AltText"/>
-
-                @if (!string.IsNullOrEmpty(img.Caption))
-                {
-                    <figcaption class="exhibit-gallery-caption">
-                        @img.Caption
-                    </figcaption>
-                }
-            </figure>
-        }
+        <h3 style="margin-top: 0"><i class="fa-solid fa-images" style="color: var(--accent-blue); margin-right: 6px;"></i> Exhibition Gallery</h3>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-top: 12px;">
+            @foreach (var img in Model.Exhibit.Gallery)
+            {
+                <figure class="exhibit-gallery-figure" style="margin: 0; background: var(--bg-surface); border: 1px solid var(--border-default); padding: 8px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.15);">
+                    <div class="catalog-img-frame" style="margin-bottom: 6px; border-width: 1px;">
+                        <img src="@img.Url" alt="@img.AltText" style="width: 100%; height: auto;" />
+                    </div>
+                    @if (!string.IsNullOrEmpty(img.Caption))
+                    {
+                        <figcaption class="exhibit-gallery-caption" style="font-size: 9px; line-height: 1.3; text-align: left; padding: 0 2px;">
+                            @img.Caption
+                        </figcaption>
+                    }
+                </figure>
+            }
+        </div>
     </div>
 }
 
 @if (!string.IsNullOrWhiteSpace(Model.NotesHtml))
 {
     <div class="news-item">
-        <h3 style="margin-top: 0">Notes</h3>
+        <h3 style="margin-top: 0"><i class="fa-solid fa-comment-dots" style="color: var(--accent-blue); margin-right: 6px;"></i> Notes</h3>
         @Html.Raw(Model.NotesHtml)
     </div>
 }

@@ -16,6 +16,9 @@ Use this empty template and add to /EvansWebpage/Data/calcs/calcs.json.
   "modelSlug": "",
   "yearIntroduced": 0,
   "type": "",
+  "hasCas": false,
+  "hasGraphing": false,
+  "hasColor": false,
   "specimens": [
     {
       "number": 1,

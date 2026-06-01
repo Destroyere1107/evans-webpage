@@ -17,9 +17,18 @@
 </p>
 <p>Until I have added more, this list is incomplete. Go look at my MyCalcs collection to see a more up-to-date list.</p>
 
-<img src="~/assets/misc/underconstruction.png"
-     alt="Under Construction"
-     class="directory-construction-banner"/>
+<!-- Under Construction Notice -->
+<div class="news-item" style="border-left: 3px solid #8b6914; background: linear-gradient(145deg, rgba(139, 105, 20, 0.05) 0%, rgba(0,0,0,0.1) 100%); margin-bottom: 20px;">
+    <div style="display: flex; align-items: center; gap: 14px; padding: 6px 4px;">
+        <i class="fa-solid fa-screwdriver-wrench" style="font-size: 24px; color: #f59e0b;"></i>
+        <div>
+            <h4 style="margin: 0; color: #f59e0b; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: bold;">Under Construction</h4>
+            <p style="margin: 4px 0 0 0; font-size: 11px; color: var(--text-muted);">
+                Some exhibits are still being worked on. These entries are marked with a <span class="showroom-meta-tag" style="border-color: #8b6914; color: #f59e0b; padding: 0px 3px; font-size: 7.5px;">Under Construction</span> badge.
+            </p>
+        </div>
+    </div>
+</div>
 
 <hr/>
 
@@ -31,25 +40,63 @@
 
     foreach (var category in orderedCategories)
     {
-        <div class="news-item">
-            <h3 style="margin-top: 0">@(category.Key)s</h3>
+        <h3 style="margin-top: 24px; margin-bottom: 12px; font-family: var(--font-heading); color: var(--accent-blue);">@(category.Key)s</h3>
 
+        <div class="showroom-grid">
             @foreach (var manufacturer in category.Value.OrderBy(m => m.Key))
             {
-                <h4>@manufacturer.Key</h4>
-                <ul>
-                    @foreach (var exhibit in manufacturer.Value)
-                    {
-                        <li>
-                            <a href="/calculators/exhibit/@exhibit.Id">@exhibit.Name</a>
+                var firstExhibit = manufacturer.Value.FirstOrDefault();
+                var count = manufacturer.Value.Count;
 
-                            @if (exhibit.UnderConstruction)
+                <div class="showroom-card">
+                    <div class="showroom-header">
+                        <h4>
+                            @if (firstExhibit != null && !string.IsNullOrEmpty(firstExhibit.ManufacturerLogo))
                             {
-                                <span class="directory-coming-soon"> &larr; Coming Soon!</span>
+                                <span class="showroom-logo">
+                                    <img src="@firstExhibit.ManufacturerLogo" alt="@manufacturer.Key" />
+                                </span>
                             }
-                        </li>
-                    }
-                </ul>
+                            @manufacturer.Key
+                        </h4>
+                        <span class="showroom-count-pill">@count @(count == 1 ? "Specimen" : "Specimens")</span>
+                    </div>
+
+                    <ul class="showroom-list">
+                        @foreach (var exhibit in manufacturer.Value)
+                        {
+                            <li class="showroom-item">
+                                <a href="/calculators/exhibit/@exhibit.Id" class="showroom-link stretched-link">
+                                    <span class="showroom-item-indicator"></span>
+                                    @exhibit.Name
+                                </a>
+
+                                <div class="showroom-meta">
+                                    @if (exhibit.YearIntroduced.HasValue)
+                                    {
+                                        <span class="showroom-meta-tag">@exhibit.YearIntroduced</span>
+                                    }
+                                    @if (exhibit.HasGraphing)
+                                    {
+                                        <span class="showroom-meta-tag showroom-meta-tag-graphing">Graphing</span>
+                                    }
+                                    @if (exhibit.HasColor)
+                                    {
+                                        <span class="showroom-meta-tag showroom-meta-tag-color">Color</span>
+                                    }
+                                    @if (exhibit.HasCas)
+                                    {
+                                        <span class="showroom-meta-tag showroom-meta-tag-cas">CAS</span>
+                                    }
+                                    @if (exhibit.UnderConstruction)
+                                    {
+                                        <span class="showroom-meta-tag" style="border-color: #8b6914; color: #f59e0b;">Under Construction</span>
+                                    }
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
             }
         </div>
     }
@@ -58,3 +105,4 @@ else
 {
     <p><i>The directory isn't working for some reason.'</i></p>
 }
+

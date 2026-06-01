@@ -160,6 +160,21 @@
         "type": "boolean",
         "description": "Determines whether the the 'Coming Soon' tag and 'Under Construction' banner are displayed.",
         "default": false
+      },
+      "hasCas": {
+        "type": "boolean",
+        "description": "Indicates if the calculator has a Computer Algebra System.",
+        "default": false
+      },
+      "hasGraphing": {
+        "type": "boolean",
+        "description": "Indicates if the calculator is a graphing calculator.",
+        "default": false
+      },
+      "hasColor": {
+        "type": "boolean",
+        "description": "Indicates if the calculator has a color display.",
+        "default": false
       }
     },
     "required": [
