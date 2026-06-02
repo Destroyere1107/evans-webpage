@@ -23,18 +23,14 @@ internal class Program
         builder.Services.AddSingleton<EvansWebpage.Services.ExhibitService>();
         builder.Services.AddSingleton<EvansWebpage.Services.MarkdownService>();
 
+        // Set WebRootFileProvider so Tag Helpers (like asp-append-version) resolve hashes correctly
+        builder.Environment.WebRootFileProvider = new ManifestEmbeddedFileProvider(typeof(Program).Assembly, "wwwroot");
+
         var app = builder.Build();
 
         if (!app.Environment.IsDevelopment()) app.UseExceptionHandler("/Error");
 
-        // app.UseStaticFiles(); used to be here, but packaging wwwroot into the binary with the functionality added
-// by Microsoft.Extensions.FileProviders.Embedded requires this
-        app.UseStaticFiles(new StaticFileOptions
-        {
-            FileProvider = new ManifestEmbeddedFileProvider(
-                typeof(Program).Assembly, "wwwroot"
-            )
-        });
+        app.UseStaticFiles();
         app.UseRouting();
 
 // Backwards compatibility: redirect /index.html to /
