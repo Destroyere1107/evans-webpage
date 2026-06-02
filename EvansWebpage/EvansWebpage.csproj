@@ -9,6 +9,7 @@
         <ServerGarbageCollection>false</ServerGarbageCollection> <!-- Reduce memory hoarding -->
         <SelfContained>true</SelfContained> <!-- Include runtime -->
         <PublishSingleFile>true</PublishSingleFile> <!-- Publish as a single file for simplicity -->
+        <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract> <!-- Bundle native libs (currently only libe_sqlite3.so) inside the single file -->
         <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile> <!-- sacrifice some cycles on start to reduce disk footprint -->
         <OptimizationPreference>Size</OptimizationPreference>
         <StaticWebAssetsEnabled>false</StaticWebAssetsEnabled> <!-- Disable sidecar JSON; we embed wwwroot via ManifestEmbeddedFileProvider -->
