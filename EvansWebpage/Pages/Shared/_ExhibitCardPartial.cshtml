@@ -8,10 +8,10 @@
         @if (!string.IsNullOrEmpty(Model.Exhibit.MainImageUrl))
         {
             <img src="@Model.Exhibit.MainImageUrl"
-                 alt="@Model.Exhibit.Manufacturer @Model.Exhibit.Name" />
+                 alt="@Model.Exhibit.Manufacturer?.Name @Model.Exhibit.Name" />
         }
         <div class="card-body">
-            <h3>@Model.Exhibit.Manufacturer @Model.Exhibit.Name</h3>
+            <h3>@Model.Exhibit.Name</h3>
             @if (!string.IsNullOrEmpty(Model.Description))
             {
                 <p>@Model.Description</p>
