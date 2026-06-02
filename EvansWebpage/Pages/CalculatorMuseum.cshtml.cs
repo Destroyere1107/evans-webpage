@@ -29,7 +29,7 @@ public class CalculatorMuseumModel : PageModel
 
     // --- Featured Exhibits (Manual & Random) ---
     // Change these IDs to swap the manually-curated featured cards.
-    public static readonly string ExhibitOfTheMonthId = "28";        // HP 28 Series
+    public static readonly string ExhibitOfTheMonthId = "48";        // HP 28 Series
     private const string CuratorsChoiceId    = "50g";       // HP 50g
     private const string NewestAdditionId    = "nspire-cx"; // TI-Nspire CX Series
 

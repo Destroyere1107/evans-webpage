@@ -90,6 +90,18 @@ Inside this folder, there can be three files:
 - **`specimens.md`**: Notes about the physical specimens in the collection, displayed below the table. If missing, it defaults to a _"Content coming soon."_ placeholder.
 - **`notes.md`**: Optional technical, programming, or miscellaneous notes. If this file is missing or empty, the entire 'Notes' section will be fully omitted.
 
+### Featured Exhibits
+
+The Calculator Museum landing page has three manually-curated highlight cards: **Calc of the Month**, **Curator's Choice**, and **Newest Addition**.
+
+To change these, open `/EvansWebpage/Pages/CalculatorMuseum.cshtml.cs` and modify the following string constants near the top of the file to match the `Id` of the desired exhibit from the `Exhibits` table:
+
+```csharp
+public static readonly string ExhibitOfTheMonthId = "28";        // Calc of the Month
+private const string CuratorsChoiceId    = "50g";       // Curator's Choice
+private const string NewestAdditionId    = "nspire-cx"; // Newest Addition
+```
+
 ## Themes
 
 1. Copy `theme-template.css` to `whatever-new-theme.css`.
