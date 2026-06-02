@@ -182,3 +182,99 @@ html.aero-mode #theme-toggle:hover {
     background-color: color-mix(in srgb, black 20%, transparent);
     color: white;
 }
+
+
+/* ====================================================
+   CALCULATOR MUSEUM — Aero Overrides
+   Glassmorphism treatment for museum components
+   ==================================================== */
+
+html.aero-mode .museum-hero {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    border-radius: 5px;
+    box-shadow: inset 0 1px 0 color-mix(in srgb, white 15%, transparent),
+                0 2px 4px color-mix(in srgb, black 30%, transparent);
+}
+
+html.aero-mode .museum-hero h2 {
+    text-shadow: 0 0 8px color-mix(in srgb, white 30%, transparent),
+                 0 2px 4px color-mix(in srgb, black 90%, transparent);
+    color: white;
+}
+
+html.aero-mode .cta-button {
+    border-radius: 4px;
+    background-color: color-mix(in srgb, black 40%, transparent);
+    border: 1px solid color-mix(in srgb, black 60%, transparent);
+    box-shadow: inset 0 1px 0 color-mix(in srgb, white 15%, transparent),
+                0 2px 5px color-mix(in srgb, black 60%, transparent);
+}
+
+html.aero-mode .cta-button:hover {
+    background-color: color-mix(in srgb, black 20%, transparent);
+    box-shadow: inset 0 1px 0 color-mix(in srgb, white 20%, transparent),
+                0 4px 10px color-mix(in srgb, black 60%, transparent);
+}
+
+html.aero-mode .museum-stats {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    border-radius: 5px;
+    box-shadow: inset 0 1px 0 color-mix(in srgb, white 15%, transparent),
+                0 2px 4px color-mix(in srgb, black 30%, transparent);
+}
+
+html.aero-mode .stat-pill {
+    border-radius: 4px;
+    background-color: color-mix(in srgb, black 30%, transparent);
+    border: 1px solid color-mix(in srgb, black 50%, transparent);
+    box-shadow: inset 0 1px 0 color-mix(in srgb, white 10%, transparent),
+                0 1px 2px color-mix(in srgb, black 30%, transparent);
+}
+
+html.aero-mode .stat-number {
+    color: white;
+    text-shadow: 0 1px 2px black;
+}
+
+html.aero-mode .exhibit-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    border-radius: 5px;
+    box-shadow: inset 0 1px 0 color-mix(in srgb, white 15%, transparent),
+                0 2px 4px color-mix(in srgb, black 30%, transparent);
+    overflow: hidden;
+}
+
+html.aero-mode .exhibit-card img {
+    border-radius: 4px 4px 0 0;
+}
+
+html.aero-mode .exhibit-card .badge {
+    border-radius: 3px;
+    background-color: color-mix(in srgb, black 50%, transparent);
+    text-shadow: 0 1px 2px black;
+}
+
+html.aero-mode .card-body h3 {
+    color: white;
+    text-shadow: 0 1px 2px black;
+}
+
+html.aero-mode .museum-explore {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    border-radius: 5px;
+    box-shadow: inset 0 1px 0 color-mix(in srgb, white 15%, transparent),
+                0 2px 4px color-mix(in srgb, black 30%, transparent);
+}
+
+html.aero-mode .museum-why {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    border-left: 3px solid color-mix(in srgb, white 30%, transparent);
+    border-radius: 5px;
+    box-shadow: inset 0 1px 0 color-mix(in srgb, white 15%, transparent),
+                0 2px 4px color-mix(in srgb, black 30%, transparent);
+}

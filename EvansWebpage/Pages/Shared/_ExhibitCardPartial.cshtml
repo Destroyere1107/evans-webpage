@@ -1,0 +1,35 @@
+@using EvansWebpage.Pages.Shared
+@model ExhibitCardViewModel
+
+@if (Model.Exhibit != null)
+{
+    <div class="exhibit-card">
+        <span class="badge @Model.BadgeClass"><i class="@Model.BadgeIcon"></i> @Model.BadgeText</span>
+        @if (!string.IsNullOrEmpty(Model.Exhibit.MainImageUrl))
+        {
+            <img src="@Model.Exhibit.MainImageUrl"
+                 alt="@Model.Exhibit.Manufacturer @Model.Exhibit.Name" />
+        }
+        <div class="card-body">
+            <h3>@Model.Exhibit.Manufacturer @Model.Exhibit.Name</h3>
+            @if (!string.IsNullOrEmpty(Model.Description))
+            {
+                <p>@Model.Description</p>
+            }
+            <p class="card-meta">
+                @Model.Exhibit.Type
+                @if (Model.Exhibit.YearIntroduced.HasValue)
+                {
+                    <text> · Introduced @Model.Exhibit.YearIntroduced</text>
+                }
+            </p>
+            @if (Model.Exhibit.UnderConstruction)
+            {
+                <div style="margin-bottom: 12px;">
+                    <span class="showroom-meta-tag" style="border-color: #8b6914; color: #f59e0b;">Under Construction</span>
+                </div>
+            }
+            <a href="/calculators/exhibit/@Model.Exhibit.Id" class="stretched-link">View Exhibit →</a>
+        </div>
+    </div>
+}

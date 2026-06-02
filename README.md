@@ -14,11 +14,11 @@ Every time this repo's main branch is pushed to, GitHub Actions builds it, the s
 
 ## About AI Contributions
 
-A decent amount of the work on this website was made with the assistance of LLMs, often (somewhat inaccurately) called 'AI'. 
+A decent amount of the work on this website was made with the assistance of LLMs, often (somewhat inaccurately) called 'AI'.
 
 I want to make this as clear as possible: I do not, and I do not endorse or support, the process of 'vibe coding', which is where a wannabe programmer who couldn't make a Hello World with a gun to his head gets a shitty idea and spends a bit of the world's oil to make a really shitty version of it.
 
-Every single line of code that I didn't write (and I o try to limit it as much as possible) passes my eyes and is brought up to my standards as much as possible. 
+Every single line of code that I didn't write (and I o try to limit it as much as possible) passes my eyes and is brought up to my standards as much as possible.
 
 In addition, under no circumstances will I ever use an LLM to generate any **content**, meaning any text or images that your average John Taxpayer will ever lay his eyes on, such as my news posts or the museum.
 
@@ -63,6 +63,7 @@ THE PAGE REQUIRES THE FOLLOWING:
 - `Microsoft.Extensions.FileProviders.Embedded` - Allows for everything to be bundled as one big binary
 - `Markdig` - For the dynamic Happenings and Calcpages.
 - `System.ServiceModel.Syndication` - For the RSS feed.
+- `Microsoft.Data.Sqlite` - For the SQLsite database
 
 ### Running on-VM
 
