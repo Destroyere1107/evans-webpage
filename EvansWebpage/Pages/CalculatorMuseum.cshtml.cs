@@ -43,7 +43,10 @@ public class CalculatorMuseumModel : PageModel
     public string? NewestAdditionDescription { get; set; }
 
     public Exhibit? RandomExhibit { get; set; }
-    public string? RandomExhibitDescription { get; set; }
+    public string? RandomExhibitDescript 50g
+    private const string NewestAdditionId    = "nspire-cx"; // TI-Nspire CX Series
+
+    public Exhibit? ExhibitOfTheMonth { get; set; }ion { get; set; }
 
     public void OnGet()
     {

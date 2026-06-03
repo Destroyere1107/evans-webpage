@@ -32,6 +32,7 @@ This table holds the high-level information for individual exhibits.
 - **`MainImageUrl`**: URL to the main feature image displayed above the Quick Facts table.
 - **`UnderConstruction`**: Determines whether the 'Under Construction' banner and tag are displayed (`1` for true, `0` for false).
 - **`HasColor`**: Set to `1` (true) if the calculator features a color screen, or `0` (false) otherwise.
+- **`IsHidden`**: Set to `1` to completely hide this exhibit from the museum. In this case, the Exhibit service will ignore it completely. Defaults to `0`.
 
 #### Specimens Table
 

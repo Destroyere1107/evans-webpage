@@ -154,7 +154,7 @@ public class ExhibitService
         // Load exhibits
         using (var cmd = conn.CreateCommand())
         {
-            cmd.CommandText = "SELECT * FROM Exhibits";
+            cmd.CommandText = "SELECT * FROM Exhibits WHERE IsHidden = 0 OR IsHidden IS NULL";
             using var reader = cmd.ExecuteReader();
             while (reader.Read())
             {
