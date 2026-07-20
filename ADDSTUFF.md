@@ -21,12 +21,12 @@ This table stores data for the manufacturers.
 
 This table holds the high-level information for individual exhibits.
 
-- **`Id`**: The URL-friendly identifier for the page route (e.g., `50g`, `nspire-cx`). This is used to link all other tables to this exhibit.
+- **`Id`**: The identifier used solely for determining the URL (e.g., `50g`, `nspire-cx`). This is **not** used for linking child tables anymore.
 - **`Name`**: The full display name of the exhibit (e.g., `50g`).
 - **`Category`**: The broad classification of the exhibit, used for organizing in the directory (e.g., `Calculator`, `Accessory`, `Computer`). The directory groups these dynamically. If left blank, it defaults to `Other`.
 - **`ManufacturerId`**: The foreign key linking to the `Id` column in the `Manufacturers` table (e.g., `hp`, `ti`).
 - **`Model`**: The shortened model name (e.g., `HP 50g`).
-- **`ModelSlug`**: The slug used for internally identifying the model.
+- **`ModelSlug`**: The internal identifier used to link child tables (`Specimens`, `GalleryImages`, `MyCalcsLinks`) and to resolve the markdown file directory. Must be unique.
 - **`Type`**: The type of calculator. Any string is valid, but the museum has special colored badges for `Graphing`, `Scientific`, `Financial`, and `Basic`. If the calculator has CAS, append ` (CAS)` to the end (e.g., `Graphing (CAS)`).
 - **`YearIntroduced`**: The 4-digit year the calculator was released (integer).
 - **`MainImageUrl`**: URL to the main feature image displayed above the Quick Facts table.
@@ -39,7 +39,7 @@ This table holds the high-level information for individual exhibits.
 This table logs the specific specimens in the collection.
 
 - **`Id`**: Auto-incrementing primary key (leave blank or let SQLite handle it).
-- **`ExhibitId`**: Must exactly match the `Id` from the `Exhibits` table.
+- **`ExhibitId`**: Must exactly match the `ModelSlug` from the `Exhibits` table.
 - **`Number`**: The sequential specimen number for this exhibit (integer).
 - **`Variant`**: Any specific variant information (e.g., `Normal`, `Blue Prototype`).
 - **`SerialNumber`**: The serial number printed on the device.
@@ -64,7 +64,7 @@ This table logs the specific specimens in the collection.
 This table holds the links to additional photos for the gallery section.
 
 - **`Id`**: Auto-incrementing primary key (leave blank).
-- **`ExhibitId`**: Must exactly match the `Id` from the `Exhibits` table.
+- **`ExhibitId`**: Must exactly match the `ModelSlug` from the `Exhibits` table.
 - **`Url`**: URL of the image.
 - **`AltText`**: Accessibility text for screen readers.
 - **`Caption`**: Optional caption to display underneath the image.
@@ -74,7 +74,7 @@ This table holds the links to additional photos for the gallery section.
 This table holds links to similar specimens on MyCalcs.
 
 - **`Id`**: Auto-incrementing primary key (leave blank).
-- **`ExhibitId`**: Must exactly match the `Id` from the `Exhibits` table.
+- **`ExhibitId`**: Must exactly match the `ModelSlug` from the `Exhibits` table.
 - **`LinkId`**: The numeric ID used in the MyCalcs URL.
 - **`Name`**: Optional display name for the link (e.g., `48SX`). If left blank, the ID will be displayed.
 

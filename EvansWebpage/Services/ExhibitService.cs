@@ -184,7 +184,7 @@ public class ExhibitService
                     exhibit.Manufacturer = new Manufacturer { Id = "unknown", Name = "Unknown", LogoUrl = "" };
                 }
 
-                exhibits[exhibit.Id] = exhibit;
+                exhibits[exhibit.ModelSlug] = exhibit;
             }
         }
 
